@@ -1,0 +1,2 @@
+{{ $appcss := resources.Get "app.css" | fingerprint }}
+<link rel="stylesheet" href="{{ $appcss.Permalink | relURL }}">

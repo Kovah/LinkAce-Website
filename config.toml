@@ -1,0 +1,5 @@
+baseURL = "https://www.linkace.org/"
+languageCode = "en-us"
+title = "LinkAce"
+assetDir = "./assets/dist"
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
