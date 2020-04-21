@@ -21,5 +21,8 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "serve": "hugo serve -D --bind 0.0.0.0",
     "build": "npm run production && hugo"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1"
   }
 }

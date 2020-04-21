@@ -1,3 +1,4 @@
-body {
-  font-family: sans-serif;
-}
+@import "~bootstrap/scss/functions";
+@import "variables";
+@import "third-party/bootstrap";
+@import "custom";
