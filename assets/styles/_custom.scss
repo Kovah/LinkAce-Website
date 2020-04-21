@@ -1,0 +1,22 @@
+body {
+  padding-top: 3rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.navbar-logo {
+  height: 38px;
+  width: 104px;
+}
+
+.stage {
+  @include gradient-directional(darken($primary, 10%), $primary, 0deg)
+}
+
+.stage-image {
+  height: 0;
+  padding-bottom: 40%;
+  overflow: hidden;
+}
