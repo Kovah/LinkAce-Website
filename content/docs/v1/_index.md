@@ -1,6 +1,5 @@
 ---
 title: LinkAce Documentation
-type: docs
 ---
 
 #### General

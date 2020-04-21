@@ -1,6 +1,5 @@
 ---
 title: LinkAce Upgrade guide
-type: docs
 ---
 
 ## General upgrade guide

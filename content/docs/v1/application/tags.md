@@ -1,6 +1,5 @@
 ---
 title: Tags
-type: docs
 ---
 
 Tags are used to quickly add several labels to a link to categorize it. Usually this is done to add further 

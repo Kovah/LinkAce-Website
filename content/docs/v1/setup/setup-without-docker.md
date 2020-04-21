@@ -1,6 +1,5 @@
 ---
 title: Setup without Docker
-type: docs
 ---
 
 The application was developed with being used with Docker in mind. All following steps will try to work around this but

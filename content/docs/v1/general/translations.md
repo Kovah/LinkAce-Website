@@ -1,6 +1,5 @@
 ---
 title: LinkAce Translations
-type: docs
 ---
 
 At the moment, LinkAce is only available in English. With a growing community more international users may

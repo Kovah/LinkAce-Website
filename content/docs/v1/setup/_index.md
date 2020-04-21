@@ -1,6 +1,5 @@
 ---
 title: LinkAce Setup
-type: docs
 ---
 
 LinkAce itself does not require a high-performance server to run at. Indeed there is just this PHP app that needs access

@@ -1,6 +1,5 @@
 ---
 title: Lists
-type: docs
 ---
 
 Other than tags, lists are meant to not directly categorize but bundle different types of links together for one topic.

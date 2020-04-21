@@ -1,6 +1,5 @@
 ---
 title: The Dashboard
-type: docs
 ---
 
 The Dashboard is the first screen you see after logging into LinkAce. It display the last few saved links, a mini form

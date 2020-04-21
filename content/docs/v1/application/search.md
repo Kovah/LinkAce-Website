@@ -1,6 +1,5 @@
 ---
 title: Advanced Search
-type: docs
 ---
 
 One of the more advanced features of LinkAce is the search. It provides a simple yet powerful interface to quickly

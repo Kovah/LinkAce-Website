@@ -1,6 +1,5 @@
 ---
 title: Link Checks
-type: docs
 ---
 
 LinkAce has a nice feature called Link Checks. If you [set up your cron](/docs/v1/configuration/system-settings) 

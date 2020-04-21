@@ -1,6 +1,5 @@
 ---
 title: Setup with Docker
-type: docs
 ---
 
 ## Setup with Docker

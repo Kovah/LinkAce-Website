@@ -1,6 +1,5 @@
 ---
 title: About LinkAce
-type: docs
 ---
 
 LinkAce is a bookmark manager like Shaarli and other similar tools.  

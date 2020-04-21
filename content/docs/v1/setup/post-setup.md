@@ -1,6 +1,5 @@
 ---
 title: Post-Setup Steps
-type: docs
 ---
 
 ## Post-Setup Steps

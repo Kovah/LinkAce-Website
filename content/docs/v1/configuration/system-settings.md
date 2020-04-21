@@ -1,6 +1,5 @@
 ---
 title: System Settings
-type: docs
 ---
 
 The system settings allow the user to configure the whole application, affecting all users - even if this is a 

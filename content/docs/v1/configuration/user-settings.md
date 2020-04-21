@@ -1,6 +1,5 @@
 ---
 title: User Settings
-type: docs
 ---
 
 LinkAce offers a lot of options to customize your bookmarking experience. Here is the overview for all user specific

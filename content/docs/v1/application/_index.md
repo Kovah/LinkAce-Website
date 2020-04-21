@@ -1,6 +1,5 @@
 ---
 title: About the Application
-type: docs
 ---
 
 * [Dashboard](/docs/v1/application/dashboard)

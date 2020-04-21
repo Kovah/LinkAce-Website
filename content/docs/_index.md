@@ -1,6 +1,5 @@
 ---
 title: LinkAce Documentation
-type: docs
 ---
 
 Welcome to the LinkAce Documentation.

@@ -1,6 +1,5 @@
 ---
 title: Links / Bookmarks
-type: docs
 ---
 
 Links are - for sure - the heart of LinkAce and store information about bookmarks together with their corresponding
