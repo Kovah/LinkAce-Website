@@ -121,6 +121,10 @@ $sizes: map-merge(
 );
 
 
+// Grid columns
+$grid-gutter-width: 40px;
+
+
 // Body
 $body-bg: $white;
 $body-color: $black;
@@ -146,6 +150,8 @@ $font-size-xs: $font-size-base * .75;
 $font-weight-normal: 400;
 
 $text-muted: $body-color-muted;
+
+$small-font-size: 85%;
 
 
 // Tables

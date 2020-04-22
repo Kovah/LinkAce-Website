@@ -10,9 +10,11 @@
 <body>
 
 {{ partial "navbar.html" . }}
-{{ partial "landing/stage.html" . }}
 
-<div class="py-5"></div>
+<main>
+  {{ partial "landing/stage.html" . }}
+  {{ partial "landing/teaser.html" . }}
+</main>
 
 {{ $appjs := resources.Get "app.js" | fingerprint }}
 <script src="{{ $appjs.Permalink | relURL }}"></script>

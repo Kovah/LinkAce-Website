@@ -6,6 +6,19 @@ img {
   max-width: 100%;
 }
 
+.icon {
+  display: inline-block;
+  font-size: inherit;
+  width: 1em;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+
+  path {
+    fill: currentColor;
+  }
+}
+
 .navbar-logo {
   height: 38px;
   width: 104px;
