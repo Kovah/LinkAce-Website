@@ -1,0 +1,24 @@
+<footer class="py-7 text-center">
+  <div class="container">
+
+    <div class="social mb-6 display-4">
+      <a href="{{ .Site.Params.Github }}" class="d-inline-block mr-3" title="Github repository">
+        {{ partial "icons/github.html" }}
+      </a>
+      <a href="{{ .Site.Params.Twitter }}" class="d-inline-block mr-3" title="Twitter profile">
+        {{ partial "icons/twitter.html" }}
+      </a>
+      <a href="{{ .Site.Params.Reddit }}" class="d-inline-block mr-3" title="Reddit Community">
+        {{ partial "icons/reddit.html" }}
+      </a>
+      <a href="{{ .Site.Params.Chat }}" class="d-inline-block mr-3" title="Chat and Support">
+        {{ partial "icons/chat.html" }}
+      </a>
+    </div>
+    
+    <div class="text-muted">
+      &copy; {{ now.Format "2006" }} LinkAce / <a href="https://www.kovah.de">Kovah.de</a>
+    </div>
+
+  </div>
+</footer>
