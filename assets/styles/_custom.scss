@@ -1,9 +1,14 @@
 body {
-  padding-top: 3rem;
+  padding-top: ($navbar-padding-y * 2) + $nav-link-height;
 }
 
 img {
   max-width: 100%;
+}
+
+.display-5 {
+  font-size: $display5-size;
+  line-height: $display-line-height;
 }
 
 .icon {

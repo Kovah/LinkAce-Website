@@ -9,7 +9,15 @@
 </head>
 <body>
 
-{{ block "main" . }}{{ end }}
+{{ partial "navbar.html" . }}
+
+<main class="container">
+  <section class="content pt-5">
+    {{ block "main" . }}{{ end }}
+  </section>
+</main>
+
+{{ partial "footer.html" . }}
 
 {{ $appjs := resources.Get "app.js" | fingerprint }}
 <script src="{{ $appjs.Permalink | relURL }}"></script>
