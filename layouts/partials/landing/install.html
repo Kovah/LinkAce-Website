@@ -1,7 +1,32 @@
-<section class="py-6 bg-primary text-light">
+<section class="py-6 bg-primary text-light text-center">
   <div class="container">
 
-    <h2>Install LinkAce</h2>
+    <div class="mb-5 px-3 px-md-7">
+      <h2 class="font-weight-bold mb-4">Install LinkAce</h2>
+      <p class="px-xl-7">
+        I tried to make the installation as easy as possible.
+        LinkAce shps with pre-configured Docker configurations and a built-in web installer.
+        Installation via Docker is the recommended way.
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6 py-4">
+        <div class="display-4 mb-3">{{ partial "icons/docker.html" }}</div>
+        <h4>Install with Docker</h4>
+        <div class="mt-4">
+          <a href="{{ .Site.Params.WikiDockerSetupUrl }}" class="btn btn-light mr-2">Docker Guide</a>
+          <a href="{{ .Site.Params.DockerHubUrl }}" class="btn btn-light">Docker Hub</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 py-4">
+        <div class="display-4 mb-3">{{ partial "icons/php.html" }}</div>
+        <h4>Install without Docker</h4>
+        <div class="mt-4">
+          <a href="{{ .Site.Params.WikiServerSetupUrl }}" class="btn btn-light">Server Guide</a>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
