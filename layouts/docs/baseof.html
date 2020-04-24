@@ -4,13 +4,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ .Title }} - LinkAce Documentation</title>
+  <title>LinkAce</title>
   {{ partial "head.html" . }}
 </head>
 <body>
 
-<h1>{{ .Title }}</h1>
-{{ block "main" . }}{{ end }}
+{{ partial "navbar.html" . }}
+
+<main class="container">
+  <section class="content-wrapper pt-5 pt-lg-6 px-lg-5 px-xl-7">
+    {{ block "main" . }}{{ end }}
+  </section>
+</main>
+
+{{ partial "footer.html" . }}
 
 {{ $appjs := resources.Get "app.js" | fingerprint }}
 <script src="{{ $appjs.Permalink | relURL }}"></script>
