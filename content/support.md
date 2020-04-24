@@ -27,7 +27,7 @@ Before posting a new help requests to the Github repository or in the communties
 
 ### Get support from the community
 
-You can post support requests in the [Spectrum chat](/community) or in the [Reddit community](/community).
+You can post support requests in the [Spectrum chat]({{< param "Chat" >}}) or in the [Reddit community]({{< param "Reddit" >}}).
 
 Please be as detailed as possible and post logs if they are available.
 
@@ -38,7 +38,7 @@ The Github repository is intended to track the development status **and not for 
 without knowing that there is a specific issue with LinkAce itself, please use the [community channels](/community) 
 instead.
 
-If you want to report a bug within the application, please open a new [issue](https://github.com/Kovah/LinkAce/issues)
+If you want to report a bug within the application, please open a new [issue]({{< param "Github" >}})
 and describe:
 
 * which version you are using,
