@@ -62,13 +62,3 @@ img {
   padding-bottom: 40%;
   overflow: hidden;
 }
-
-.content {
-  h2, h3 {
-    margin-top: map_get($spacers, 5);
-  }
-
-  h4, h5 {
-    margin-top: map_get($spacers, 4);
-  }
-}
