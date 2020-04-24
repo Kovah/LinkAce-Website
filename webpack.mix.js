@@ -15,3 +15,4 @@ mix.js('assets/js/app.js', 'assets/dist')
   });
 
 mix.sass('assets/styles/app.scss', 'assets/dist');
+mix.sass('assets/styles/highlighter.scss', 'assets/dist');

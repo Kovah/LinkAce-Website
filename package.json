@@ -23,6 +23,7 @@
     "build": "npm run production && hugo"
   },
   "dependencies": {
-    "bootstrap": "^4.4.1"
+    "bootstrap": "^4.4.1",
+    "prismjs": "^1.20.0"
   }
 }
