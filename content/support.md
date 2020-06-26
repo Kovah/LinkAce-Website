@@ -2,34 +2,25 @@
 title: Support for LinkAce
 ---
 
-LinkAce is a private side-project mainly developed for *myself*. I develop the app in my free time and do not expect
-any payment from users.
+Free support is highly limited for all my free tools, including LinkAce. If you need help please visit the 
+[community forum](/community) and post your issue there. I do not offer free personal support via chat or email.  
+Please notice that LinkAce has specific requirements to run correctly.
 
-{{< alert type="danger" >}}
+{{< alert type="success" >}}
 
-* I do not offer any paid support. Free support is available from the community.
-* I do not offer any free or paid installation help.
-* I do not offer any free or paid customization for single users.
+If you need prioritized support you can **become a [Patreon](https://www.patreon.com/Kovah)** 
+or **[Github Sponsor](https://github.com/sponsors/Kovah)**. ⭐️
 
 {{</ alert >}}
-
-If you need an app with extensive support please consider using a commercial solution.
 
 
 ## In case you need help
 
-Nothing goes exactly as planned. There can be small, hidden problems with LinkAce or the app is not entirely compatible
+Nothing goes exactly as planned. There can be small, hidden problems with LinkAce, or the app is not entirely compatible
 with your system.
 
-Before posting a new help requests to the Github repository or in the communties, please take a look at the 
+Before posting a new help requests to the Github repository or in the communities, please take a look at the 
 [documentation](/docs/v1).
-
-
-### Get support from the community
-
-You can post support requests in the [Spectrum chat]({{< param "Chat" >}}) or in the [Reddit community]({{< param "Reddit" >}}).
-
-Please be as detailed as possible and post logs if they are available.
 
 
 ### Posting bug reports
