@@ -11,11 +11,19 @@
 
 {{ partial "navbar.html" . }}
 
-<main class="container">
-  <section class="content-wrapper pt-5 pt-lg-6 px-lg-5 px-xl-7">
-    {{ block "main" . }}{{ end }}
-  </section>
-</main>
+<div class="container">
+  <div class="row pt-5 pt-lg-6">
+    <main class="col-12 col-md-8 mb-6 mb-md-0">
+      <section class="content-wrapper">
+        {{ block "main" . }}{{ end }}
+      </section>
+    </main>
+
+    <aside class="col-12 col-md-4">
+      {{ partial "docs/sidebar" . }}
+    </aside>
+  </div>
+</div>
 
 {{ partial "footer.html" . }}
 

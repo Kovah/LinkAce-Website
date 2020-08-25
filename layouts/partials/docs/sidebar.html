@@ -1,0 +1,67 @@
+<div class="list-group">
+
+  <div class="list-group-item">
+    General
+  </div>
+  <div class="list-group-item btn-group-vertical">
+    <a href='{{ ref . "/about" }}' class="btn btn-link text-left">About LinkAce</a>
+    <a href='{{ ref . "/docs/v1/general/translations" }}' class="btn btn-link text-left">Translations</a>
+    <a href='{{ ref . "/docs/v1/general/changelog" }}' class="btn btn-link text-left">Changelog</a>
+  </div>
+
+  <div class="list-group-item">
+    Setup
+  </div>
+  <div class="list-group-item btn-group-vertical">
+    {{ with .Site.GetPage "section" "docs/v1/setup" -}}
+    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    {{- range .Pages -}}
+    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    {{- end -}}
+    {{- end }}
+  </div>
+
+  <div class="list-group-item">
+    Upgrade
+  </div>
+  <div class="list-group-item btn-group-vertical">
+    {{ with .Site.GetPage "section" "docs/v1/upgrade" -}}
+    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    {{- end }}
+  </div>
+
+  <div class="list-group-item">
+    LinkAce
+  </div>
+  <div class="list-group-item btn-group-vertical">
+    {{ with .Site.GetPage "section" "docs/v1/application" -}}
+    {{- range .Pages -}}
+    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    {{- end -}}
+    {{- end }}
+  </div>
+
+  <div class="list-group-item">
+    Configuration
+  </div>
+  <div class="list-group-item btn-group-vertical">
+    {{ with .Site.GetPage "section" "docs/v1/configuration" -}}
+    {{- range .Pages -}}
+    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    {{- end -}}
+    {{- end }}
+  </div>
+
+  <div class="list-group-item">
+    Command Line
+  </div>
+  <div class="list-group-item btn-group-vertical">
+    {{ with .Site.GetPage "section" "docs/v1/cli" -}}
+    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    {{- range .Pages -}}
+    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    {{- end -}}
+    {{- end }}
+  </div>
+
+</div>

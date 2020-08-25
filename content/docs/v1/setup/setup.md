@@ -1,5 +1,6 @@
 ---
 title: Setup with Docker
+weight: 10
 ---
 
 ## Setup with Docker

@@ -1,5 +1,6 @@
 ---
 title: Trash
+weight: 70
 ---
 
 There should never be the situation where data is lost by mistake. That's why everything in LinkAce will not be

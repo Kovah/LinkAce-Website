@@ -1,5 +1,6 @@
 ---
 title: Lists
+weight: 40
 ---
 
 Other than tags, lists are meant to not directly categorize but bundle different types of links together for one topic.

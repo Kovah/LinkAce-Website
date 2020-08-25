@@ -1,5 +1,6 @@
 ---
 title: Post-Setup Steps
+weight: 30
 ---
 
 ## Post-Setup Steps

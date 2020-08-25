@@ -1,5 +1,6 @@
 ---
 title: Links / Bookmarks
+weight: 20
 ---
 
 Links are - for sure - the heart of LinkAce and store information about bookmarks together with their corresponding

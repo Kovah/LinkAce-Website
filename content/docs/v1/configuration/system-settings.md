@@ -1,5 +1,6 @@
 ---
 title: System Settings
+weight: 20
 ---
 
 The system settings allow the user to configure the whole application, affecting all users - even if this is a 

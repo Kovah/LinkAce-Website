@@ -1,5 +1,6 @@
 ---
 title: Setup without Docker
+weight: 20
 ---
 
 The application was developed with being used with Docker in mind. All following steps will try to work around this but
