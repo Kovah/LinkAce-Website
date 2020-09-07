@@ -12,7 +12,8 @@ There are two different ways to install LinkAce with Docker:
 * one container with PHP and nginx (simple)
 * different containers for PHP and nginx (advanced)
 
-If you are unsure about which one to use, pick the simple setup.
+If you are unsure about which one to use, pick the simple setup. All images are available on the 
+[Docker Hub](https://hub.docker.com/r/linkace/linkace).
 
 
 ---
@@ -26,6 +27,8 @@ In this version, there is only one Docker container needed and one optional for 
 database outside of Docker, you only have to run one single container. This is useful for environments, where access
 to Docker is limited, e.g. on Heroku or other cloud platforms. However, if you have full access to a VPS or root
 server, the advanced setup is recommended as it also improves the performance.
+
+Docker images used in this setup are named `linkace/linkace:php-nginx` or `linkace/linkace:0.0.42-php-nginx`.
 
 Let's get started.
 
@@ -79,6 +82,8 @@ user account in the following process.
 The advanced setup is not that different from the simple setup, but may not be suitable for certain environments.
 Specifically, it uses different containers for the application running with PHP, and the web server. The docker-compose
 file also includes configuration for Redis, which increases performance.
+
+Docker images used in this setup are named `linkace/linkace:latest` or `linkace/linkace:0.0.42`.
 
 This setup is recommended when having full access to Docker, e.g. on a VPS or root server.
 
