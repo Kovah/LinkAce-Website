@@ -12,4 +12,8 @@
       margin-bottom: 0;
     }
   }
+
+  hr {
+    margin: map_get($spacers, 5) 0;
+  }
 }

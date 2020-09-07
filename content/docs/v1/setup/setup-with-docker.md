@@ -5,8 +5,6 @@ aliases:
 - setup
 ---
 
-## Setup with Docker
-
 Working with Docker is pretty straight forward, but you should be somewhat familiar with Docker.
 
 There are two different ways to install LinkAce with Docker:
