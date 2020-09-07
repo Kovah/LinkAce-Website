@@ -4,9 +4,9 @@
     General
   </div>
   <div class="list-group-item btn-group-vertical btn-group-sm">
-    <a href='{{ ref . "/about" }}' class="btn btn-link text-left">About LinkAce</a>
-    <a href='{{ ref . "/docs/v1/general/translations" }}' class="btn btn-link text-left">Translations</a>
-    <a href='{{ ref . "/docs/v1/general/changelog" }}' class="btn btn-link text-left">Changelog</a>
+    <a href='{{ relref . "/about" }}' class="btn btn-link text-left">About LinkAce</a>
+    <a href='{{ relref . "/docs/v1/general/translations" }}' class="btn btn-link text-left">Translations</a>
+    <a href='{{ relref . "/docs/v1/general/changelog" }}' class="btn btn-link text-left">Changelog</a>
   </div>
 
   <div class="list-group-item">
@@ -14,9 +14,9 @@
   </div>
   <div class="list-group-item btn-group-vertical btn-group-sm">
     {{ with .Site.GetPage "section" "docs/v1/setup" -}}
-    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    <a href="{{ .RelPermalink }}" class="btn btn-link text-left">{{ .Title }}</a>
     {{- range .Pages -}}
-    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    <a href="{{ .RelPermalink }}" class="btn btn-link text-left">{{ .Title }}</a>
     {{- end -}}
     {{- end }}
   </div>
@@ -26,7 +26,7 @@
   </div>
   <div class="list-group-item btn-group-vertical btn-group-sm">
     {{ with .Site.GetPage "section" "docs/v1/upgrade" -}}
-    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    <a href="{{ .RelPermalink }}" class="btn btn-link text-left">{{ .Title }}</a>
     {{- end }}
   </div>
 
@@ -36,7 +36,7 @@
   <div class="list-group-item btn-group-vertical btn-group-sm">
     {{ with .Site.GetPage "section" "docs/v1/application" -}}
     {{- range .Pages -}}
-    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    <a href="{{ .RelPermalink }}" class="btn btn-link text-left">{{ .Title }}</a>
     {{- end -}}
     {{- end }}
   </div>
@@ -47,7 +47,7 @@
   <div class="list-group-item btn-group-vertical btn-group-sm">
     {{ with .Site.GetPage "section" "docs/v1/configuration" -}}
     {{- range .Pages -}}
-    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    <a href="{{ .RelPermalink }}" class="btn btn-link text-left">{{ .Title }}</a>
     {{- end -}}
     {{- end }}
   </div>
@@ -57,9 +57,9 @@
   </div>
   <div class="list-group-item btn-group-vertical btn-group-sm">
     {{ with .Site.GetPage "section" "docs/v1/cli" -}}
-    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    <a href="{{ .RelPermalink }}" class="btn btn-link text-left">{{ .Title }}</a>
     {{- range .Pages -}}
-    <a href="{{ .Permalink }}" class="btn btn-link text-left">{{ .Title }}</a>
+    <a href="{{ .RelPermalink }}" class="btn btn-link text-left">{{ .Title }}</a>
     {{- end -}}
     {{- end }}
   </div>
