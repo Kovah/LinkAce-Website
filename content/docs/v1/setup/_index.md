@@ -12,7 +12,7 @@ There will be **no** support for environments which do not meet the requirements
 
 * Shell access to your server
 * Docker version 19 or greater
-* docker-compose is recommended for the setup, must support compose version 2
+* docker-compose is recommended for the setup, must support compose version 3
 
 
 ## Requirements for setup without Docker
@@ -22,7 +22,7 @@ Please see the corresponding [wiki page](/docs/v1/setup/setup-without-docker) fo
 
 ## Continue with the setup
 
-If you are confident that your environment meets the requirements, continue with the setup:
+If you are confident your environment meets the requirements, continue with the setup:
 
 * [Setup with Docker](/docs/v1/setup/setup-with-docker)
 * [Setup without Docker](/docs/v1/setup/setup-without-docker)

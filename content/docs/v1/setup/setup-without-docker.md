@@ -54,7 +54,7 @@ npm run prod
 
 ### 4. Point your web server to /public
 
-For security reasons the application won't run from the base filder where you extracted the files to. Instead, point
+For security reasons the application won't run from the base folder where you extracted the files to. Instead, point
 your web server to the `/public` directory in your linkace folder.
 
 If you are using Apache, LinkAce already ships with a proper .htaccess file.
