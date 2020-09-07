@@ -13,8 +13,9 @@ Please follow these instructions to upgrade LinkAce to a newer version.
     ```
     docker-compose down
     ```
-2. Delete the current app volume, where `linkace_linkace_app` is the name of your volume. You may find the exact name 
-    by running `docker volume ls`, the volume must end with `linkace_app`.
+2. This step only applies to the advanced setup method. Delete the current app volume, where `linkace_linkace_app` 
+    is the name of your volume. You may find the exact name by running `docker volume ls`, the volume must end 
+    with `linkace_app`.
     ```
     docker volume rm linkace_linkace_app
     ```
@@ -58,6 +59,6 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 ## Version-specific upgrades
 
-#### from to version < v0.0.28 to v0.0.28 or v0.0.29
+#### from version < v0.0.28 to v0.0.28 or v0.0.29
 
 Please add `SETUP_COMPLETED=true` to your `.env` file to prevent the setup from starting automatically.
