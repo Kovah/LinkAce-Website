@@ -24,5 +24,5 @@ Please see the corresponding [wiki page](/docs/v1/setup/setup-without-docker) fo
 
 If you are confident that your environment meets the requirements, continue with the setup:
 
-* [Setup with Docker](/docs/v1/setup/setup)
+* [Setup with Docker](/docs/v1/setup/setup-with-docker)
 * [Setup without Docker](/docs/v1/setup/setup-without-docker)
