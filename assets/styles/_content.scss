@@ -25,4 +25,16 @@
   table {
     @extend .table;
   }
+
+  code {
+    background-color: $gray-100;
+    padding: .125rem .25rem;
+    border-radius: $border-radius;
+  }
+
+  pre code {
+    background-color: inherit;
+    padding: 0;
+    border-radius: 0;
+  }
 }
