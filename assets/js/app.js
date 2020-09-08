@@ -1,13 +1,3 @@
-function registerNavbarToggle () {
-  const $navBarToggle = document.querySelector('.navbar-toggler');
-  const $navBarContent = document.querySelector('#la-navbar-content');
-
-  $navBarToggle.addEventListener('click', (event) => {
-    event.preventDefault();
-    $navBarContent.classList.toggle('show');
-  });
-}
-
 function registerCollapseToggles () {
   const collapseToggles = document.querySelectorAll('[data-toggle="collapse"]');
 
@@ -23,6 +13,5 @@ function registerCollapseToggles () {
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  registerNavbarToggle();
   registerCollapseToggles();
 });
