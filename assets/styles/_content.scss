@@ -18,6 +18,11 @@
   }
 
   img {
+    margin: map_get($spacers, 4) 0;
     box-shadow: $box-shadow-sm;
+  }
+
+  table {
+    @extend .table;
   }
 }
