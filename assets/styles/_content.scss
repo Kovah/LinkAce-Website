@@ -16,4 +16,8 @@
   hr {
     margin: map_get($spacers, 5) 0;
   }
+
+  img {
+    box-shadow: $box-shadow-sm;
+  }
 }
