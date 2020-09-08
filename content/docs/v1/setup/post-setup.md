@@ -3,8 +3,6 @@ title: Post-Setup Steps
 weight: 30
 ---
 
-## Post-Setup Steps
-
 Theoretically you can use LinkAce after finishing the setup. I recommend checking the following short steps to make
 sure you unlock the full potential of LinkAce.  
 All following steps are described in detail in the [Configuration](/docs/v1/configuration/) section.
