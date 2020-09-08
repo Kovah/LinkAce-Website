@@ -3,8 +3,7 @@ title: Setup without Docker
 weight: 20
 ---
 
-The application was developed with being used with Docker in mind. All following steps will try to work around this but
-cannot be guaranteed to work in every environment. Please remember that you need shell access to work with LinkAce.
+The application was developed with being used with Docker in mind. All following steps will try to work around this but cannot be guaranteed to work in every environment. Please remember that you need shell access to work with LinkAce.
 
 ### Requirements
 
@@ -25,8 +24,7 @@ cannot be guaranteed to work in every environment. Please remember that you need
     * SQL Server 2017+ (not tested, may work)
 * Node 12 LTS must be installed
 
-Older PHP versions will not be supported in any way. Please do yourself a favor and do not expose yourself or your users
-to any risks by using an outdated PHP version.
+Older PHP versions will not be supported in any way. Please do yourself a favor and do not expose yourself or your users to any risks by using an outdated PHP version.
 
 ### 1. Get the .zip file
 
@@ -54,8 +52,7 @@ npm run prod
 
 ### 4. Point your web server to /public
 
-For security reasons the application won't run from the base folder where you extracted the files to. Instead, point
-your web server to the `/public` directory in your linkace folder.
+For security reasons the application won't run from the base folder where you extracted the files to. Instead, point your web server to the `/public` directory in your linkace folder.
 
 If you are using Apache, LinkAce already ships with a proper .htaccess file.
 
@@ -82,11 +79,10 @@ error_page 404 /index.php;
 
 ### 5. Run the built-in setup
 
-Now open the URL pointing to LinkAce in your browser. The built-in setup should start. Follow the instructions to
-configure a database and register your user account.
+Now open the URL pointing to LinkAce in your browser. The built-in setup should start. Follow the instructions to configure a database and register your user account.
 
 You can now use LinkAce. Please make sure to follow the next post-setup steps to make sure LinkAce works correctly.
 
 ---
 
-Next Step: [Post-Setup Steps](/docs/v1/setup/post-setup)
+Next Step: [Post-Setup Steps]({{< relref path="docs/v1/setup/post-setup.md" >}})

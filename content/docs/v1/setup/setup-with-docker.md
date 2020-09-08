@@ -21,12 +21,7 @@ If you are unsure about which one to use, pick the simple setup. All images are 
 
 ## Setup with Docker: Simple
 
-To make things easier, we provide a Docker Compose file (docker-compose.production.yml) in the repository which
-contains all needed services, perfectly configured to just run the application right away.  
-In this version, there is only one Docker container needed and one optional for the database. If you use a managed
-database outside of Docker, you only have to run one single container. This is useful for environments, where access
-to Docker is limited, e.g. on Heroku or other cloud platforms. However, if you have full access to a VPS or root
-server, the advanced setup is recommended as it also improves the performance.
+To make things easier, we provide a Docker Compose file (docker-compose.production.yml) in the repository which contains all needed services, perfectly configured to just run the application right away. In this version, there is only one Docker container needed and one optional for the database. If you use a managed database outside of Docker, you only have to run one single container. This is useful for environments, where access to Docker is limited, e.g. on Heroku or other cloud platforms. However, if you have full access to a VPS or root server, the advanced setup is recommended as it also improves the performance.
 
 Docker images used in this setup are named `linkace/linkace:php-nginx` or `linkace/linkace:0.0.42-php-nginx`.
 
@@ -34,8 +29,7 @@ Let's get started.
 
 ### 1. Copy all needed files
 
-All files you need are `docker-compose.production-simple.yml`, `.env.docker.production` and `nginx-simple.conf`.
-Copy all of them to the directory you want to use for the application.
+All files you need are `docker-compose.production-simple.yml`, `.env.docker.production` and `nginx-simple.conf`. Copy all of them to the directory you want to use for the application.
 
 ### 2. Modify the files
 
@@ -57,10 +51,7 @@ docker-compose up -d
 
 ### 4. Set a secure key
 
-After you started the Docker containers, you are almost ready to run the setup. Before the setup, we have to generate
-a secret key.
-Please note that `linkace_app_1` is the name of your LinkAce container here. It may differ from your name. You will find
-the name of your container in the output of the previous command, but will most likely end with `_app_1`.
+After you started the Docker containers, you are almost ready to run the setup. Before the setup, we have to generate a secret key. Please note that `linkace_app_1` is the name of your LinkAce container here. It may differ from your name. You will find the name of your container in the output of the previous command, but will most likely end with `_app_1`.
 
 ```bash
 docker exec -it linkace_app_1 php artisan key:generate
@@ -68,8 +59,7 @@ docker exec -it linkace_app_1 php artisan key:generate
 
 ### 5. Start the built-in setup
 
-Open the URL which points to your Docker container in your browser now. You have to configure the database and your 
-user account in the following process.
+Open the URL which points to your Docker container in your browser now. You have to configure the database and your user account in the following process.
 
 **Please make sure to follow the post-installation tasks to fully enable all features.**
 
@@ -79,9 +69,7 @@ user account in the following process.
 
 ## Setup with Docker: Advanced
 
-The advanced setup is not that different from the simple setup, but may not be suitable for certain environments.
-Specifically, it uses different containers for the application running with PHP, and the web server. The docker-compose
-file also includes configuration for Redis, which increases performance.
+The advanced setup is not that different from the simple setup, but may not be suitable for certain environments. Specifically, it uses different containers for the application running with PHP, and the web server. The docker-compose file also includes configuration for Redis, which increases performance.
 
 Docker images used in this setup are named `linkace/linkace:latest` or `linkace/linkace:0.0.42`.
 
@@ -89,8 +77,7 @@ This setup is recommended when having full access to Docker, e.g. on a VPS or ro
 
 ### 1. Copy all needed files
 
-All files you need are `docker-compose.production.yml`, `.env.docker.production` and `nginx.conf`.
-Copy all files to the directory you want to use for the application.
+All files you need are `docker-compose.production.yml`, `.env.docker.production` and `nginx.conf`. Copy all files to the directory you want to use for the application.
 
 ### 2. Modify the files
 
@@ -114,10 +101,7 @@ docker-compose up -d
 
 ### 4. Prepare the database
 
-After you started the Docker containers, you are almost ready to run the setup. Before the setup, we have to generate
-a secret key.
-Please note that `linkace_app_1` is the name of your PHP container here. It may differ from your name. You will find
-the name of your container in the output of the previous command, but will most likely end with `_app_1`.
+After you started the Docker containers, you are almost ready to run the setup. Before the setup, we have to generate a secret key. Please note that `linkace_app_1` is the name of your PHP container here. It may differ from your name. You will find the name of your container in the output of the previous command, but will most likely end with `_app_1`.
 
 ```bash
 docker exec -it linkace_app_1 php artisan key:generate
@@ -125,8 +109,7 @@ docker exec -it linkace_app_1 php artisan key:generate
 
 ### 5. Start the built-in setup
 
-Open the URL which points to your Docker container in your browser now. You have to configure the database and your 
-user account in this process.
+Open the URL which points to your Docker container in your browser now. You have to configure the database and your user account in this process.
 
 **Please make sure to follow the post-installation tasks to fully enable all features.**
 
@@ -136,9 +119,7 @@ user account in this process.
 
 ## Enable HTTPS for LinkAce
 
-Depending on your setup, you may want to run LinkAce without other web servers in front of it. In this case, I highly
-encourage you to enable support for HTTPS. Please note that, due to complexity reasons, I won't discuss generating
-SSL certificates here. Please check [Let's Encrypt](https://letsencrypt.org/) for that.
+Depending on your setup, you may want to run LinkAce without other web servers in front of it. In this case, I highly encourage you to enable support for HTTPS. Please note that, due to complexity reasons, I won't discuss generating SSL certificates here. Please check [Let's Encrypt](https://letsencrypt.org/) for that.
 
 ### 1. Stop your containers
 
@@ -173,8 +154,7 @@ ssl_certificate      /certs/[FULLCHAIN FILE NAME];
 ssl_certificate_key  /certs/[CERTIFICATE KEY FILE NAME];
 ```
 
-The first line tells the web server to actually enable SSL. The last two lines specify the location of the files.
-Please replace `[FULLCHAIN FILE NAME]` and `[CERTIFICATE KEY FILE NAME]` with the actual filenames.
+The first line tells the web server to actually enable SSL. The last two lines specify the location of the files. Please replace `[FULLCHAIN FILE NAME]` and `[CERTIFICATE KEY FILE NAME]` with the actual filenames.
 
 ### 5. Redirect to HTTPS automatically (optional)
 
@@ -201,11 +181,10 @@ Start LinkAce again by using `docker-compose up -d`.
 
 ## Running Linkace behind a proxy / load balancer
 
-* If you are using a proxy / load balancer with HTTPS, please make sure it sends the `X-Forwarded-Proto` header
-  to LinkAce. Otherwise, LinkAce won't be able to correctly generate URLs, or end up in redirection loops.
+* If you are using a proxy / load balancer with HTTPS, please make sure it sends the `X-Forwarded-Proto` header to LinkAce. Otherwise, LinkAce won't be able to correctly generate URLs, or end up in redirection loops.
 * LinkAce currently does not accept a `$PORT` environment variable to listen on that port for incoming connections.
 
 ---
 
 
-Next Step: [Post-Setup Steps](/docs/v1/setup/post-setup)
+Next Step: [Post-Setup Steps]({{< relref path="docs/v1/setup/post-setup.md" >}})
