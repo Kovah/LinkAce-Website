@@ -7,8 +7,8 @@ The application was developed with being used with Docker in mind. All following
 
 ### Requirements
 
-* Shell access to your server
-* **PHP 7.2, 7.3 or 7.4**, with the following extensions
+* A Linux-based server with shell access
+* **PHP 7.3 or 7.4**, with the following extensions
     * OpenSSL
     * PDO
     * Mbstring
