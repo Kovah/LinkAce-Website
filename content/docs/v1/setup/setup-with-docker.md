@@ -99,7 +99,7 @@ After you completed the above steps, run the following command to start up the c
 docker-compose up -d
 ```
 
-### 4. Prepare the database
+### 4. Set a secure key
 
 After you started the Docker containers, you are almost ready to run the setup. Before the setup, we have to generate a secret key. Please note that `linkace_app_1` is the name of your PHP container here. It may differ from your name. You will find the name of your container in the output of the previous command, but will most likely end with `_app_1`.
 
