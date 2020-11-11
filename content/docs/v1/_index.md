@@ -4,34 +4,34 @@ title: LinkAce Documentation
 
 #### General
 
-* [Translations](/docs/v1/general/translations)
-* [Changelog](/docs/v1/general/changelog)
+* [Translations]({{< relref path="docs/v1/general/translations.md" >}})
+* [Changelog]({{< relref path="docs/v1/general/changelog.md" >}})
 
 #### Setup
 
-* [Setup with Docker](/docs/v1/setup/)
-* [Setup without Docker](/docs/v1/setup/setup-without-docker)
-* [Post-Setup Steps](/docs/v1/setup/post-setup)
+* [Setup with Docker]({{< relref path="docs/v1/setup/setup-with-docker.md" >}})
+* [Setup without Docker]({{< relref path="docs/v1/setup/setup-without-docker.md" >}})
+* [Post-Setup Steps]({{< relref path="docs/v1/setup/post-setup.md" >}})
 
 #### Upgrade Guides
 
-* [Upgrade LinkAce](/docs/v1/upgrade/)
+* [Upgrade LinkAce]({{< relref path="docs/v1/upgrade" >}})
 
 #### The Application
 
-* [Dashboard](/docs/v1/application/dashboard)
-* [Links](/docs/v1/application/links)
-* [Links Checks](/docs/v1/application/link-checks)
-* [Tags](/docs/v1/application/tags)
-* [Lists](/docs/v1/application/lists)
-* [Search](/docs/v1/application/search)
-* [Trash](/docs/v1/application/trash)
+* [Dashboard]({{< relref path="/docs/v1/application/dashboard.md" >}})
+* [Links]({{< relref path="/docs/v1/application/links.md" >}})
+* [Links Checks]({{< relref path="/docs/v1/application/link-checks.md" >}})
+* [Tags]({{< relref path="/docs/v1/application/tags.md" >}})
+* [Lists]({{< relref path="/docs/v1/application/lists.md" >}})
+* [Search]({{< relref path="/docs/v1/application/search.md" >}})
+* [Trash]({{< relref path="/docs/v1/application/trash.md" >}})
 
 #### Configuration
 
-* [System Settings](/docs/v1/configuration/system-settings)
-* [User Settings](/docs/v1/configuration/user-settings)
+* [System Settings]({{< relref path="/docs/v1/configuration/system-settings.md" >}})
+* [User Settings]({{< relref path="/docs/v1/configuration/user-settings.md" >}})
 
 #### CLI Commands
 
-* [Overview](/docs/v1/cli)
+* [Overview]({{< relref path="/docs/v1/cli" >}})

@@ -2,10 +2,10 @@
 title: About the Application
 ---
 
-* [Dashboard](/docs/v1/application/dashboard)
-* [Links](/docs/v1/application/links)
-* [Links Checks](/docs/v1/application/link-checks)
-* [Tags](/docs/v1/application/tags)
-* [Lists](/docs/v1/application/lists)
-* [Search](/docs/v1/application/search)
-* [Trash](/docs/v1/application/trash)
+* [Dashboard]({{< relref path="/docs/v1/application/dashboard.md" >}})
+* [Links]({{< relref path="/docs/v1/application/links.md" >}})
+* [Links Checks]({{< relref path="/docs/v1/application/link-checks.md" >}})
+* [Tags]({{< relref path="/docs/v1/application/tags.md" >}})
+* [Lists]({{< relref path="/docs/v1/application/lists.md" >}})
+* [Search]({{< relref path="/docs/v1/application/search.md" >}})
+* [Trash]({{< relref path="/docs/v1/application/trash.md" >}})
