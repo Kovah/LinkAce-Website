@@ -4,19 +4,9 @@ title: LinkAce Setup
 
 LinkAce itself does not require a high-performance server to run at. Indeed, there is just this PHP app that needs access to a database. However, your environment must fulfill the following requirements to run properly.
 
+{{< alert type="danger" >}}
 There will be **no** support for environments which do not meet the requirements!
-
-
-## Requirements for Docker
-
-* Shell access to your server
-* Docker version 19 or greater
-* docker-compose is recommended for the setup, must support compose version 3
-
-
-## Requirements for setup without Docker
-
-Please see the corresponding [wiki page]({{< relref path="docs/v1/setup/setup-without-docker.md" >}}) for details.
+{{</ alert >}}
 
 
 ## Continue with the setup
