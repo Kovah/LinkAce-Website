@@ -101,9 +101,10 @@ $spacers: map-merge(
       2: ($spacer * .5),
       3: $spacer,
       4: ($spacer * 1.5),
-      5: ($spacer * 3),
-      6: ($spacer * 5),
-      7: ($spacer * 7)
+      5: ($spacer * 2.25),
+      6: ($spacer * 3),
+      7: ($spacer * 5),
+      8: ($spacer * 7)
     ),
     $spacers
 );
