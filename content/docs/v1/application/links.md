@@ -13,15 +13,15 @@ Links can be displayed in two different formats, which can be changed in the [us
 
 #### Display links as rows with many details
 
-![Preview of the Link overview: rows](/images/screens/v1/link_index_rows.png)
+{{< image type="screen" img="link_index_rows.png" alt="Preview of the Link overview: rows with many details" >}}
 
 #### Display links as rows with fewer details
 
-![Preview of the Link overview: rows](/images/screens/v1/link_index_rows_small.png)
+{{< image type="screen" img="link_index_rows_small.png" alt="Preview of the Link overview: rows with less details" >}}
 
 #### Display links as cards
 
-![Preview of the Link overview: cards](/images/screens/v1/link_index_cards.png)
+{{< image type="screen" img="link_index_cards.png" alt="Preview of the Link overview: cards" >}}
 
 
 ---
@@ -29,7 +29,7 @@ Links can be displayed in two different formats, which can be changed in the [us
 
 ## Adding new Links
 
-![Preview of the Link form](/images/screens/v1/link_create.png)
+{{< image type="screen" img="link_create.png" alt="Preview of the Link form" >}}
 
 New links can be added in two ways: directly from the dashboard by using the "Quick Add" form, or by using the more powerful main form available via the "Add Link" link in the menu bar.
 
@@ -52,12 +52,19 @@ If you would like to add several links in a row, check the "Continue Adding" box
 to the link details page, but will see the link form again.
 
 
+### Suggestions for Tags
+
+After adding an URL in the form, LinkAce will gather details from the specified URL. If a valid site was found, and it contains meta information, LinkAce will suggest them to be added as tags. Click on a suggestion to add it as a new tag.
+
+{{< image type="screen" img="link_create_tag_suggestions.png" alt="Preview of some tag suggestions" >}}
+
+
 ---
 
 
 ## Link Details
 
-![Preview of Link Details](/images/screens/v1/link_details.png)
+{{< image type="screen" img="link_details.png" alt="Preview of Link Details" >}}
 
 The link detail page shows all available information about the link, including title, description, lists and tags. From the details page you can directly hop into the edit form or delete the link.
 

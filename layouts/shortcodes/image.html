@@ -1,0 +1,22 @@
+{{- $headless := .Site.GetPage (printf "/media/%s" (.Get "type")) -}}
+{{- $image := $headless.Resources.Match (.Get "img") -}}
+{{- $alt := .Get "alt" -}}
+{{- $modifier := .Get "modifier" -}}
+{{- $link := .Get "link" -}}
+{{- $caption := .Get "caption" -}}
+
+{{- range $image -}}
+{{- $originalImg := . -}}
+{{- $largeImg := .Fit "1200x1200" -}}
+{{- $mobileImg := .Fit "960x960" -}}
+<figure{{ with $modifier }} class="figure-{{.}}"{{ end }}>
+  <a href="{{ $originalImg.RelPermalink }}">
+    <picture>
+      <source srcset='{{ $mobileImg.RelPermalink }} 1x' media="(max-width: 960px)"/>
+      <img src='{{ $largeImg.RelPermalink }}' width='{{ $largeImg.Width }}' height='{{ $largeImg.Height }}'
+          {{ with $alt}}alt="{{.}}"{{ end }}/>
+    </picture>
+  </a>
+{{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
+{{- end -}}
