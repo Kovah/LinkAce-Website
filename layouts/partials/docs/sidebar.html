@@ -4,7 +4,6 @@
     General
   </div>
   <div class="list-group-item btn-group-vertical btn-group-sm">
-    <a href='{{ relref . "/about" }}' class="btn btn-link text-left">About LinkAce</a>
     <a href='{{ relref . "/docs/v1/general/translations" }}' class="btn btn-link text-left">Translations</a>
     <a href='{{ relref . "/docs/v1/general/changelog" }}' class="btn btn-link text-left">Changelog</a>
   </div>
@@ -53,9 +52,10 @@
   </div>
 
   <div class="list-group-item">
-    Command Line
+    API & Command Line
   </div>
   <div class="list-group-item btn-group-vertical btn-group-sm">
+    <a href="https://linkace.stoplight.io/docs/api-docs/" class="btn btn-link text-left">LinkAce API</a>
     {{ with .Site.GetPage "section" "docs/v1/cli" -}}
     <a href="{{ .RelPermalink }}" class="btn btn-link text-left">{{ .Title }}</a>
     {{- range .Pages -}}
