@@ -5,11 +5,11 @@
   "license": "MIT",
   "devDependencies": {
     "cross-env": "^7.0.2",
-    "laravel-mix": "^5.0.4",
+    "laravel-mix": "^5.0.9",
     "laravel-mix-polyfill": "^1.1.1",
-    "sass": "^1.26.3",
+    "sass": "^1.29.0",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   },
   "scripts": {
     "dev": "npm run development -- --watch",
@@ -23,7 +23,7 @@
     "build": "npm run production && hugo"
   },
   "dependencies": {
-    "bootstrap": "^4.4.1",
-    "prismjs": "^1.21.0"
+    "bootstrap": "^4.5.3",
+    "prismjs": "^1.22.0"
   }
 }
