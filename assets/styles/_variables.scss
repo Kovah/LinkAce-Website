@@ -184,6 +184,9 @@ $btn-border-radius-xs: $border-radius-xs;
 
 
 // Navbar
+$navbar-padding-y: map_get($spacers, 4) !default;
+$navbar-padding-x: map_get($spacers, 3) !default;
+
 $navbar-dark-color: rgba($white, .75);
 $navbar-dark-hover-color: rgba($white, 1);
 $navbar-dark-disabled-color: rgba($white, .4);
