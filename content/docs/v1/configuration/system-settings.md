@@ -16,7 +16,7 @@ about the latest releases from Github and compares it to your currently installe
 ## Cron Token
 
 A [cron](https://en.wikipedia.org/wiki/Cron) is needed to move certain functionality out of the user actions and
-schedule certain tasks. The cron is kind of a script that runs tasks on predefined times across the day. 
+schedule certain tasks. The cron is kind of a script that runs tasks on predefined times through day. 
 
 The cron token you can access or re-generate in the system settings is needed to properly authenticate your cron
 script against LinkAce, so no third party can trigger the scheduled tasks.
@@ -25,11 +25,11 @@ Currently, the following tasks will be run:
 
 * LinkAce runs the [link check](/docs/v1/application/link-checks) and sends a notification if moved or dead links 
 were found.
-* LinkAce sends requests to the Wayback Machine with all queued links, so they are backed up for later.
+* LinkAce sends requests to the Wayback Machine with all newly added links, so they are backed up later.
 
 ### Setting up the cron
 
-If oyu are unsure about setting up a cron, either use a web service like [cron-job.org](https://cron-job.org/en/) or 
+If you are unsure about setting up a cron, either use a web service like [cron-job.org](https://cron-job.org/en/) or 
 [mywebcron.com](http://www.mywebcron.com/), or search the web for help.
 
 Your cron must run **every minute** and must open the URL provided in the system settings. A basic unix cron entry may

@@ -1,13 +1,13 @@
 ---
-title: Links / Bookmarks
+title: Links
 weight: 20
 ---
 
-Links are - for sure - the heart of LinkAce and store information about bookmarks together with their corresponding meta data. The core concept is that you can simply save URLs and LinkAce will try to parse some meta data from the  website. You may also categorize links by adding tags.
+Links are the heart of LinkAce. Links can be anything, from interesting articles, cool portfolios, helpful web tools. As long as it has a URL, you can add it to LinkAce. Additionally to informations like title and description, you may categorize links using tags or group them together with lists. Links are archived by the Wayback Machine and checked regularly to make sure you know about changes in availability of the links you saved.
 
 ## Link Overview
 
-The link overview lists all available links together with some meta information like tags as well as the sharing options and links for editing and deleting them.
+The link overview lists all available links together with some meta information like tags as well as the sharing options and links for editing and deleting them. You can sort the list by creation date, title and URL, both ascending and descending.
 
 Links can be displayed in two different formats, which can be changed in the [user settings]({{< relref path="docs/v1/configuration/user-settings.md" >}}).
 
@@ -31,30 +31,30 @@ Links can be displayed in two different formats, which can be changed in the [us
 
 {{< image type="screen" img="link_create.png" alt="Preview of the Link form" >}}
 
-New links can be added in two ways: directly from the dashboard by using the "Quick Add" form, or by using the more powerful main form available via the "Add Link" link in the menu bar.
+New links can be added in two ways: directly from the dashboard by using the "Quick Add" form, or by using the more powerful form available via the "Add Link" link in the menu bar.
 
-The main form shows you a lot of different fields which will be described in the following overview:
+The primary form shows you a lot of different fields which will be described in the following overview:
 
 {{< table >}}
 
 | Field | Required | Description |
 |:------|:---------|:------------|
-| URL | Yes | Contains the URL of the link you want to add |
-| Title | No | You may set a custom title for the link here. If left blank, LinkAce will try to parse the title from the website. |
+| URL | Yes | Contains the URL of the link you want to add. |
+| Title | No | You may set a custom title for the link here. If left blank, LinkAce will try to parse the title from the website. If no title was found, the URL will be used as the title. |
 | Description | No | You may set a custom description for the link here. If left blank, LinkAce will try to parse the description from the website. |
-| List | No | Used to add the link to lists. When you start typing, LinkAce will search for existing lists. If there are none you may add new lists by just entering them here. |
-| Tags | No | Used to add tags for the link. When you start typing, LinkAce will search for existing tags. If there are none you may add new tags by just entering them here. |
+| List | No | Used to add the link to lists. When you start typing, LinkAce will search for existing lists. If there are none you may add new lists by just entering them here. Lists can contain almost every character, except the comma. |
+| Tags | No | Used to add tags for the link. When you start typing, LinkAce will search for existing tags. If there are none you may add new tags by just entering them here. Tags can contain almost every character, except the comma. |
 | Is Private | No | Set the privacy mode of the link here. |
 
 {{< / table >}}
 
 If you would like to add several links in a row, check the "Continue Adding" box. If checked, you will not be redirected
-to the link details page, but will see the link form again.
+to the link detail page, but will see the link form again.
 
 
 ### Suggestions for Tags
 
-After adding an URL in the form, LinkAce will gather details from the specified URL. If a valid site was found, and it contains meta information, LinkAce will suggest them to be added as tags. Click on a suggestion to add it as a new tag.
+After adding the URL in the form, LinkAce will gather details from the specified site. If a valid site was found and it contains meta information, LinkAce will suggest them to be added as tags. Click on a suggestion to add it as a new tag.
 
 {{< image type="screen" img="link_create_tag_suggestions.png" alt="Preview of some tag suggestions" >}}
 
@@ -85,10 +85,12 @@ The change history at the bottom of the link details shows you your recent chang
 ## Automatic Backups with the Wayback Machine
 
 After you add a link to LinkAce, it will schedule an automatic "backup" with the help of the [Wayback Machine (archive.org)](https://archive.org/web/web.php).
-This backup will help you access the contents of your saved link in case it goes offline. The Wayback Machine itself is not capable of knowing every website available, so LinkAce will just ping the service, so the website can be archived.
+This backup will help you access the contents of your saved link in case it goes offline. LinkAce will notify the Waback Machine about the link you safed, so the archiving can be scheduled. It may take a while until the first backup is finished.
+
+Please notice, that some websites restrict access of the Wayback Machine. If that's the case, the website will not be archived. Please contact the site owner to get access for the Wayback Machine.
 
 {{< alert type="warning" >}}
-You need to have the cron set up for this automated backup to work.
+The [cron]({{< relref path="docs/v1/configuration/system-settings.md#cron-token" >}}) needs to be configured and working to enable automated backups.
 {{</ alert >}}
 
 ## Notifications about dead or moved Links
