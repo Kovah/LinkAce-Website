@@ -3,17 +3,16 @@ title: Advanced Search
 weight: 60
 ---
 
-One of the more advanced features of LinkAce is the search. It provides a simple yet powerful interface to quickly
-find links you are searching for.
+One of the more advanced features of LinkAce is the search. It provides a simple yet powerful interface to quickly find links you are searching for. You can search either by a specific search string, or by a list or tag.
 
-![Preview of the Search](/images/screens/v1/linkace_search.png)
+{{< image type="screen" img="search_results.png" alt="Preview of the search form with results" >}}
+
 
 ## Search Options
 
 The following table gives you an overview over all search options available.
 
-<div class="table-responsive">
-<div class="table" markdown="block">
+{{< table >}}
 
 | Option | Description |
 |:------|:------------|
@@ -26,5 +25,4 @@ The following table gives you an overview over all search options available.
 | Tag filter | If you select one or more tags here, LinkAce will only display links which are associated with one of the tags. |
 | Sorting option | This option allows you to sort the results by title, URL or the creation date, ascending or descending respectively. |
 
-</div>
-</div>
+{{< / table >}}
