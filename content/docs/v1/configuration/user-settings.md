@@ -32,6 +32,30 @@ You can find the complete API details in our [**dedicated API documentation**](h
 For sure LinkAce also lets you change your user details and your password. You can change both in the Account Settings panel, or the Change Password panel.
 
 
+## Two Factor Authentication
+
+For additional security, you can enable Two Factor Authentication. You need an additional device that supports either scanning a QR code or entering a 2FA secret.
+
+{{< image type="screen" img="user_settings_2fa_enable.png" alt="Preview of the option to enable Two Factor Authentication" >}}
+
+Make sure your additional device is ready and click the "Enable Two Factor Authentication" button. You will be asked for your password to verify your intent. After the page reloads, you will be presented a QR code. Scan this QR code or click the "QR code not working" label to display the secret for manually adding LinkAce as your new authentication option. Once your device is correctly set up, you will be asked for the one-time-password while logging into LinkAce again.
+
+{{< image type="screen" img="user_settings_2fa_qr_code.png" alt="Preview of the option to enable Two Factor Authentication" >}}
+
+
+### Two Factor Recovery Codes
+
+In case you have lost your Two Factor device or it's inaccessible, you may use a recovery code to log into LinkAce.
+
+{{< alert type="danger" >}}
+**Please save these recovery codes** where they are save to access by yourself at any time. If you lose access to these codes, you will be locked out of LinkAce!
+{{</ alert >}}
+
+{{< image type="screen" img="user_settings_2fa_recovery_codes.png" alt="Preview of the option to enable Two Factor Authentication" >}}
+
+Once you use a recovery code to log into LinkAce, it will be removed from the valid codes. Please make sure to regenerate codes once they are depleted. This can be done with a click on the "Generate new Recovery Codes" button.
+
+
 ## User Settings
 
 {{< image type="screen" img="user_settings_general.png" alt="Preview of general user settings" >}}
