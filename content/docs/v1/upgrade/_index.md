@@ -60,6 +60,10 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 ## Version-specific upgrades
 
-#### from version < v0.0.28 to v0.0.28 or v0.0.29
+#### from version v0.0.43 and below to higher
+
+In your `.env` file: please rename `BACKUP_DISK=cloud` to `BACKUP_DISK=s3`. If you have backup notifications enabled, please make sure to set a `BACKUP_NOTIFICATION_EMAIL`.
+
+#### from version v0.0.28 and below to higher
 
 Please add `SETUP_COMPLETED=true` to your `.env` file to prevent the setup from starting automatically.
