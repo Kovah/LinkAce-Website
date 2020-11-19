@@ -11,5 +11,4 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   DockerHub = "https://hub.docker.com/r/linkace/linkace"
   Github = "https://github.com/Kovah/LinkAce/"
   Twitter = "https://twitter.com/linkaceapp"
-  Reddit = "https://www.reddit.com/r/LinkAce/"
-  Chat = "https://spectrum.chat/linkace/"
+  Community = "https://community.linkace.org/"

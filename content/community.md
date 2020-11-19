@@ -2,12 +2,7 @@
 title: The LinkAce Community
 ---
 
-Currently, there is no dedicated forum for the LinkAce community. Instead, you can talk to me and each other via 
-
-* **[Reddit]({{< param "Reddit" >}})**, or
-* **[Spectrum Chat]({{< param "Chat" >}})**.
-
-In these communities you can
+LinkAce has a dedicated **[Community Forum]({{< param "Community" >}})** where you can
 
 * talk about the project general and post your experiences with it.
 * share feedback with me and post requests for new features or improvements.
