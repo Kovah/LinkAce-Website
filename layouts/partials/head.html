@@ -1,3 +1,21 @@
+<title>LinkAce - Your self-hosted bookmark archive. Free and open source.</title>
+<meta name="description" content="LinkAce is a free and open source bookmark archive for long-term storage and organization of your favorite links."/>
+<link rel="canonical" href="{{ .Page.Permalink }}">
+
+<meta property="og:title" content="LinkAce - Your self-hosted bookmark archive. Free and open source.">
+<meta property="og:description" content="LinkAce is a free and open source bookmark archive for long-term storage and organization of your favorite links.">
+<meta property="og:image" content="{{ .Site.BaseURL }}images/linkace-social.jpg">
+<meta property="og:url" content="https://www.linkace.org/">
+<meta property="og:site_name" content="LinkAce">
+
+<meta name="twitter:title" content="LinkAce - Your self-hosted bookmark archive. Free and open source.">
+<meta name="twitter:description" content="LinkAce is a free and open source bookmark archive for long-term storage and organization of your favorite links.">
+<meta name="twitter:creator" content="@kovah_kvh">
+<meta name="twitter:site" content="@LinkAceApp">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}images/linkace-social.jpg">
+<meta name="twitter:image:alt" content="Logo of the LinkAce project">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -6,8 +24,6 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
-
-
 
 {{ $appcss := resources.Get "app.css" | fingerprint }}
 <link rel="stylesheet" href="{{ $appcss.Permalink | relURL }}">
