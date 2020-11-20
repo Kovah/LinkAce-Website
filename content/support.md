@@ -2,7 +2,7 @@
 title: Support for LinkAce
 ---
 
-I built LinkAce to solve my problem, and I now offer my solution and code to your without charging anything. Thus I won't offer any free personal support, customization or installation help. If you need help please visit the [community forum]({{< relref path="community.md" >}}) and post your issue there.
+As written in the Readme of the project and on the website: I built LinkAce to solve my problem, and I now share my solution and code to your without charging anything. I spent a lot of my free time building this application already, so I won't offer any *free* personal support, customization or installation help. If you need help please visit the [community forum]({{< relref path="community.md" >}}) and post your issue there.
 
 {{< alert type="success" >}}
 
