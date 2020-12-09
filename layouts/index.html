@@ -20,9 +20,7 @@
 </main>
 
 {{ partial "footer.html" . }}
-
-{{ $appjs := resources.Get "app.js" | fingerprint }}
-<script src="{{ $appjs.Permalink | relURL }}"></script>
+{{ partial "scripts.html" . }}
 
 </body>
 </html>
