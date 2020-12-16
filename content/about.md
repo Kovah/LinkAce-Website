@@ -6,14 +6,10 @@ LinkAce is a self-hosted web application for managing a bookmark archive. I buil
 
 I created LinkAce to have a long-term solution to archive and organize my bookmarks. Browser bookmarks sadly lack a lot of features, like proper search, advanced categorization or even the backup of those sites. Therefore, I use browser bookmarks for regularly accessed sites and have a separate application that takes care of all those links I would like to "keep in mind" but don't want to pollute my browser bookmarks with.
 
+The main feature of LinkAce is the archival and organization of links. Those links can be anything that has a valid URL: blog articles, Youtube videos, Reddit posts, github projects, and so on. Add new links, categorize them, edit them, search through them. That's the main point of LinkAce.
 
-## Features
 
-The main feature of LinkAce is the management of links. Those links can be anything that has a valid URL: blog articles, Youtube videos, Reddit posts, github projects, and so on. Add new links, categorize them, edit them, search through them. That's the main point of LinkAce.
-
-🖼 Looking for more screenshots of LinkAce? The [documentation]({{< relref path="docs/v1/application/dashboard.md" >}}) has quite a few.
-
-### Highlights
+### Feature Highlights
 
 **Automated link monitoring**  
 Links are checked regularly after you saved them. If a link is either not available or was moved (HTTP status 301/302), you will get a notification with details.
@@ -42,16 +38,7 @@ The search allows you to search through all your links and filter them by variou
 **Light and dark theme**  
 Dark mode is not only a trend, but a helpful and eye-protecting feature also available in LinkAce. You can switch between the light or dark theme or let the app set the theme automatically based on your operating system.
 
-
-### More Features
-
-* Titles and descriptions are generated automatically once you saved a link in LinkAce.
-* Add unlimited notes to links to add thoughts, details, to dos or whatever you don't want to put into the link description.
-* To make sharing as easy as possible, LinkAce prepares share links for a lot of different apps: email, Twitter, Whatsapp, Reddit,...
-* You can import existing bookmarks from your browser based on a standard HTML file. Or export all links saved in LinkAce to this standard format to be consumed by browsers or other applications.
-* The app can be backed up to Amazon AWS, including both the application files and the database.
-* Links, tags, lists or notes are not permanently deleted. A trash holds all "deleted" entries so nothing gets lost accidentally. You can restore all entries from the trash.
-* A lot of configuration options ensure that LinkAce fits your needs: timezone, time and date formats, defaults for link creation, and many more.
+Want to know more? Check out the [feature overview]({{< relref path="features" >}}).
 
 
 ## Roadmap

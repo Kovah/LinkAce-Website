@@ -11,11 +11,13 @@
 {{ partial "navbar.html" . }}
 
 <main>
-  {{ partial "landing/stage.html" . }}
-  {{ partial "landing/teaser.html" . }}
+  <div class="container">
+    <section class="content-wrapper pt-5 pt-lg-6 pt-xl-8">
+      {{ partial "features/overview.html" . }}
+    </section>
+  </div>
   {{ partial "landing/demo.html" . }}
   {{ partial "landing/install.html" . }}
-  {{ partial "landing/aboutme.html" . }}
 </main>
 
 {{ partial "footer.html" . }}
