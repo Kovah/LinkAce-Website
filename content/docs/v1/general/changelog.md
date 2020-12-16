@@ -2,6 +2,8 @@
 title: LinkAce Changelog
 ---
 
-{{< alert type="info" >}}
-A proper changelog will be provided with the beginning of release 1.0
-{{</ alert >}}
+### 1.0.0
+
+_Released at 2020-12-16_
+
+First stable release of LinkAce. 
