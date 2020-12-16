@@ -47,6 +47,7 @@ Run the following commands to install all needed dependencies and prepare LinkAc
 composer install --prefer-dist
 
 php artisan key:generate
+php artisan vendor:publish --provider="Spatie\Backup\BackupServiceProvider"
 
 npm install
 npm run prod
@@ -54,7 +55,7 @@ npm run prod
 
 ### 4. Point your web server to /public
 
-For security reasons the application won't run from the base folder where you extracted the files to. Instead, point your web server to the `/public` directory in your linkace folder.
+For security reasons the application won't run from the base folder where you extracted the files to. Instead, point your web server to the `/public` directory in your LinkAce folder.
 
 If you are using Apache, LinkAce already ships with a proper .htaccess file.
 
