@@ -8,23 +8,25 @@ The application was developed with being used with Docker in mind. All following
 ### Requirements
 
 * A Linux-based server with shell access
-* **PHP 7.3 or 7.4**, with the following extensions
+* **PHP 7.3, 7.4 or 8.0**, with the following extensions
+    * BCMath
+    * Ctype
+    * Fileinfo
+    * JSON
+    * Mbstring
     * OpenSSL
     * PDO
-    * Mbstring
     * Tokenizer
     * XML
-    * Ctype
-    * JSON
 * Composer must be installed
 * A database server with one of the following databases running:
     * MySQL 5.6+ (recommended)
     * PostgreSQL 9.4+
     * SQLite 3.8.8+ (not tested, may work)
     * SQL Server 2017+ (not tested, may work)
-* Node 12 LTS must be installed
+* Node 12 LTS or higher must be installed
 
-Older PHP versions will not be supported in any way. Please do yourself a favor and do not expose yourself or your users to any risks by using an outdated PHP version.
+Older PHP versions will **not** be supported in any way. Please do yourself a favor and do not expose yourself or your users to any risks by using an outdated PHP version.
 
 ### 1. Get the .zip file
 
@@ -33,11 +35,11 @@ Download the latest release from the [release page](https://github.com/Kovah/Lin
 Extract all files and place them wherever you need them. This obviously depends on how and where you want to run the
 app.
 
-### 2. Edit the .env file and generate a secret
+### 2. Edit the .env file
 
 Make a copy of the `.env.example` file and name it `.env`. Please do not change any values in it now!
 
-### 3. Install dependencies
+### 3. Install dependencies and generate a secret key
 
 Run the following commands to install all needed dependencies and prepare LinkAce for the setup:
 
