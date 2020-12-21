@@ -140,7 +140,7 @@ docker exec linkace_app_1 php artisan key:generate
 Open the URL which points to your Docker container in your browser now. You configure the database and your user account in this process.
 
 {{< alert type="warning" >}}
-Please make sure to follow the [post-installation steps]({{< relref path="docs/v1/setup/post-setup.md" >}}) to fully enable all features.
+Please make sure to follow the [post-installation steps]({{< relref path="docs/v1/setup/post-setup.md" >}}) to fully enable all features, including automated backups and link checks.
 {{</ alert >}}
 
 

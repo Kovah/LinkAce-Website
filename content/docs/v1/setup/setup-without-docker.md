@@ -84,7 +84,9 @@ error_page 404 /index.php;
 
 Now open the URL pointing to LinkAce in your browser. The built-in setup should start. Follow the instructions to configure a database and register your user account.
 
-You can now use LinkAce. Please make sure to follow the next post-setup steps to make sure LinkAce works correctly.
+{{< alert type="warning" >}}
+Please make sure to follow the [post-installation steps]({{< relref path="docs/v1/setup/post-setup.md" >}}) to fully enable all features, including automated backups and link checks.
+{{</ alert >}}
 
 ---
 
