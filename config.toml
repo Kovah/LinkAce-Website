@@ -5,6 +5,7 @@ assetDir = "./assets/dist"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
 [params]
+  DocsRepo = "https://github.com/Kovah/LinkAce-Website"
   DemoUrl = "https://demo.linkace.org"
   WikiDockerSetupUrl = "/docs/v1/setup/setup-with-docker/"
   WikiServerSetupUrl = "/docs/v1/setup/setup-without-docker/"

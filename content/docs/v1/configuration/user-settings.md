@@ -117,7 +117,7 @@ Yes! LinkAce ships with a dark mode! You have three options available here:
 | Option | Description |
 |:------|:------------|
 | Disabled | The light theme will always be displayed. (This is the default.) |
-| Permanently Enabled | The dark theme will always be disabled. |
+| Permanently Enabled | The dark theme will always be enabled. |
 | Automatic | Caution, magic happening here! 😜 If this option is set, LinkAce will use the current setting of your operating system as a base. If you have the dark mode enabled in your operating system, LinkAce will also enable his one. |
 
 {{< / table >}}
