@@ -74,6 +74,8 @@ You will also be shown all share links if you enabled some in the user settings.
 
 Each link can have several notes. Those may be used to add more detailed information about the link or leaving hints to your guest viewers. Notes can like links be either private or not private. Private notes can only be read by yourself.
 
+To add a new note, view existing ones or edit an existing note, go to the link detail page. The notes section is displayed below the regular link details.
+
 ### Change History
 
 The change history at the bottom of the link details shows you your recent changes with the timestamp and the previous value. Changes are recorded for all link values and assigned lists and tags.

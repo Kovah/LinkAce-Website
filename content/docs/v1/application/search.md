@@ -5,6 +5,8 @@ weight: 60
 
 One of the more advanced features of LinkAce is the search. It provides a simple yet powerful interface to quickly find links you are searching for. You can search either by a specific search string, or by a list or tag.
 
+Please notice that search is only available for logged-in users.
+
 {{< image type="screen" img="search_results.png" alt="Preview of the search form with results" >}}
 
 
