@@ -214,6 +214,27 @@ Start LinkAce again by using `docker-compose up -d`.
 * If you are using a proxy / load balancer with HTTPS, please make sure it sends the `X-Forwarded-Proto` header to LinkAce. Otherwise, LinkAce won't be able to correctly generate URLs, or end up in redirection loops.
 * LinkAce currently does not accept a `$PORT` environment variable to listen on that port for incoming connections.
 
+
+---
+
+
+## Using Docker environment variables instead of the .env file
+
+It is possible to set environment variables by using Docker, instead of using a .env file. It is not the recommended way and not properly tested, so expect things to break.
+
+If you want to use Docker variables, please read the following requirements before starting any setup steps:
+
+* Instead of setting an application key in the .env file, you must add it to your Docker variables manually. After starting the Docker containers, run `docker exec linkace_app_1 php artisan key:generate --show` instead of the command shown atop. Add the key that is shown as the output to your Docker variables as `APP_KEY`, like `APP_KEY=base64:y1f1BJ74...`.
+* Configure the database completely by using the variables from the .env file. You cannot complete the setup without configuring a database.
+* After creating an account in the setup and reaching the completed screen, add `SETUP_COMPLETED=true` as a new Docker variable and restart the containers. You should then be able to access LinkAce through the browser.
+
+If you already completed the setup adn want to migrate to Docker variables from your .env file, you can do so by moving all variables from the .env file into Docker variables and remove the .env file from the container.
+
+### Troubleshooting
+
+* If you run into issues with this method, please check the content of the application Docker container. It might contain a .env file which could overwrite your Docker variables.
+
+
 ---
 
 
