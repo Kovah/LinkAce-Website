@@ -30,7 +30,7 @@ Older PHP versions will **not** be supported in any way. Please do yourself a fa
 
 ### 1. Get the .zip file
 
-Download the latest release from the [release page](https://github.com/Kovah/LinkAce/releases).
+Download the LinkAce .zip package from the [release page](https://github.com/Kovah/LinkAce/releases/latest).
 
 Extract all files and place them wherever you need them. This obviously depends on how and where you want to run the
 app.
@@ -39,18 +39,12 @@ app.
 
 Make a copy of the `.env.example` file and name it `.env`. Please do not change any values in it now!
 
-### 3. Install dependencies and generate a secret key
+### 3. Generate a secret key
 
-Run the following commands to install all needed dependencies and prepare LinkAce for the setup:
+Run the following command to generate a secret key for your application and prepare LinkAce for the setup:
 
 ```
-composer install --prefer-dist
-
 php artisan key:generate
-php artisan vendor:publish --provider="Spatie\Backup\BackupServiceProvider"
-
-npm install
-npm run prod
 ```
 
 ### 4. Point your web server to /public
