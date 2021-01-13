@@ -18,15 +18,14 @@ The application was developed with being used with Docker in mind. All following
     * PDO
     * Tokenizer
     * XML
-* Composer must be installed
 * A database server with one of the following databases running:
     * MySQL 5.6+ (recommended)
     * PostgreSQL 9.4+
     * SQLite 3.8.8+ (not tested, may work)
     * SQL Server 2017+ (not tested, may work)
-* Node 12 LTS or higher must be installed
+* Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` may cause issues with different Unicode characters.
 
-Older PHP versions will **not** be supported in any way. Please do yourself a favor and do not expose yourself or your users to any risks by using an outdated PHP version.
+Older PHP versions will **not** be supported in any way. Please do yourself a favor and do not expose yourself, or your users to any risks by using an outdated PHP version.
 
 ### 1. Get the .zip file
 
