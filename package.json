@@ -7,7 +7,7 @@
     "cross-env": "^7.0.3",
     "laravel-mix": "^5.0.9",
     "laravel-mix-polyfill": "^1.1.1",
-    "sass": "^1.32.0",
+    "sass": "^1.32.5",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.12"
   },
@@ -23,7 +23,7 @@
     "build": "npm run production && hugo"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3",
-    "prismjs": "^1.22.0"
+    "bootstrap": "^4.6.0",
+    "prismjs": "^1.23.0"
   }
 }
