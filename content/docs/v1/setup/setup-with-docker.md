@@ -40,7 +40,7 @@ Let's get started.
 
 ### 1. Copy the needed files
 
-Copy the following files to the directory you want to use for the application. You don't need any other files to run LinkAce.
+Copy the following files [from the repository](https://github.com/Kovah/LinkAce) to the directory you want to use for the application. You don't need any other files to run LinkAce.
 
 * `docker-compose.production-simple.yml`
 * `.env.docker.production`
@@ -98,7 +98,7 @@ This setup is recommended when having full access to Docker, e.g. on a VPS or ro
 
 ### 1. Copy all needed files
 
-Copy the following files to the directory you want to use for the application. You don't need any other files to run LinkAce.
+Copy the following files [from the repository](https://github.com/Kovah/LinkAce) to the directory you want to use for the application. You don't need any other files to run LinkAce.
 
 * `docker-compose.production.yml`
 * `.env.docker.production`
