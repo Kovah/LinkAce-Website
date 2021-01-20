@@ -22,3 +22,66 @@ php artisan reset-password
 ```
 
 If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+
+
+## Cleanup history entries for Links
+
+Removes all but the last 5 entries in the link histories. Useful if you changed your links a lot in the latest time and want to clean up the histories a bit.
+If a field is provided, only history entries of that field are deleted. Possible values are:
+- `url`
+- `title`
+- `description`
+- `is_private`
+- `deleted_at`
+- `revtags` (Changes for assigned Tags)
+- `revlists` (Changes for assigned Lists)
+
+**Run via Docker**
+```
+docker exec -it linkace_php_1 php artisan link:cleanup-histories [field]
+```
+
+**Run without Docker**
+```
+php artisan link:cleanup-histories [field]
+```
+
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+
+
+## Import Links from a HTML bookmarks file
+
+If you have very large bookmark exports, you may want to import all links from the command line. Use this command after storing your file in the `/storage` directory.
+
+Possible Options:
+- `--skip-meta-generation` - Whether the automatic generation of titles should be skipped.
+- `--skip-check` - Whether the links checking should be skipped afterwards.
+
+**Run via Docker**
+```
+docker exec -it linkace_php_1 php artisan links:import [file name]
+```
+
+**Run without Docker**
+```
+php artisan links:import [file name]
+```
+
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+
+
+## View 2FA Recovery Codes
+
+This command allows you to view the 2FA recovery codes for any user and can be used if 2 Factor Authentication cannot or should be reset.
+
+**Run via Docker**
+```
+docker exec -it linkace_php_1 php artisan 2fa:view-recovery-codes
+```
+
+**Run without Docker**
+```
+php artisan 2fa:view-recovery-codes
+```
+
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
