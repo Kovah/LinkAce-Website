@@ -8,4 +8,5 @@ title: About the Application
 * [Tags]({{< relref path="/docs/v1/application/tags.md" >}})
 * [Lists]({{< relref path="/docs/v1/application/lists.md" >}})
 * [Search]({{< relref path="/docs/v1/application/search.md" >}})
+* [Bookmarklet]({{< relref path="/docs/v1/application/bookmarklet.md" >}})
 * [Trash]({{< relref path="/docs/v1/application/trash.md" >}})

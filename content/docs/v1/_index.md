@@ -6,6 +6,7 @@ title: LinkAce Documentation
 
 * [Translations]({{< relref path="docs/v1/general/translations.md" >}})
 * [Changelog]({{< relref path="docs/v1/general/changelog.md" >}})
+* [Third-Party Tools and Libraries]({{< relref path="docs/v1/general/third-party-tools.md" >}})
 
 #### Setup
 
@@ -25,6 +26,7 @@ title: LinkAce Documentation
 * [Tags]({{< relref path="/docs/v1/application/tags.md" >}})
 * [Lists]({{< relref path="/docs/v1/application/lists.md" >}})
 * [Search]({{< relref path="/docs/v1/application/search.md" >}})
+* [Bookmarklet]({{< relref path="/docs/v1/application/bookmarklet.md" >}})
 * [Trash]({{< relref path="/docs/v1/application/trash.md" >}})
 
 #### Configuration

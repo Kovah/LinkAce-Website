@@ -11,7 +11,7 @@ LinkAce offers a lot of options to customize your bookmarking experience. Here i
 
 The Bookmarklet is one of the most important features as it provides a simple way to add a random website to LinkAce as a link without leaving the website. To use the Bookmarklet, drag the button to your browser bookmarks bar.
 
-While on a website you want to save to LinkAce, click the Bookmarklet. This will open a popup. This popup will show a login page if you are not logged in on LinkAce, or the pre-filled link form.
+More details about the Bookmarklet can be found in the [Bookmarklet documentation]({{< relref path="docs/v1/application/bookmarklet.md" >}}).
 
 
 ## The API Token
@@ -45,7 +45,7 @@ Make sure your additional device is ready and click the "Enable Two Factor Authe
 
 ### Two Factor Recovery Codes
 
-In case you have lost your Two Factor device or it's inaccessible, you may use a recovery code to log into LinkAce.
+In case you have lost your Two Factor device, or it's inaccessible, you may use a recovery code to log into LinkAce.
 
 {{< alert type="danger" >}}
 **Please save these recovery codes** where they are save to access by yourself at any time. If you lose access to these codes, you will be locked out of LinkAce!
