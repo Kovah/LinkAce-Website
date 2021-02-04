@@ -2,6 +2,15 @@
 title: LinkAce Changelog
 ---
 
+### 1.2.1
+
+_Released at 2021-02-04_
+
+- LinkAce properly handles issues with character encoding now. (#225)
+- Users can now search for broken links only.
+- Dependencies were updated to fix some security vulnerabilities.
+
+
 ### 1.2.0
 
 _Released at 2021-01-20_
