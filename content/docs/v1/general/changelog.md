@@ -2,6 +2,15 @@
 title: LinkAce Changelog
 ---
 
+### 1.2.2
+
+_Released at 2021-02-07_
+
+- A link to a search for broken links was added to the dashboard.
+- Fix of the current LinkAce version.
+- Dependencies were updated.
+
+
 ### 1.2.1
 
 _Released at 2021-02-04_
