@@ -224,15 +224,16 @@ Start LinkAce again by using `docker-compose up -d`.
 It is possible to set environment variables by using Docker, instead of using a .env file. Variables set in your Docker Compose file override values in the .env file.  
 If you want to use Docker variables, please read the following requirements before starting any setup steps:
 
-1. Add the following environment variables to the application container:
+1. Remove `- ./.env:/app/.env` from the application configuration in your docker-compose file.
+2. Add the following environment variables to the application container:
    - `DB_HOST=[your database host]`
    - `DB_DATABASE=[name of the database]`
    - `DB_USERNAME=[name of the user]`
    - `DB_PASSWORD=[password for the user]`
-2. After starting the Docker containers, run `docker exec linkace_app_1 php artisan key:generate --show` instead of the command shown atop. Add the key that is shown as the output to your Docker variables as `APP_KEY`, like `APP_KEY=base64:y1f1BJ74...`.
-3. Restart the containers with `docker-compose up -d --force-recreate` to load the new Application key.
-4. Open LinkAce in your browser under the domain it is reachable at. You should be redirected to the setup.
-5. Go through the setup. After creating an account in the setup and reaching the completed screen, add `SETUP_COMPLETED=true` as a new Docker variable and restart the containers with the same command as above. You should then be able to access LinkAce through the browser.
+3. After starting the Docker containers, run `docker exec linkace_app_1 php artisan key:generate --show` instead of the command shown atop. Add the key that is shown as the output to your Docker variables as `APP_KEY`, like `APP_KEY=base64:y1f1BJ74...`.
+4. Restart the containers with `docker-compose up -d --force-recreate` to load the new Application key.
+5. Open LinkAce in your browser under the domain it is reachable at. You should be redirected to the setup.
+6. Go through the setup. After creating an account in the setup and reaching the completed screen, add `SETUP_COMPLETED=true` as a new Docker variable and restart the containers with the same command as above. You should then be able to access LinkAce through the browser.
 
 The docker-compose file should look similar to this after completing all steps:
 ```yml
