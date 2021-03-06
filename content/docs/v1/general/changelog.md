@@ -2,6 +2,20 @@
 title: LinkAce Changelog
 ---
 
+### 1.3.0
+
+_Released at 2021-03-06_
+
+- Markdown is now supported in link descriptions and notes, can be enabled in the user settings. (#217)
+- Share links are now hidden if all services are disabled. (#233)
+- Fixed issue with encoding of HTML meta while adding links. (#238)
+- Link checks were improved: timeout was increased, status codes are now handled properly. (#236)
+- Fixed issue with overflowing tag suggestions. (#242)
+- The Linkace version and update check is now displayed in the footer. (#220)
+- Link tables now contain tags.
+- Dependencies were updated.
+
+
 ### 1.2.2
 
 _Released at 2021-02-07_

@@ -73,6 +73,7 @@ Last but not least, the user settings. The following table gives you an overview
 | Number of entries in lists | This setting affects hoe many entries are displayed on the overview pages. Please note that displaying 50 or more entries may affect the loading times on low-powered systems. |
 | Display links as... | Links can be displayed in two different formats. For more details, check the [links documentation]({{< relref path="docs/v1/application/links.md" >}}). |
 | Open external links in new tabs | If enabled, external links will be opened in new tabs on click, instead of the current tab. |
+| Enable Markdown for descriptions and notes  | If enabled, Markdown can be used to format link descriptions and notes.  |
 
 {{< / table >}}
 
