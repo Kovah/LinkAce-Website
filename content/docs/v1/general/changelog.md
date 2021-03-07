@@ -2,6 +2,15 @@
 title: LinkAce Changelog
 ---
 
+### 1.3.1
+
+_Released at 2021-03-07_
+
+- The cron token is now properly changed when you re-generate it. (#245)
+- Fixes issue with failing update check in footer. (#244)
+- HTML meta is now provided by the [kovah/laravel-html-meta](https://github.com/Kovah/laravel-html-meta) package to fix issues with encoding. (#238)
+
+
 ### 1.3.0
 
 _Released at 2021-03-06_
