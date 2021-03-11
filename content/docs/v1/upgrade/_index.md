@@ -30,28 +30,21 @@ Alternatively, you can run all actions on your own. This might be helpful if you
     ```
 5. Run the database migrations:
     ```
-    docker exec -it linkace_php_1 bash -c "php artisan migrate"
+    docker exec -it linkace_php_1 php artisan migrate
     ```
 
 Make sure to check the version-specific upgrade guides to make sure you don't miss additional important steps.
 
+
 ### Upgrade a non-Docker installation
 
-1. Get the latest files of LinkAce, depending on how your got them in the first place. Either by downloading them from the [releases page](https://github.com/Kovah/LinkAce/releases) or via Git.
-2. Run updates for both Composer and NPM:
-    ```
-    composer install
-    npm install
-    ```
-3. Generate the new JavaScript and CSS files by running this command:
-    ```
-    npm run production
-    ```
-4. Run the database migrations:
+1. Get the latest version of LinkAce by downloading the package from the [releases page](https://github.com/Kovah/LinkAce/releases).
+   Overwrite all existing files with the new ones. If you want to keep your log files, skip the `storage/logs` folder.
+4. Run the database migrations which are needed after all updates:
     ```
     php artisan migrate
     ```
-
+   You may get a warning about running the migration in production mode. You should confirm the migration by answering with `yes`.
 Make sure to check the version-specific upgrade guides to make sure you don't miss additional important steps.
 
 
