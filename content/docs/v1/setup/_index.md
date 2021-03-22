@@ -15,3 +15,10 @@ If you are confident your environment meets the requirements, continue with the 
 
 * [Setup with Docker]({{< relref path="docs/v1/setup/setup-with-docker.md" >}})
 * [Setup without Docker]({{< relref path="docs/v1/setup/setup-without-docker.md" >}})
+
+
+## Setup with SQLite
+
+{{< alert type="warning" >}}
+By default, LinkAce requires using MySQL or PostgreSQL for the regular setup. To use SQLite, please follow the specific [SQLite instructions]({{< relref path="docs/v1/setup/setup-with-sqlite.md" >}}).
+{{</ alert >}}

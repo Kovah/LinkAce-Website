@@ -1,6 +1,6 @@
 ---
 title: Post-Setup Steps
-weight: 30
+weight: 40
 ---
 
 Theoretically you can use LinkAce after finishing the setup. I recommend checking the following short steps to make sure you unlock the full potential of LinkAce, including automated backups to the Internet Archive and regular link checks.
