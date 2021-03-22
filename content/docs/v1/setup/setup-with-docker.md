@@ -212,9 +212,22 @@ Start LinkAce again by using `docker-compose up -d`.
 
 ## Running Linkace behind a proxy / load balancer
 
-* If you are using a proxy / load balancer with HTTPS, please make sure it sends the `X-Forwarded-Proto` header to LinkAce. Otherwise, LinkAce won't be able to correctly generate URLs, or end up in redirection loops.
-* LinkAce currently does not accept a `$PORT` environment variable to listen on that port for incoming connections.
+If you are using a proxy / load balancer with HTTPS, please make sure it sends the `X-Forwarded-Proto` and `X-Forwarded-For` headers to LinkAce. Otherwise, LinkAce won't be able to correctly generate URLs.
 
+Nginx configuration example:
+```
+proxy_set_header X-Forwarded-For $remote_addr;
+proxy_set_header X-Forwarded-Proto $scheme; 
+```
+
+Apache configuration example:
+```
+ProxyPreserveHost on
+RequestHeader set X-Forwarded-Port "443"
+RequestHeader set X-Forwarded-Proto "https"
+```
+
+LinkAce currently does not accept a `$PORT` environment variable to listen on that port for incoming connections.
 
 ---
 
