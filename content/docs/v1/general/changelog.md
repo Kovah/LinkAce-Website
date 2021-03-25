@@ -6,6 +6,8 @@ title: LinkAce Changelog
 
 _Released at 2021-03-25_
 
+**This release requires additional steps while upgrading. Please [read the upgrade guide]({{< relref path="docs/v1/upgrade#version-specific-upgrades" >}}).**
+
 - LinkAce now supports the ARM platform (ARM64 and ARM v7). (#175)
 - You can now use third-party S3 services for application backups, instead of AWS S3. (#198)
 - Redis sockets can now be used instead of TCP-based connections. (#196)
