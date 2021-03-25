@@ -53,6 +53,10 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 ## Version-specific upgrades
 
+#### to version 1.4.0
+
+The Docker image for the simple setup was renamed from `linkace/linkace:php-nginx` to `linkace/linkace:simple`. Please change this image name in your `docker-compose.yml` file.
+
 #### from version v0.0.43 and below to higher
 
 In your `.env` file: please rename `BACKUP_DISK=cloud` to `BACKUP_DISK=s3`. If you have backup notifications enabled, please make sure to set a `BACKUP_NOTIFICATION_EMAIL`.
