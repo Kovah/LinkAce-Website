@@ -53,14 +53,20 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 ## Version-specific upgrades
 
-#### to version 1.4.0
+### to version 1.4.0
 
 The Docker image for the simple setup was renamed from `linkace/linkace:php-nginx` to `linkace/linkace:simple`. Please change this image name in your `docker-compose.yml` file.
 
-#### from version v0.0.43 and below to higher
+##### Required change for simple Docker setup
+- You have to change the destination port from 8080 to 80 in your docker-compose file:
+  `"0.0.0.0:80:8080"` to `"0.0.0.0:80:80"`
+- Remove the following line from the docker-compose file before pulling the new image and starting LinkAce:
+   `./nginx.conf:/opt/docker/etc/nginx/conf.d/linkace.conf:ro`
+
+### from version v0.0.43 and below to higher
 
 In your `.env` file: please rename `BACKUP_DISK=cloud` to `BACKUP_DISK=s3`. If you have backup notifications enabled, please make sure to set a `BACKUP_NOTIFICATION_EMAIL`.
 
-#### from version v0.0.28 and below to higher
+### from version v0.0.28 and below to higher
 
 Please add `SETUP_COMPLETED=true` to your `.env` file to prevent the setup from starting automatically.
