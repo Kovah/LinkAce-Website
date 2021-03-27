@@ -53,6 +53,12 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 ## Version-specific upgrades
 
+### to version 1.4.1
+
+Please add the following two settings to your .env file and fill them with your desired values:
+- `MAIL_FROM_ADDRESS` (Address which is used to send emails from.)
+- `MAIL_FROM_NAME` (Name that should be displayed as the sender.)
+
 ### to version 1.4.0
 
 The Docker image for the simple setup was renamed from `linkace/linkace:php-nginx` to `linkace/linkace:simple`. Please change this image name in your `docker-compose.yml` file.

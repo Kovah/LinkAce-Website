@@ -2,6 +2,14 @@
 title: LinkAce Changelog
 ---
 
+### 1.4.1
+
+_Released at 2021-03-27_
+
+- Fix issues with empty HTML meta tags by using a hotfix version of the laravel-html-meta package. (#253)
+- Corrects usage of the application backups package. (#251)
+
+
 ### 1.4.0
 
 _Released at 2021-03-25_
