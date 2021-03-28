@@ -16,7 +16,7 @@ or **[Github Sponsor](https://github.com/sponsors/Kovah)**. ⭐️
 
 Nothing goes exactly as planned. There can be small, hidden problems with LinkAce, or the app is not entirely compatible with your system.
 
-Before posting a new help requests to the Github repository or in the community, please take a look at the [documentation](/docs/v1).
+Before posting a new help requests to the Github repository or in the community, please take a look at the [**documentation**](/docs/v1) and the [**FAQ**](https://community.linkace.org/c/faq/9).
 
 
 ### Posting bug reports
