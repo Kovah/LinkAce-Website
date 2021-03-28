@@ -26,6 +26,10 @@ All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkac
 * docker-compose is recommended for the setup, must support compose version 3.
 * Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` may cause issues with different Unicode characters.
 
+{{< alert type="info" >}}
+If you are using an ARM v7 operating system, please make sure that you have the latest version of `libseccomp2` (> 2.4.4) installed. Otherwise, you will run into issues with our Docker images. A guide can be found [on linuxserver.io](https://docs.linuxserver.io/faq#option-2).
+{{</ alert >}}
+
 
 ---
 
