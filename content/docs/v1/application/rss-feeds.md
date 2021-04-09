@@ -1,5 +1,6 @@
 ---
 title: RSS Feeds
+since: v1.5.0
 weight: 70
 ---
 
