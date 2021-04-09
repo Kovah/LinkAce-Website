@@ -1,6 +1,6 @@
 ---
 title: Trash
-weight: 70
+weight: 100
 ---
 
 There should never be the situation where data is lost by mistake. That's why everything in LinkAce will not be deleted permanently when deleting it from the interface. Instead, the entry (be it a link, tag or category) is moved to the trash. You can access the trash trough the menu bar by clicking on the trashcan.

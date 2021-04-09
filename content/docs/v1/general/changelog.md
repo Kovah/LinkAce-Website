@@ -2,6 +2,18 @@
 title: LinkAce Changelog
 ---
 
+### 1.5.0
+
+_Released at 2021-04-09_
+
+- LinkAce now provides RSS feeds for public links. Private feeds can be accessed by using the API token. [Read more]({{< relref path="docs/v1/configuration/user-settings.md" >}}). (#197)
+- Links can manually be set to a "working" status. Helpful if LinkAce has issues correctly checking the status of the link. (#234)
+- Users can now search for links which have no tags or lists assigned. (#257)
+- The simple Docker image was fixed. (#258)
+- Issues with incorrect search results while searching in title and description were fixed.
+- Dependencies were updated.
+
+
 ### 1.4.1
 
 _Released at 2021-03-27_

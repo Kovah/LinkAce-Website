@@ -33,7 +33,7 @@ If you are unsure about setting up a cron, either use a web service like [cron-j
 Your cron must run **every minute** and must open the URL provided in the system settings. A basic unix cron entry may look like this:
 
 ```
-*   *   *   *   *   wget -qO- https://linkace.example.com/cron/WPvv4mxM6nr22Aq4rVf1qEKutsXLTgyw > /dev/null
+*   *   *   *   *   wget -qO- https://linkace-example.com/cron/WPvv4mxM6nr22Aq4rVf1qEKutsXLTgyw > /dev/null
 ```
 
 ### Re-generate the cron token
