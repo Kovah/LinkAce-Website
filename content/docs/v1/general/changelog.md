@@ -2,6 +2,17 @@
 title: LinkAce Changelog
 ---
 
+### 1.6.0
+
+_Released at 2021-04-18_
+
+- LinkAce now saves a thumbnail URl for a link if it is provided through `og:image` or `twitter:image` in the HTML meta tags. Thumbnails are shown on the detail page in and lists with many details. This is a "light" version of providing screenshots for links. (#18)
+- A new command for updating the thumbnails of all links is now available.
+- Restructuring of some internal components, as well as minor code quality improvements.
+- Update checks were updates to use less traffic.
+- Dependencies were updated.
+
+
 ### 1.5.0
 
 _Released at 2021-04-09_

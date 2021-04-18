@@ -24,6 +24,25 @@ php artisan reset-password
 If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
 
 
+## Update the thumbnails for all links
+
+_Since v1.6.0_
+
+This command updates the thumbnail for all links with the status "ok". This can take a long time, depending on the amount of links you have saved. Helpful if you upgrade from a previous version to version 1.6.0 and want to set the correct thumbnails for all links.
+
+**Run via Docker**
+```
+docker exec -it linkace_php_1 php artisan links:update-thumbnails
+```
+
+**Run without Docker**
+```
+php artisan links:update-thumbnails
+```
+
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+
+
 ## Cleanup history entries for Links
 
 Removes all but the last 5 entries in the link histories. Useful if you changed your links a lot in the latest time and want to clean up the histories a bit.
@@ -38,12 +57,12 @@ If a field is provided, only history entries of that field are deleted. Possible
 
 **Run via Docker**
 ```
-docker exec -it linkace_php_1 php artisan link:cleanup-histories [field]
+docker exec -it linkace_php_1 php artisan links:cleanup-histories [field]
 ```
 
 **Run without Docker**
 ```
-php artisan link:cleanup-histories [field]
+php artisan links:cleanup-histories [field]
 ```
 
 If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.

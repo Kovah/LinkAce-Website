@@ -28,10 +28,12 @@ Alternatively, you can run all actions on your own. This might be helpful if you
     ```
     docker-compose up -d
     ```
-5. Run the database migrations:
+5. Run the database migrations and delete the current cache:
     ```
     docker exec -it linkace_php_1 php artisan migrate
+    docker exec -it linkace_php_1 php artisan cache:clear
     ```
+   You may get a warning about running the migration in production mode. You should confirm the migration by answering with `yes`.
 
 Make sure to check the version-specific upgrade guides to make sure you don't miss additional important steps.
 
@@ -40,9 +42,10 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 1. Get the latest version of LinkAce by downloading the package from the [releases page](https://github.com/Kovah/LinkAce/releases).
    Overwrite all existing files with the new ones. If you want to keep your log files, skip the `storage/logs` folder.
-4. Run the database migrations which are needed after all updates:
+4. Run the database migrations which are needed after all updates and delete the current cache:
     ```
     php artisan migrate
+    php artisan cache:clear
     ```
    You may get a warning about running the migration in production mode. You should confirm the migration by answering with `yes`.
 Make sure to check the version-specific upgrade guides to make sure you don't miss additional important steps.
@@ -52,6 +55,11 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 
 ## Version-specific upgrades
+
+### to version 1.6.0
+
+- The command for cleaning link histories changed from `link:cleanup-histories` to `links:cleanup-histories`.
+- You may want to run the [links:update-thumbnails]({{< relref path="docs/v1/cli" >}}) command to generate thumbnails for all existing links.
 
 ### to version 1.4.1
 

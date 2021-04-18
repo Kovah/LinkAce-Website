@@ -66,7 +66,7 @@ After adding the URL in the form, LinkAce will gather details from the specified
 
 {{< image type="screen" img="link_details.png" alt="Preview of Link Details" >}}
 
-The link detail page shows all available information about the link, including title, description, lists and tags. From the details page you can directly hop into the edit form or delete the link.
+The link detail page shows all available information about the link, including title, description, lists and tags. From the details page you can directly hop into the edit form or delete the link. If a thumbnail was saved for a link it will be displayed.
 
 You will also be shown all share links if you enabled some in the user settings.
 
