@@ -2,6 +2,17 @@
 title: LinkAce Changelog
 ---
 
+### 1.6.1
+
+_Released at 2021-04-19_
+
+- Youtube links with underscores now get the correct thumbnail. (#263)
+- Update checks are cached for a day as intended by default.
+- The Docker update script was corrected. (#259)
+- LinkAce now provides basic social meta information for sharing and a social media image.
+- Minor optimizations for internal SVG usage.
+
+
 ### 1.6.0
 
 _Released at 2021-04-18_
