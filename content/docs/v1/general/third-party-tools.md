@@ -15,3 +15,12 @@ Github user TheJokersThief created a Python-based CLI tool for working with Link
 
 * Installation: `pip install linkace-cli`
 * [Source Code](https://github.com/TheJokersThief/linkace-cli)
+
+
+## Browser Extensions
+
+### Firefox Bookmark Extension
+
+Github user daufinsyd created a Firefox extension to quickly save links from within your browser. A perfect alternative to the built-in bookmarklet.
+
+[Get the extension here](https://addons.mozilla.org/de/firefox/addon/linkace-bookmarklet/)
