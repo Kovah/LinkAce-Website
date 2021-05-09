@@ -27,7 +27,7 @@ volumes:
   - ./database.sqlite:/app/database/database.sqlite
 ```
 
-Remove `DB_DATABASE=linkace` from your `.env` file and replace `DB_CONNECTION=mysql` with `DB_CONNECTION=sqlite`.
+Replace `DB_DATABASE=linkace` with `DB_DATABASE=/app/database/database.sqlite` in your `.env` file and replace `DB_CONNECTION=mysql` with `DB_CONNECTION=sqlite`.
 After that run the following command to prepare the database:
 
 ```
@@ -59,7 +59,7 @@ Follow the steps 1 to 4 of the [regular installation guide]({{< relref path="doc
 touch database/database.sqlite
 ```
 
-Remove `DB_DATABASE=linkace` from your `.env` file and replace `DB_CONNECTION=mysql` with `DB_CONNECTION=sqlite`.
+Replace `DB_DATABASE=linkace` with `DB_DATABASE=/app/database/database.sqlite` in your `.env` file and replace `DB_CONNECTION=mysql` with `DB_CONNECTION=sqlite`.
 After that run the following command to prepare the database:
 
 ```
