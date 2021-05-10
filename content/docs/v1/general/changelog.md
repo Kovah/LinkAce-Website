@@ -2,6 +2,15 @@
 title: LinkAce Changelog
 ---
 
+### 1.6.2
+
+_Released at 2021-05-10_
+
+- Fixes an issue where link thumbnail URLs caused links to not be saved. (#274)
+- Dependencies were updated.
+- Large internal code cleanup and optimization.
+
+
 ### 1.6.1
 
 _Released at 2021-04-19_
