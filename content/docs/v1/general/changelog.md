@@ -2,6 +2,15 @@
 title: LinkAce Changelog
 ---
 
+### 1.6.3
+
+_Released at 2021-06-06_
+
+- Link tags are also shown in the search results now. (#279)
+- Fixes issues with the search box on the dashboard. (#278)
+- Dependencies were updated.
+
+
 ### 1.6.2
 
 _Released at 2021-05-10_
