@@ -1,6 +1,6 @@
 baseURL = "https://www.linkace.org/"
 languageCode = "en-us"
-title = "LinkAce"
+title = "LinkAce - Your self-hosted bookmark archive. Free and open source."
 assetDir = "./assets/dist"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 

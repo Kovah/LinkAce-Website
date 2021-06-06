@@ -1,14 +1,14 @@
-<title>LinkAce - Your self-hosted bookmark archive. Free and open source.</title>
+<title>{{ if eq .IsHome true }}{{ .Title }}{{ else }}{{ .Title }} - LinkAce{{ end }}</title>
 <meta name="description" content="LinkAce is a free and open source bookmark archive for long-term storage and organization of your favorite links."/>
-<link rel="canonical" href="{{ .Page.Permalink }}">
+<link rel="canonical" href="{{ .Permalink }}">
 
-<meta property="og:title" content="LinkAce - Your self-hosted bookmark archive. Free and open source.">
+<meta property="og:title" content="{{ if eq .IsHome true }}{{ .Title }}{{ else }}{{ .Title }} - LinkAce{{ end }}">
 <meta property="og:description" content="LinkAce is a free and open source bookmark archive for long-term storage and organization of your favorite links.">
 <meta property="og:image" content="{{ .Site.BaseURL }}images/linkace-social.jpg">
 <meta property="og:url" content="https://www.linkace.org/">
 <meta property="og:site_name" content="LinkAce">
 
-<meta name="twitter:title" content="LinkAce - Your self-hosted bookmark archive. Free and open source.">
+<meta name="twitter:title" content="{{ if eq .IsHome true }}{{ .Title }}{{ else }}{{ .Title }} - LinkAce{{ end }}">
 <meta name="twitter:description" content="LinkAce is a free and open source bookmark archive for long-term storage and organization of your favorite links.">
 <meta name="twitter:creator" content="@kovah_kvh">
 <meta name="twitter:site" content="@LinkAceApp">
