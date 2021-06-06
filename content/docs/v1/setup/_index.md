@@ -13,7 +13,7 @@ There will be **no** support for environments which do not meet the requirements
 
 If you are confident your environment meets the requirements, continue with the setup:
 
-* [Setup with Docker]({{< relref path="docs/v1/setup/setup-with-docker.md" >}})
+* [Setup with Docker]({{< relref path="docs/v1/setup/setup-with-docker/_index.md" >}})
 * [Setup without Docker]({{< relref path="docs/v1/setup/setup-without-docker.md" >}})
 
 

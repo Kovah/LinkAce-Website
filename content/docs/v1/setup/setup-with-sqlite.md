@@ -8,7 +8,7 @@ By default, LinkAce requires using MySQL or PostgreSQL for the regular setup. To
 
 ## Setup with Docker
 
-Follow the steps 1 to 4 of the [**Docker installation guide**]({{< relref path="docs/v1/setup/setup-with-docker.md" >}}), but do not start the built-in setup now. The database file needs to be created, so run the following commands:
+Follow the steps 1 to 4 of the [**Docker installation guide**]({{< relref path="docs/v1/setup/setup-with-docker/_index.md" >}}), but do not start the built-in setup now. The database file needs to be created, so run the following commands:
 
 ```
 docker exec -it linkace_app_1 touch database/database.sqlite

@@ -10,7 +10,7 @@ title: LinkAce Documentation
 
 #### Setup
 
-* [Setup with Docker]({{< relref path="docs/v1/setup/setup-with-docker.md" >}})
+* [Setup with Docker]({{< relref path="docs/v1/setup/setup-with-docker/_index.md" >}})
 * [Setup without Docker]({{< relref path="docs/v1/setup/setup-without-docker.md" >}})
 * [Post-Setup Steps]({{< relref path="docs/v1/setup/post-setup.md" >}})
 
