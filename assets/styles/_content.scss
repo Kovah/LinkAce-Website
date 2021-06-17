@@ -29,7 +29,7 @@
   }
 
   figure {
-    margin: map_get($spacers, 4) 0;
+    margin: map_get($spacers, 5) 0;
 
     a {
       display: block;
@@ -44,6 +44,10 @@
     background-color: $gray-100;
     padding: .125rem .25rem;
     border-radius: $border-radius;
+  }
+
+  pre {
+    margin: map_get($spacers, 4) 0;
   }
 
   pre code {

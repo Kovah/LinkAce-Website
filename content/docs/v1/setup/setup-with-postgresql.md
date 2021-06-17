@@ -1,18 +1,14 @@
 ---
-title: Setup with SQLite
-weight: 31
+title: Setup with PostgreSQL
+weight: 30
 ---
 
-By default, LinkAce requires using MySQL for the regular setup. To use SQLite, please follow the specific instructions below depending on whether you use Docker or not.
+By default, LinkAce requires using MySQL for the regular setup. To use PostgreSQL, please follow the specific instructions below depending on whether you use Docker or not.
 
 
 ## Setup with Docker
 
-Follow the steps **1** to **4** of the [**Docker installation guide**]({{< relref path="docs/v1/setup/setup-with-docker/_index.md" >}}), but do not start the built-in setup now. The database file needs to be created, so run the following commands:
-
-```
-docker exec -it linkace_app_1 touch database/database.sqlite
-```
+Follow the steps **1** to **4** of the basic [**Docker installation guide**]({{< relref path="docs/v1/setup/setup-with-docker" >}}), but do not start the built-in setup now.
 
 Stop the Docker container now.
 
@@ -20,14 +16,7 @@ Stop the Docker container now.
 docker-compose stop
 ```
 
-To persist your SQLite database, add the following line to the `volumes` section in your docker-compose.yml file:
-
-```
-volumes:
-  - ./database.sqlite:/app/database/database.sqlite
-```
-
-Replace `DB_DATABASE=linkace` with `DB_DATABASE=/app/database/database.sqlite` in your `.env` file and replace `DB_CONNECTION=mysql` with `DB_CONNECTION=sqlite`.
+Replace `DB_CONNECTION=mysql` with `DB_CONNECTION=pgsql` and set the correct port of the database in `DB_PORT=5432`  in your `.env` file.
 After that run the following command to prepare the database:
 
 ```
@@ -53,13 +42,9 @@ Please make sure to follow the [post-installation steps]({{< relref path="docs/v
 
 ## Setup without Docker
 
-Follow the steps **1** to **4** of the [regular installation guide]({{< relref path="docs/v1/setup/setup-without-docker.md" >}}), but do not start the built-in setup now. The database file needs to be created, so run the following command:
+Follow the steps **1** to **4** of the [regular installation guide]({{< relref path="docs/v1/setup/setup-without-docker.md" >}}), but do not start the built-in setup now.
 
-```
-touch database/database.sqlite
-```
-
-Replace `DB_DATABASE=linkace` with `DB_DATABASE=/app/database/database.sqlite` in your `.env` file and replace `DB_CONNECTION=mysql` with `DB_CONNECTION=sqlite`.
+Replace `DB_CONNECTION=mysql` with `DB_CONNECTION=pgsql` and set the correct port of the database in `DB_PORT=5432`  in your `.env` file.
 After that run the following command to prepare the database:
 
 ```
@@ -79,6 +64,5 @@ Please make sure to follow the [post-installation steps]({{< relref path="docs/v
 {{</ alert >}}
 
 ---
-
 
 Next Step: [Post-Setup Steps]({{< relref path="docs/v1/setup/post-setup.md" >}})
