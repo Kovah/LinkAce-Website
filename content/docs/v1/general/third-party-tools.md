@@ -19,6 +19,13 @@ Github user TheJokersThief created a Python-based CLI tool for working with Link
 
 ## Browser Extensions
 
+### Chrome / Edge Bookmark Extension
+
+Github user Creling created a Chrome extension to save links from within your browser. A perfect alternative to the built-in bookmarklet. It also checks if the current site is already bookmarked and lets you update the entry.
+
+[Get the extension here](https://chrome.google.com/webstore/detail/yet-another-linkace-exten/ladekkfhihppgfcjgaimgggecekfhmho)
+[Source Code](https://github.com/Creling/Yet-Another-LinkAce-Extension)
+
 ### Firefox Bookmark Extension
 
 Github user daufinsyd created a Firefox extension to quickly save links from within your browser. A perfect alternative to the built-in bookmarklet.
