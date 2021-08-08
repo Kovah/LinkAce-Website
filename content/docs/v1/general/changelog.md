@@ -2,6 +2,16 @@
 title: LinkAce Changelog
 ---
 
+### 1.6.4
+
+_Released at 2021-08-08_
+
+- The setup process was improved and issues were fixed. (#288)
+- Long list and tag names won't break the dashboard interface anymore. (#303)
+- Private tags and lists have the lock indicator on their detail pages now. (#304)
+- Translations and dependencies were updated.
+
+
 ### 1.6.3
 
 _Released at 2021-06-06_
