@@ -60,6 +60,10 @@ Regardless of this setting, LinkAce will always show you the option to make link
 
 If you don't want anyone to view your bookmark collection, leave the guest access disabled.
 
+### Custom Header Content
+
+Content entered here will be placed before the </head> tag on all LinkAce sites. Useful to place analytics or customization scripts. **Caution:** contents are not escaped and may break the site! Use at your own risk.
+
 
 ## Guest Settings
 

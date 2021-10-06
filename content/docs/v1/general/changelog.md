@@ -2,6 +2,20 @@
 title: LinkAce Changelog
 ---
 
+
+### 1.7.0
+
+_Released at 2021-10-06_
+
+- You can now search for tags and lists directly on the overview pages. Many thanks to gavinr for his contribution! (#309)
+- Users are now notified if a link already exists in the Bookmarklet form. The edit form was optimized too. (#318)
+- Custom HTML can be added to the `<head>`. Useful for adding analytics scripts. (#280)
+- New translations for Catalan, Spanish and Hungarian were added. Huge thanks to Patrick Mates, aladecom and Xorxe!
+- Tags can be ordered correctly in the guest mode. (#306)
+- Display of public/private links in guest mode were fixed. (#307)
+- Dependencies were updated.
+
+
 ### 1.6.4
 
 _Released at 2021-08-08_
