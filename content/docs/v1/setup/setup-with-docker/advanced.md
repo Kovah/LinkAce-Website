@@ -35,7 +35,7 @@ Copy the following files [from the repository](https://github.com/Kovah/LinkAce)
 * Rename the `.env.docker.production` to `.env`.
 * Rename the `docker-compose.production.yml` to `docker-compose.yml`.
 
-By default, you have change the following variables before starting the setup:
+By default, you have to change the following variables before starting the setup:
 
 * DB_PASSWORD - Please set a secure password here
 * REDIS_PASSWORD - Please set a secure password here
@@ -44,7 +44,7 @@ By default, you have change the following variables before starting the setup:
 
 ### 3. Start the application
 
-After you completed the above steps, run the following command to start up the container setup:
+After you completed the above steps, run the following command to begin the container setup:
 
 ```bash
 docker-compose up -d
