@@ -68,6 +68,8 @@ After adding the URL in the form, LinkAce will gather details from the specified
 
 The link detail page shows all available information about the link, including title, description, lists and tags. From the details page you can directly hop into the edit form or delete the link. If a thumbnail was saved for a link it will be displayed.
 
+The "Enable Check" / "Disable Check" button lets you enable / disable the [automated checks]({{< relref path="docs/v1/application/link-checks.md" >}}) performed by LinkAce. This might be helpful if a website is reachable but LinkAce has problems accessing it. This is mostly the case with visitor captcha checks seen with Cloudflare-hosted websites.
+
 You will also be shown all share links if you enabled some in the user settings.
 
 ### Link Notes

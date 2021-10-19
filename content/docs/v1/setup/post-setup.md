@@ -3,7 +3,7 @@ title: Post-Setup Steps
 weight: 40
 ---
 
-Theoretically you can use LinkAce after finishing the setup. I recommend checking the following short steps to make sure you unlock the full potential of LinkAce, including automated backups to the Internet Archive and regular link checks.
+Theoretically you can use LinkAce after finishing the setup. I recommend checking the following short steps to make sure you unlock the full potential of LinkAce, including automated backups to the Internet Archive and regular automated link checks.
 
 ### 1. Update the .env file with advanced settings
 
@@ -16,7 +16,7 @@ The `.env` file in your LinkAce directory contains some advanced settings which 
 
 ### 2. Setup the cron
 
-**The cron is necessary to enable automated backups via the Waybackmachine, enabling regular link checks and application backups.** You will be presented a cron token, and a pre-built cron URL on the system settings page, available from the username dropdown. More information about how to configure a cron can be found in the  [System Settings]({{< relref path="docs/v1/configuration/system-settings.md" >}}).
+**The cron is necessary to enable automated backups via the Waybackmachine, enabling regular link checks and application backups.** You will be presented a cron token, and a pre-built cron URL on the system settings page, available from the username dropdown. More information about how to configure a cron can be found in the [System Settings]({{< relref path="docs/v1/configuration/system-settings.md" >}}).
 
 ### 3. Configure basic app settings
 
