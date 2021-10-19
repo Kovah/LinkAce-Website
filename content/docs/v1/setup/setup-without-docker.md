@@ -7,7 +7,7 @@ The application was developed with being used with Docker in mind. All following
 
 ### Requirements
 
-* A Linux-based server with shell access
+* A Linux-based server with command line access
 * **PHP 7.3, 7.4 or 8.0**, with the following extensions
     * BCMath
     * Ctype
