@@ -11,16 +11,15 @@
 {{ partial "navbar.html" . }}
 
 <div class="container">
-  <div class="row pt-5 pt-lg-6">
-    <main class="col-12 col-md-8 mb-6 mb-md-0">
+  <div class="d-flex flex-wrap row pt-5 pt-lg-6">
+    <aside class="order-1 order-md-0 col-12 col-md-4">
+      {{ partial "docs/sidebar" . }}
+    </aside>
+    <main class="order-0 order-md-1 col-12 col-md-8 mb-6 mb-md-0">
       <section class="content-wrapper">
         {{ block "main" . }}{{ end }}
       </section>
     </main>
-
-    <aside class="col-12 col-md-4">
-      {{ partial "docs/sidebar" . }}
-    </aside>
   </div>
 </div>
 
