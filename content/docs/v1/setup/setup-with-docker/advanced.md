@@ -42,6 +42,8 @@ By default, you have to change the following variables before starting the setup
 * SESSION_DRIVER - Change the setting from `file` to `redis` (like `SESSION_DRIVER=redis`)
 * CACHE_DRIVER - Change the setting from `file` to `redis`
 
+If you are unsure if the `.env` file is writable inside Docker, please make it writable for anybody (`-rw-rw-rw- or 666`). You can switch back to make it read only after the setup.
+
 ### 3. Start the application
 
 After you completed the above steps, run the following command to begin the container setup:

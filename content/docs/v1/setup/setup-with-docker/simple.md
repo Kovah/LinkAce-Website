@@ -38,6 +38,8 @@ By default, you only have change two variables set in this file before starting 
 * DB_PASSWORD - Please set a secure password here
 * REDIS_PASSWORD - Please set a secure password here
 
+If you are unsure if the `.env` file is writable inside Docker, please make it writable for anybody (`-rw-rw-rw- or 666`). You can switch back to make it read only after the setup.
+
 ### 3. Start the application
 
 After you completed the above steps, run the following command to start up the container setup:
