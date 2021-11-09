@@ -28,7 +28,7 @@ Currently, the following tasks will be run:
 
 ### Setting up the cron
 
-If you are unsure about setting up a cron, either use a web service like [cron-job.org](https://cron-job.org/en/) or [mywebcron.com](http://www.mywebcron.com/), or search the web for help.
+If you are unsure about setting up a cron, either use a web service like [cron-job.org](https://cron-job.org/en/), or search the web for help.
 
 Your cron must run **every minute** and must open the URL provided in the system settings. A basic unix cron entry may look like this:
 
