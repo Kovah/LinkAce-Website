@@ -5,9 +5,9 @@
   "license": "MIT",
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "laravel-mix": "^6.0.34",
+    "laravel-mix": "^6.0.39",
     "laravel-mix-polyfill": "^1.1.1",
-    "sass": "^1.43.2",
+    "sass": "^1.43.4",
     "sass-loader": "^8.0.2"
   },
   "scripts": {
@@ -22,7 +22,7 @@
     "build": "npm run production && hugo"
   },
   "dependencies": {
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^4.6.1",
     "prismjs": "^1.25.0"
   }
 }
