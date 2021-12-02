@@ -48,7 +48,7 @@ Please make sure to follow the [post-installation steps]({{< relref path="docs/v
 
 ## Setup without Docker
 
-Follow the steps **1** and **2** of the [regular installation guide]({{< relref path="docs/v1/setup/setup-without-docker.md" >}}), and do not start the Docker setup now. The database file needs to be created, so run the following command:
+Follow the steps **1** to **4** of the [regular installation guide]({{< relref path="docs/v1/setup/setup-without-docker.md" >}}), and do not start the built-in setup right now. The database file needs to be created, so run the following command:
 
 ```
 touch database/database.sqlite
@@ -58,7 +58,6 @@ Replace `DB_DATABASE=linkace` with `DB_DATABASE=/path-to-linkace/database/databa
 After that run the following command to prepare the database:
 
 ```
-php artisan key:generate
 php artisan migrate
 ```
 
