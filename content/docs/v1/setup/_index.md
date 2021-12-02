@@ -19,7 +19,7 @@ Depending on your personal preferences, you can run LinkAce either with or witho
 
 ## Setup with SQLite or PostgreSQL
 
-By default, LinkAce requires using MySQL for the regular setup.
+By default, LinkAce is using MySQL but you are free to use SQLite or PostgreSQL.
 
 - To use **SQLite**, please follow the specific [SQLite instructions]({{< relref path="docs/v1/setup/setup-with-sqlite.md" >}}).
 - To use **PostgreSQL**, please follow the specific [PostgreSQL instructions]({{< relref path="docs/v1/setup/setup-with-postgresql.md" >}}).
