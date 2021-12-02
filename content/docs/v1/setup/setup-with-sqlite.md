@@ -8,10 +8,12 @@ By default, LinkAce requires using MySQL for the regular setup. To use SQLite, p
 
 ## Setup with Docker
 
-Follow the steps **1** and **2** of the [**Docker installation guide**]({{< relref path="docs/v1/setup/setup-with-docker/_index.md" >}}), and do not start the Docker setup now. The database file needs to be created, so run the following commands:
+Follow the steps **1** and **2** of the [**Docker installation guide**]({{< relref path="docs/v1/setup/setup-with-docker/_index.md" >}}), and do not start the Docker setup now.
+
+The database file needs to be created. You can do this by using the following command which assumes that the database file is located in the same directory as the docker-compose.yml file and is called `database.sqlite`:
 
 ```
-docker exec -it linkace_app_1 touch database/database.sqlite
+touch database.sqlite
 ```
 
 To persist your SQLite database, add the following line to the `volumes` section in your docker-compose.yml file:
