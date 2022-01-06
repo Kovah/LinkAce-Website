@@ -2,6 +2,19 @@
 title: LinkAce Changelog
 ---
 
+### 1.8.0
+
+_Released at 2022-01-06_
+
+- **LinkAce now requires PHP 7.4 and uses Node 16 by default.**
+- The API now accepts a `per_page` query parameter to define the amount of items in paged results. Use `0` to return unlimited results. (#294)
+- The bookmarklet now accepts additional tags and lists as query parameters. (#308)
+- When deleting links, lists or tags, you are redirected to the previous page instead to the overview. (#341)
+- The welcome screen / splash screen was removed. (#325)
+- Duplicate error messages were removed. (#329)
+- Links are opened in a new tab on the simple list, if activated in the settings. (#339) 
+- Dependencies were updated.
+
 
 ### 1.7.0
 
