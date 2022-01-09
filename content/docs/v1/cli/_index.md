@@ -13,7 +13,7 @@ To work around this issue, you can use the CLI command to reset your password.
 
 **Run via Docker**
 ```
-docker exec -it linkace_php_1 php artisan reset-password
+docker exec -it linkace_app_1 php artisan reset-password
 ```
 
 **Run without Docker**
@@ -32,7 +32,7 @@ This command updates the thumbnail for all links with the status "ok". This can 
 
 **Run via Docker**
 ```
-docker exec -it linkace_php_1 php artisan links:update-thumbnails
+docker exec -it linkace_app_1 php artisan links:update-thumbnails
 ```
 
 **Run without Docker**
@@ -57,7 +57,7 @@ If a field is provided, only history entries of that field are deleted. Possible
 
 **Run via Docker**
 ```
-docker exec -it linkace_php_1 php artisan links:cleanup-histories [field]
+docker exec -it linkace_app_1 php artisan links:cleanup-histories [field]
 ```
 
 **Run without Docker**
@@ -78,7 +78,7 @@ Possible Options:
 
 **Run via Docker**
 ```
-docker exec -it linkace_php_1 php artisan links:import [file name]
+docker exec -it linkace_app_1 php artisan links:import [file name]
 ```
 
 **Run without Docker**
@@ -95,7 +95,7 @@ This command allows you to view the 2FA recovery codes for any user and can be u
 
 **Run via Docker**
 ```
-docker exec -it linkace_php_1 php artisan 2fa:view-recovery-codes
+docker exec -it linkace_app_1 php artisan 2fa:view-recovery-codes
 ```
 
 **Run without Docker**
