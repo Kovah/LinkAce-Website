@@ -4,12 +4,6 @@ title = "LinkAce - Your self-hosted bookmark archive. Free and open source."
 assetDir = "./assets/dist"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
-[markup]
-  [markup.tableOfContents]
-    endLevel = 3
-    ordered = false
-    startLevel = 2
-
 [params]
   DocsRepo = "https://github.com/Kovah/LinkAce-Website"
   DemoUrl = "https://demo.linkace.org"
