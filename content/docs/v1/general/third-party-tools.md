@@ -2,7 +2,7 @@
 title: Third-Party Tools and Libraries
 ---
 
-LinkAce is an open-source software program with a powerful API; that unlocks almost all features from other tools.
+LinkAce is an open-source software program with a [powerful API](https://linkace.stoplight.io/docs/api-docs); that unlocks almost all features from other tools.
 
 This page is an overview of third-party tools and libraries which are compatible or specially made for LinkAce.
 
