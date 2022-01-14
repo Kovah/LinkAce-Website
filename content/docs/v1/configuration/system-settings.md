@@ -91,8 +91,9 @@ Change the timezone of the core application here. It does not affect the timezon
 
 ### `APP_USER_AGENT`
 
-Change the User Agent that is used in LinkAce to make requests to website. Can be helpful if LinkAce is blocked often by sites when it tries to gather metadata.
+Change the User Agent that is used in LinkAce to make requests to website. Can be helpful if LinkAce is blocked often by sites when it tries to gather metadata.  
+Please note that it's important to wrap the User Agent in quotes (`"`) in your .env file.
 
 * Possible Value(s): a valid User Agent string
 * Default value: `LinkAce/1 (https://github.com/Kovah/LinkAce)`
-* Example: `APP_USER_AGENT=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36`
+* Example: `APP_USER_AGENT="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"`
