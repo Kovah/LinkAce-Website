@@ -72,3 +72,27 @@ These settings apply to all guests visiting your site, if you have guest access 
 {{< image type="screen" img="system_settings_guest_settings.png" alt="Preview of the system guest settings" >}}
 
 Please check the [user settings documentation]({{< relref path="docs/v1/configuration/user-settings.md" lang="" >}}) for more details about all available options, as they are exactly the same.
+
+
+---
+
+
+## Advanced System Settings
+
+The following settings can be changed only in the `.env` file.
+
+### `APP_TIMEZONE`
+
+Change the timezone of the core application here. It does not affect the timezone set in the user settings but changes how LinkAce saves dates and times in the database. Be very careful when using this setting as it can have unintended site effects! There won't be any support for broken applications due to a changed timezone.
+
+* Possible Value(s): a valid timezone according to [PHP](https://www.php.net/manual/en/timezones.php)
+* Default value: `UTC`
+* Example: `APP_TIMEZONE=Europe/Berlin`
+
+### `APP_USER_AGENT`
+
+Change the User Agent that is used in LinkAce to make requests to website. Can be helpful if LinkAce is blocked often by sites when it tries to gather metadata.
+
+* Possible Value(s): a valid User Agent string
+* Default value: `LinkAce/1 (https://github.com/Kovah/LinkAce)`
+* Example: `APP_USER_AGENT=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36`

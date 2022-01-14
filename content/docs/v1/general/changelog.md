@@ -2,6 +2,18 @@
 title: LinkAce Changelog
 ---
 
+### 1.9.0
+
+_Released at 2022-01-14_
+
+- LinkAce now uses Bootstrap 5 and comes with a slightly updated design. ({{<issuelink 345>}})
+- The old Selectize library was replaced and jQuery removed, resulting in 30% smaller assets. ({{<issuelink 343>}})
+- You can now set a custom core timezone using `APP_TIMEZONE`. Please read the [documentation]({{< relref path="docs/v1/configuration/system-settings.md#advanced-system-settings" >}}) before using this setting! ({{<issuelink 348>}})
+- You can now set a custom User Agent to prevent being blocked by websites. [Read more]({{< relref path="docs/v1/configuration/system-settings.md#advanced-system-settings" >}}) ({{<issuelink 334>}})
+- Tags and lists are now properly preserved when logging in while using the bookmarklet. ({{<issuelink 350>}})
+- Dependencies were updated.
+
+
 ### 1.8.1
 
 _Released at 2022-01-08_
