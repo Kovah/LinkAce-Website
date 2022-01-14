@@ -38,6 +38,8 @@ After that, generate a new admin account by running the following command. You w
 docker exec -it linkace_app_1 php artisan registeruser
 ```
 
+Lastly, change `SETUP_COMPLETED=false` to `SETUP_COMPLETED=true` in your `.env` file.
+
 You can now open LinkAce in your browser and should be able to use the application.
 
 {{< alert type="warning" >}}

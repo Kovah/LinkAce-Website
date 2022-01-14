@@ -30,8 +30,8 @@ Alternatively, you can run all actions on your own. This might be helpful if you
     ```
 5. Run the database migrations and delete the current cache:
     ```
-    docker exec -it linkace_php_1 php artisan migrate
-    docker exec -it linkace_php_1 php artisan cache:clear
+    docker exec -it linkace_app_1 php artisan migrate
+    docker exec -it linkace_app_1 php artisan cache:clear
     ```
    You may get a warning about running the migration in production mode. You should confirm the migration by answering with `yes`.
 
