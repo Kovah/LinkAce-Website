@@ -5,6 +5,11 @@ weight: 31
 
 By default, LinkAce requires using MySQL for the regular setup. To use SQLite, please follow the specific instructions below depending on whether you use Docker or not.
 
+{{< alert type="danger" >}}
+I currently **discourage** using SQLite for LinkAce because of ongoing issues with the database system. If you have a MySQL or PostgreSQL database at hand, please use this instead.  
+Issue related to SQLite: [#327](https://github.com/Kovah/LinkAce/issues/327)
+{{</ alert >}}
+
 
 ## Setup with Docker
 
@@ -14,6 +19,7 @@ The database file needs to be created. You can do this by using the following co
 
 ```
 touch database.sqlite
+chmod 0777 database.sqlite
 ```
 
 To persist your SQLite database, add the following line to the `volumes` section in your docker-compose.yml file:
