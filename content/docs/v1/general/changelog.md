@@ -2,6 +2,14 @@
 title: LinkAce Changelog
 ---
 
+### 1.9.1
+
+_Released at 2022-01-20_
+
+- Users are redirected back after links are deleted from lists and tags. ({{<issuelink 355>}})
+- New tags and lists can be added inside the bookmarklet again. ({{<issuelink 356>}})
+
+
 ### 1.9.0
 
 _Released at 2022-01-14_
