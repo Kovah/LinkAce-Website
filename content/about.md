@@ -6,7 +6,7 @@ LinkAce is a self-hosted web application for managing a bookmark archive. I buil
 
 I created LinkAce to have a long-term solution to archive and organize my bookmarks. Browser bookmarks sadly lack a lot of features, like proper search, advanced categorization or even the backup of those sites. Therefore, I use browser bookmarks for regularly accessed sites and have a separate application that takes care of all those links I would like to "keep in mind" but don't want to pollute my browser bookmarks with.
 
-The main feature of LinkAce is the archival and organization of links. Those links can be anything that has a valid URL: blog articles, Youtube videos, Reddit posts, github projects, and so on. Add new links, categorize them, edit them, search through them. That's the main point of LinkAce.
+The main feature of LinkAce is the archival and organization of links. Those links can be anything that has a valid URL: blog articles, YouTube videos, Reddit posts, Github projects, and so on. Add new links, categorize them, edit them, search through them. That's the main point of LinkAce.
 
 
 ### Feature Highlights
