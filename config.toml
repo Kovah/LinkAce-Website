@@ -5,11 +5,11 @@ assetDir = "./assets/dist"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
 [params]
-  DocsRepo = "https://github.com/Kovah/LinkAce-Website"
+  DocsRepo = "https://github.com/Kovah/LinkAce-Website/"
   DemoUrl = "https://demo.linkace.org"
   WikiDockerSetupUrl = "/docs/v1/setup/setup-with-docker/"
   WikiServerSetupUrl = "/docs/v1/setup/setup-without-docker/"
-  DockerHub = "https://hub.docker.com/r/linkace/linkace"
-  Github = "https://github.com/Kovah/LinkAce"
+  DockerHub = "https://hub.docker.com/r/linkace/linkace/"
+  Github = "https://github.com/Kovah/LinkAce/"
   Twitter = "https://twitter.com/linkaceapp"
-  Community = "https://github.com/Kovah/LinkAce/discussions"
+  Community = "https://github.com/Kovah/LinkAce/discussions/"
