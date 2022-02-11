@@ -3,7 +3,7 @@ title: Application Backups
 weight: 50
 ---
 
-LinkAce provides an easy way to back up the whole application including the database to any S3-compatible service, including Amazon AWS S3, Minio or Backblase B2. Under the hood LinkAce uses the [**Spatie Backup package**](https://spatie.be/docs/laravel-backup/v6/introduction). Please consult the documentation of the package for advanced configuration.
+LinkAce provides an easy way to back up the whole application including the database to the local filesystem, or any S3-compatible service, including Amazon AWS S3, Minio or Backblase B2. Under the hood LinkAce uses the [**Spatie Backup package**](https://spatie.be/docs/laravel-backup/v6/introduction). Please consult the documentation of the package for advanced configuration.
 
 By default, the backup system will periodically purge old backups. For more details, [read the default configuration](https://spatie.be/docs/laravel-backup/v6/cleaning-up-old-backups/overview#determining-which-backups-should-be-deleted).
 
@@ -19,6 +19,10 @@ AWS_SECRET_ACCESS_KEY=V8pu...
 AWS_DEFAULT_REGION=eu-central-1
 AWS_BUCKET=linkace
 ```
+
+{{< alert type="info" >}}
+If you don't want to use an external service to store your backups, change `BACKUP_DISK=s3` to `BACKUP_DISK=local` in your .env file. Backups will then be stored under `storage/app/LinkAce/`.
+{{</ alert >}}
 
 
 ## Using a third-party S3-compatible service
