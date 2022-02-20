@@ -1,3 +1,5 @@
+import docsSearch from './docs-search';
+
 function registerCollapseToggles () {
   const collapseToggles = document.querySelectorAll('[data-toggle="collapse"]');
 
@@ -12,6 +14,15 @@ function registerCollapseToggles () {
   });
 }
 
+function initiateDocsSearch () {
+  const searchEnabled = document.body.classList.contains('is-docs');
+
+  if (searchEnabled) {
+    docsSearch.start();
+  }
+}
+
 window.addEventListener('DOMContentLoaded', (event) => {
   registerCollapseToggles();
+  initiateDocsSearch();
 });

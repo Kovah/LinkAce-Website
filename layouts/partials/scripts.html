@@ -1,6 +1,7 @@
 {{ $appjs := resources.Get "app.js" | fingerprint }}
 <script src="{{ $appjs.Permalink | relURL }}"></script>
 
+
 <noscript><img src="https://analytics.kovah.de/ingress/e2c6ad69-2a8d-4bd3-96d5-bb7d12adb339/pixel.gif"></noscript>
 <script src="https://analytics.kovah.de/ingress/e2c6ad69-2a8d-4bd3-96d5-bb7d12adb339/script.js"></script>
 

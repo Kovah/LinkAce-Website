@@ -76,3 +76,30 @@ img {
   padding-bottom: 40%;
   overflow: hidden;
 }
+
+.docsearch-results {
+  position: absolute;
+  z-index: $zindex-popover;
+  top: 5px;
+  width: 300px;
+  max-width: 90vw;
+  box-shadow: 0 0.5rem 1rem rgb(23 24 26 / 15%);
+  border-radius: $border-radius;
+  background: #fff;
+}
+
+.docsearch-result {
+  &:not(:first-child) {
+    border-top: 1px solid $list-group-border-color;
+  }
+}
+
+.docsearch-result-link {
+  display: block;
+  width: 100%;
+  padding: map_get($spacers, 2);
+
+  &:hover, &:focus {
+    background: $list-group-action-active-bg;
+  }
+}

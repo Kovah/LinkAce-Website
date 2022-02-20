@@ -1,4 +1,7 @@
 {{ $currentPage := . }}
+
+{{ partial "docs/search" . }}
+
 <div class="docs-sidebar list-group">
 
   <div class="list-group-item" data-link="{{ .RelPermalink }}">
