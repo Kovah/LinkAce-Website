@@ -13,3 +13,16 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   Github = "https://github.com/Kovah/LinkAce/"
   Twitter = "https://twitter.com/linkaceapp"
   Community = "https://github.com/Kovah/LinkAce/discussions/"
+
+# [outputs]
+#   page = ['HTML', 'Algolia']
+
+[outputFormats.Algolia]
+baseName = "algolia"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true
+
+[params.algolia]
+vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+params = ["categories", "tags"]
