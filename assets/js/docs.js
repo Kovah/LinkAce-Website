@@ -7,7 +7,7 @@ const searchClient = algoliasearch('NDCLQHIM62', 'df23e2ffa22a485068544b25dc69d7
 const docsSearch = instantsearch({
   indexName: 'linkace_docs',
   searchClient,
-  searchFunction: function(helper) {
+  searchFunction: function (helper) {
     const searchResults = document.querySelector('#docsearch-results');
     if (helper.state.query === '') {
       searchResults.classList.add('d-none');
@@ -29,8 +29,8 @@ docsSearch.addWidgets([
     showReset: false,
     cssClasses: {
       form: 'my-form',
-      input: 'form-control',
-    },
+      input: 'form-control'
+    }
   }),
 
   hits({
@@ -42,9 +42,11 @@ docsSearch.addWidgets([
     },
     templates: {
       item: hitTemplate,
-      empty: 'No results for <q>{{ query }}</q>',
+      empty: 'No results for <strong>{{ query }}</strong>'
     }
   })
 ]);
 
-export default docsSearch;
+window.addEventListener('DOMContentLoaded', (event) => {
+  docsSearch.start();
+});

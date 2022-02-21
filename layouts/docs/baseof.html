@@ -26,5 +26,8 @@
 {{ partial "footer.html" . }}
 {{ partial "scripts.html" . }}
 
+{{ $docsjs := resources.Get "docs.js" | fingerprint }}
+<script src="{{ $docsjs.Permalink | relURL }}"></script>
+
 </body>
 </html>

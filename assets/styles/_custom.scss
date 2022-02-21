@@ -83,7 +83,8 @@ img {
   top: 5px;
   width: 300px;
   max-width: 90vw;
-  box-shadow: 0 0.5rem 1rem rgb(23 24 26 / 15%);
+  box-shadow: $dropdown-box-shadow;
+  border: 1px solid $dropdown-border-color;
   border-radius: $border-radius;
   background: #fff;
 }
@@ -97,7 +98,7 @@ img {
 .docsearch-result-link {
   display: block;
   width: 100%;
-  padding: map_get($spacers, 2);
+  padding: map_get($spacers, 2) map_get($spacers, 3);
 
   &:hover, &:focus {
     background: $list-group-action-active-bg;
