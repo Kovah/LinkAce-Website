@@ -27,6 +27,6 @@
     "algoliasearch": "^4.12.1",
     "bootstrap": "^4.6.1",
     "instantsearch.js": "^4.38.1",
-    "prismjs": "^1.25.0"
+    "prismjs": "^1.27.0"
   }
 }
