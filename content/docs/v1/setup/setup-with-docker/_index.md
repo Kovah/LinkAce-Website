@@ -1,5 +1,6 @@
 ---
 title: Setup with Docker
+description: "There are two different ways to install LinkAce with Docker: one container that contains both the application and a web server, and LinkAce as a stand-alone container with a separate web server."
 weight: 10
 aliases:
 - setup
@@ -9,10 +10,10 @@ Working with Docker is pretty straight forward, but you should be familiar with 
 
 There are two different ways to install LinkAce with Docker:
 
-* one container that contains both the application and nginx (simple)
-* different containers for the application and nginx (advanced)
+* one container that contains both the application and a web server (tagged as `linkace/linkace:simple`)
+* LinkAce as a stand-alone container with a separate web server (tagged as `linkace/linkace:latest`)
 
-If you are unsure about which one to use, pick the simple setup. 
+If you are unsure about which one to use, please pick the simple setup. 
 
 {{< alert type="info" >}}
 All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkace/linkace).
@@ -34,7 +35,7 @@ In this version, there is only one Docker container needed and one optional for 
 
 ## Setup with Docker: Advanced
 
-The advanced setup is not that different from the simple setup, but may not be suitable for certain environments. Specifically, it uses different containers for the application running with PHP, and the web server. The docker-compose file also includes configuration for Redis, which increases performance.
+The advanced setup is not that different from the simple setup, but may not be suitable for certain environments. Specifically, it uses different containers for the application and the web server. The docker-compose file also includes configuration for Redis, which increases performance.
 
 👉  [**Continue with the advanced Setup**]({{< relref path="docs/v1/setup/setup-with-docker/advanced.md" >}})
 

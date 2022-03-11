@@ -1,13 +1,10 @@
 {{ define "main" }}
-<h2 class="mb-3 font-weight-bold">{{ .Title }}</h2>
+<h1 class="mb-5 font-weight-bold">{{ .Title }}</h1>
 
 {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
-<div class="mb-3">
-  <button class="btn btn-light btn-sm" type="button" data-toggle="collapse" data-target="#main-toc"
-      aria-expanded="false" aria-controls="main-toc">
-    Table of Contents
-  </button>
-  <div class="collapse small mt-3" id="main-toc">
+<div class="mb-5 d-lg-none">
+  <h2 class="h5">Table of Contents</h2>
+  <div class="small mt-3">
     {{ .TableOfContents }}
   </div>
 </div>

@@ -4,14 +4,14 @@ title: Setup with Docker (Advanced)
 
 The advanced setup is not that different from the simple setup, but may not be suitable for certain environments. Specifically, it uses different containers for the application running with PHP, and the web server. The docker-compose file also includes configuration for Redis, which increases performance.
 
-Docker images used in this setup are named `linkace/linkace:latest` or `linkace/linkace:0.0.42`.
+Docker images used in this setup are named `linkace/linkace:latest` or `linkace/linkace:1.5.2`.
 
 This setup is recommended when having full access to Docker, e.g. on a VPS or root server.
 
 
 ## Base Requirements
 
-* Shell access to your server.
+* Full access to the command line.
 * Docker version 19 or greater.
 * docker-compose is recommended for the setup, must support compose version 3.
 * Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` may cause issues with different Unicode characters.

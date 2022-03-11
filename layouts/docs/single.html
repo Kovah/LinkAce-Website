@@ -1,20 +1,17 @@
 {{ define "main" }}
-<div class="d-flex align-items-center mb-3">
-  <h2 class="font-weight-bold mb-0 mr-1">
+<div class="d-flex align-items-center mb-5">
+  <h1 class="font-weight-bold mb-0 mr-1">
     {{ .Title }}
-  </h2>
+  </h1>
   {{ if isset .Params "since" }}
   <span class="ml-auto badge badge-info">Since {{ .Params.since }}</span>
   {{ end }}
 </div>
 
 {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
-<div class="mb-4">
-  <button class="btn btn-outline-primary btn-sm" type="button" data-toggle="collapse" data-target="#main-toc"
-      aria-expanded="false" aria-controls="main-toc">
-    {{ partial "icons/toc.html" }} <span class="ml-2">Table of Contents</span>
-  </button>
-  <div class="collapse small mt-3" id="main-toc">
+<div class="mb-5 d-lg-none">
+  <h2 class="h5">Table of Contents</h2>
+  <div class="small mt-3">
     {{ .TableOfContents }}
   </div>
 </div>

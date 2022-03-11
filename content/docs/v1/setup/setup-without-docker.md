@@ -5,10 +5,10 @@ weight: 20
 
 The application was developed with being used with Docker in mind. All following steps will try to work around this but cannot be guaranteed to work in every environment. Please remember that you need shell access to work with LinkAce.
 
-### Requirements
+## Requirements
 
-* A Linux-based server with command line access
-* **PHP 7.3, 7.4 or 8.0**, with the following extensions
+* A Linux-based server with full command line access
+* **PHP 7.4, 8.0 or 8.1**, with the following extensions
     * BCMath
     * Ctype
     * Fileinfo
@@ -26,6 +26,9 @@ The application was developed with being used with Docker in mind. All following
 * Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` may cause issues with different Unicode characters.
 
 Older PHP versions will **not** be supported in any way. Please do yourself a favor and do not expose yourself, or your users to any risks by using an outdated PHP version.
+
+
+## Installation Process
 
 ### 1. Get the .zip file
 

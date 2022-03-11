@@ -2,7 +2,17 @@
 title: LinkAce Changelog
 ---
 
-### 1.9.1
+## 1.9.2
+
+_Released at 2022-03-11_
+
+- Corrected the documentation for local backups: `BACKUP_DISK` must be set to `local_backups` instead of `local`. ({{<issuelink 381>}})
+- Added backup-temp directory to the storage to prevent possible permission issues inside Docker. ({{<issuelink 412>}})
+- LinkAce now supports PHP 8.1 and the Docker images are using PHP 8.1 and Node 16.
+- Dependencies were updated to mitigate security vulnerabilities.
+
+
+## 1.9.1
 
 _Released at 2022-01-20_
 
@@ -10,7 +20,7 @@ _Released at 2022-01-20_
 - New tags and lists can be added inside the bookmarklet again. ({{<issuelink 356>}})
 
 
-### 1.9.0
+## 1.9.0
 
 _Released at 2022-01-14_
 
@@ -22,14 +32,14 @@ _Released at 2022-01-14_
 - Dependencies were updated.
 
 
-### 1.8.1
+## 1.8.1
 
 _Released at 2022-01-08_
 
 - Contains a fix for properly handling link deletion. ({{<issuelink 346>}})
 
 
-### 1.8.0
+## 1.8.0
 
 _Released at 2022-01-06_
 
@@ -43,7 +53,7 @@ _Released at 2022-01-06_
 - Dependencies were updated.
 
 
-### 1.7.0
+## 1.7.0
 
 _Released at 2021-10-06_
 
@@ -56,7 +66,7 @@ _Released at 2021-10-06_
 - Dependencies were updated.
 
 
-### 1.6.4
+## 1.6.4
 
 _Released at 2021-08-08_
 
@@ -66,7 +76,7 @@ _Released at 2021-08-08_
 - Translations and dependencies were updated.
 
 
-### 1.6.3
+## 1.6.3
 
 _Released at 2021-06-06_
 
@@ -75,7 +85,7 @@ _Released at 2021-06-06_
 - Dependencies were updated.
 
 
-### 1.6.2
+## 1.6.2
 
 _Released at 2021-05-10_
 
@@ -84,7 +94,7 @@ _Released at 2021-05-10_
 - Large internal code cleanup and optimization.
 
 
-### 1.6.1
+## 1.6.1
 
 _Released at 2021-04-19_
 
@@ -95,7 +105,7 @@ _Released at 2021-04-19_
 - Minor optimizations for internal SVG usage.
 
 
-### 1.6.0
+## 1.6.0
 
 _Released at 2021-04-18_
 
@@ -106,7 +116,7 @@ _Released at 2021-04-18_
 - Dependencies were updated.
 
 
-### 1.5.0
+## 1.5.0
 
 _Released at 2021-04-09_
 
@@ -118,7 +128,7 @@ _Released at 2021-04-09_
 - Dependencies were updated.
 
 
-### 1.4.1
+## 1.4.1
 
 _Released at 2021-03-27_
 
@@ -126,7 +136,7 @@ _Released at 2021-03-27_
 - Corrects usage of the application backups package. ({{<issuelink 251>}})
 
 
-### 1.4.0
+## 1.4.0
 
 _Released at 2021-03-25_
 
@@ -140,7 +150,7 @@ _Released at 2021-03-25_
 - Dependencies were updated.
 
 
-### 1.3.1
+## 1.3.1
 
 _Released at 2021-03-07_
 
@@ -149,7 +159,7 @@ _Released at 2021-03-07_
 - HTML meta is now provided by the [kovah/laravel-html-meta](https://github.com/Kovah/laravel-html-meta) package to fix issues with encoding. ({{<issuelink 238>}})
 
 
-### 1.3.0
+## 1.3.0
 
 _Released at 2021-03-06_
 
@@ -163,7 +173,7 @@ _Released at 2021-03-06_
 - Dependencies were updated.
 
 
-### 1.2.2
+## 1.2.2
 
 _Released at 2021-02-07_
 
@@ -172,7 +182,7 @@ _Released at 2021-02-07_
 - Dependencies were updated.
 
 
-### 1.2.1
+## 1.2.1
 
 _Released at 2021-02-04_
 
@@ -181,7 +191,7 @@ _Released at 2021-02-04_
 - Dependencies were updated to fix some security vulnerabilities.
 
 
-### 1.2.0
+## 1.2.0
 
 _Released at 2021-01-20_
 
@@ -194,7 +204,7 @@ _Released at 2021-01-20_
 - Dependencies were updated to fix some security vulnerabilities.
 
 
-### 1.1.0
+## 1.1.0
 
 _Released at 2021-01-11_
 
@@ -205,7 +215,7 @@ _Released at 2021-01-11_
 - Updates for all dependencies.
 
 
-### 1.0.1
+## 1.0.1
 
 _Released at 2020-12-21_
 
@@ -218,7 +228,7 @@ _Released at 2020-12-21_
 - The URL is correctly validated for tag suggestions loading.
  
  
-### 1.0.0
+## 1.0.0
 
 _Released at 2020-12-16_
 

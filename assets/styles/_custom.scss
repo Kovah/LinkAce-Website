@@ -77,6 +77,17 @@ img {
   overflow: hidden;
 }
 
+.docs-container {
+  max-width: 1800px;
+}
+
+.is-docs {
+
+  #TableOfContents ul {
+    padding-left: map-get($spacers, 4);
+  }
+}
+
 .docsearch-results {
   position: absolute;
   z-index: $zindex-popover;

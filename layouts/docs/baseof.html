@@ -10,16 +10,19 @@
 
 {{ partial "navbar.html" . }}
 
-<div class="container">
+<div class="container-fluid docs-container">
   <div class="d-flex flex-wrap row pt-5 pt-lg-6">
-    <aside class="order-1 order-md-0 col-12 col-md-4">
+    <aside class="order-1 order-md-0 col-12 col-md-4 col-lg-3">
       {{ partial "docs/sidebar" . }}
     </aside>
-    <main class="order-0 order-md-1 col-12 col-md-8 mb-6 mb-md-0">
+    <main class="order-0 order-md-1 col-12 col-md-8 col-lg-6 mb-6 mb-md-0">
       <section class="content-wrapper">
         {{ block "main" . }}{{ end }}
       </section>
     </main>
+    <aside class="d-none d-lg-block order-2 col-3">
+      {{ partial "docs/toc" . }}
+    </aside>
   </div>
 </div>
 

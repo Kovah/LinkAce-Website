@@ -11,15 +11,15 @@ The link overview lists all available links together with some meta information 
 
 Links can be displayed in two different formats, which can be changed in the [user settings]({{< relref path="docs/v1/configuration/user-settings.md" >}}).
 
-#### Display links as rows with many details
+### Display links as rows with many details
 
 {{< image type="screen" img="link_index_rows.png" alt="Preview of the Link overview: rows with many details" >}}
 
-#### Display links as rows with fewer details
+### Display links as rows with fewer details
 
 {{< image type="screen" img="link_index_rows_small.png" alt="Preview of the Link overview: rows with less details" >}}
 
-#### Display links as cards
+### Display links as cards
 
 {{< image type="screen" img="link_index_cards.png" alt="Preview of the Link overview: cards" >}}
 

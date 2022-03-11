@@ -1,0 +1,10 @@
+{{ $currentPage := . }}
+
+{{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
+<div id="docs-toc">
+  <h2 class="h5">Table of Contents</h2>
+  <div >
+    {{ .TableOfContents }}
+  </div>
+</div>
+{{ end }}

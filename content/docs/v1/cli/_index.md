@@ -1,7 +1,25 @@
 ---
 title: CLI Commands for LinkAce
+description: LinkAce provides a set of command line tools for maintenance tasks.
 type: docs
 ---
+
+## Register a user
+
+This is helpful if you are not able to run the built-in setup LinkAce provides. At least one admin user must be created. The command will guide you through the process and ask for a username, an email and a password.
+
+**Run via Docker**
+```
+docker exec -it linkace_app_1 php artisan registeruser
+```
+
+**Run without Docker**
+```
+php artisan registeruser
+```
+
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+
 
 ## Reset a user password
 
