@@ -1,5 +1,6 @@
 ---
 title: LinkAce Documentation
+hide_toc: true
 ---
 
 #### General

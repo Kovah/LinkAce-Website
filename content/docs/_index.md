@@ -1,11 +1,12 @@
 ---
 title: LinkAce Documentation
+hide_toc: true
 outputs:
 - html
 - algolia 
 cascade:
   outputs:
-    - HTML
+    - html
     - algolia
 ---
 
