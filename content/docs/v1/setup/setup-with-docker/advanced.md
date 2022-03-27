@@ -29,6 +29,7 @@ Copy the following files [from the repository](https://github.com/Kovah/LinkAce)
 
 * `docker-compose.production.yml`
 * `.env.docker.production`
+* `nginx.conf`
 
 ### 2. Modify the files
 
@@ -43,6 +44,15 @@ By default, you have to change the following variables before starting the setup
 * CACHE_DRIVER - Change the setting from `file` to `redis`
 
 If you are unsure if the `.env` file is writable inside Docker, please make it writable for anybody (`-rw-rw-rw- or 666`). You can switch back to make it read only after the setup.
+
+Your directory should look like this now:
+
+```
+/my-user-directory/linkace
+├╴ .env
+├╴ docker-compose.yml
+└╴ nginx.conf
+```
 
 ### 3. Start the application
 
