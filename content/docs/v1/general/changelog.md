@@ -2,6 +2,20 @@
 title: LinkAce Changelog
 ---
 
+## 1.10.0
+
+_Released at 2022-04-04_
+
+- LinkAce is way less dependent on the .env file. It is still needed, but it was reduced to the bare minimum. However, existing LinkAce installations do not have to change anything. ({{<issuelink 398>}})
+- There are now dedicated packages for Docker setups that contain all needed files. ({{<issuelink 426>}})
+- Added a new display option for links: cards with many details. ({{<issuelink 305>}})
+- The "list with many details" display option was extended to also display the link description. ({{<issuelink 352>}})
+- When ordering/sorting links, lists or tags, the order is now saved through the session. ({{<issuelink 349>}})
+- Services used in the Docker setups were updated to the latest versions.
+- Translations were updated.
+- Dependencies were updated.
+
+
 ## 1.9.2
 
 _Released at 2022-03-11_
