@@ -40,6 +40,14 @@ By default, you only have change two variables set in this file before starting 
 
 If you are unsure if the `.env` file is writable inside Docker, please make it writable for anybody (`-rw-rw-rw- or 666`). You can switch back to make it read only after the setup.
 
+Your directory should look like this now:
+
+```
+/my-user-directory/linkace
+├╴ .env
+├╴ docker-compose.yml
+```
+
 ### 3. Start the application
 
 After you completed the above steps, run the following command to start up the container setup:
