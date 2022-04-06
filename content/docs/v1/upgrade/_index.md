@@ -56,6 +56,11 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 ## Version-specific upgrades
 
+### to version 1.10.0
+
+There should be no reason to change something specific when upgrading to version 1.10.  
+However, if you upgraded LinkAce and the setup starts, stop immediately and report this in the [discussion forum](https://github.com/Kovah/LinkAce/discussions)!
+
 ### to version 1.6.0
 
 - The command for cleaning link histories changed from `link:cleanup-histories` to `links:cleanup-histories`.
