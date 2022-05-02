@@ -2,6 +2,16 @@
 title: LinkAce Changelog
 ---
 
+## 1.10.1
+
+_Released at 2022-05-02_
+
+- Alex Tu fixed an issue with the input styling in dark mode ({{<issuelink 448>}})
+- Minor design changes and small fixes
+- Added translation for Norwegian
+- Updated dependencies
+
+
 ## 1.10.0
 
 _Released at 2022-04-04_
