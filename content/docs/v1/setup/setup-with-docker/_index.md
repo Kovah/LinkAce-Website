@@ -42,4 +42,16 @@ The advanced setup is not that different from the simple setup, but may not be s
 
 ---
 
+
+## Advanced Configuration
+
 The [advanced Docker configuration]({{< relref path="docs/v1/setup/setup-with-docker/advanced-configuration.md" >}}) page provides some guides for specific use cases for Docker.
+
+- Running Linkace behind a proxy / load balancer
+- Using Docker environment variables instead of the .env file
+- Enable HTTPS for LinkAce without a proxy / load balancer
+
+
+## Compatibility with other Tools
+
+- **Watchtower**: Several users reported broken LinkAce installations after Watchtower ran updates. Please exclude LinkAce from Watchtower and only update manually to properly run all update steps.
