@@ -25,11 +25,11 @@ If you are using an ARM v7 operating system, please make sure that you have the 
 
 ### 1. Copy all needed files
 
-Download the Docker setup package from the LinkAce repository: [**linkace-docker-advanced.zip**](https://github.com/Kovah/LinkAce/releases/latest)
+Download the Docker setup package from the LinkAce repository and unpack it: [**linkace-docker-advanced.zip**](https://github.com/Kovah/LinkAce/releases/latest)
 
 ### 2. Edit the base configuration
 
-By default, you have to change the following variables before starting the setup:
+You have to change the following settings in the .env file before starting the setup:
 
 * DB_PASSWORD - Please set a secure password here
 * REDIS_PASSWORD - Please set a secure password here

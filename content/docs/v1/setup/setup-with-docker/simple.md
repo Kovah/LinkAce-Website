@@ -27,7 +27,7 @@ Download the Docker setup package from the LinkAce repository: [**linkace-docker
 
 ### 2. Edit the base configuration
 
-By default, you only have change two variables set in this file before starting the setup:
+You have to change the following settings in the .env file before starting the setup:
 
 * DB_PASSWORD - Please set a secure password here
 * REDIS_PASSWORD - Please set a secure password here
