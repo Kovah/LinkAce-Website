@@ -10,8 +10,16 @@ By default, the backup system will periodically purge old backups. For more deta
 
 ## Configure the backups
 
-To back up LinkAce to S3, change `BACKUP_ENABLED=false` to `BACKUP_ENABLED=true` in your `.env` file. You can find other settings directly in your .env file.
-Also, define the key ID, the access key, the region and your bucket name here if you want to use AWS S3 for backups.
+To back up LinkAce to S3, add the following settings to your .env file:
+
+| .env setting | Possible values | Default value | Description |
+|:--|:--|:--|:--|
+| `BACKUP_ENABLED` | `true`, `false` | `false` | Set to true to enable the application backups |
+| `BACKUP_DISK` | `local_backups`, `s3` | `s3` | The storage for backups: `local_backups` saves the files to `/storage/app/backups`, `s3` saves to your configured S3 storage |
+| `BACKUP_NOTIFICATION_EMAIL` | any email address | `your@email.com` | Set a valid email address to receive notification about backups. |
+| `BACKUP_MAX_SIZE` | any number | `512` | The maximum size of all backups in MB. Once reached the oldest backups will be deleted. |
+
+if you want to use AWS S3 for backups, define the key ID, the access key, the region and your bucket name here. any S3
 
 ```
 AWS_ACCESS_KEY_ID=ZG25U...
@@ -20,12 +28,7 @@ AWS_DEFAULT_REGION=eu-central-1
 AWS_BUCKET=linkace
 ```
 
-{{< alert type="info" >}}
-If you don't want to use an external service to store your backups, change `BACKUP_DISK=s3` to `BACKUP_DISK=local` in your .env file. Backups will then be stored under `storage/app/LinkAce/`.
-{{</ alert >}}
-
-
-## Using a third-party S3-compatible service
+### Using a third-party S3-compatible service
 
 Instead of Amazon AWS S3, you can use any S3-compatible service. To connect to the service instead of AWS, you have to set the correct endpoint in your `.env` file. Near your other AWS_ settings, add the following line and replace the URL with your own service URL:
 
