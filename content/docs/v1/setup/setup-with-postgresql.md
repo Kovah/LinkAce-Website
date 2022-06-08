@@ -16,7 +16,8 @@ Stop the Docker container now.
 docker-compose stop
 ```
 
-Replace `DB_CONNECTION=mysql` with `DB_CONNECTION=pgsql` and set the correct port of the database in `DB_PORT=5432`  in your `.env` file.
+Replace `DB_CONNECTION=mysql` with `DB_CONNECTION=pgsql` and set the correct port of the database in `DB_PORT=5432`  in your `.env` file.  
+Additionally, add `SETUP_COMPLETED=true` to the .env file as LinkAce does not support Postgres in the built-in setup yet.  
 After that run the following command to prepare the database:
 
 ```

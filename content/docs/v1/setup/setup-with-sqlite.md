@@ -29,7 +29,8 @@ volumes:
   - ./database.sqlite:/app/database/database.sqlite
 ```
 
-Replace `DB_DATABASE=linkace` with `DB_DATABASE=/app/database/database.sqlite` in your `.env` file and replace `DB_CONNECTION=mysql` with `DB_CONNECTION=sqlite`.
+Replace `DB_DATABASE=linkace` with `DB_DATABASE=/app/database/database.sqlite` in your `.env` file and replace `DB_CONNECTION=mysql` with `DB_CONNECTION=sqlite`.  
+Additionally, add `SETUP_COMPLETED=true` to the .env file as LinkAce does not support Postgres in the built-in setup yet.  
 After that run the following command to prepare start the application:
 
 ```
