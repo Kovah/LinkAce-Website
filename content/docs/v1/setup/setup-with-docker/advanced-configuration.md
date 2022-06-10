@@ -46,40 +46,49 @@ The docker-compose file should look similar to this after completing all steps:
 ```yml
 version: "3"
 services:
-  # --- MariaDB
-  db:
-    image: mariadb:10.5
-    restart: unless-stopped
-    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
-    environment:
-      - MYSQL_ROOT_PASSWORD=dbpassword
-      - MYSQL_USER=dbuser
-      - MYSQL_PASSWORD=dbpassword
-      - MYSQL_DATABASE=linkacedb
-    volumes:
-      - db:/bitnami
-  # --- LinkAce Image with PHP 7.4 and nginx
-  app:
-    image: linkace/linkace:php-nginx
-    restart: unless-stopped
-    depends_on:
-      - db
-    ports:
-      - "0.0.0.0:80:8080"
-    environment:
-      - APP_KEY=base64:jpzRiL9ceL5...
-      - SETUP_COMPLETED=true
-      - DB_HOST=db
-      - DB_DATABASE=linkacedb
-      - DB_USERNAME=dbuser
-      - DB_PASSWORD=dbpassword
-    volumes:
-      - ./nginx-simple.conf:/opt/docker/etc/nginx/conf.d/linkace.conf:ro
+
+   # --- MariaDB
+   db:
+      image: mariadb:10.7
+      restart: unless-stopped
+      command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
+      environment:
+         - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+         - MYSQL_USER=${DB_USERNAME}
+         - MYSQL_PASSWORD=${DB_PASSWORD}
+         - MYSQL_DATABASE=${DB_DATABASE}
+      volumes:
+         - db:/var/lib/mysql
+
+   # --- LinkAce Image with PHP and nginx
+   app:
+      image: linkace/linkace:simple
+      restart: unless-stopped
+      depends_on:
+         - db
+      environment:
+         - APP_KEY=base64:jpzRiL9ceL5...
+         - SETUP_COMPLETED=true
+         - DB_HOST=db
+         - DB_DATABASE=linkacedb
+         - DB_USERNAME=dbuser
+         - DB_PASSWORD=dbpassword
+      ports:
+         - "0.0.0.0:80:80"
+         #- "0.0.0.0:443:443"
+      volumes:
+         - ./.env:/app/.env
+         - linkace_logs:/app/storage/logs
+         # Remove the hash of the following line if you want to use HTTPS for this container
+         #- ./nginx-ssl.conf:/etc/nginx/conf.d/default.conf:ro
+         #- /path/to/your/ssl/certificates:/certs:ro
+         # Remove the hash of the following line if you want to use local backups
+         #- ./backups:/app/storage/app/backups
 
 volumes:
-  linkace_logs:
-  db:
-    driver: local
+   linkace_logs:
+   db:
+      driver: local
 ```
 
 If you already completed the setup and want to migrate to Docker variables from your .env file, you can do so by moving all variables from the .env file into Docker variables and remove the .env file from the `volumes` section of the application container.
