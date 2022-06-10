@@ -38,6 +38,14 @@ AWS_SECRET_ACCESS_KEY=
 AWS_DEFAULT_REGION=us-east-1
 AWS_BUCKET=
 
+# Advanced S3 settings, only use them if you know what you are doing
+AWS_SCHEME=https
+AWS_BUCKET_ENDPOINT=[true/false]
+AWS_PATH_STYLE_ENDPOINT=[true/false]
+AWS_ACCELERATE_ENDPOINT=[true/false]
+AWS_FIPS_ENDPOINT=[true/false]
+AWS_DUAL_STACK_ENDPOINT=[true/false]
+
 
 ## Mail configuration
 MAIL_FROM_ADDRESS=your@email.com

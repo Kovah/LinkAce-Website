@@ -2,6 +2,22 @@
 title: LinkAce Changelog
 ---
 
+## 1.10.2
+
+_Released at 2022-06-10_
+
+Big thanks to [Yasin Baran](https://github.com/brnysn) for his first contribution to LinkAce! 🥳
+
+- Some websites are now properly checked for meta information ({{<issuelink 465>}})
+- Automatic app backups should now run properly without permission changes ({{<issuelink 475>}})
+- Timeouts for saving links to the Wayback Machine are now ignored ({{<issuelink 472>}})
+- Added new configuration options for S3 for third-party services, see [advanced .env settings]({{< relref path="docs/v1/configuration/env-settings.md" >}}) for more details. ({{<issuelink 476>}})
+- LinkAce skips the link check in the import command if email is not configured ({{<issuelink 445>}})
+- Remove the typed characters from tag and list select once item is selected ({{<issuelink 378>}})
+- Some websites are now properly checked for meta information ({{<issuelink 465>}})
+- Updated dependencies
+
+
 ## 1.10.1
 
 _Released at 2022-05-02_
