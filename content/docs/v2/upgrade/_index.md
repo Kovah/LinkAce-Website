@@ -1,7 +1,7 @@
 ---
 title: LinkAce Upgrade guide
 menu:
-  docs_v1:
+  docs_v2:
     weight: 30
 ---
 
@@ -35,7 +35,6 @@ Alternatively, you can run all actions on your own. This might be helpful if you
     ```
     docker exec -it linkace_app_1 php artisan migrate
     docker exec -it linkace_app_1 php artisan cache:clear
-    docker exec -it linkace_app_1 php artisan config:clear
     ```
    You may get a warning about running the migration in production mode. You should confirm the migration by answering with `yes`.
 
@@ -46,14 +45,12 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 1. Get the latest version of LinkAce by downloading the package from the [releases page](https://github.com/Kovah/LinkAce/releases).
    Overwrite all existing files with the new ones. If you want to keep your log files, skip the `storage/logs` folder.
-2. Run the database migrations which are needed after all updates and delete the current cache:
-   ```
-   php artisan migrate
-   php artisan cache:clear
-   php artisan config:clear
-   ```
+4. Run the database migrations which are needed after all updates and delete the current cache:
+    ```
+    php artisan migrate
+    php artisan cache:clear
+    ```
    You may get a warning about running the migration in production mode. You should confirm the migration by answering with `yes`.
-
 Make sure to check the version-specific upgrade guides to make sure you don't miss additional important steps.
 
 
@@ -61,14 +58,6 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 
 ## Version-specific upgrades
-
-### to version 1.10.4
-
-Please take a look at [the new docker-compose files](https://github.com/Kovah/LinkAce/releases/tag/v1.10.4) and check if they match your setup. Update the volume settings to make sure backups are stored outside the container.
-
-- If you have enabled backups before, please add `BACKUP_MAX_SIZE=512` to your `.env` file to make sure no old backups are deleted.
-- If you do not want LinkAce to automatically create backups, please add `BACKUP_ENABLED=false` to your `.env` file.
-
 
 ### to version 1.10.0
 

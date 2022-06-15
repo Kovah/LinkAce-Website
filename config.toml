@@ -7,8 +7,8 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 [params]
   DocsRepo = "https://github.com/Kovah/LinkAce-Website/"
   DemoUrl = "https://demo.linkace.org"
-  WikiDockerSetupUrl = "/docs/v1/setup/setup-with-docker/"
-  WikiServerSetupUrl = "/docs/v1/setup/setup-without-docker/"
+  WikiDockerSetupUrl = "/docs/v2/setup/setup-with-docker/"
+  WikiServerSetupUrl = "/docs/v2/setup/setup-without-docker/"
   DockerHub = "https://hub.docker.com/r/linkace/linkace/"
   Github = "https://github.com/Kovah/LinkAce/"
   Twitter = "https://twitter.com/linkaceapp"

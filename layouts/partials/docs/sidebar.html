@@ -1,76 +1,45 @@
 {{ $currentPage := . }}
+{{ $docsV1 := .Site.GetPage "section" "docs/v1" }}
+{{ $docsV2 := .Site.GetPage "section" "docs/v2" }}
+{{ $version := $docsV2 }}
+{{ if or (.IsDescendant (.Site.GetPage "section" "docs/v1")) (eq . (.Site.GetPage "section" "docs/v1")) }}
+{{ $version = $docsV1 }}
+{{ end }}
 
-{{ partial "docs/search" . }}
+<div class="d-flex w-100 align-items-center mb-4">
+  {{ partial "docs/search" . }}
+  <div class="flex-shrink-0">
+    <a class='d-inline-block ml-3 {{ if eq $currentPage.Params.doc_version "docs_v2" }}font-weight-bold{{ end }}'
+        href='{{ relref . "/docs/v2/_index.md" }}'>v2</a>
+    <a class='d-inline-block ml-2 {{ if eq $currentPage.Params.doc_version "docs_v1" }}font-weight-bold{{ end }}'
+        href='{{ relref . "/docs/v1/_index.md" }}'>v1</a>
+  </div>
+</div>
 
 <div class="docs-sidebar list-group">
 
-  <div class="list-group-item" data-link="{{ .RelPermalink }}">
-    General
-  </div>
-  <div class="list-group-item btn-group-vertical btn-group-sm">
-    <a href='{{ relref . "/docs/v1/general/translations" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/general/translations/" }}font-weight-bold{{ end }}'>Translations</a>
-    <a href='{{ relref . "/docs/v1/general/changelog" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/general/changelog/" }}font-weight-bold{{ end }}'>Changelog</a>
-    <a href='{{ relref . "/docs/v1/general/third-party-tools" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/general/third-party-tools/" }}font-weight-bold{{ end }}'>Third-Party Tools</a>
-  </div>
+  {{ range (index $.Site.Menus $version.Params.doc_version) }}
 
-  <div class="list-group-item">
-    Setup
-  </div>
-  <div class="list-group-item btn-group-vertical btn-group-sm">
-    <a href='{{ relref . "/docs/v1/setup/_index.md" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/setup/" }}font-weight-bold{{ end }}'>LinkAce Setup</a>
-    <a href='{{ relref . "/docs/v1/setup/setup-with-docker" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/setup/setup-with-docker/" }}font-weight-bold{{ end }}'>Setup with Docker</a>
-    <a href='{{ relref . "/docs/v1/setup/setup-with-docker/simple" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/setup/setup-with-docker/simple/" }}font-weight-bold{{ end }}'><span class="text-muted">&boxur;</span> Simple Setup</a>
-    <a href='{{ relref . "/docs/v1/setup/setup-with-docker/advanced" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/setup/setup-with-docker/advanced/" }}font-weight-bold{{ end }}'><span class="text-muted">&boxur;</span> Advanced Setup</a>
-    <a href='{{ relref . "/docs/v1/setup/setup-with-docker/advanced-configuration" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/setup/setup-with-docker/advanced-configuration/" }}font-weight-bold{{ end }}'><span class="text-muted">&boxur;</span> Advanced Configuration</a>
-    <a href='{{ relref . "/docs/v1/setup/setup-without-docker" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/setup/setup-without-docker/" }}font-weight-bold{{ end }}'>Setup without Docker</a>
-    <a href='{{ relref . "/docs/v1/setup/setup-with-postgresql" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/setup/setup-with-postgresql/" }}font-weight-bold{{ end }}'>Setup with PostgreSQL</a>
-    <a href='{{ relref . "/docs/v1/setup/setup-with-sqlite" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/setup/setup-with-sqlite/" }}font-weight-bold{{ end }}'>Setup with SQLite</a>
-    <a href='{{ relref . "/docs/v1/setup/post-setup" }}' class='btn btn-link text-left {{ if eq .RelPermalink "/docs/v1/setup/post-setup/" }}font-weight-bold{{ end }}'>Post Setup Steps</a>
-  </div>
+    <div class="list-group-item">
+      {{ .Title }}
+    </div>
+    <div class="list-group-item btn-group-vertical btn-group-sm">
+      {{ with .Page }}
+        {{ range .Pages }}
+          <a href="{{ .Permalink }}" class='btn btn-link text-left {{ if eq .Permalink $currentPage.Permalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
 
-  <div class="list-group-item">
-    Upgrade
-  </div>
-  <div class="list-group-item btn-group-vertical btn-group-sm">
-    {{ with .Site.GetPage "section" "docs/v1/upgrade" -}}
-    <a href="{{ .RelPermalink }}" class='btn btn-link text-left {{ if eq $currentPage.RelPermalink .RelPermalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
-    {{- end }}
-  </div>
+          {{ range .Pages }}
+            <a href="{{ .Permalink }}" class='btn btn-link text-left'><span class="text-muted">&boxur;</span> {{ .Title }}</a>
+          {{ end }}
 
-  <div class="list-group-item">
-    LinkAce
-  </div>
-  <div class="list-group-item btn-group-vertical btn-group-sm">
-    {{ with .Site.GetPage "section" "docs/v1/application" -}}
-    {{- range .Pages -}}
-    <a href="{{ .RelPermalink }}" class='btn btn-link text-left {{ if eq $currentPage.RelPermalink .RelPermalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
-    {{- end -}}
-    {{- end }}
-  </div>
+        {{ else }}
+          <a href="{{ .Permalink }}" class='btn btn-link text-left {{ if eq .Permalink $currentPage.Permalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
+        {{ end }}
 
-  <div class="list-group-item">
-    Configuration
-  </div>
-  <div class="list-group-item btn-group-vertical btn-group-sm">
-    {{ with .Site.GetPage "section" "docs/v1/configuration" -}}
-    {{- range .Pages -}}
-    <a href="{{ .RelPermalink }}" class='btn btn-link text-left {{ if eq $currentPage.RelPermalink .RelPermalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
-    {{- end -}}
-    {{- end }}
-  </div>
+      {{ end }}
+    </div>
 
-  <div class="list-group-item">
-    API & Command Line
-  </div>
-  <div class="list-group-item btn-group-vertical btn-group-sm">
-    <a href="https://api-docs.linkace.org/" class="btn btn-link text-left">LinkAce API</a>
-    {{ with .Site.GetPage "section" "docs/v1/cli" -}}
-    <a href="{{ .RelPermalink }}" class='btn btn-link text-left {{ if eq $currentPage.RelPermalink .RelPermalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
-    {{- range .Pages -}}
-    <a href="{{ .RelPermalink }}" class='btn btn-link text-left {{ if eq $currentPage.RelPermalink .RelPermalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
-    {{- end -}}
-    {{- end }}
-  </div>
+  {{ end }}
 
 </div>
 

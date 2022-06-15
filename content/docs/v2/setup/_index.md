@@ -1,7 +1,7 @@
 ---
 title: LinkAce Setup
 menu:
-  docs_v1:
+  docs_v2:
     weight: 20
 ---
 

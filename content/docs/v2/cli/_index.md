@@ -2,26 +2,9 @@
 title: CLI Commands for LinkAce
 description: LinkAce provides a set of command line tools for maintenance tasks.
 menu:
-  docs_v1:
+  docs_v2:
     weight: 60
 ---
-
-## Complete the setup
-
-While running the setup in the web interface, the setup is completed properly. When installing LinkAce with PostgreSQL or SQLite, you have to use this command to complete the setup after running the `php artisan migrate` command.
-
-**Run via Docker**
-```
-docker-compose exec app php artisan setup:complete
-```
-
-**Run without Docker**
-```
-php artisan setup:complete
-```
-
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
-
 
 ## Register a user
 
@@ -29,7 +12,7 @@ This is helpful if you are not able to run the built-in setup LinkAce provides. 
 
 **Run via Docker**
 ```
-docker-compose exec app php artisan registeruser
+docker exec -it linkace_app_1 php artisan registeruser
 ```
 
 **Run without Docker**
@@ -37,7 +20,7 @@ docker-compose exec app php artisan registeruser
 php artisan registeruser
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
 
 
 ## Reset a user password
@@ -50,7 +33,7 @@ To work around this issue, you can use the CLI command to reset your password.
 
 **Run via Docker**
 ```
-docker-compose exec app php artisan reset-password
+docker exec -it linkace_app_1 php artisan reset-password
 ```
 
 **Run without Docker**
@@ -58,7 +41,7 @@ docker-compose exec app php artisan reset-password
 php artisan reset-password
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
 
 
 ## Update the thumbnails for all links
@@ -69,7 +52,7 @@ This command updates the thumbnail for all links with the status "ok". This can 
 
 **Run via Docker**
 ```
-docker-compose exec app php artisan links:update-thumbnails
+docker exec -it linkace_app_1 php artisan links:update-thumbnails
 ```
 
 **Run without Docker**
@@ -77,7 +60,7 @@ docker-compose exec app php artisan links:update-thumbnails
 php artisan links:update-thumbnails
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
 
 
 ## Cleanup history entries for Links
@@ -94,7 +77,7 @@ If a field is provided, only history entries of that field are deleted. Possible
 
 **Run via Docker**
 ```
-docker-compose exec app php artisan links:cleanup-histories [field]
+docker exec -it linkace_app_1 php artisan links:cleanup-histories [field]
 ```
 
 **Run without Docker**
@@ -102,7 +85,7 @@ docker-compose exec app php artisan links:cleanup-histories [field]
 php artisan links:cleanup-histories [field]
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
 
 
 ## Import Links from a HTML bookmarks file
@@ -115,7 +98,7 @@ Possible Options:
 
 **Run via Docker**
 ```
-docker-compose exec app php artisan links:import [file name]
+docker exec -it linkace_app_1 php artisan links:import [file name]
 ```
 
 **Run without Docker**
@@ -123,7 +106,7 @@ docker-compose exec app php artisan links:import [file name]
 php artisan links:import [file name]
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
 
 
 ## View 2FA Recovery Codes
@@ -132,7 +115,7 @@ This command allows you to view the 2FA recovery codes for any user and can be u
 
 **Run via Docker**
 ```
-docker-compose exec app php artisan 2fa:view-recovery-codes
+docker exec -it linkace_app_1 php artisan 2fa:view-recovery-codes
 ```
 
 **Run without Docker**
@@ -140,23 +123,4 @@ docker-compose exec app php artisan 2fa:view-recovery-codes
 php artisan 2fa:view-recovery-codes
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
-
-
-## List all registered users
-
-{{< since version="1.10.4">}}
-
-This command allows you to see which users are currently registered.
-
-**Run via Docker**
-```
-docker-compose exec app php artisan users:list
-```
-
-**Run without Docker**
-```
-php artisan users:list
-```
-
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.

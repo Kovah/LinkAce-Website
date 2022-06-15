@@ -1,10 +1,10 @@
 ---
 title: LinkAce Documentation
 hide_toc: true
-doc_version: docs_v1
+doc_version: docs_v2
+hide_toc: true
 cascade:
-  doc_version: docs_v1
-  deprecated: true
+    doc_version: docs_v2
 ---
 
 #### General

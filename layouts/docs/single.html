@@ -8,6 +8,12 @@
   {{ end }}
 </div>
 
+{{ if isset .Params "deprecated" }}
+<div class="alert alert-warning small mb-4">
+  <strong>Warning</strong>: The documentation is deprecated. Please check the latest version.
+</div>
+{{ end }}
+
 {{ if ne .Params.hide_toc true }}
 {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
 <div class="mb-5 d-lg-none">
