@@ -1,12 +1,7 @@
 ---
 title: Configuration of LinkAce
+headless: true
 menu:
   docs_v1:
     weight: 50
 ---
-
-* [Application Backups]({{< relref path="/docs/v1/configuration/application-backups.md" >}})
-* [System Settings]({{< relref path="/docs/v1/configuration/system-settings.md" >}})
-* [User Settings]({{< relref path="/docs/v1/configuration/user-settings.md" >}})
-* [Import]({{< relref path="/docs/v1/configuration/import.md" >}})
-* [Export]({{< relref path="/docs/v1/configuration/export.md" >}})

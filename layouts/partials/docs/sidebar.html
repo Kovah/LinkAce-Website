@@ -8,12 +8,7 @@
 
 <div class="d-flex w-100 align-items-center mb-4">
   {{ partial "docs/search" . }}
-  <div class="flex-shrink-0">
-    <a class='d-inline-block ml-3 {{ if eq $currentPage.Params.doc_version "docs_v2" }}font-weight-bold{{ end }}'
-        href='{{ relref . "/docs/v2/_index.md" }}'>v2</a>
-    <a class='d-inline-block ml-2 {{ if eq $currentPage.Params.doc_version "docs_v1" }}font-weight-bold{{ end }}'
-        href='{{ relref . "/docs/v1/_index.md" }}'>v1</a>
-  </div>
+  {{ partial "docs/version-switch" (dict "docsV1" $docsV1 "docsV2" $docsV2 "version" $version "currentPage" $currentPage "Site" $.Site) }}
 </div>
 
 <div class="docs-sidebar list-group">

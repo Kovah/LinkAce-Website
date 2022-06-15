@@ -1,0 +1,17 @@
+<div class="flex-shrink-0">
+    {{ if eq .version .docsV1 }}
+        {{ with .Site.GetPage (replace .currentPage.File.Path "v1" "v2") }}
+            <a class='d-inline-block ml-3' href='{{ .RelPermalink }}'>v2</a>
+        {{ else }}
+            <a class='d-inline-block ml-3' href='{{ relref .currentPage "/docs/v2/_index.md" }}'>v2</a>
+        {{ end }}
+        <a class='d-inline-block ml-2 font-weight-bold' href='{{ relref .currentPage "/docs/v1/_index.md" }}'>v1</a>
+    {{ else }}
+        <a class='d-inline-block ml-3 font-weight-bold' href='{{ relref .currentPage "/docs/v2/_index.md" }}'>v2</a>
+        {{ with .Site.GetPage (replace .currentPage.File.Path "v2" "v1") }}
+            <a class='d-inline-block ml-2' href='{{ .RelPermalink }}'>v1</a>
+        {{ else }}
+            <a class='d-inline-block ml-2' href='{{ relref .currentPage "/docs/v1/_index.md" }}'>v1</a>
+        {{ end }}
+    {{ end }}
+</div>
