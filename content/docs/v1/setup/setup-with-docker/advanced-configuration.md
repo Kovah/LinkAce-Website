@@ -7,6 +7,7 @@ title: Advanced Docker configuration
 If you are using a proxy / load balancer with HTTPS, please make sure it sends the `X-Forwarded-Proto` and `X-Forwarded-For` headers to LinkAce. Otherwise, LinkAce won't be able to correctly generate URLs.
 
 Nginx configuration example:
+
 ```
 proxy_set_header X-Forwarded-For $remote_addr;
 proxy_set_header X-Forwarded-Proto $scheme; 
@@ -14,19 +15,24 @@ proxy_set_header Host $host;
 ```
 
 Apache configuration example:
+
 ```
 ProxyPreserveHost on
 RequestHeader set X-Forwarded-Port "443"
 RequestHeader set X-Forwarded-Proto "https"
 ```
 
-LinkAce currently does not accept a `$PORT` environment variable to listen on that port for incoming connections.
+LinkAce currently does not accept a `$PORT` environment variable to listen on that port for incoming connections at the moment.
 
 
 ---
 
 
 ## Using Docker environment variables instead of the .env file
+
+{{< alert type="warning" >}}
+This setup method is not fully tested and thus not supported. Use at your own risk.
+{{</ alert >}}
 
 It is possible to set environment variables by using Docker, instead of using a .env file. Variables set in your Docker Compose file override values in the .env file.  
 If you want to use Docker variables, please read the following requirements before starting any setup steps:
@@ -37,61 +43,64 @@ If you want to use Docker variables, please read the following requirements befo
     - `DB_DATABASE=[name of the database]`
     - `DB_USERNAME=[name of the user]`
     - `DB_PASSWORD=[password for the user]`
-3. After starting the Docker containers, run `docker exec linkace_app_1 php artisan key:generate --show` instead of the command shown atop. Add the key that is shown as the output to your Docker variables as `APP_KEY`, like `APP_KEY=base64:y1f1BJ74...`.
-4. Restart the containers with `docker-compose up -d --force-recreate` to load the new Application key.
-5. Open LinkAce in your browser under the domain it is reachable at. You should be redirected to the setup.
-6. Go through the setup. After creating an account in the setup and reaching the completed screen, add `SETUP_COMPLETED=true` as a new Docker variable and restart the containers with the same command as above. You should then be able to access LinkAce through the browser.
+3. Next, an application key needs to be generated. There are two methods:
+    - Start the Docker containers, run `docker exec linkace_app_1 php artisan key:generate --show`. Add the key that is shown as the output to your Docker variables as `APP_KEY`, like `APP_KEY=base64:y1f1BJ74...`.  
+      Now restart the containers with `docker-compose up -d --force-recreate` to load the new application key.
+    - Alternatively, add a random 32 characters long string to the docker-compose file as a Docker variable like `APP_KEY=40iN15LxpoQ8...`
+4. If you would like to use MySQL which ships with the default configuration, start the LinkAce containers and proceed with the setup by opening the corresponding URL in your browser. In this example, it would be http://localhost.  
+   However, if you want to use Postgres or SQLite, follow the Docker setup guides in the Docker setup section.
 
-The docker-compose file should look similar to this after completing all steps:
+The docker-compose file should look _similar_ to this after completing all steps:
+
 ```yml
 version: "3"
 services:
 
-   # --- MariaDB
-   db:
-      image: mariadb:10.7
-      restart: unless-stopped
-      command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
-      environment:
-         - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
-         - MYSQL_USER=${DB_USERNAME}
-         - MYSQL_PASSWORD=${DB_PASSWORD}
-         - MYSQL_DATABASE=${DB_DATABASE}
-      volumes:
-         - db:/var/lib/mysql
+  # --- MariaDB
+  db:
+    image: mariadb:10.7
+    restart: unless-stopped
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
+    environment:
+      - MYSQL_ROOT_PASSWORD=someDbPassword
+      - MYSQL_USER=linkacedb
+      - MYSQL_PASSWORD=dbuser
+      - MYSQL_DATABASE=someDbPassword
+    volumes:
+      - db:/var/lib/mysql
 
-   # --- LinkAce Image with PHP and nginx
-   app:
-      image: linkace/linkace:simple
-      restart: unless-stopped
-      depends_on:
-         - db
-      environment:
-         - APP_KEY=base64:jpzRiL9ceL5...
-         - SETUP_COMPLETED=true
-         - DB_HOST=db
-         - DB_DATABASE=linkacedb
-         - DB_USERNAME=dbuser
-         - DB_PASSWORD=dbpassword
-      ports:
-         - "0.0.0.0:80:80"
-         #- "0.0.0.0:443:443"
-      volumes:
-         - ./.env:/app/.env
-         - linkace_logs:/app/storage/logs
-         # Remove the hash of the following line if you want to use HTTPS for this container
-         #- ./nginx-ssl.conf:/etc/nginx/conf.d/default.conf:ro
-         #- /path/to/your/ssl/certificates:/certs:ro
-         # Remove the hash of the following line if you want to use local backups
-         #- ./backups:/app/storage/app/backups
+  # --- LinkAce Image with PHP and nginx
+  app:
+    image: linkace/linkace:simple
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      - APP_KEY=base64:jpzRiL9ceL5...
+      - DB_HOST=db
+      - DB_DATABASE=linkacedb
+      - DB_USERNAME=dbuser
+      - DB_PASSWORD=someDbPassword
+    ports:
+      - "0.0.0.0:80:80"
+      #- "0.0.0.0:443:443"
+    volumes:
+      - linkace_logs:/app/storage/logs
+      # Remove the hash of the following line if you want to use HTTPS for this container
+      #- ./nginx-ssl.conf:/etc/nginx/conf.d/default.conf:ro
+      #- /path/to/your/ssl/certificates:/certs:ro
+      # Remove the hash of the following line if you want to use local backups
+      #- ./backups:/app/storage/app/backups
 
 volumes:
-   linkace_logs:
-   db:
-      driver: local
+  linkace_logs:
+  db:
+    driver: local
 ```
 
 If you already completed the setup and want to migrate to Docker variables from your .env file, you can do so by moving all variables from the .env file into Docker variables and remove the .env file from the `volumes` section of the application container.
+
+You may add more environment configuration variables, depending on what you want to configure. Please consult the [**.env configuration reference**]({{< relref path="docs/v1/configuration/env-settings.md" >}}) for more details.
 
 
 ---
@@ -117,6 +126,7 @@ Generate SSL certificates for your domain and copy them to a location on your fi
 
 Open your docker-compose file and change the webserver settings.  
 Remove the hash (#) in front of these two configurations:
+
 * `- "0.0.0.0:443:8443"`
 * `- /path/to/your/ssl/certificates:...`
 
