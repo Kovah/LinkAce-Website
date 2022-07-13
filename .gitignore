@@ -4,3 +4,4 @@
 /themes
 /.env
 /mix-manifest.json
+/.hugo_build.lock
