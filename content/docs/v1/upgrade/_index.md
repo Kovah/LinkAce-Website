@@ -42,12 +42,13 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 1. Get the latest version of LinkAce by downloading the package from the [releases page](https://github.com/Kovah/LinkAce/releases).
    Overwrite all existing files with the new ones. If you want to keep your log files, skip the `storage/logs` folder.
-4. Run the database migrations which are needed after all updates and delete the current cache:
-    ```
-    php artisan migrate
-    php artisan cache:clear
-    ```
+2. Run the database migrations which are needed after all updates and delete the current cache:
+   ```
+   php artisan migrate
+   php artisan cache:clear
+   ```
    You may get a warning about running the migration in production mode. You should confirm the migration by answering with `yes`.
+
 Make sure to check the version-specific upgrade guides to make sure you don't miss additional important steps.
 
 
