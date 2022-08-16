@@ -2,6 +2,17 @@
 title: LinkAce Changelog
 ---
 
+## 1.10.3
+
+_Released at 2022-08-16_
+
+Big thanks to [Dzung Do](https://github.com/saosangmo) and [Ahmad Khalili](https://github.com/Ahmad-kh) for their first contribution to LinkAce! 🥳
+
+- Added the Vietnamese translation provided by Dzung Do
+- Typo fix in SearchTrait by Ahmad Khalili
+- Updated dependencies
+- Updates to Readme, contribution and issue templates
+
 ## 1.10.2
 
 _Released at 2022-06-10_
