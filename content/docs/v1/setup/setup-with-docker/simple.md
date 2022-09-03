@@ -23,7 +23,7 @@ If you are using an ARM v7 operating system, please make sure that you have the 
 
 ### 1. Copy the needed files
 
-Download the Docker setup package from the LinkAce repository: [**linkace-docker.zip**](https://github.com/Kovah/LinkAce/releases/latest)
+Download the Docker setup package from the LinkAce repository: [**linkace-docker-simple.zip**](https://github.com/Kovah/LinkAce/releases/latest)
 
 ### 2. Edit the base configuration
 
