@@ -59,9 +59,10 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 ### to version 1.10.4
 
-If you have enabled backups before, please add `BACKUP_MAX_SIZE=512` to your `.env` file to make sure no old backups are deleted.
+Please take a look at [the new docker-compose files](https://github.com/Kovah/LinkAce/releases/tag/v1.10.4) and check if they match your setup. Update the volume settings to make sure backups are stored outside the container.
 
-If you do not want LinkAce to automatically create backups, please add `BACKUP_ENABLED=false` to your `.env` file.
+- If you have enabled backups before, please add `BACKUP_MAX_SIZE=512` to your `.env` file to make sure no old backups are deleted.
+- If you do not want LinkAce to automatically create backups, please add `BACKUP_ENABLED=false` to your `.env` file.
 
 
 ### to version 1.10.0

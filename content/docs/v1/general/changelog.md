@@ -4,7 +4,7 @@ title: LinkAce Changelog
 
 ## 1.10.4
 
-_Released at 2022-09.04_
+_Released at 2022-09-04_
 
 - The docker-compose files for setting up LinkAce with Docker were changed and backups are now **enabled by default**. Please [read the upgrade guide]({{< relref path="docs/v1/upgrade#version-specific-upgrades" >}}).
 - A new command for listing all active users was added: [`users:list`]({{< relref path="docs/v1/upgrade#version-specific-upgrades" >}})
