@@ -26,10 +26,6 @@ Please add the following block to your .env file and change the values according
 | MAIL_PASSWORD | any string | none | SMTP only: the password for connecting to the host |
 | MAIL_ENCRYPTION | `ssl`, `tls`, none | `tls` | SMTP only: the sending encryption |
 
-### Application backups to Amazon AWS
-
-Application backups have a dedicated documentation: [Application backups]({{< relref path="docs/v1/configuration/application-backups.md" >}})
-
 
 ## 2. Setup the cron
 

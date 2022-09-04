@@ -57,6 +57,13 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 ## Version-specific upgrades
 
+### to version 1.10.4
+
+If you have enabled backups before, please add `BACKUP_MAX_SIZE=512` to your `.env` file to make sure no old backups are deleted.
+
+If you do not want LinkAce to automatically create backups, please add `BACKUP_ENABLED=false` to your `.env` file.
+
+
 ### to version 1.10.0
 
 There should be no reason to change something specific when upgrading to version 1.10.  

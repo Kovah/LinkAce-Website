@@ -122,3 +122,22 @@ php artisan 2fa:view-recovery-codes
 ```
 
 If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+
+
+## List all registered users
+
+{{< since version="1.10.4">}}
+
+This command allows you to see which users are currently registered.
+
+**Run via Docker**
+```
+docker exec -it linkace_app_1 php artisan users:list
+```
+
+**Run without Docker**
+```
+php artisan users:list
+```
+
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
