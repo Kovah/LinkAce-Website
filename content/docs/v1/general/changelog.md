@@ -2,6 +2,18 @@
 title: LinkAce Changelog
 ---
 
+## 1.10.5
+
+_Released at 2022-11-17_
+
+Please note that the LinkAce Docker image will be renamed with the release of LinkAce 2! [Read more](https://github.com/Kovah/LinkAce/issues/502)
+
+- Fixed an issue where not only time zone options were available in the user settings. ({{<issuelink 568>}})
+- Adjusted the notices about APP_KEYs in the .env files ({{<issuelink 540>}})
+- Fix issue with all links being public despite setting is set to private ({{<issuelink 504>}})
+- Updated dependencies
+
+
 ## 1.10.4
 
 _Released at 2022-09-04_
