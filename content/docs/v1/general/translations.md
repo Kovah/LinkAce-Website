@@ -16,9 +16,13 @@ Before a new language will be officially added to the application, it needs to b
 
 ## Currently available Languages
 
+* English (US)
+
 * Catalan
 * Chinese (Simplified)
 * French
 * German
 * Hungarian
+* Norwegian
 * Spanish
+* Vietnamese
