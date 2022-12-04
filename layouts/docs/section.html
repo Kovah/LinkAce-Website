@@ -1,6 +1,7 @@
 {{ define "main" }}
 <h1 class="mb-5 font-weight-bold">{{ .Title }}</h1>
 
+{{ if ne .Params.hide_toc true }}
 {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
 <div class="mb-5 d-lg-none">
   <h2 class="h5">Table of Contents</h2>
@@ -8,6 +9,7 @@
     {{ .TableOfContents }}
   </div>
 </div>
+{{ end }}
 {{ end }}
 
 <article class="content">
