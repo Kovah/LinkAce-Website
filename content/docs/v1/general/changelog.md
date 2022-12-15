@@ -2,6 +2,21 @@
 title: LinkAce Changelog
 ---
 
+## 1.11.0
+
+_Released at 2022-12-15_
+
+**Support for PHP 7.4 was dropped. LinkAce only supports PHP 8.0, 8.1 and 8.2.**
+
+- Added the Italian translation provided by Alessandro Del Prete
+- Added the Polish translation provided by Mateusz Hajder and Zimmy
+- QR Codes for 2-Factor-Authentication (2FA) can be scanned when dark mode is activated. ({{<issuelink 501>}})
+- Toggles for active share services are now properly handled. ({{<issuelink 581>}})
+- The "Links are private by default" setting is taken into account when importing bookmarks. ({{<issuelink 577>}})
+- Updated dependencies: Laravel 9, Spatie Backup and many more
+- LinkAce now offers a bug bounty program for critical security vulnerabilities. Details can be found in the [Security Policy](https://github.com/Kovah/LinkAce/security/policy).
+
+
 ## 1.10.5
 
 _Released at 2022-11-17_
