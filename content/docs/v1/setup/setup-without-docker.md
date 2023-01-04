@@ -8,7 +8,7 @@ The application was developed with being used with Docker in mind. All following
 ## Requirements
 
 * A Linux-based server with full command line access
-* **PHP 7.4, 8.0, 8.1, or 8.2**, with the following extensions
+* **PHP 8.0, 8.1, or 8.2**, with the following extensions
     * BCMath
     * Ctype
     * Fileinfo
