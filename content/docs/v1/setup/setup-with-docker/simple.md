@@ -4,7 +4,7 @@ title: Setup with Docker (Simple)
 
 In this version, there is only one Docker container needed and one optional for the database. If you use a managed database outside of Docker, you only have to run one single container. This is useful for environments where access to Docker is limited, e.g. on Heroku or other cloud platforms. However, if you have full access to a VPS or root server, the advanced setup is recommended as it also improves the performance.
 
-Docker images used in this setup are named `linkace/linkace:simple` or `linkace/linkace:1.5.2-simple`.
+Docker images used in this setup are named `linkace/linkace:simple` or `linkace/linkace:v1.5.2-simple`.
 
 
 ## Base Requirements
