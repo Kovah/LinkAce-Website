@@ -4,6 +4,23 @@ description: LinkAce provides a set of command line tools for maintenance tasks.
 type: docs
 ---
 
+## Complete the setup
+
+While running the setup in the web interface, the setup is completed properly. When installing LinkAce with PostgreSQL or SQLite, you have to use this command to complete the setup after running the `php artisan migrate` command.
+
+**Run via Docker**
+```
+docker exec -it linkace_app_1 php artisan setup:complete
+```
+
+**Run without Docker**
+```
+php artisan setup:complete
+```
+
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+
+
 ## Register a user
 
 This is helpful if you are not able to run the built-in setup LinkAce provides. At least one admin user must be created. The command will guide you through the process and ask for a username, an email and a password.

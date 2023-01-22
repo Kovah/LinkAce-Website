@@ -22,10 +22,12 @@ After that run the following command to prepare the database:
 
 ```
 docker-compose up -d
+docker exec -it linkace_app_1 php artisan key:generate
 docker exec -it linkace_app_1 php artisan migrate
+docker exec -it linkace_app_1 php artisan setup:complete
 ```
 
-After that, generate a new admin account by running the following account. You will be asked for a username, email address and a password.
+After that, generate a new admin account by running the following command. You will be asked for a username, email address and a password.
 
 ```
 docker exec -it linkace_app_1 php artisan registeruser
@@ -49,7 +51,9 @@ Replace `DB_CONNECTION=mysql` with `DB_CONNECTION=pgsql` and set the correct por
 After that run the following command to prepare the database:
 
 ```
+php artisan key:generate
 php artisan migrate
+php artisan setup:complete
 ```
 
 After that, generate a new admin account by running the following account. You will be asked for a username, email address and a password.

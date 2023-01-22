@@ -37,6 +37,7 @@ After that run the following command to prepare start the application:
 docker-compose up -d
 docker exec -it linkace_app_1 php artisan key:generate
 docker exec -it linkace_app_1 php artisan migrate
+docker exec -it linkace_app_1 php artisan setup:complete
 ```
 
 After that, generate a new admin account by running the following command. You will be asked for a username, email address and a password.
@@ -44,8 +45,6 @@ After that, generate a new admin account by running the following command. You w
 ```
 docker exec -it linkace_app_1 php artisan registeruser
 ```
-
-Lastly, change `SETUP_COMPLETED=false` to `SETUP_COMPLETED=true` in your `.env` file.
 
 You can now open LinkAce in your browser and should be able to use the application.
 
@@ -69,7 +68,9 @@ Replace `DB_DATABASE=linkace` with `DB_DATABASE=/path-to-linkace/database/databa
 After that run the following command to prepare the database:
 
 ```
+php artisan key:generate
 php artisan migrate
+php artisan setup:complete
 ```
 
 After that, generate a new admin account by running the following command. You will be asked for a username, email address and a password.

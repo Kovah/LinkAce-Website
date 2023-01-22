@@ -2,6 +2,17 @@
 title: LinkAce Changelog
 ---
 
+## 1.11.1
+
+_Released at 2023-01-22_
+
+- The password reset no longer exposes if user accounts exist.
+- Adds a new command to complete the setup if installing with PostgreSQL or SQLite.
+- Add hint about special characters in passwords. ({{<issuelink 596>}})
+- Tags are set to private during the import if the user setting is configured to do so. ({{<issuelink 588>}})
+- Updated dependencies
+
+
 ## 1.11.0
 
 _Released at 2022-12-15_
