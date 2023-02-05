@@ -53,4 +53,4 @@ Welcome to the LinkAce Documentation.
 
 #### API
 
-* [API Documentation](https://linkace.stoplight.io/docs/api-docs/)
+* [API Documentation](https://api-docs.linkace.org)

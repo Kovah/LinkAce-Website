@@ -21,7 +21,7 @@ More details about the Bookmarklet can be found in the [Bookmarklet documentatio
 The API token is needed to authorize your requests when working with the LinkAce API.
 
 {{< alert type="info" >}}
-You can find the complete API details in our [**dedicated API documentation**](https://linkace.stoplight.io/docs/api-docs/).
+You can find the complete API details in our [**dedicated API documentation**](https://api-docs.linkace.org).
 {{</ alert >}}
 
 

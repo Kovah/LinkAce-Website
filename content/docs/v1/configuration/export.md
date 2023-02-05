@@ -14,5 +14,5 @@ Exporting links with this feature is **NOT** intended to be a backup for LinkAce
 Once you click one of the export buttons, LinkAce will generate an export file with all links in it. Please notice that this may take some time depending on the number of links you saved.
 
 {{< alert type="info" >}}
-If you want to access your link data from other applications, you can also try the [**LinkAce API**](https://linkace.stoplight.io/docs/api-docs/). It's an easy to use REST API that can be accessed by almost any application.
+If you want to access your link data from other applications, you can also try the [**LinkAce API**](https://api-docs.linkace.org). It's an easy to use REST API that can be accessed by almost any application.
 {{</ alert >}}
