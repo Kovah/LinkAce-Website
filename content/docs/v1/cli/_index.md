@@ -18,7 +18,7 @@ docker exec -it linkace_app_1 php artisan setup:complete
 php artisan setup:complete
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 
 ## Register a user
@@ -35,7 +35,7 @@ docker exec -it linkace_app_1 php artisan registeruser
 php artisan registeruser
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 
 ## Reset a user password
@@ -56,7 +56,7 @@ docker exec -it linkace_app_1 php artisan reset-password
 php artisan reset-password
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 
 ## Update the thumbnails for all links
@@ -75,7 +75,7 @@ docker exec -it linkace_app_1 php artisan links:update-thumbnails
 php artisan links:update-thumbnails
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 
 ## Cleanup history entries for Links
@@ -100,7 +100,7 @@ docker exec -it linkace_app_1 php artisan links:cleanup-histories [field]
 php artisan links:cleanup-histories [field]
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 
 ## Import Links from a HTML bookmarks file
@@ -121,7 +121,7 @@ docker exec -it linkace_app_1 php artisan links:import [file name]
 php artisan links:import [file name]
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 
 ## View 2FA Recovery Codes
@@ -138,7 +138,7 @@ docker exec -it linkace_app_1 php artisan 2fa:view-recovery-codes
 php artisan 2fa:view-recovery-codes
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 
 ## List all registered users
@@ -157,4 +157,4 @@ docker exec -it linkace_app_1 php artisan users:list
 php artisan users:list
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
