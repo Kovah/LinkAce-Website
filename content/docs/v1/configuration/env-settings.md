@@ -79,6 +79,18 @@ CACHE_DRIVER=file
 QUEUE_DRIVER=database
 
 
+## By default, LinkAce allows all proxies in front of it for the best compatibility without configuration.
+## If you wan't to set trusted proxies, which increases security, configure them with the TRUSTED_PROXIES setting.
+## Multiple proxies must be separated with a comma: 127.0.0.1,10.72.0.1,... 
+TRUSTED_PROXIES=*
+
+
+## The hashing driver specifies how passwords should be hashed. Possible values are "bcrypt", "argon", "argon2id".
+## bcrypt is the default for the wides compatibility with systems.
+HASHING_DRIVER=bcrypt
+BCRYPT_ROUNDS=12
+
+
 ## Using Redis sockets
 # If you want to use Redis via a Unix socket, you can remove the hash before the following lines, but remove one before
 # the "CACHE_DRIVER" line above. Also, set a proper path to your Redis socket.

@@ -2,6 +2,18 @@
 title: LinkAce Changelog
 ---
 
+## 1.11.2
+
+_Released at 2023-03-16_
+
+- The LinkAce Docker images are now also available on the [GitHub registry](https://github.com/Kovah/LinkAce/pkgs/container/linkace).
+- The search no longer display "No results found" when no search was performed, contributed by [@chrissawyerfan4](https://github.com/chrissawyerfan4). 🥳
+- Dark mode for guests is correctly applied on login form. ({{<issuelink 619>}})
+- The hashing driver configuration was updated and is now configurable. ({{<issuelink 617>}})
+- The trusted proxies can now be set in the env file. ({{<issuelink 617>}})
+- Updated dependencies
+
+
 ## 1.11.1
 
 _Released at 2023-01-22_
