@@ -2,6 +2,13 @@
 title: LinkAce Changelog
 ---
 
+## 1.11.3
+
+_Released at 2023-03-19_
+
+- The handling of trusted proxies was corrected. ({{<issuelink 625>}})
+
+
 ## 1.11.2
 
 _Released at 2023-03-16_
