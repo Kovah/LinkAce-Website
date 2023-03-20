@@ -2,6 +2,13 @@
 title: LinkAce Changelog
 ---
 
+## 1.11.4
+
+_Released at 2023-03-20_
+
+- Fixes the broken Docker images that were missing libraries for running backups. ({{<issuelink 627>}})
+
+
 ## 1.11.3
 
 _Released at 2023-03-19_
