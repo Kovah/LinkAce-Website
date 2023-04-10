@@ -32,6 +32,7 @@ Alternatively, you can run all actions on your own. This might be helpful if you
     ```
     docker exec -it linkace_app_1 php artisan migrate
     docker exec -it linkace_app_1 php artisan cache:clear
+    docker exec -it linkace_app_1 php artisan config:clear
     ```
    You may get a warning about running the migration in production mode. You should confirm the migration by answering with `yes`.
 
@@ -46,6 +47,7 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
    ```
    php artisan migrate
    php artisan cache:clear
+   php artisan config:clear
    ```
    You may get a warning about running the migration in production mode. You should confirm the migration by answering with `yes`.
 

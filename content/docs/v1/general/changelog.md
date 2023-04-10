@@ -2,6 +2,17 @@
 title: LinkAce Changelog
 ---
 
+## 1.12.0
+
+_Released at 2023-04-10_
+
+- Adds new translation for Romanian, big thanks to M. Gabriel Lup for his work! 🥳
+- Sorting options were optimized to be more clear and easier to use, big thanks to @chrissawyerfan4.
+- Imports from various browsers were fixed. ({{<issuelink 630>}})
+- Spacing between buttons was fixed. ({{<issuelink 631>}})
+- Dependencies were updated.
+
+
 ## 1.11.4
 
 _Released at 2023-03-20_
