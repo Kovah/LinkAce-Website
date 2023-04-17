@@ -6,7 +6,7 @@ weight: 40
 If you are not satisfied with LinkAce or want to store your links in your browser again, you can export all links to either a browser-compatible HTML file, or a CSV file readable by other applications like Excel.
 
 {{< alert type="danger" >}}
-Exporting links with this feature is **NOT** intended to be a backup for LinkAce! It does not store all information such as lists and some details about links itself! Instead, use [regular database backups]({{< relref path="application-backups.md" >}}). 
+Exporting links with this feature is **NOT** intended to be a backup for LinkAce! It does not store all information such as lists and some details about links itself! Instead, use [regular database backups]({{< relref path="docs/v1/configuration/application-backups.md" >}}). 
 {{</ alert >}}
 
 {{< image type="screen" img="export.png" alt="Preview of the export page" >}}

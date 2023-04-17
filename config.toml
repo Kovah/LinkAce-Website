@@ -14,6 +14,10 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   Twitter = "https://twitter.com/linkaceapp"
   Mastodon = "https://mastodon.social/@linkace"
   Community = "https://github.com/Kovah/LinkAce/discussions/"
+  Zapier = "https://zapier.com/apps/linkace/integrations"
+  AboutMeMastodon = "https://mastodon.social/@Kovah"
+  AboutMeWebsite = "https://kovah.de"
+  AboutMeTwitter = "https://twitter.com/kevinwoblick"
 
 # [outputs]
 #   page = ['HTML', 'Algolia']

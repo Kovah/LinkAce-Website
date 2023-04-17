@@ -11,6 +11,10 @@ When using Docker, backups can be found in the `backups` folder outside the cont
 When using the PHP install method, backups can be found in the `storage/app/backups` folder.
 {{</ alert >}}
 
+{{< alert type="warning" >}}
+You must [set up the cron]({{< relref path="docs/v1/configuration/system-settings.md#setting-up-the-cron" >}}) job for the backup system to work.
+{{</ alert >}}
+
 By default, the backup system will periodically purge old backups if they exceed 250 MB of disk usage. For more details, [read more about configuration](https://spatie.be/docs/laravel-backup/v6/cleaning-up-old-backups/overview#content-determining-which-backups-should-be-deleted).
 
 
