@@ -8,7 +8,6 @@ _Released at 2023-06-04_
 
 - Fix for ordering links, list and tags in random order, thanks to @chrissawyerfan4.
 - Link description is now returned as `null` if it's empty ({{<issuelink 646>}})
-- Spacing between buttons was fixed. ({{<issuelink 631>}})
 - Lists and tags are now private according to the user setting if created while adding a link. ({{<issuelink 644>}})
 - Added a missing `storage/app/backups` directory to the Docker image. ({{<issuelink 639>}})
 - Dependencies were updated.
