@@ -2,6 +2,14 @@
 title: LinkAce Changelog
 ---
 
+## 1.12.2
+
+_Released at 2023-07-20_
+
+- Handling of order directions for links, lists and tags was improved to prevent errors from automated requests.
+- Dependencies were updated.
+
+
 ## 1.12.1
 
 _Released at 2023-06-04_
