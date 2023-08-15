@@ -10,7 +10,7 @@ While running the setup in the web interface, the setup is completed properly. W
 
 **Run via Docker**
 ```
-docker exec -it linkace_app_1 php artisan setup:complete
+docker-compose exec app php artisan setup:complete
 ```
 
 **Run without Docker**
@@ -27,7 +27,7 @@ This is helpful if you are not able to run the built-in setup LinkAce provides. 
 
 **Run via Docker**
 ```
-docker exec -it linkace_app_1 php artisan registeruser
+docker-compose exec app php artisan registeruser
 ```
 
 **Run without Docker**
@@ -48,7 +48,7 @@ To work around this issue, you can use the CLI command to reset your password.
 
 **Run via Docker**
 ```
-docker exec -it linkace_app_1 php artisan reset-password
+docker-compose exec app php artisan reset-password
 ```
 
 **Run without Docker**
@@ -67,7 +67,7 @@ This command updates the thumbnail for all links with the status "ok". This can 
 
 **Run via Docker**
 ```
-docker exec -it linkace_app_1 php artisan links:update-thumbnails
+docker-compose exec app php artisan links:update-thumbnails
 ```
 
 **Run without Docker**
@@ -92,7 +92,7 @@ If a field is provided, only history entries of that field are deleted. Possible
 
 **Run via Docker**
 ```
-docker exec -it linkace_app_1 php artisan links:cleanup-histories [field]
+docker-compose exec app php artisan links:cleanup-histories [field]
 ```
 
 **Run without Docker**
@@ -113,7 +113,7 @@ Possible Options:
 
 **Run via Docker**
 ```
-docker exec -it linkace_app_1 php artisan links:import [file name]
+docker-compose exec app php artisan links:import [file name]
 ```
 
 **Run without Docker**
@@ -130,7 +130,7 @@ This command allows you to view the 2FA recovery codes for any user and can be u
 
 **Run via Docker**
 ```
-docker exec -it linkace_app_1 php artisan 2fa:view-recovery-codes
+docker-compose exec app php artisan 2fa:view-recovery-codes
 ```
 
 **Run without Docker**
@@ -149,7 +149,7 @@ This command allows you to see which users are currently registered.
 
 **Run via Docker**
 ```
-docker exec -it linkace_app_1 php artisan users:list
+docker-compose exec app php artisan users:list
 ```
 
 **Run without Docker**
