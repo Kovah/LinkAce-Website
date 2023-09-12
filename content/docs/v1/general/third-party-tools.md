@@ -28,6 +28,12 @@ Github user Creling created a Chrome extension to save links from within your br
 * Get the extension [here](https://chrome.google.com/webstore/detail/yet-another-linkace-exten/ladekkfhihppgfcjgaimgggecekfhmho) or the Source Code at
 [Github](https://github.com/Creling/Yet-Another-LinkAce-Extension).
 
+### Chrome / Edge Bookmark Extension
+
+Github user sergiorgiraldo created a Chrome extension to save links automatically from your navigation. Any page visited goes to your history, tagged with the date you visited the page. If you visit same page more than once in a given day, only first visit will be stored.
+
+* Get the extension [here](https://github.com/sergiorgiraldo/linkace/).
+
 ### Firefox Bookmark Extension
 
 Github user daufinsyd created a Firefox extension to quickly save links from within your browser. A perfect alternative to the built-in bookmarklet.
