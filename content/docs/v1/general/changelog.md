@@ -2,6 +2,20 @@
 title: LinkAce Changelog
 ---
 
+## 1.13.0
+
+_Released at 2023-11-01_
+
+- All pages now have proper titles in their HTML. Thanks to @chrissawyerfan4 ({{<issuelink 584>}} & {{<issuelink 691>}})
+- Guest settings are hidden if Guest mode is disabled. Thanks to @chrissawyerfan4
+- PDO requirement in the setup is not clarified. Thanks to @chrissawyerfan4
+- LinkAce is now also available in Russian. Translations are provided by kyaroslav83 on Crowdin.
+- Absolute paths can now be used when importing bookmarks from the CLI. ({{<issuelink 690>}})
+- Dashboard statistics only count for the current user. Thanks to @sergiorgiraldo
+- Some styling issues were fixed.
+- Fixes a security issue where users could use LinkAce as a proxy. Theoretically only exploitable if you have multiple users who might exploit your application.
+- Dependencies were updated.
+
 ## 1.12.2
 
 _Released at 2023-07-20_
