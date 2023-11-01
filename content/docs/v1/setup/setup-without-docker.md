@@ -15,7 +15,7 @@ The application was developed with being used with Docker in mind. All following
     * JSON
     * Mbstring
     * OpenSSL
-    * PDO
+    * PDO (with [a driver](https://www.php.net/manual/en/pdo.drivers.php) matching your database)
     * Tokenizer
     * XML
     * DOM
