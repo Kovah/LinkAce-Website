@@ -8,7 +8,7 @@ _Released at 2023-11-01_
 
 - All pages now have proper titles in their HTML. Thanks to @chrissawyerfan4 ({{<issuelink 584>}} & {{<issuelink 691>}})
 - Guest settings are hidden if Guest mode is disabled. Thanks to @chrissawyerfan4
-- PDO requirement in the setup is not clarified. Thanks to @chrissawyerfan4
+- PDO requirement in the setup is now clarified. Thanks to @chrissawyerfan4
 - LinkAce is now also available in Russian. Translations are provided by kyaroslav83 on Crowdin.
 - Absolute paths can now be used when importing bookmarks from the CLI. ({{<issuelink 690>}})
 - Dashboard statistics only count for the current user. Thanks to @sergiorgiraldo
