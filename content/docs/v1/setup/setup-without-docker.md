@@ -18,8 +18,9 @@ The application was developed with being used with Docker in mind. All following
     * PDO
     * Tokenizer
     * XML
+    * DOM
 * A database server with one of the following databases running:
-    * MySQL 5.6+ (recommended)
+    * MySQL 5.6+ or MariaDB (recommended)
     * PostgreSQL 9.4+
     * SQLite 3.8.8+ (not tested, may work)
     * SQL Server 2017+ (not tested, may work)
