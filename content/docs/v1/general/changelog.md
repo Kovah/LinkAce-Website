@@ -2,6 +2,17 @@
 title: LinkAce Changelog
 ---
 
+## 1.14.0
+
+_Released at 2024-02-05_
+
+**Support for PHP 8.0 was dropped. LinkAce only supports PHP 8.1, 8.2 and 8.3.**
+
+- Update for the Romanian translation.
+- Small Interface fixes.
+- Large-scale update of used dependencies.
+- Base Node version used in the project is not v20 LTS.
+
 ## 1.13.0
 
 _Released at 2023-11-01_
