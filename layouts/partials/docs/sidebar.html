@@ -20,17 +20,17 @@
     </div>
     <div class="list-group-item btn-group-vertical btn-group-sm">
       {{ with .Page }}
+        {{ if ne .Params.headless true }}
+          <a href="{{ .Permalink }}" class='btn btn-link text-left {{ if eq .Permalink $currentPage.Permalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
+        {{ end }}
+
         {{ range .Pages }}
           <a href="{{ .Permalink }}" class='btn btn-link text-left {{ if eq .Permalink $currentPage.Permalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
 
           {{ range .Pages }}
             <a href="{{ .Permalink }}" class='btn btn-link text-left'><span class="text-muted">&boxur;</span> {{ .Title }}</a>
           {{ end }}
-
-        {{ else }}
-          <a href="{{ .Permalink }}" class='btn btn-link text-left {{ if eq .Permalink $currentPage.Permalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
         {{ end }}
-
       {{ end }}
     </div>
 

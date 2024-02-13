@@ -9,7 +9,7 @@ Theoretically you can use LinkAce after finishing the setup. I recommend checkin
 
 The `.env` file in your LinkAce directory contains some advanced settings which can be enabled if you want to use them. Two configurations are quite important: email settings and application backups.
 
-All other possible settings can be found in the [.env file reference]({{< relref path="docs/v1/configuration/env-settings.md" >}}).
+All other possible settings can be found in the [.env file reference]({{< relref path="docs/v2/configuration/env-settings.md" >}}).
 
 ### Email Configuration
 
@@ -28,12 +28,12 @@ Please add the following block to your .env file and change the values according
 
 ### Application backups to Amazon AWS
 
-Application backups have a dedicated documentation: [Application backups]({{< relref path="docs/v1/configuration/application-backups.md" >}})
+Application backups have a dedicated documentation: [Application backups]({{< relref path="docs/v2/configuration/application-backups.md" >}})
 
 
 ## 2. Setup the cron
 
-**The cron is necessary to enable automated backups via the Waybackmachine, enabling regular link checks and application backups.** You will be presented a cron token, and a pre-built cron URL on the system settings page, available from the username dropdown. More information about how to configure a cron can be found in the [System Settings]({{< relref path="docs/v1/configuration/system-settings.md" >}}).
+**The cron is necessary to enable automated backups via the Waybackmachine, enabling regular link checks and application backups.** You will be presented a cron token, and a pre-built cron URL on the system settings page, available from the username dropdown. More information about how to configure a cron can be found in the [System Settings]({{< relref path="docs/v2/configuration/system-settings.md" >}}).
 
 ## 3. Configure basic app settings
 

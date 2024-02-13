@@ -46,7 +46,7 @@ If you are stuck, you can cancel the command at any time by using `Ctl / Strg` +
 
 ## Update the thumbnails for all links
 
-_Since v1.6.0_
+_Since v2.6.0_
 
 This command updates the thumbnail for all links with the status "ok". This can take a long time, depending on the amount of links you have saved. Helpful if you upgrade from a previous version to version 1.6.0 and want to set the correct thumbnails for all links.
 

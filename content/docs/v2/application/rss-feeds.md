@@ -1,6 +1,6 @@
 ---
 title: RSS Feeds
-since: v1.5.0
+since: v2.5.0
 weight: 70
 ---
 
@@ -28,6 +28,6 @@ Public feeds are only available if you enabled the **Guest Mode**. The feeds can
 
 ## Accessing private data
 
-You can also access your private links, lists and tags. To be able to access private data, you have to append the [API token]({{< relref path="docs/v1/configuration/user-settings.md" >}}) to the corresponding URL like this:
+You can also access your private links, lists and tags. To be able to access private data, you have to append the [API token]({{< relref path="docs/v2/configuration/user-settings.md" >}}) to the corresponding URL like this:
 
 `https://linkace-example.com/links/feed?api_token=knCz[...]vzhy`

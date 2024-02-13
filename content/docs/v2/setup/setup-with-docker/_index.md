@@ -8,36 +8,64 @@ aliases:
 
 Working with Docker is pretty straight forward, but you should be familiar with Docker. To make things easier, we provide Docker Compose files in the repository which contain all needed services, configured to just run the application right away.
 
-There are two different ways to install LinkAce with Docker:
-
-* one container that contains both the application and a web server (tagged as `linkace/linkace:simple`)
-* LinkAce as a stand-alone container with a separate web server (tagged as `linkace/linkace:latest`)
-
-If you are unsure about which one to use, please pick the simple setup. 
-
 {{< alert type="info" >}}
-All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkace/linkace).
+All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkace/linkace) and on the [**GitHub Registry**](https://github.com/Kovah/LinkAce/pkgs/container/linkace) and support `amd/v7`, `amd64` and `amd64`.
 {{</ alert >}}
 
+## Base Requirements
 
----
-
-
-## Setup with Docker: Simple
-
-In this version, there is only one Docker container needed and one optional for the database. If you use a managed database outside of Docker, you only have to run one single container. This is useful for environments where access to Docker is limited, e.g. on Heroku or other cloud platforms. However, if you have full access to a VPS or root server, the advanced setup is recommended as it also improves the performance.
-
-👉  [**Continue with the simple Setup**]({{< relref path="docs/v1/setup/setup-with-docker/simple.md" >}})
+* Command-line access to your server
+* Docker version 19 or greater
+* Docker Compose is recommended for the setup, must support compose version 3
+* Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` may cause issues with different Unicode characters.
 
 
----
+## Setup with Docker
+
+### 1. Copy the needed files
+
+Download the Docker setup package from the LinkAce repository: [**linkace-docker.zip**](https://github.com/Kovah/LinkAce/releases/latest)
+
+### 2. Edit the base configuration
+
+You should change the following settings in the .env file before starting the setup:
+
+* DB_PASSWORD - Please set a secure password here
+* REDIS_PASSWORD - Please set a secure password here
+
+If you are unsure if the `.env` file is writable inside Docker, please make it writable for anybody (`-rw-rw-rw- or 666`). You can switch back to read only after the setup.
+
+Your directory should look like this now:
+
+```
+/my-user-directory/linkace
+├╴ .env
+├╴ docker-compose.yml
+├╴ LICENSE.md
+└╴ README.md
+```
+
+### 3. Start the application
+
+After you completed the above steps, run the following command to start up the container setup:
+
+```bash
+docker compose up -d
+```
 
 
-## Setup with Docker: Advanced
+### 4. Start the built-in setup
 
-The advanced setup is not that different from the simple setup, but may not be suitable for certain environments. Specifically, it uses different containers for the application and the web server. The docker-compose file also includes configuration for Redis, which increases performance.
+Open the URL which points to your Docker container in your browser now. If you started LinkAce on your local machine, for example, the URL should be `http://localhost`.
 
-👉  [**Continue with the advanced Setup**]({{< relref path="docs/v1/setup/setup-with-docker/advanced.md" >}})
+You can configure the database and your user account in the following process.
+
+
+### 5. Follow the post-installation steps
+
+{{< alert type="warning" >}}
+Please make sure to follow the [post-installation steps]({{< relref path="docs/v2/setup/post-setup.md" >}}) now to fully enable all features.
+{{</ alert >}}
 
 
 ---
@@ -45,7 +73,7 @@ The advanced setup is not that different from the simple setup, but may not be s
 
 ## Advanced Configuration
 
-The [advanced Docker configuration]({{< relref path="docs/v1/setup/setup-with-docker/advanced-configuration.md" >}}) page provides some guides for specific use cases for Docker.
+The [advanced Docker configuration]({{< relref path="docs/v2/setup/setup-with-docker/advanced-configuration.md" >}}) page provides some guides for specific use cases for Docker.
 
 - Running Linkace behind a proxy / load balancer
 - Using Docker environment variables instead of the .env file

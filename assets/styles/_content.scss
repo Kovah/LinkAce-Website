@@ -15,6 +15,10 @@
     }
   }
 
+  li > .alert {
+    margin: map_get($spacers, 3) 0;
+  }
+
   hr {
     margin: map_get($spacers, 6) 0;
   }

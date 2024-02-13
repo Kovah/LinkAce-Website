@@ -11,7 +11,7 @@ LinkAce offers a lot of options to customize your bookmarking experience. Here i
 
 The Bookmarklet is one of the most important features as it provides a simple way to add a random website to LinkAce as a link without leaving the website. To use the Bookmarklet, drag the button to your browser bookmarks bar.
 
-More details about the Bookmarklet can be found in the [Bookmarklet documentation]({{< relref path="docs/v1/application/bookmarklet.md" >}}).
+More details about the Bookmarklet can be found in the [Bookmarklet documentation]({{< relref path="docs/v2/application/bookmarklet.md" >}}).
 
 
 ## The API Token
@@ -71,7 +71,7 @@ Last but not least, the user settings. The following table gives you an overview
 | Date format | You can choose the format of all displayed dates here. |
 | Time format | You can choose the format of all displayed times here. |
 | Number of entries in lists | This setting affects hoe many entries are displayed on the overview pages. Please note that displaying 50 or more entries may affect the loading times on low-powered systems. |
-| Display links as... | Links can be displayed in two different formats. For more details, check the [links documentation]({{< relref path="docs/v1/application/links.md" >}}). |
+| Display links as... | Links can be displayed in two different formats. For more details, check the [links documentation]({{< relref path="docs/v2/application/links.md" >}}). |
 | Open external links in new tabs | If enabled, external links will be opened in new tabs on click, instead of the current tab. |
 | Enable Markdown for descriptions and notes  | If enabled, Markdown can be used to format link descriptions and notes.  |
 

@@ -13,7 +13,7 @@ Issue related to SQLite: [#327](https://github.com/Kovah/LinkAce/issues/327)
 
 ## Setup with Docker
 
-Follow the steps **1** and **2** of the [**Docker installation guide**]({{< relref path="docs/v1/setup/setup-with-docker/_index.md" >}}), and do not start the Docker setup now.
+Follow the steps **1** and **2** of the [**Docker installation guide**]({{< relref path="docs/v2/setup/setup-with-docker/_index.md" >}}), and do not start the Docker setup now.
 
 The database file needs to be created. You can do this by using the following command which assumes that the database file is located in the same directory as the docker-compose.yml file and is called `database.sqlite`:
 
@@ -50,7 +50,7 @@ Lastly, change `SETUP_COMPLETED=false` to `SETUP_COMPLETED=true` in your `.env` 
 You can now open LinkAce in your browser and should be able to use the application.
 
 {{< alert type="warning" >}}
-Please make sure to follow the [post-installation steps]({{< relref path="docs/v1/setup/post-setup.md" >}}) to fully enable all features.
+Please make sure to follow the [post-installation steps]({{< relref path="docs/v2/setup/post-setup.md" >}}) to fully enable all features.
 {{</ alert >}}
 
 
@@ -59,7 +59,7 @@ Please make sure to follow the [post-installation steps]({{< relref path="docs/v
 
 ## Setup without Docker
 
-Follow the steps **1** to **4** of the [regular installation guide]({{< relref path="docs/v1/setup/setup-without-docker.md" >}}), and do not start the built-in setup right now. The database file needs to be created, so run the following command:
+Follow the steps **1** to **4** of the [regular installation guide]({{< relref path="docs/v2/setup/setup-without-docker.md" >}}), and do not start the built-in setup right now. The database file needs to be created, so run the following command:
 
 ```
 touch database/database.sqlite
@@ -81,10 +81,10 @@ php artisan registeruser
 You can now open LinkAce in your browser and should be able to use the application.
 
 {{< alert type="warning" >}}
-Please make sure to follow the [post-installation steps]({{< relref path="docs/v1/setup/post-setup.md" >}}) to fully enable all features.
+Please make sure to follow the [post-installation steps]({{< relref path="docs/v2/setup/post-setup.md" >}}) to fully enable all features.
 {{</ alert >}}
 
 ---
 
 
-Next Step: [Post-Setup Steps]({{< relref path="docs/v1/setup/post-setup.md" >}})
+Next Step: [Post-Setup Steps]({{< relref path="docs/v2/setup/post-setup.md" >}})

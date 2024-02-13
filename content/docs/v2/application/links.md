@@ -9,7 +9,7 @@ Links are the heart of LinkAce. Links can be anything, from interesting articles
 
 The link overview lists all available links together with some meta information like tags as well as the sharing options and links for editing and deleting them. You can sort the list by creation date, title and URL, both ascending and descending.
 
-Links can be displayed in two different formats, which can be changed in the [user settings]({{< relref path="docs/v1/configuration/user-settings.md" >}}).
+Links can be displayed in two different formats, which can be changed in the [user settings]({{< relref path="docs/v2/configuration/user-settings.md" >}}).
 
 ### Display links as rows with many details
 
@@ -68,7 +68,7 @@ After adding the URL in the form, LinkAce will gather details from the specified
 
 The link detail page shows all available information about the link, including title, description, lists and tags. From the details page you can directly hop into the edit form or delete the link. If a thumbnail was saved for a link it will be displayed.
 
-The "Enable Check" / "Disable Check" button lets you enable / disable the [automated checks]({{< relref path="docs/v1/application/link-checks.md" >}}) performed by LinkAce. This might be helpful if a website is reachable but LinkAce has problems accessing it. This is mostly the case with visitor captcha checks seen with Cloudflare-hosted websites.
+The "Enable Check" / "Disable Check" button lets you enable / disable the [automated checks]({{< relref path="docs/v2/application/link-checks.md" >}}) performed by LinkAce. This might be helpful if a website is reachable but LinkAce has problems accessing it. This is mostly the case with visitor captcha checks seen with Cloudflare-hosted websites.
 
 You will also be shown all share links if you enabled some in the user settings.
 
@@ -94,9 +94,9 @@ This backup will help you access the contents of your saved link in case it goes
 Please notice, that some websites restrict access of the Wayback Machine. If that's the case, the website will not be archived. Please contact the site owner to get access for the Wayback Machine.
 
 {{< alert type="warning" >}}
-The [cron]({{< relref path="docs/v1/configuration/system-settings.md#cron-token" >}}) needs to be configured and working to enable automated backups.
+The [cron]({{< relref path="docs/v2/configuration/system-settings.md#cron-token" >}}) needs to be configured and working to enable automated backups.
 {{</ alert >}}
 
 ## Notifications about dead or moved Links
 
-Also, if you set up the cron correctly, LinkAce will regularly check all links if they are still available. More details about this can be found on the [Link Checks]({{< relref path="docs/v1/application/link-checks.md" >}}) page.
+Also, if you set up the cron correctly, LinkAce will regularly check all links if they are still available. More details about this can be found on the [Link Checks]({{< relref path="docs/v2/application/link-checks.md" >}}) page.

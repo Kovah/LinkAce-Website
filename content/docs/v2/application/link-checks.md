@@ -3,7 +3,7 @@ title: Link Checks
 weight: 30
 ---
 
-LinkAce has a nice feature called Link Checks. If you [set up your cron]({{< relref path="docs/v1/configuration/system-settings.md" >}}) correctly, LinkAce will regularly take a chunk of links from your collection and check if the links are still accessible.
+LinkAce has a nice feature called Link Checks. If you [set up your cron]({{< relref path="docs/v2/configuration/system-settings.md" >}}) correctly, LinkAce will regularly take a chunk of links from your collection and check if the links are still accessible.
 
 ## Requirements
 

@@ -67,7 +67,7 @@ However, if you upgraded LinkAce and the setup starts, stop immediately and repo
 ### to version 1.6.0
 
 - The command for cleaning link histories changed from `link:cleanup-histories` to `links:cleanup-histories`.
-- You may want to run the [links:update-thumbnails]({{< relref path="docs/v1/cli" >}}) command to generate thumbnails for all existing links.
+- You may want to run the [links:update-thumbnails]({{< relref path="docs/v2/cli" >}}) command to generate thumbnails for all existing links.
 
 ### to version 1.4.1
 

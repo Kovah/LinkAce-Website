@@ -16,13 +16,13 @@ There will be **no** support for environments which do not meet the requirements
 
 Depending on your personal preferences, you can run LinkAce either with or without Docker. Please notice that the browser-based setup only supports MySQL. For other databases follow the instructions further below.
 
-* [Setup with Docker]({{< relref path="docs/v1/setup/setup-with-docker/_index.md" >}})
-* [Setup without Docker]({{< relref path="docs/v1/setup/setup-without-docker.md" >}})
+* [Setup with Docker]({{< relref path="docs/v2/setup/setup-with-docker/_index.md" >}})
+* [Setup without Docker]({{< relref path="docs/v2/setup/setup-without-docker.md" >}})
 
 
 ## Setup with SQLite or PostgreSQL
 
 By default, LinkAce is using MySQL but you are free to use SQLite or PostgreSQL.
 
-- To use **SQLite**, please follow the specific [SQLite instructions]({{< relref path="docs/v1/setup/setup-with-sqlite.md" >}}).
-- To use **PostgreSQL**, please follow the specific [PostgreSQL instructions]({{< relref path="docs/v1/setup/setup-with-postgresql.md" >}}).
+- To use **SQLite**, please follow the specific [SQLite instructions]({{< relref path="docs/v2/setup/setup-with-sqlite.md" >}}).
+- To use **PostgreSQL**, please follow the specific [PostgreSQL instructions]({{< relref path="docs/v2/setup/setup-with-postgresql.md" >}}).

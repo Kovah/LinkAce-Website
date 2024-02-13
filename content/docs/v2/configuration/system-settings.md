@@ -23,7 +23,7 @@ The cron token you can access or re-generate in the system settings is needed to
 
 Currently, the following tasks will be run:
 
-* LinkAce runs the [link check]({{< relref path="docs/v1/application/link-checks.md" >}}) and sends a notification if moved or dead links were found.
+* LinkAce runs the [link check]({{< relref path="docs/v2/application/link-checks.md" >}}) and sends a notification if moved or dead links were found.
 * LinkAce sends requests to the Wayback Machine with all newly added links, so they are backed up later.
 
 ### Setting up the cron
@@ -71,7 +71,7 @@ These settings apply to all guests visiting your site, if you have guest access 
 
 {{< image type="screen" img="system_settings_guest_settings.png" alt="Preview of the system guest settings" >}}
 
-Please check the [user settings documentation]({{< relref path="docs/v1/configuration/user-settings.md" lang="" >}}) for more details about all available options, as they are exactly the same.
+Please check the [user settings documentation]({{< relref path="docs/v2/configuration/user-settings.md" lang="" >}}) for more details about all available options, as they are exactly the same.
 
 
 ---
