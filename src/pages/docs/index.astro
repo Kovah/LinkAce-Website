@@ -1,0 +1,19 @@
+---
+import MarkdownLayout from "~/layouts/MarkdownLayout.astro";
+import { getCollection } from "astro:content";
+
+let docs = await getCollection('docs');
+docs.shift();
+
+const frontmatter = {
+  title: 'LinkAce Documentation'
+};
+---
+
+<MarkdownLayout frontmatter={frontmatter}>
+  <ul>
+    {docs.map((page) => (
+      <li><a href={'/docs/' + page.slug}>{page.data.title}</a></li>
+    ))}
+  </ul>
+</MarkdownLayout>
