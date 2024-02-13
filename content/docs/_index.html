@@ -1,0 +1,64 @@
+---
+title: LinkAce Documentation
+hide_toc: true
+outputs:
+- html
+- algolia
+cascade:
+  outputs:
+    - html
+    - algolia
+---
+
+Welcome to the LinkAce Documentation.
+
+#### General
+
+* [Translations]({{ $.Site.Params.DocsCurrentVersion }}/general/translations)
+* [Changelog]({{ $.Site.Params.DocsCurrentVersion }}/general/changelog)
+* [Third-Party Tools and Libraries]({{ $.Site.Params.DocsCurrentVersion }}/general/third-party-tools)
+
+#### Setup
+
+* [Setup with Docker]({{ $.Site.Params.DocsCurrentVersion }}/setup/setup-with-docker/_index.md)
+* [Setup without Docker]({{ $.Site.Params.DocsCurrentVersion }}/setup/setup-without-docker.md)
+* [Post-Setup Steps]({{ $.Site.Params.DocsCurrentVersion }}/setup/post-setup.md)
+
+#### Upgrade Guides
+
+* [Upgrade LinkAce]({{ $.Site.Params.DocsCurrentVersion }}/upgrade)
+
+#### The Application
+
+* [Dashboard]({{ $.Site.Params.DocsCurrentVersion }}/application/dashboard.md)
+* [Links]({{ $.Site.Params.DocsCurrentVersion }}/application/links.md)
+* [Links Checks]({{ $.Site.Params.DocsCurrentVersion }}/application/link-checks.md)
+* [Tags]({{ $.Site.Params.DocsCurrentVersion }}/application/tags.md)
+* [Lists]({{ $.Site.Params.DocsCurrentVersion }}/application/lists.md)
+* [Search]({{ $.Site.Params.DocsCurrentVersion }}/application/search.md)
+* [Bookmarklet]({{ $.Site.Params.DocsCurrentVersion }}/application/bookmarklet.md)
+* [Trash]({{ $.Site.Params.DocsCurrentVersion }}/application/trash.md)
+
+#### Configuration
+
+* [Application Backups]({{ $.Site.Params.DocsCurrentVersion }}/configuration/application-backups.md)
+* [System Settings]({{ $.Site.Params.DocsCurrentVersion }}/configuration/system-settings.md)
+* [User Settings]({{ $.Site.Params.DocsCurrentVersion }}/configuration/user-settings.md)
+* [Import]({{ $.Site.Params.DocsCurrentVersion }}/configuration/import.md)
+* [Export]({{ $.Site.Params.DocsCurrentVersion }}/configuration/export.md)
+
+#### CLI Commands
+
+* [Overview]({{ $.Site.Params.DocsCurrentVersion }}/cli)
+
+#### API
+
+* [API Documentation](https://api-docs.linkace.org)
+
+
+---
+
+
+{{< alert type="info" >}}
+Looking for the documentation of LinkAce version 1? You can find them here [**LinkAce v1 documentation**]({{< relref path="docs/v1/_index.md" >}})
+{{</ alert >}}
