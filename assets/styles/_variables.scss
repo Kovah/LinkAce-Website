@@ -133,7 +133,7 @@ $body-color-muted: $gray;
 
 
 // Links
-$link-color: theme-color("primary");
+$link-color: $primary;
 $link-hover-color: darken($link-color, 20%);
 $link-hover-decoration: none;
 

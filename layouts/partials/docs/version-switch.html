@@ -1,4 +1,4 @@
-<div class="flex-shrink-0 btn-group  ml-2">
+<div class="flex-shrink-0 btn-group ms-2">
     {{ if eq .version .docsV1 }}
         {{ with .Site.GetPage (replace .currentPage.File.Path "v1" "v2") }}
             <a class='btn btn-outline-primary' href='{{ .RelPermalink }}'>v2</a>

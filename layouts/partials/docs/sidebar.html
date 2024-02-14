@@ -19,17 +19,17 @@
     <div class="list-group-item">
       {{ .Title }}
     </div>
-    <div class="list-group-item btn-group-vertical btn-group-sm">
+    <div class="list-group-item p-2 btn-group-vertical btn-group-sm">
       {{ with .Page }}
         {{ if ne .Params.headless true }}
-          <a href="{{ .Permalink }}" class='btn btn-link text-left {{ if eq .Permalink $currentPage.Permalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
+          <a href="{{ .Permalink }}" class='btn btn-plain text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
         {{ end }}
 
         {{ range .Pages }}
-          <a href="{{ .Permalink }}" class='btn btn-link text-left {{ if eq .Permalink $currentPage.Permalink }}font-weight-bold{{ end }}'>{{ .Title }}</a>
+          <a href="{{ .Permalink }}" class='btn btn-plain text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
 
           {{ range .Pages }}
-            <a href="{{ .Permalink }}" class='btn btn-link text-left'><span class="text-muted">&boxur;</span> {{ .Title }}</a>
+            <a href="{{ .Permalink }}" class='btn btn-plain text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'><span class="text-muted">&boxur;</span> {{ .Title }}</a>
           {{ end }}
         {{ end }}
       {{ end }}
