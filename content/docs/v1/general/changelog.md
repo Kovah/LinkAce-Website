@@ -2,6 +2,15 @@
 title: LinkAce Changelog
 ---
 
+## 1.14.1
+
+_Released at 2024-02-20_
+
+- Translation fix and minor adjustment of the privacy icon by [@ramsnerm](https://github.com/ramsnerm). 🥳
+- Imports now properly work if exports do not contain creation dates. ({{<issuelink 752>}})
+- Dependencies were updated.
+
+
 ## 1.14.0
 
 _Released at 2024-02-05_
@@ -12,6 +21,7 @@ _Released at 2024-02-05_
 - Small Interface fixes.
 - Large-scale update of used dependencies.
 - Base Node version used in the project is not v20 LTS.
+
 
 ## 1.13.0
 
@@ -26,6 +36,7 @@ _Released at 2023-11-01_
 - Some styling issues were fixed.
 - Fixes a security issue where users could use LinkAce as a proxy. Theoretically only exploitable if you have multiple users who might exploit your application.
 - Dependencies were updated.
+
 
 ## 1.12.2
 
