@@ -2,6 +2,14 @@
 title: LinkAce Changelog
 ---
 
+## 1.14.2
+
+_Released at 2024-05-02_
+
+- Tags and lists are now properly added to links by their ID when then link is created via the API ({{<issuelink 774>}})
+- Compatibility with Podman, update for the contribution docs by [@chrissawyerfan4](https://github.com/chrissawyerfan4).
+- Dependencies were updated.
+
 ## 1.14.1
 
 _Released at 2024-02-20_
