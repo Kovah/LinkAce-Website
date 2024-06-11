@@ -19,7 +19,7 @@
   "dependencies": {
     "algoliasearch": "^4.23.3",
     "bootstrap": "^5.3.3",
-    "instantsearch.js": "^4.70.0",
+    "instantsearch.js": "^4.71.1",
     "prismjs": "^1.25.0"
   },
   "devDependencies": {
