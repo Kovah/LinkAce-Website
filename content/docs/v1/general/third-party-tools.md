@@ -6,6 +6,16 @@ LinkAce is an open-source software program with a [powerful API](https://api-doc
 
 This page is an overview of third-party tools and libraries which are compatible or specially made for LinkAce.
 
+# Mobile apps
+
+### ananasowe/hyperlinks-knapsack
+
+Gitlab user [ananasowe](https://gitlab.com/ananasowe) created a native Android app for interacting with LinkAce collections using the API.
+
+{{< image type="third_party" img="hyperlinks-knapsack-home.png" alt="Home screen of the Hyperlinks Knapsack app" >}}
+
+* APK installation [described here](https://gitlab.com/ananasowe/hyperlinks-knapsack#install)
+* Source Code at [Gitlab](https://gitlab.com/ananasowe/hyperlinks-knapsack)
 
 ## Command Line Tools (CLI)
 
