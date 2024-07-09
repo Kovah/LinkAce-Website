@@ -2,6 +2,15 @@
 title: LinkAce Changelog
 ---
 
+## 1.15.0
+
+_Released at 2024-07-09_
+
+- LinkAce is now available in Japanese, thanks to Crowdin user kazukisuzuki! 🥳
+- Browser cookies are secure by default now.
+- Dependencies were updated, including security patches.
+
+
 ## 1.14.2
 
 _Released at 2024-05-02_
@@ -9,6 +18,7 @@ _Released at 2024-05-02_
 - Tags and lists are now properly added to links by their ID when then link is created via the API ({{<issuelink 774>}})
 - Compatibility with Podman, update for the contribution docs by [@chrissawyerfan4](https://github.com/chrissawyerfan4).
 - Dependencies were updated.
+
 
 ## 1.14.1
 
