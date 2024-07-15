@@ -19,14 +19,14 @@
   "dependencies": {
     "algoliasearch": "^4.24.0",
     "bootstrap": "^5.3.3",
-    "instantsearch.js": "^4.73.0",
+    "instantsearch.js": "^4.73.1",
     "prismjs": "^1.25.0"
   },
   "devDependencies": {
     "atomic-algolia": "^0.3.19",
     "cross-env": "^7.0.3",
     "laravel-mix": "^6.0.39",
-    "sass": "^1.77.6",
+    "sass": "^1.77.8",
     "sass-loader": "^14.2.1"
   }
 }
