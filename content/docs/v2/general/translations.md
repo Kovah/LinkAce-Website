@@ -21,4 +21,11 @@ Before a new language will be officially added to the application, it needs to b
 * French
 * German
 * Hungarian
+* Italian
+* Japanese
+* Norwegian
+* Polish
+* Romanian
+* Russian
 * Spanish
+* Thai

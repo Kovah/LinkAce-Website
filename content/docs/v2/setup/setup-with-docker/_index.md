@@ -76,7 +76,6 @@ Please make sure to follow the [post-installation steps]({{< relref path="docs/v
 The [advanced Docker configuration]({{< relref path="docs/v2/setup/setup-with-docker/advanced-configuration.md" >}}) page provides some guides for specific use cases for Docker.
 
 - Running Linkace behind a proxy / load balancer
-- Using Docker environment variables instead of the .env file
 - Enable HTTPS for LinkAce without a proxy / load balancer
 
 

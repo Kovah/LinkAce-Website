@@ -8,9 +8,10 @@ The application was developed with being used with Docker in mind. All following
 ## Requirements
 
 * A Linux-based server with full command line access
-* **PHP 7.4, 8.0 or 8.1**, with the following extensions
+* **PHP 8.1, 8.2 or 8.3**, with the following extensions
     * BCMath
     * Ctype
+    * DOM
     * Fileinfo
     * JSON
     * Mbstring
@@ -25,7 +26,7 @@ The application was developed with being used with Docker in mind. All following
     * SQL Server 2017+ (not tested, may work)
 * Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` may cause issues with different Unicode characters.
 
-Older PHP versions will **not** be supported in any way. Please do yourself a favor and do not expose yourself, or your users to any risks by using an outdated PHP version.
+Older PHP versions will **not** be supported in any way. Please do yourself a favor and do not expose yourself or your users to any risks by using an outdated PHP version.
 
 
 ## Installation Process
