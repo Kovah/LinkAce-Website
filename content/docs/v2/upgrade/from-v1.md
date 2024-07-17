@@ -21,6 +21,7 @@ There will be absolutely no help to restore your old LinkAce installation and da
   - If you enable Guest Mode before the upgrade, links marked as `public` will stay public.  
     However, if you have Guest Mode disabled, public links will become `internal`. This means they are visible to all logged-in users, but not to guests.
 - Your current user will become the primary administrator who can now control some system settings, as well as inviting users to LinkAce.
+- The API was updated to version `v2`. Any existing integrations must be checked and adjusted if needed.
 
 
 ## Upgrade a Docker installation
@@ -29,20 +30,20 @@ There will be absolutely no help to restore your old LinkAce installation and da
     ```
     docker compose down
     ```
-2. LinkAce no longer provides the advanced Docker image. LinkAce is now available as a complete Docker container including a 
+2. LinkAce no longer provides the advanced Docker image. LinkAce is now available as a complete Docker container including a webserver.
 3. If you have a service called `nginx` in your docker-compose.yml file, remove this service completely!
    {{< alert type="warning" >}}
    Due to a change in the default web server, there is no upgrade guide if you are running LinkAce directly with SSL certificates to provide HTTPS. Please consult the [steps to configure HTTPS with Docker]({{< relref path="docs/v2/setup/setup-with-docker/advanced-configuration.md" >}}) for all needed changes.
    {{</ alert >}}
 4. Pull the new image:
     ```
-    docker pull linkace/linkace
+    docker pull linkace/linkace:2.x
     ```
 5. Restart your container:
     ```
     docker compose up -d
     ```
-6. Run the database migrations and delete the current cache:
+6. Run the database migrations and delete the current cache. The migration can take quite a while depending on your amount of links, lists and tags saved.
     ```
     docker compose exec app php artisan migrate
     docker compose exec app php artisan cache:clear

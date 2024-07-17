@@ -7,7 +7,7 @@ title: LinkAce Changelog
 _Released at TBD_
 
 {{< alert type="warning" >}}
-Please consult the [dedicated upgrade guide]({{< relref path="" >}}) to update from LinkAce 1 to version 2.
+Please consult the [dedicated upgrade guide]({{< relref path="docs/v2/upgrade/from-v1.md" >}}) to update from LinkAce 1 to version 2.
 {{</ alert >}}
 
 - Support for multiple users, including a more advanced permission scheme as well as a new visibility setting for entities ({{<issuelink 165>}})
