@@ -1,5 +1,5 @@
 ---
-title: Upgrade from LinkAce v2
+title: Upgrade from LinkAce v1
 ---
 
 ## General upgrade guide
@@ -14,13 +14,13 @@ Please follow these instructions to upgrade LinkAce to the new version 2.
 There will be absolutely no help to restore your old LinkAce installation and database in case of a failed migration!
 {{</ alert >}}
 
-## Notable changes
+## Breaking changes
 
 - LinkAce v2 now supports multiple users and comes with a more sophisticated system for the visibility of links, lists, tags and notes.
   - All entries that are currently marked as `private` will remain as such.
   - If you enable Guest Mode before the upgrade, links marked as `public` will stay public.  
     However, if you have Guest Mode disabled, public links will become `internal`. This means they are visible to all logged-in users, but not to guests.
-- The way links are displayed changed a lot. The option to display Cards with more details is replaced with a generic card display. I deeply encourage you to check out the new styles and pick the one that ou like.
+- Your current user will become the primary administrator who can now control some system settings, as well as inviting users to LinkAce.
 
 
 ## Upgrade a Docker installation
@@ -30,7 +30,7 @@ There will be absolutely no help to restore your old LinkAce installation and da
     docker compose down
     ```
 2. LinkAce no longer provides the advanced Docker image. LinkAce is now available as a complete Docker container including a 
-3. If you have a service called `nginx` in your docker-compose.yml file, remove this service completely.
+3. If you have a service called `nginx` in your docker-compose.yml file, remove this service completely!
    {{< alert type="warning" >}}
    Due to a change in the default web server, there is no upgrade guide if you are running LinkAce directly with SSL certificates to provide HTTPS. Please consult the [steps to configure HTTPS with Docker]({{< relref path="docs/v2/setup/setup-with-docker/advanced-configuration.md" >}}) for all needed changes.
    {{</ alert >}}
