@@ -16,26 +16,33 @@
 
   {{ range (index $.Site.Menus $version.Params.doc_version) }}
 
-    <div class="list-group-item">
+    <div class="list-group-item border-bottom-0 pb-0">
       {{ .Title }}
     </div>
     <div class="list-group-item p-2 btn-group-vertical btn-group-sm">
       {{ with .Page }}
         {{ if ne .Params.headless true }}
-          <a href="{{ .Permalink }}" class='btn btn-plain text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
+          <a href="{{ .Permalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
         {{ end }}
 
         {{ range .Pages }}
-          <a href="{{ .Permalink }}" class='btn btn-plain text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
+          <a href="{{ .Permalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
 
           {{ range .Pages }}
-            <a href="{{ .Permalink }}" class='btn btn-plain text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'><span class="text-muted">&boxur;</span> {{ .Title }}</a>
+            <a href="{{ .Permalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'><span class="text-muted">&boxur;</span> {{ .Title }}</a>
           {{ end }}
         {{ end }}
       {{ end }}
     </div>
 
   {{ end }}
+
+  <div class="list-group-item border-bottom-0">
+    API
+  </div>
+  <div class="list-group-item p-2 btn-group-vertical btn-group-sm">
+    <a href="{{ .Site.Params.ApiDocs }}" class='btn btn-sidebar text-start'>API Documentation</a>
+  </div>
 
 </div>
 

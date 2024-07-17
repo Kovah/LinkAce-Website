@@ -10,9 +10,16 @@ img {
   max-width: 100%;
 }
 
-.btn-plain:hover,
-.btn-plain:focus {
+.btn-sidebar,
+.btn-sidebar:hover,
+.btn-sidebar:focus {
   color: $primary;
+  font-size: 90%;
+}
+
+.btn-sidebar:hover,
+.btn-sidebar:focus {
+  text-decoration: underline;
 }
 
 .text-large {
