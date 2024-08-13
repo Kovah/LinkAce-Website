@@ -2,6 +2,23 @@
 title: LinkAce Changelog
 ---
 
+## 1.15.2
+
+_Released at 2024-08-13_
+
+- Session cookies are no longer secure by default, as it breaks any LinkAce running under http://
+- Users can now search for links without tags or lists ({{issuelink 824}})
+- Dependencies were updated, including security patches.
+
+
+## 1.15.1
+
+_Released at 2024-07-14_
+
+- Reduce release image size by [@rare-magma](https://github.com/rare-magma) in {{issuelink 799}}
+- Dependencies were updated, including security patches.
+
+
 ## 1.15.0
 
 _Released at 2024-07-09_
