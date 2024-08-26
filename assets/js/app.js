@@ -12,6 +12,6 @@ function registerCollapseToggles () {
   });
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
   registerCollapseToggles();
 });

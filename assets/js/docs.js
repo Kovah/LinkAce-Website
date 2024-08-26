@@ -47,6 +47,6 @@ docsSearch.addWidgets([
   })
 ]);
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
   docsSearch.start();
 });
