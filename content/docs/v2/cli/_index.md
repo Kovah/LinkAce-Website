@@ -46,7 +46,7 @@ If you are stuck, you can cancel the command at any time by using `Ctl / Strg` +
 
 ## Update the thumbnails for all links
 
-_Since v2.6.0_
+_Since v1.6.0_
 
 This command updates the thumbnail for all links with the status "ok". This can take a long time, depending on the amount of links you have saved. Helpful if you upgrade from a previous version to version 1.6.0 and want to set the correct thumbnails for all links.
 
@@ -104,6 +104,25 @@ docker exec -it linkace_app_1 php artisan links:import [file name]
 **Run without Docker**
 ```
 php artisan links:import [file name]
+```
+
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+
+
+## Check the Email Configuration
+
+_Since v2.0.0_
+
+This command sends a test email to a given email address to check if email is correctly configured for your LinkAce setup.
+
+**Run via Docker**
+```
+docker exec -it linkace_app_1 php artisan mail:check
+```
+
+**Run without Docker**
+```
+php artisan mail:check
 ```
 
 If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.

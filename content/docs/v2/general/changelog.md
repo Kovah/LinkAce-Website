@@ -26,15 +26,17 @@ LinkAce now supports working with multiple users, which also includes a more adv
   - Lists and tags are now loaded up-front when adding or editing links. This speeds up the process and allows near-instant searches. 
 - Links, lists and tags can now be bulk-edited. ({{<issuelink 26>}})
 - Meta information was added for all relevant pages so your browser now displays more information. Contributed by chrissawyerfan4. ({{<issuelink 494>}})
+- The HTML templates now contain a lot of semantic and special CSS classes for easier customization. ({{<issuelink 437>}})
 
 ### Administration
 
 - Audit logs were rewritten and now also log events on the system level. ({{<issuelink 467>}})
 - A unique tag is added to all links processed during an import, to identify them later on. ({{<issuelink 757>}})
+- There is a dedicated CLI command to test the email configuration. ({{<issuelink 500>}})
 
 ### Running LinkAce
 
-- The Docker image for LinkAce was rewritten and is now based on Caddy. ({{<issuelink 502>}})
+- The Docker image for LinkAce was rewritten, is now based on the Caddy web server and runs rootless by default. ({{<issuelink 502>}})
 - The setup was overhauled and now supports SQLite and PostgreSQL too. ({{<issuelink 831>}})
 - The way settings are stored was completely rewritten and is now more solid for both system and user settings. ({{<issuelink 494>}})
 - Lots of smaller corrections, adjustments and rewritten features to make LinkAce more stable.
