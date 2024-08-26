@@ -18,11 +18,3 @@ Depending on your personal preferences, you can run LinkAce either with or witho
 
 * [Setup with Docker]({{< relref path="docs/v2/setup/setup-with-docker/_index.md" >}})
 * [Setup without Docker]({{< relref path="docs/v2/setup/setup-without-docker.md" >}})
-
-
-## Setup with SQLite or PostgreSQL
-
-By default, LinkAce is using MySQL but you are free to use SQLite or PostgreSQL.
-
-- To use **SQLite**, please follow the specific [SQLite instructions]({{< relref path="docs/v2/setup/setup-with-sqlite.md" >}}).
-- To use **PostgreSQL**, please follow the specific [PostgreSQL instructions]({{< relref path="docs/v2/setup/setup-with-postgresql.md" >}}).

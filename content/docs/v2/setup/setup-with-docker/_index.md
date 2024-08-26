@@ -8,7 +8,7 @@ aliases:
 
 Working with Docker is pretty straight forward, but you should be familiar with Docker. To make things easier, we provide Docker Compose files in the repository which contain all needed services, configured to just run the application right away.
 
-{{< alert type="info" >}}
+{{< alert type="secondary" >}}
 All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkace/linkace) and on the [**GitHub Registry**](https://github.com/Kovah/LinkAce/pkgs/container/linkace) and support `amd/v7`, `amd64` and `amd64`.
 {{</ alert >}}
 
@@ -19,8 +19,23 @@ All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkac
 * Docker Compose is recommended for the setup, must support compose version 3
 * Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` may cause issues with different Unicode characters.
 
+---
 
-## Setup with Docker
+## 2-Minute Testing Setup
+
+You can run LinkAce within a couple of minutes, using a SQLite database to get started quickly. Please notice that switching between databases is not supported if you decide to run LinkAce with MySQL or Postgres later on.
+
+```
+docker run -p "8080:80" -v "./database.sqlite:/app/database/database.sqlite" linkace/linkace
+```
+
+Then open `http://localhost:8080` in your browser and follow the few setup steps.
+
+---
+
+## Stable Setup
+
+It is recommended to follow these setup steps to ensure that LinkAce is running smoothly. This setup method is the only supported one for Docker. 
 
 ### 1. Copy the needed files
 
