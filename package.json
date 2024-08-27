@@ -17,9 +17,9 @@
     "build-with-search": "npm run production && hugo && npm run algolia"
   },
   "dependencies": {
-    "algoliasearch": "^5.0.0",
+    "algoliasearch": "^5.1.1",
     "bootstrap": "^5.3.3",
-    "instantsearch.js": "^4.73.2",
+    "instantsearch.js": "^4.74.0",
     "prismjs": "^1.25.0"
   },
   "devDependencies": {
