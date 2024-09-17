@@ -10,6 +10,7 @@ LinkAce supports various OAuth or OIDC providers.
 
 ## Supported providers
 
+- Generic OIDC provider
 - Auth0
 - Authentik
 - AWS Cognito
@@ -71,6 +72,24 @@ users try to login.
 ---
 
 ## Provider Configuration
+
+### Generic OpenID Connect Provider
+
+{{< table >}}
+
+| Config                     | Default | Description                                 |
+|:---------------------------|:--------|:--------------------------------------------|
+| `OAUTH_OIDC_ENABLED`       | `false` | Enable SSO authentication for OIDC          |
+| `OAUTH_OIDC_BASE_URL`      |         | The OIDC base URL (details see below)       |
+| `OAUTH_OIDC_CLIENT_ID`     |         | The OIDC client ID                          |
+| `OAUTH_OIDC_CLIENT_SECRET` |         | The OIDC client secret                      |
+| `OAUTH_OIDC_SCOPES`        |         | Additional scopes sent to the OIDC provider |
+
+{{< / table >}}
+
+The base URL must be set to the URL of your OIDC endpoint excluding the `.well-known/openid-configuration` part.
+Example: If `https://auth.company.com/application/linkace/.well-known/openid-configuration` is your OIDC configuration 
+URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 ### Auth0
 
