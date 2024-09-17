@@ -1,6 +1,6 @@
 ---
 title: Application Backups
-weight: 50
+weight: 10
 ---
 
 LinkAce provides an easy way to back up the whole application including the database to the local filesystem, or any S3-compatible service, including Amazon AWS S3, Minio or Backblase B2. Under the hood LinkAce uses the [**Spatie Backup package**](https://spatie.be/docs/laravel-backup/v6/introduction). Please consult the documentation of the package for advanced configuration.

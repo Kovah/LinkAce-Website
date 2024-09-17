@@ -1,6 +1,6 @@
 ---
 title: User Settings
-weight: 10
+weight: 20
 ---
 
 LinkAce offers a lot of options to customize your bookmarking experience. Here is the overview for all user specific settings which are accessible from the user drop down menu in the menu bar.

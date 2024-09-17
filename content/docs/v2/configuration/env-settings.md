@@ -1,6 +1,6 @@
 ---
 title: Advanced Settings
-weight: 60
+weight: 100
 ---
 
 The following settings can be added to the `.env` file and changed as you need them. 

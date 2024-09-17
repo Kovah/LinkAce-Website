@@ -1,6 +1,6 @@
 ---
 title: Export
-weight: 40
+weight: 50
 ---
 
 If you are not satisfied with LinkAce or want to store your links in your browser again, you can export all links to either a browser-compatible HTML file, or a CSV file readable by other applications like Excel.
