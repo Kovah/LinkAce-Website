@@ -32,7 +32,7 @@ provider has its own configuration which must be added to the .env file and prop
 
 | Config                   | Possible Options | Description                                         |
 |:-------------------------|:-----------------|:----------------------------------------------------|
-| `OAUTH_ENABLED`          | true/false       | Enable SSO authentication via OAuth or OIDC         |
+| `SSO_ENABLED`            | true/false       | Enable SSO authentication via OAuth or OIDC         |
 | `REGULAR_LOGIN_DISABLED` | true/false       | Disable the regular login form and user management. |
 
 {{< / table >}}
@@ -57,13 +57,13 @@ regular password reset feature.
 ## Example Configuration
 
 ```
-OAUTH_ENABLED=true
+SSO_ENABLED=true
 REGULAR_LOGIN_DISABLED=true
 
-OAUTH_AUTH0_ENABLED=true
-OAUTH_AUTH0_BASE_URL=https://example.auth0.com/
-OAUTH_AUTH0_CLIENT_ID=W+qVVdlLP32a2F.....
-OAUTH_AUTH0_CLIENT_SECRET=U5qo0Le2stKK2vO87TTl.....
+SSO_AUTH0_ENABLED=true
+SSO_AUTH0_BASE_URL=https://example.auth0.com/
+SSO_AUTH0_CLIENT_ID=W+qVVdlLP32a2F.....
+SSO_AUTH0_CLIENT_SECRET=U5qo0Le2stKK2vO87TTl.....
 ```
 
 After adding this to your .env file, the regular login form vanishes and a button to login with Auth0 will show up when
@@ -77,13 +77,13 @@ users try to login.
 
 {{< table >}}
 
-| Config                     | Default | Description                                 |
-|:---------------------------|:--------|:--------------------------------------------|
-| `OAUTH_OIDC_ENABLED`       | `false` | Enable SSO authentication for OIDC          |
-| `OAUTH_OIDC_BASE_URL`      |         | The OIDC base URL (details see below)       |
-| `OAUTH_OIDC_CLIENT_ID`     |         | The OIDC client ID                          |
-| `OAUTH_OIDC_CLIENT_SECRET` |         | The OIDC client secret                      |
-| `OAUTH_OIDC_SCOPES`        |         | Additional scopes sent to the OIDC provider |
+| Config                   | Default | Description                                 |
+|:-------------------------|:--------|:--------------------------------------------|
+| `SSO_OIDC_ENABLED`       | `false` | Enable SSO authentication for OIDC          |
+| `SSO_OIDC_BASE_URL`      |         | The OIDC base URL (details see below)       |
+| `SSO_OIDC_CLIENT_ID`     |         | The OIDC client ID                          |
+| `SSO_OIDC_CLIENT_SECRET` |         | The OIDC client secret                      |
+| `SSO_OIDC_SCOPES`        |         | Additional scopes sent to the OIDC provider |
 
 {{< / table >}}
 
@@ -95,12 +95,12 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 {{< table >}}
 
-| Config                      | Default | Description                           |
-|:----------------------------|:--------|:--------------------------------------|
-| `OAUTH_AUTH0_ENABLED`       | `false` | Enable SSO authentication for Zitadel |
-| `OAUTH_AUTH0_BASE_URL`      |         | The Auth0 base URL                    |
-| `OAUTH_AUTH0_CLIENT_ID`     |         | The Auth0 client ID                   |
-| `OAUTH_AUTH0_CLIENT_SECRET` |         | The Auth0 client secret               |
+| Config                    | Default | Description                           |
+|:--------------------------|:--------|:--------------------------------------|
+| `SSO_AUTH0_ENABLED`       | `false` | Enable SSO authentication for Zitadel |
+| `SSO_AUTH0_BASE_URL`      |         | The Auth0 base URL                    |
+| `SSO_AUTH0_CLIENT_ID`     |         | The Auth0 client ID                   |
+| `SSO_AUTH0_CLIENT_SECRET` |         | The Auth0 client secret               |
 
 {{< / table >}}
 
@@ -108,12 +108,12 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 {{< table >}}
 
-| Config                          | Default | Description                             |
-|:--------------------------------|:--------|:----------------------------------------|
-| `OAUTH_AUTHENTIK_ENABLED`       | `false` | Enable SSO authentication for Authentik |
-| `OAUTH_AUTHENTIK_BASE_URL`      |         | The Authentik base URL                  |
-| `OAUTH_AUTHENTIK_CLIENT_ID`     |         | The Authentik client ID                 |
-| `OAUTH_AUTHENTIK_CLIENT_SECRET` |         | The Authentik client secret             |
+| Config                        | Default | Description                             |
+|:------------------------------|:--------|:----------------------------------------|
+| `SSO_AUTHENTIK_ENABLED`       | `false` | Enable SSO authentication for Authentik |
+| `SSO_AUTHENTIK_BASE_URL`      |         | The Authentik base URL                  |
+| `SSO_AUTHENTIK_CLIENT_ID`     |         | The Authentik client ID                 |
+| `SSO_AUTHENTIK_CLIENT_SECRET` |         | The Authentik client secret             |
 
 {{< / table >}}
 
@@ -121,14 +121,14 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 {{< table >}}
 
-| Config                        | Default | Description                                       |
-|:------------------------------|:--------|:--------------------------------------------------|
-| `OAUTH_COGNITO_ENABLED`       | `false` | Enable SSO authentication for Cognito             |
-| `OAUTH_COGNITO_HOST`          |         | The Cognito base URL                              |
-| `OAUTH_COGNITO_CLIENT_ID`     |         | The Cognito client ID                             |
-| `OAUTH_COGNITO_CLIENT_SECRET` |         | The Cognito client secret                         |
-| `OAUTH_COGNITO_LOGIN_SCOPE`   |         | Comma-separated list of login scopes              |
-| `OAUTH_COGNITO_SIGN_OUT_URL`  |         | Where to redirect to in LinkAce after logging out |
+| Config                      | Default | Description                                       |
+|:----------------------------|:--------|:--------------------------------------------------|
+| `SSO_COGNITO_ENABLED`       | `false` | Enable SSO authentication for Cognito             |
+| `SSO_COGNITO_HOST`          |         | The Cognito base URL                              |
+| `SSO_COGNITO_CLIENT_ID`     |         | The Cognito client ID                             |
+| `SSO_COGNITO_CLIENT_SECRET` |         | The Cognito client secret                         |
+| `SSO_COGNITO_LOGIN_SCOPE`   |         | Comma-separated list of login scopes              |
+| `SSO_COGNITO_SIGN_OUT_URL`  |         | Where to redirect to in LinkAce after logging out |
 
 {{< / table >}}
 
@@ -136,12 +136,12 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 {{< table >}}
 
-| Config                           | Default | Description                              |
-|:---------------------------------|:--------|:-----------------------------------------|
-| `OAUTH_FUSIONAUTH_ENABLED`       | `false` | Enable SSO authentication for FusionAuth |
-| `OAUTH_FUSIONAUTH_BASE_URL`      |         | The FusionAuth base URL                  |
-| `OAUTH_FUSIONAUTH_CLIENT_ID`     |         | The FusionAuth client ID                 |
-| `OAUTH_FUSIONAUTH_CLIENT_SECRET` |         | The FusionAuth client secret             |
+| Config                         | Default | Description                              |
+|:-------------------------------|:--------|:-----------------------------------------|
+| `SSO_FUSIONAUTH_ENABLED`       | `false` | Enable SSO authentication for FusionAuth |
+| `SSO_FUSIONAUTH_BASE_URL`      |         | The FusionAuth base URL                  |
+| `SSO_FUSIONAUTH_CLIENT_ID`     |         | The FusionAuth client ID                 |
+| `SSO_FUSIONAUTH_CLIENT_SECRET` |         | The FusionAuth client secret             |
 
 {{< / table >}}
 
@@ -149,11 +149,11 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 {{< table >}}
 
-| Config                       | Default | Description                          |
-|:-----------------------------|:--------|:-------------------------------------|
-| `OAUTH_GOOGLE_ENABLED`       | `false` | Enable SSO authentication for Google |
-| `OAUTH_GOOGLE_CLIENT_ID`     |         | The Google client ID                 |
-| `OAUTH_GOOGLE_CLIENT_SECRET` |         | The Google client secret             |
+| Config                     | Default | Description                          |
+|:---------------------------|:--------|:-------------------------------------|
+| `SSO_GOOGLE_ENABLED`       | `false` | Enable SSO authentication for Google |
+| `SSO_GOOGLE_CLIENT_ID`     |         | The Google client ID                 |
+| `SSO_GOOGLE_CLIENT_SECRET` |         | The Google client secret             |
 
 {{< / table >}}
 
@@ -161,11 +161,11 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 {{< table >}}
 
-| Config                       | Default | Description                          |
-|:-----------------------------|:--------|:-------------------------------------|
-| `OAUTH_GITHUB_ENABLED`       | `false` | Enable SSO authentication for GitHub |
-| `OAUTH_GITHUB_CLIENT_ID`     |         | The GitHub client ID                 |
-| `OAUTH_GITHUB_CLIENT_SECRET` |         | The GitHub client secret             |
+| Config                     | Default | Description                          |
+|:---------------------------|:--------|:-------------------------------------|
+| `SSO_GITHUB_ENABLED`       | `false` | Enable SSO authentication for GitHub |
+| `SSO_GITHUB_CLIENT_ID`     |         | The GitHub client ID                 |
+| `SSO_GITHUB_CLIENT_SECRET` |         | The GitHub client secret             |
 
 {{< / table >}}
 
@@ -173,13 +173,13 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 {{< table >}}
 
-| Config                       | Default              | Description                          |
-|:-----------------------------|:---------------------|:-------------------------------------|
-| `OAUTH_GITLAB_ENABLED`       | `false`              | Enable SSO authentication for GitLab |
-| `OAUTH_GITLAB_HOST`          | `https://gitlab.com` | The GitLab base URL                  |
-| `OAUTH_GITLAB_BASE_URL`      |                      | The GitLab base URL                  |
-| `OAUTH_GITLAB_CLIENT_ID`     |                      | The GitLab client ID                 |
-| `OAUTH_GITLAB_CLIENT_SECRET` |                      | The GitLab client secret             |
+| Config                     | Default              | Description                          |
+|:---------------------------|:---------------------|:-------------------------------------|
+| `SSO_GITLAB_ENABLED`       | `false`              | Enable SSO authentication for GitLab |
+| `SSO_GITLAB_HOST`          | `https://gitlab.com` | The GitLab base URL                  |
+| `SSO_GITLAB_BASE_URL`      |                      | The GitLab base URL                  |
+| `SSO_GITLAB_CLIENT_ID`     |                      | The GitLab client ID                 |
+| `SSO_GITLAB_CLIENT_SECRET` |                      | The GitLab client secret             |
 
 {{< / table >}}
 
@@ -187,13 +187,13 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 {{< table >}}
 
-| Config                         | Default | Description                            |
-|:-------------------------------|:--------|:---------------------------------------|
-| `OAUTH_KEYCLOAK_ENABLED`       | `false` | Enable SSO authentication for Keycloak |
-| `OAUTH_KEYCLOAK_BASE_URL`      |         | The Keycloak base URL                  |
-| `OAUTH_KEYCLOAK_CLIENT_ID`     |         | The Keycloak client ID                 |
-| `OAUTH_KEYCLOAK_CLIENT_SECRET` |         | The Keycloak client secret             |
-| `OAUTH_KEYCLOAK_REALM`         |         | The Keycloak realm                     |
+| Config                       | Default | Description                            |
+|:-----------------------------|:--------|:---------------------------------------|
+| `SSO_KEYCLOAK_ENABLED`       | `false` | Enable SSO authentication for Keycloak |
+| `SSO_KEYCLOAK_BASE_URL`      |         | The Keycloak base URL                  |
+| `SSO_KEYCLOAK_CLIENT_ID`     |         | The Keycloak client ID                 |
+| `SSO_KEYCLOAK_CLIENT_SECRET` |         | The Keycloak client secret             |
+| `SSO_KEYCLOAK_REALM`         |         | The Keycloak realm                     |
 
 {{< / table >}}
 
@@ -201,12 +201,12 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 {{< table >}}
 
-| Config                      | Default | Description                         |
-|:----------------------------|:--------|:------------------------------------|
-| `OAUTH_AZURE_ENABLED`       | `false` | Enable SSO authentication for Azure |
-| `OAUTH_AZURE_CLIENT_ID`     |         | The Azure client ID                 |
-| `OAUTH_AZURE_CLIENT_SECRET` |         | The Azure client secret             |
-| `OAUTH_AZURE_TENANT_ID`     |         | The Azure tenant ID                 |
+| Config                    | Default | Description                         |
+|:--------------------------|:--------|:------------------------------------|
+| `SSO_AZURE_ENABLED`       | `false` | Enable SSO authentication for Azure |
+| `SSO_AZURE_CLIENT_ID`     |         | The Azure client ID                 |
+| `SSO_AZURE_CLIENT_SECRET` |         | The Azure client secret             |
+| `SSO_AZURE_TENANT_ID`     |         | The Azure tenant ID                 |
 
 {{< / table >}}
 
@@ -214,12 +214,12 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 {{< table >}}
 
-| Config                     | Default | Description                        |
-|:---------------------------|:--------|:-----------------------------------|
-| `OAUTH_OKTA_ENABLED`       | `false` | Enable SSO authentication for Okta |
-| `OAUTH_OKTA_BASE_URL`      |         | The Okta base URL                  |
-| `OAUTH_OKTA_CLIENT_ID`     |         | The Okta client ID                 |
-| `OAUTH_OKTA_CLIENT_SECRET` |         | The Okta client secret             |
+| Config                   | Default | Description                        |
+|:-------------------------|:--------|:-----------------------------------|
+| `SSO_OKTA_ENABLED`       | `false` | Enable SSO authentication for Okta |
+| `SSO_OKTA_BASE_URL`      |         | The Okta base URL                  |
+| `SSO_OKTA_CLIENT_ID`     |         | The Okta client ID                 |
+| `SSO_OKTA_CLIENT_SECRET` |         | The Okta client secret             |
 
 {{< / table >}}
 
@@ -227,14 +227,14 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
 {{< table >}}
 
-| Config                                   | Default | Description                                       |
-|:-----------------------------------------|:--------|:--------------------------------------------------|
-| `OAUTH_ZITADEL_ENABLED`                  | `false` | Enable SSO authentication for Zitadel             |
-| `OAUTH_ZITADEL_CLIENT_ID`                |         | The Zitadel Client ID                             |
-| `OAUTH_ZITADEL_CLIENT_SECRET`            |         | The Zitadel Client Secret                         |
-| `OAUTH_ZITADEL_BASE_URL`                 |         | The Zitadel base URL                              |
-| `OAUTH_ZITADEL_ORGANIZATION_ID`          |         | The Zitadel organization ID                       |
-| `OAUTH_ZITADEL_PROJECT_ID`               |         | The Zitadel project ID                            |
-| `OAUTH_ZITADEL_POST_LOGOUT_REDIRECT_URI` | `/`     | Where to redirect to in LinkAce after logging out |
+| Config                                 | Default | Description                                       |
+|:---------------------------------------|:--------|:--------------------------------------------------|
+| `SSO_ZITADEL_ENABLED`                  | `false` | Enable SSO authentication for Zitadel             |
+| `SSO_ZITADEL_CLIENT_ID`                |         | The Zitadel Client ID                             |
+| `SSO_ZITADEL_CLIENT_SECRET`            |         | The Zitadel Client Secret                         |
+| `SSO_ZITADEL_BASE_URL`                 |         | The Zitadel base URL                              |
+| `SSO_ZITADEL_ORGANIZATION_ID`          |         | The Zitadel organization ID                       |
+| `SSO_ZITADEL_PROJECT_ID`               |         | The Zitadel project ID                            |
+| `SSO_ZITADEL_POST_LOGOUT_REDIRECT_URI` | `/`     | Where to redirect to in LinkAce after logging out |
 
 {{< / table >}}
