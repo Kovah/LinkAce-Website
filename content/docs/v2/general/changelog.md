@@ -18,7 +18,7 @@ LinkAce now supports working with **multiple users**, which also includes a more
   - Links, lists and tags are now displayed with the actual author so it's clear who added it.
   - Each user has its own API keys which can be used to work in the name of the user from third party applications. Additionally, admins can create system-wide API keys.
 
-Additionally, LinkAce now supports **Single Sign On** with OAuth or OIDC. 12 providers are already built-in, including one generic OIDC provider. Please consult the [dedicated SSO setup guide]({{< relref path="" >}}) for more details.
+Additionally, LinkAce now supports **Single Sign On** with OAuth or OIDC. 12 providers are already built-in, including one generic OIDC provider. Please consult the [dedicated SSO setup guide]({{< relref path="docs/v2/configuration/sso-oauth-oidc.md" >}}) for more details.
 
 ### User Interface
 
