@@ -2,6 +2,13 @@
 title: LinkAce Changelog
 ---
 
+## 1.15.3
+
+_Released at 2024-09-23_
+
+- Dependencies were updated, including security patches
+
+
 ## 1.15.2
 
 _Released at 2024-08-13_

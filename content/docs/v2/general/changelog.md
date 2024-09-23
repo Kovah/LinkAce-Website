@@ -12,11 +12,13 @@ Please consult the [dedicated upgrade guide]({{< relref path="docs/v2/upgrade/fr
 
 ### Support for multiple users
 
-LinkAce now supports working with multiple users, which also includes a more advanced permission scheme as well as a new visibility setting for links, lists and tags ({{<issuelink 165>}})
+LinkAce now supports working with **multiple users**, which also includes a more advanced permission scheme as well as a new visibility setting for links, lists and tags ({{<issuelink 165>}})
   - Administrators can now control various system settings and invite new users.
   - Links, lists and tags can now be public, internal or private, which controls the visibility to the public as well as logged-in users.
   - Links, lists and tags are now displayed with the actual author so it's clear who added it.
   - Each user has its own API keys which can be used to work in the name of the user from third party applications. Additionally, admins can create system-wide API keys.
+
+Additionally, LinkAce now supports **Single Sign On** with OAuth or OIDC. 12 providers are already built-in, including one generic OIDC provider. Please consult the [dedicated SSO setup guide]({{< relref path="" >}}) for more details.
 
 ### User Interface
 
