@@ -5,5 +5,5 @@ doc_version: docs_v1
 layout: overview
 cascade:
   doc_version: docs_v1
-  #deprecated: true
+  deprecated: true
 ---

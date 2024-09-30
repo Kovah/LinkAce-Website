@@ -2,10 +2,8 @@
 title: LinkAce Documentation
 doc_version: docs_v2
 hide_toc: true
-#layout: overview
 cascade:
     doc_version: docs_v2
-    beta: true
 ---
 
 LinkAce is a self-hosted tool for effortlessly archiving, organizing, and sharing your favorite web links. With a clean interface, you can save articles, bookmark tools, and preserve important content long-term. Easily categorize and retrieve your links, or share your collection with others.
