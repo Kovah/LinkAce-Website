@@ -12,7 +12,7 @@
     "prod": "npm run production",
     "production": "mix --production",
     "algolia": "atomic-algolia",
-    "serve": "hugo serve -D --bind 0.0.0.0",
+    "serve": "hugo serve -D --gc --bind 0.0.0.0",
     "build": "npm run production && hugo",
     "build-with-search": "npm run production && hugo && npm run algolia"
   },

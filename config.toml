@@ -5,24 +5,24 @@ assetDir = "./assets/dist"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
 [params]
-  DocsCurrentVersion = "docs/v1"
-  DocsRepo = "https://github.com/Kovah/LinkAce-Website/"
-  ApiDocs = "https://api-docs.linkace.org"
-  DemoUrl = "https://demo.linkace.org"
-  WikiDockerSetupUrl = "/docs/v1/setup/setup-with-docker/"
-  WikiServerSetupUrl = "/docs/v1/setup/setup-without-docker/"
-  DockerHub = "https://hub.docker.com/r/linkace/linkace/"
-  Github = "https://github.com/Kovah/LinkAce/"
-  Twitter = "https://twitter.com/linkaceapp"
-  Mastodon = "https://mastodon.social/@linkace"
-  Community = "https://github.com/Kovah/LinkAce/discussions/"
-  Zapier = "https://zapier.com/apps/linkace/integrations"
-  AboutMeMastodon = "https://mastodon.social/@Kovah"
-  AboutMeWebsite = "https://kovah.de"
-  AboutMeTwitter = "https://twitter.com/kevinwoblick"
+DocsCurrentVersion = "docs/v1"
+DocsRepo = "https://github.com/Kovah/LinkAce-Website/"
+ApiDocs = "https://api-docs.linkace.org"
+DemoUrl = "https://demo.linkace.org"
+WikiDockerSetupUrl = "/docs/v1/setup/setup-with-docker/"
+WikiServerSetupUrl = "/docs/v1/setup/setup-without-docker/"
+DockerHub = "https://hub.docker.com/r/linkace/linkace/"
+Github = "https://github.com/Kovah/LinkAce/"
+Twitter = "https://twitter.com/linkaceapp"
+Mastodon = "https://mastodon.social/@linkace"
+Community = "https://github.com/Kovah/LinkAce/discussions/"
+Zapier = "https://zapier.com/apps/linkace/integrations"
+AboutMeMastodon = "https://mastodon.social/@Kovah"
+AboutMeWebsite = "https://kovah.de"
+AboutMeTwitter = "https://twitter.com/kevinwoblick"
 
-# [outputs]
-#   page = ['HTML', 'Algolia']
+[outputs]
+page = ['HTML', 'Algolia']
 
 [outputFormats.Algolia]
 baseName = "algolia"

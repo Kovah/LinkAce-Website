@@ -1,6 +1,6 @@
 ---
 title: SSO with OAuth or OIDC
-weight: 30
+weight: 130
 ---
 
 You can connect LinkAce with an OAuth or OIDC provider to manage your users at a central place and let them login to

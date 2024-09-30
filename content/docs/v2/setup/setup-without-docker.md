@@ -22,7 +22,7 @@ The application was developed with being used with Docker in mind. All following
 * A database server with one of the following databases running:
     * MySQL 5.6+ (recommended)
     * PostgreSQL 9.4+
-    * SQLite 3.8.8+ (not tested, may work)
+    * SQLite 3.8.8+
     * SQL Server 2017+ (not tested, may work)
 * Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` may cause issues with different Unicode characters.
 

@@ -16,7 +16,8 @@
     {{ if isset .Params "beta" }}
         <div class="alert alert-warning mb-4">
             <strong>Warning</strong>: This is the documentation of a beta version of LinkAce. Things may break. Only use
-            this version for tests.
+            this
+            version for tests.
         </div>
     {{ end }}
 
@@ -31,7 +32,31 @@
         {{ end }}
     {{ end }}
 
+    {{ $currentPage := . }}
+    {{ $defaultDocs := .Site.Params.DocsBaseVersion }}
+    {{ $docsV1 := .Site.GetPage "section" "docs/v1" }}
+    {{ $docsV2 := .Site.GetPage "section" "docs/v2" }}
+    {{ $version := $docsV2 }}
+    {{ if or (.IsDescendant (.Site.GetPage "section" "docs/v1")) (eq . (.Site.GetPage "section" "docs/v1")) }}
+        {{ $version = $docsV1 }}
+    {{ end }}
+
     <article class="content">
         {{ .Content }}
+
+        {{ range (index $.Site.Menus $version.Params.doc_version) }}
+            {{ if and (ne .Page.Params.headless true) (ne .Page.Params.in_sidebar false) }}
+                <h3><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></h3>
+            {{ else }}
+                <h3>{{ .Page.Title }}</h3>
+            {{ end }}
+            {{ if ne .Page.Pages nil }}
+                <ul>
+                    {{ range .Page.Pages }}
+                        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+        {{ end }}
     </article>
 {{ end }}

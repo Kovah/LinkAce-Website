@@ -6,7 +6,7 @@ weight: 10
 The Dashboard is the first screen you see after logging into LinkAce. It display the last few saved links, a mini form
 for adding a new link quickly, as well as some numeric stats of your link database.
 
-{{< image type="screen" img="dashboard.png" alt="Preview of the Dashboard" >}}
+{{< image type="screen" img="v2/dashboard.png" alt="Preview of the Dashboard" >}}
 
 ## Link Quick Adding
 

@@ -1,6 +1,6 @@
 ---
 title: User Management
-weight: 20
+weight: 120
 ---
 
 LinkAce supports multiple users working on the same application, sharing links, lists and tags with each other. There are two major user groups in LinkAce:

@@ -1,0 +1,16 @@
+<div class="card-group mt-6">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title mt-0">Install with Docker</h4>
+      <p class="card-text">This is the recommended way of installing LinkAce on a server with Docker.</p>
+      <p class="card-text"><a href='{{ relref . (.Get "docker") }}' class="btn btn-primary btn-lg">Start Setup</a></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title mt-0">Install without Docker</h4>
+      <p class="card-text">Install LinkAce on a server with plain PHP, or on shared hosting.</p>
+      <p class="card-text"><a href='{{ relref . (.Get "nodocker") }}' class="btn btn-primary btn-lg">Start Setup</a></p>
+    </div>
+  </div>
+</div>

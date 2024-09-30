@@ -1,6 +1,6 @@
 ---
 title: Import
-weight: 40
+weight: 10
 ---
 
 LinkAce provides a way to import existing bookmarks from your browser. Please notice, that you have to export your bookmarks in the HTML format. Other formats are not supported.
