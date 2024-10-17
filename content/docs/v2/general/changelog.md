@@ -33,8 +33,10 @@ Additionally, LinkAce now supports **Single Sign On** with OAuth or OIDC. 12 pro
 ### Administration
 
 - Audit logs were rewritten and now also log events on the system level. ({{<issuelink 467>}})
-- A unique tag is added to all links processed during an import, to identify them later on. ({{<issuelink 757>}})
 - There is a dedicated CLI command to test the email configuration. ({{<issuelink 500>}})
+- Importing & Exporting
+  - The import process was overhauled for better processing of large import files. Importing of links is now done in the background. ({{<issuelink 287>}}) 
+  - A unique tag is added to all links processed during an import, to identify them later on. ({{<issuelink 757>}})
 
 ### Running LinkAce
 
@@ -42,6 +44,13 @@ Additionally, LinkAce now supports **Single Sign On** with OAuth or OIDC. 12 pro
 - The setup was overhauled and now supports SQLite and PostgreSQL too. ({{<issuelink 831>}})
 - The way settings are stored was completely rewritten and is now more solid for both system and user settings. ({{<issuelink 494>}})
 - Lots of smaller corrections, adjustments and rewritten features to make LinkAce more stable.
+
+### API
+
+- Bulk editing for links, lists and tags is now available
+- Bulk adding for links, lists and tags is now available
+
+The complete API documentation can be found at [**api-docs.linkace.org**]({{< param "ApiDocs" >}}).
 
 ---
 
