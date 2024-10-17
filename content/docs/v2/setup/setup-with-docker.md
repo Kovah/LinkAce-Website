@@ -21,15 +21,16 @@ All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkac
 
 ---
 
-## 2-Minute Testing Setup
+## 2-Minute Test Setup
 
 You can run LinkAce within a couple of minutes, using a SQLite database to get started quickly. Please notice that switching between databases is not supported if you decide to run LinkAce with MySQL or Postgres later on.
 
 ```
+touch database.sqlite
 docker run -p "8080:80" -v "./database.sqlite:/app/database/database.sqlite" linkace/linkace
 ```
 
-Then open `http://localhost:8080` in your browser and follow the few setup steps.
+Then open `http://localhost:8080` in your browser and follow the setup steps.
 
 ---
 
@@ -90,11 +91,82 @@ Please make sure to follow the [post-installation steps]({{< relref path="docs/v
 
 ## Advanced Configuration
 
-The [advanced Docker configuration]({{< relref path="docs/v2/setup/setup-with-docker/advanced-configuration.md" >}}) page provides some guides for specific use cases for Docker.
+### Running Linkace behind a proxy / load balancer
 
-- Running Linkace behind a proxy / load balancer
-- Enable HTTPS for LinkAce without a proxy / load balancer
+If you are using a proxy / load balancer with HTTPS, please make sure it sends the `X-Forwarded-Proto` and `X-Forwarded-For` headers to LinkAce. Otherwise, LinkAce won't be able to correctly generate URLs.
 
+Nginx configuration example:
+```
+proxy_set_header X-Forwarded-For $remote_addr;
+proxy_set_header X-Forwarded-Proto $scheme; 
+proxy_set_header Host $host; 
+```
+
+Apache configuration example:
+```
+ProxyPreserveHost on
+RequestHeader set X-Forwarded-Port "443"
+RequestHeader set X-Forwarded-Proto "https"
+```
+
+LinkAce 2 accepts a `$PORT` environment variable to listen on the specified port for incoming connections. This might be useful for restricted Docker hosting environments such as Heroku.
+
+### Running LinkAce directly with SSL
+
+If you want to run LinkAce without a proxy but still want to use HTTPS, you must configure the built-in web server accordingly.
+
+1. First of all, stop your existing LinkAce setup. Make sure that your domain is properly configured to be accessible from the internet.
+
+2. Download the [ssl.Caddyfile](https://github.com/Kovah/LinkAce/blob/2.x/resources/docker/ssl.Caddyfile) file, place it besides your `docker-compose.yml` file.
+
+3. Then, open your `docker-compose.yml` file and do the following adjustments:
+
+4. After `image: docker.io/linkace/linkace:latest`, add a new `env` like this and set your own domain:
+   ```yaml
+   services:
+     # --- LinkAce
+     app:
+       image: docker.io/linkace/linkace:latest
+       environment:
+         LINKACE_DOMAIN: "your-linkace-domain.com"
+         PORT: 443
+   ```
+5. Remove the hash in front of the `- "0.0.0.0:443:443"` line.
+6. Remove the hash in front of the `- ./caddy-data:/home/www-data/.local/share/caddy` and `- ./ssl.Caddyfile:/etc/caddy/Caddyfile` lines.
+
+Your docker-compose.yml file should now look like this:
+
+```yaml
+---
+services:
+  # --- LinkAce
+  app:
+    image: docker.io/linkace/linkace:latest
+    environment:
+      LINKACE_DOMAIN: "demo.linkace.org"
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "0.0.0.0:80:80"
+      # Remove the hash of the following line if you want to use HTTPS for this container
+      - "0.0.0.0:443:443"
+    volumes:
+      - ./.env:/app/.env
+      - ./backups:/app/storage/app/backups
+      # Remove the hash of the following line if you want to use HTTPS for this container
+      - ./caddy-data:/home/www-data/.local/share/caddy
+      - ./ssl.Caddyfile:/etc/caddy/Caddyfile
+...
+```
+
+After that, start the installation again with `docker compose up -d`.
+
+The web server will now try to get the SSL certificate. After a short while you will be able to access LinkAce under your domain.
+
+If that doesn't work, check the logs of the web server with `docker compose logs -f app`.
+
+---
 
 ## Compatibility with other Tools
 

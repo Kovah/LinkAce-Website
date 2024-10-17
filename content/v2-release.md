@@ -1,30 +1,39 @@
 ---
-title: LinkAce 2 is here! 💙
+title: LinkAce 2.0 is here! 💙
 ---
 
-LinkAce 2 is finally here. Whew. It took almost 2 years and over 100 hours of coding to get here.
-
 {{< v2-celebrate >}}
+
+I’m super excited to finally share LinkAce 2.0 with you! It’s been a wild ride since the first version launched four years ago, and this new release has taken me over 100 hours to put together. I’ve completely reworked a ton of features and polished everything to give you a faster, smoother, and overall better experience.
+
+This update has been all about making it easier and more enjoyable to organize your bookmarks. I’ve listened to all the feedback, squashed some old bugs, and added new features that I think you’ll love.
+
+I can’t wait for you to try out LinkAce 2.0 and see what’s new. Thanks for sticking with me through this journey—I hope you enjoy this version as much as I enjoyed building it!
 
 ## Feature Highlights
 
 ### Support for multiple users
 
-LinkAce now supports working with **multiple users**, which also includes a more advanced permission scheme as well as a new visibility setting for links, lists and tags ({{<issuelink 165>}})
-- Administrators can now control various system settings and invite new users.
-- Links, lists and tags can now be public, internal or private, which controls the visibility to the public as well as logged-in users.
-- Links, lists and tags are now displayed with the actual author so it's clear who added it.
-- Each user has its own API keys which can be used to work in the name of the user from third party applications. Additionally, admins can create system-wide API keys.
+LinkAce now supports multiple users, along with an improved permission system and new visibility settings for links, lists, and tags. Here’s what’s new:
 
-Additionally, LinkAce now supports **Single Sign On** with OAuth or OIDC. 12 providers are already built-in, including one generic OIDC provider. Please consult the [dedicated SSO setup guide]({{< relref path="docs/v2/configuration/sso-oauth-oidc.md" >}}) for more details.
+- Administrators can manage system settings and invite new users.
+- You can now set links, lists, and tags to be public, internal, or private, controlling who can see them—whether it’s the public or logged-in users.
+- Links, lists, and tags now display the author’s name, so it’s clear who added them.
+- Each user has their own API keys for third-party app integration, while admins can also create system-wide API keys.
+
+LinkAce now also supports **Single Sign-On (SSO)** via OAuth or OIDC, with 12 providers already built-in, including a generic OIDC option. For setup instructions, check out the [SSO setup guide]({{< relref path="docs/v2/configuration/sso-oauth-oidc.md" >}}).
 
 ### User Interface
 
-- Overhaul of the user interface for a clearer structure, fewer inconsistencies and more readable lists.
-    - LinkAce now has three redesigned modes for displaying links: compact, detailed and as cards. This setting can be controlled directly from the interface, no settings are needed.
-    - The main navigation bar was adjusted so users need fewer clicks.
-    - Lists and tags are now loaded up-front when adding or editing links. This speeds up the process and allows near-instant searches.
-- Links, lists and tags can now be bulk-edited.
+The user interface has been completely revamped for better structure, consistency, and readability.
+
+- Three newly designed display modes for links: compact, detailed, and card view. You can easily switch between them directly from the interface, without needing to go to the settings.
+- The main navigation has been streamlined, reducing the number of clicks needed to get around.
+- Lists and tags are now preloaded when adding or editing links, making the process faster and allowing near-instant searches.
+
+{{< image type="screen" img="v2/dashboard.png" alt="Display links as a simple list" >}}
+
+Also, you can now bulk-edit links, lists, and tags for quicker management.
 
 ### Administration
 
@@ -36,3 +45,26 @@ Additionally, LinkAce now supports **Single Sign On** with OAuth or OIDC. 12 pro
 
 - The Docker image for LinkAce was rewritten, is now based on the Caddy web server and runs rootless by default.
 - The setup was overhauled and now supports SQLite and PostgreSQL too.
+
+{{< alert type="info" >}}
+The full list of changes with more details can be found in the [**changelog**]({{< relref path="docs/v2/general/changelog.md" >}}).
+{{</ alert >}}
+
+## How to upgrade from LinkAce 1
+
+{{< card >}}
+Ready to upgrade your LinkAce installation to the new version? Follow this upgrade guide:
+
+👉 [**Upgrade from LinkAce v1**]({{< relref path="docs/v2/upgrade/from-v1.md" >}})
+
+If you want to take a quick look at it without upgrading the existing setup, I suggest to try the [2-minute test setup]({{< relref path="docs/v2/setup/setup-with-docker#2-minute-test-setup" >}}).
+{{</ card >}}
+
+## Feedback and Issues
+
+If you are having issues with your upgrade or find issues in the new version, please report them in the [Community Forum]({{< param "Community" >}}).
+
+{{< alert type="success" >}}
+If you like LinkAce, please consider supporting the project by **becoming a [Patreon](https://www.patreon.com/Kovah)
+or [Github Sponsor](https://github.com/sponsors/Kovah)**. ⭐️
+{{</ alert >}}
