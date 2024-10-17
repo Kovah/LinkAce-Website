@@ -1,6 +1,6 @@
 ---
 title: System Settings
-weight: 10
+weight: 100
 ---
 
 The system settings allow the user to configure the whole application, affecting all users - even if this is a  single-user application for now.
@@ -43,7 +43,7 @@ If you have problems with your current token or think that someone else knows th
 
 ## General Settings
 
-{{< image type="screen" img="system_settings_general.png" alt="Preview of the general system settings" >}}
+{{< image type="screen" img="v2/system_settings_general.png" alt="Preview of the general system settings" >}}
 
 ### Page Title
 
@@ -69,7 +69,7 @@ Content entered here will be placed before the </head> tag on all LinkAce sites.
 
 These settings apply to all guests visiting your site, if you have guest access enabled.
 
-{{< image type="screen" img="system_settings_guest_settings.png" alt="Preview of the system guest settings" >}}
+{{< image type="screen" img="v2/system_settings_guest_settings.png" alt="Preview of the system guest settings" >}}
 
 Please check the [user settings documentation]({{< relref path="docs/v2/configuration/user-settings.md" lang="" >}}) for more details about all available options, as they are exactly the same.
 
