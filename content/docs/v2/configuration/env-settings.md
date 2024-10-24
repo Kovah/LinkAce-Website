@@ -19,6 +19,10 @@ APP_DEBUG=false
 # Set the time after a session expires automatically, in minutes. Default is 7 days.
 SESSION_LIFETIME=10080
 
+# Configure the API rate limit here: the first number defines the number of requests, the second the time frame
+# for the requests. 60,1 is the default which means: 60 requests per 1 minute
+API_RATE_LIMIT=60,1
+
 
 #### Backup configuration
 # Enable backups here
