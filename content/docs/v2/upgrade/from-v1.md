@@ -2,16 +2,13 @@
 title: Upgrade from LinkAce v1
 ---
 
-## General upgrade guide
-
 Please follow these instructions to upgrade LinkAce to the new version 2.
-
 
 ## Preparation
 
 {{< alert type="danger" >}}
-⚠️ **MAKE A BACKUP OF LINKACE, INCLUDING THE DATABASE!!!** ⚠️  
-There will be absolutely no help to restore your old LinkAce installation and database in case of a failed migration!
+⚠️ **MAKE A BACKUP OF YOUR LINKACE, INCLUDING THE DATABASE!!!** ⚠️  
+There will be absolutely no help to restore your old LinkAce installation and database if you have no backup!
 {{</ alert >}}
 
 ## Breaking changes
@@ -26,29 +23,43 @@ There will be absolutely no help to restore your old LinkAce installation and da
 
 ## Upgrade a Docker installation
 
-1. Stop your current containers:
-    ```
-    docker compose down
-    ```
-2. LinkAce no longer provides the advanced Docker image. LinkAce is now available as a complete Docker container including a webserver.
-3. If you have a service called `nginx` in your docker-compose.yml file, remove this service completely!
-   {{< alert type="warning" >}}
-   Due to a change in the default web server, there is no upgrade guide if you are running LinkAce directly with SSL certificates to provide HTTPS. Please consult the [steps to configure HTTPS with Docker]({{< relref path="docs/v2/setup/setup-with-docker/advanced-configuration.md" >}}) for all needed changes.
-   {{</ alert >}}
-4. Pull the new image:
-    ```
-    docker pull linkace/linkace:2.x
-    ```
-5. Restart your container:
-    ```
-    docker compose up -d
-    ```
-6. Run the database migrations and delete the current cache. The migration can take quite a while depending on your amount of links, lists and tags saved.
-    ```
-    docker compose exec app php artisan migrate
-    docker compose exec app php artisan cache:clear
-    ```
-   You may get a warning about running the migration in production mode. You should confirm the migration by answering with `yes`.
+### 1. Prepare your current installation
+
+After taking a backup, stop your current containers:
+```
+docker compose down
+```
+
+### 2. Adjust the docker-compose.yml file
+
+LinkAce no longer provides the advanced Docker image. LinkAce is now available as a complete Docker container including a webserver.
+If you are using `linkace/linkace:simple` or `linkace/linkace:php-nginx`, replace the image name with `linkace/linkace:2.x`.
+
+#### Migrating an advanced installation
+
+If you have a service called `nginx` in your docker-compose.yml file, please download the Docker setup package and replace your existing `docker-compose.yml` file. Do NOT overwrite your .env file!
+
+👉 [**linkace-docker.zip**](https://github.com/Kovah/LinkAce/releases/latest)
+
+Alternatively, you can take a look at the [docker-compose.yml](https://github.com/Kovah/LinkAce/blob/2.x/docker-compose.production.yml) and [.env](https://github.com/Kovah/LinkAce/blob/2.x/.env.docker.production) files directly and adopt it to your own setup.
+
+{{< alert type="warning" >}}
+If you used LinkAce directly with SSL certificates: a migration of existing certificates is not possible. Please consult the [steps to configure HTTPS with Docker]({{< relref path="docs/v2/setup/setup-with-docker.md#advanced-configuration" >}}) for all needed changes after finishing the upgrade.
+{{</ alert >}}
+
+### 3. Running the migration
+
+After adjusting the docker-compose.yml file or your personal setup, restart your container:
+```
+docker compose up -d
+```
+
+Now, run the database migrations and delete the current cache. The migration can take quite a while depending on your amount of links, lists and tags saved.
+```
+docker compose exec app php artisan migrate
+docker compose exec app php artisan cache:clear
+```
+You may get a warning about running the migration in production mode. You should confirm the migration by answering with `yes`.
 
 
 ## Upgrade a non-Docker installation

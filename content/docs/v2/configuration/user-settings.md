@@ -1,6 +1,6 @@
 ---
 title: User Settings
-weight: 20
+weight: 50
 ---
 
 LinkAce offers a lot of options to customize your bookmarking experience. Here is the overview for all user specific settings which are accessible from the user drop down menu in the menu bar.
@@ -12,17 +12,6 @@ LinkAce offers a lot of options to customize your bookmarking experience. Here i
 The Bookmarklet is one of the most important features as it provides a simple way to add a random website to LinkAce as a link without leaving the website. To use the Bookmarklet, drag the button to your browser bookmarks bar.
 
 More details about the Bookmarklet can be found in the [Bookmarklet documentation]({{< relref path="docs/v2/application/bookmarklet.md" >}}).
-
-
-## The API Token
-
-{{< image type="screen" img="user_settings_api_token.png" alt="Preview of the API token settings" >}}
-
-The API token is needed to authorize your requests when working with the LinkAce API.
-
-{{< alert type="info" >}}
-You can find the complete API details in our [**dedicated API documentation**](https://linkace.stoplight.io/docs/api-docs/).
-{{</ alert >}}
 
 
 ## Account Settings
@@ -91,7 +80,7 @@ By default, LinkAce won't try to backup links that are marked as "private". This
 
 ### Privacy settings
 
-{{< image type="screen" img="user_settings_privacy.png" alt="Preview of the privacy settings" >}}
+{{< image type="screen" img="v2/user_settings_privacy.png" alt="Preview of the privacy settings" >}}
 
 Privacy is quite important if you enabled guest mode. Whether you enable or disable the default behavior for links, lists, tags or notes, you can make them private or public while creating or editing them.
 
@@ -99,10 +88,10 @@ Privacy is quite important if you enabled guest mode. Whether you enable or disa
 
 | Option | Description |
 |:------|:------------|
-| Private Links by default | If enabled, all new links will be private by default. |
-| Private Lists by default  | If enabled, all new Lists will be private by default. |
-| Private Tags by default  | If enabled, all new Tags will be private by default. |
-| Private Notes by default  | If enabled, all new notes will be private by default. |
+| Default Link visibility | Depending on your choice, all new links will be `private`, `internal` or `private`. |
+| Default List visibility  | Depending on your choice, all new Lists will be `private`, `internal` or `private`. |
+| Default Tag visibility  | Depending on your choice, all new Tags will be `private`, `internal` or `private`. |
+| Default Note visibility  | Depending on your choice, all new Notes will be `private`, `internal` or `private`. |
 
 {{< / table >}}
 
