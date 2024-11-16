@@ -30,6 +30,7 @@ The user interface has been completely revamped for better structure, consistenc
 - Three newly designed display modes for links: compact, detailed, and card view. You can easily switch between them directly from the interface, without needing to go to the settings.
 - The main navigation has been streamlined, reducing the number of clicks needed to get around.
 - Lists and tags are now preloaded when adding or editing links, making the process faster and allowing near-instant searches.
+- Customize LinkAce with a custom logo text, additional footer link or a custom contact page.
 
 {{< image type="screen" img="v2/dashboard.png" alt="Display links as a simple list" >}}
 

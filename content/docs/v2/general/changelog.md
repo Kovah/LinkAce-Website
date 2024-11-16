@@ -29,6 +29,7 @@ Additionally, LinkAce now supports **Single Sign On** with OAuth or OIDC. 12 pro
 - Links, lists and tags can now be bulk-edited. ({{<issuelink 26>}})
 - Meta information was added for all relevant pages so your browser now displays more information. Contributed by chrissawyerfan4. ({{<issuelink 494>}})
 - The HTML templates now contain a lot of semantic and special CSS classes for easier customization. ({{<issuelink 437>}})
+- Customize LinkAce with a custom logo text, additional footer link or a custom contact page. ({{<issuelink 862>}} {{<issuelink 863>}} {{<issuelink 864>}})
 
 ### Administration
 

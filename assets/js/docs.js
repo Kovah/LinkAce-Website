@@ -6,20 +6,19 @@ const searchClient = algoliasearch('NDCLQHIM62', 'df23e2ffa22a485068544b25dc69d7
 
 const docsSearch = instantsearch({
   indexName: 'linkace_docs',
+  future: {
+    preserveSharedStateOnUnmount: true,
+  },
   searchClient,
-  searchFunction: function (helper) {
+  onStateChange: function ({uiState, setUiState}) {
     const searchResults = document.querySelector('#docsearch-results');
-    if (helper.state.query === '') {
-      searchResults.classList.add('d-none');
+    if (uiState.linkace_docs.query) {
+      searchResults.classList.remove('d-none');
       return;
     }
-    helper.search();
-    searchResults.classList.remove('d-none');
+    searchResults.classList.add('d-none');
   }
 });
-
-const hitTemplate = `
-  <a href="{{{ permalink }}}" class="docsearch-result-link">{{{ title }}}</a>`;
 
 docsSearch.addWidgets([
   searchBox({
@@ -41,8 +40,12 @@ docsSearch.addWidgets([
       item: 'docsearch-result'
     },
     templates: {
-      item: hitTemplate,
-      empty: 'No results for <strong>{{ query }}</strong>'
+      item(hit, { html, components, sendEvent }) {
+        return html`<a href="${hit.permalink}" class="docsearch-result-link">${hit.title}${hit.version ? ' (' + hit.version + ')' : ''}</a>`;
+      },
+      empty(results, { html }) {
+        return html`No results found for "${results.query}"`;
+      },
     }
   })
 ]);
