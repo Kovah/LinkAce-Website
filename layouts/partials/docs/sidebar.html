@@ -22,14 +22,14 @@
     <div class="list-group-item p-2 btn-group-vertical btn-group-sm">
       {{ with .Page }}
         {{ if and (ne .Params.headless true) (ne .Params.in_sidebar false) }}
-          <a href="{{ .Permalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
+          <a href="{{ .RelPermalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
         {{ end }}
 
         {{ range .Pages }}
-          <a href="{{ .Permalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
+          <a href="{{ .RelPermalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
 
           {{ range .Pages }}
-            <a href="{{ .Permalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'><span class="text-muted">&boxur;</span> {{ .Title }}</a>
+            <a href="{{ .RelPermalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'><span class="text-muted">&boxur;</span> {{ .Title }}</a>
           {{ end }}
         {{ end }}
       {{ end }}

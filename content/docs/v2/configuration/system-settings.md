@@ -13,7 +13,7 @@ The system settings allow the user to configure the whole application, affecting
 LinkAce will automatically check for updates on the system settings page. To get this to work, the app pulls information about the latest releases from Github and compares it to your currently installed version.
 
 
-## Cron Token
+## System Cron
 
 {{< image type="screen" img="system_settings_cron_token.png" alt="Preview of th cron token settings" >}}
 
@@ -34,6 +34,18 @@ Your cron must run **every minute** and must open the URL provided in the system
 
 ```
 *   *   *   *   *   wget -qO- https://linkace-example.com/cron/WPvv4mxM6nr22Aq4rVf1qEKutsXLTgyw > /dev/null
+```
+
+#### Cron Setup for Docker
+
+```
+*   *   *   *   *   docker exec linkace-app-1 php artisan schedule:run > /dev/null
+```
+
+#### Cron Setup for a PHP installation
+
+```
+*   *   *   *   *   cd /path/to/your/linkace && php artisan schedule:run > /dev/null
 ```
 
 ### Re-generate the cron token
