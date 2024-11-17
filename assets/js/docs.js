@@ -10,7 +10,7 @@ const docsSearch = instantsearch({
     preserveSharedStateOnUnmount: true,
   },
   searchClient,
-  onStateChange: function ({uiState, setUiState}) {
+  onStateChange: function ({uiState}) {
     const searchResults = document.querySelector('#docsearch-results');
     if (uiState.linkace_docs.query) {
       searchResults.classList.remove('d-none');
@@ -40,7 +40,7 @@ docsSearch.addWidgets([
       item: 'docsearch-result'
     },
     templates: {
-      item(hit, { html, components, sendEvent }) {
+      item(hit, { html }) {
         return html`<a href="${hit.permalink}" class="docsearch-result-link">${hit.title}${hit.version ? ' (' + hit.version + ')' : ''}</a>`;
       },
       empty(results, { html }) {
