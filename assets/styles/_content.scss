@@ -13,6 +13,14 @@
     p, ol, ul {
       margin-bottom: 0;
     }
+
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
   }
 
   li > .alert {

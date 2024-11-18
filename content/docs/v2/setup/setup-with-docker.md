@@ -16,14 +16,14 @@ All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkac
 
 * Command-line access to your server
 * Docker version 19 or greater
-* Docker Compose is recommended for the setup, must support compose version 3
-* Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` may cause issues with different Unicode characters.
+* Docker Compose is recommended for the setup, must support at least compose version 3
+* Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` _may_ cause issues with different Unicode characters.
 
 ---
 
 ## 2-Minute Test Setup
 
-You can run LinkAce within a couple of minutes, using a SQLite database to get started quickly. Please notice that switching between databases is not supported if you decide to run LinkAce with MySQL or Postgres later on.
+You can run LinkAce within a couple of minutes, using a SQLite database to try out the application. Please note that this is not recommended for production use and migrating from this test setup to another database is not supported.
 
 ```
 touch database.sqlite
@@ -38,11 +38,13 @@ Then open `http://localhost:8080` in your browser and follow the setup steps.
 
 It is recommended to follow these setup steps to ensure that LinkAce is running smoothly. This setup method is the only supported one for Docker. 
 
+
 ### 1. Copy the needed files
 
 Download the Docker setup package from the LinkAce repository: [**linkace-docker.zip**](https://github.com/Kovah/LinkAce/releases/latest)
 
 Alternatively, you can take a look at the [docker-compose.yml](https://github.com/Kovah/LinkAce/blob/2.x/docker-compose.production.yml) and [.env](https://github.com/Kovah/LinkAce/blob/2.x/.env.docker.production) files directly and adopt it to your own setup. 
+
 
 ### 2. Edit the base configuration
 
@@ -62,6 +64,30 @@ Your directory should look like this now:
 ├╴ LICENSE.md
 └╴ README.md
 ```
+
+{{< alert type="info" >}}
+#### Using environment variables instead of an .env file
+
+You might move the configuration variables from the .env file into your docker-compose.yml file or Docker setup. If you do this, you **must** generate your own application key.
+
+```
+$ docker run --rm -it linkace/linkace php artisan key:generate --show
+base64:Il/5KRDENz2TiCYjKweDAkI93Q4D5ZWmP3AORXgReNo=
+```
+
+Put this key into your environment variables. This is how it might look like in the provided docker-compose.yml file:
+
+```yaml {hl_lines=6}
+services:
+  # --- LinkAce
+  app:
+    image: docker.io/linkace/linkace:latest
+    environment:
+      APP_KEY: base64:Il/5KRDENz2TiCYjKweDAkI93Q4D5ZWmP3AORXgReNo=
+      DB_CONNECTION: mysql
+      # ...
+```
+{{</ alert >}}
 
 ### 3. Start the application
 
@@ -111,6 +137,7 @@ RequestHeader set X-Forwarded-Proto "https"
 
 LinkAce 2 accepts a `$PORT` environment variable to listen on the specified port for incoming connections. This might be useful for restricted Docker hosting environments such as Heroku.
 
+
 ### Running LinkAce directly with SSL
 
 If you want to run LinkAce without a proxy but still want to use HTTPS, you must configure the built-in web server accordingly.
@@ -136,7 +163,7 @@ If you want to run LinkAce without a proxy but still want to use HTTPS, you must
 
 Your docker-compose.yml file should now look like this:
 
-```yaml
+```yaml {hl_lines=["6-7",14,"19-20"]}
 ---
 services:
   # --- LinkAce
