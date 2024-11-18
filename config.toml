@@ -8,6 +8,7 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 DocsCurrentVersion = "docs/v2"
 DocsRepo = "https://github.com/Kovah/LinkAce-Website/"
 ApiDocs = "https://api-docs.linkace.org"
+ApiDocsV2 = "https://api-docs.linkace.org/v2"
 DemoUrl = "https://demo.linkace.org"
 WikiDockerSetupUrl = "/docs/v1/setup/setup-with-docker/"
 WikiServerSetupUrl = "/docs/v1/setup/setup-without-docker/"

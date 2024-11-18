@@ -18,7 +18,7 @@ There will be absolutely no help to restore your old LinkAce installation and da
   - If you enable Guest Mode before the upgrade, links marked as `public` will stay public.  
     However, if you have Guest Mode disabled, public links will become `internal`. This means they are visible to all logged-in users, but not to guests.
 - Your current user will become the primary administrator who can now control some system settings, as well as inviting users to LinkAce.
-- The API was updated to version `v2`. Any existing integrations must be checked and adjusted if needed.
+- The API was updated to version `v2`. Any existing integrations must be checked and adjusted if needed. The documentation can be found [here]({{< param "ApiDocsV2" >}}).
 
 
 ## Upgrade a Docker installation
