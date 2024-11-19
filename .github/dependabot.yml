@@ -17,8 +17,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    ignore:
-      - dependency-name: "laravel/cashier-paddle"
     groups:
       composer-major:
         update-types:
