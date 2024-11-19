@@ -14,6 +14,43 @@ By default, the backup system will periodically purge old backups. For more deta
 Please note that the [system cron]({{< relref path="docs/v2/configuration/system-settings.md#system-cron" >}}) should be configured for automatic backups to work correctly. However, you may also create backups manually, see below.
 {{</ alert >}}
 
+### Edit your .env file / environment variable
+
+Add the following line to your .env file or environment variables:
+
+```
+BACKUP_ENABLED=true
+```
+
+### Edit your docker-compose.yml
+
+First, create a backup folder to store the backups. The folder must be writable for other users, otherwise LinkAce won't be able to properly store the resulting files.
+
+```bash
+$ mkdir ./backups
+$ chmod 0766 ./backups
+```
+
+Now, open the `docker-compose.yml` file and remove the `#` in front of the `- ./backups:/app/storage/app/backups` line like this:
+
+```yaml {hl_lines=7}
+services:
+  # --- LinkAce
+  app:
+    image: docker.io/linkace/linkace:latest
+    volumes:
+      - ./.env:/app/.env
+      - ./backups:/app/storage/app/backups
+```
+
+If you run a custom Docker-based setup (e.g. via Portainer), please adjust your container to mount a writable directory into `/app/storage/app/backups`.
+
+That's it. LinkAce will now create backups every night at 2am.
+
+---
+
+## Configuration for an S3-compatible service
+
 To back up LinkAce to S3, add the following settings to your .env file:
 
 | .env setting | Possible values | Default value | Description |
@@ -40,6 +77,8 @@ Instead of Amazon AWS S3, you can use any S3-compatible service. To connect to t
 ```
 AWS_ENDPOINT=https://minio.example.com
 ```
+
+---
 
 ## Manually creating backups
 

@@ -116,3 +116,7 @@ The [cron]({{< relref path="docs/v2/configuration/system-settings.md#cron-token"
 ## Notifications about dead or moved Links
 
 Also, if you set up the cron correctly, LinkAce will regularly check all links if they are still available. More details about this can be found on the [Link Checks]({{< relref path="docs/v2/application/link-checks.md" >}}) page.
+
+## Opening multiple links in new browser tabs
+
+Lists and Tags have an option to open all links in new browser tabs. This feature requires you to configure your browser to allow popups for LinkAce. Please consult the documentation of your browser on how to do this.
