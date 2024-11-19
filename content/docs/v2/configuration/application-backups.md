@@ -60,12 +60,15 @@ To back up LinkAce to S3, add the following settings to your .env file:
 | `BACKUP_NOTIFICATION_EMAIL` | any email address | `your@email.com` | Set a valid email address to receive notification about backups. |
 | `BACKUP_MAX_SIZE` | any number | `265` | The maximum size of all backups in MB. Once reached the oldest backups will be deleted. |
 | `BACKUP_ARCHIVE_PASSWORD` | any string | none | Protect your backups with a password. |
+| `AWS_USE_PATH_STYLE_ENDPOINT` | `true`, `false` | `false` | Non-AWS services might require you to set this option. |
 
-if you want to use AWS S3 for backups, define the key ID, the access key, the region and your bucket name here. any S3
+The .env file or your environment variables should look like this: 
 
-```
-AWS_ACCESS_KEY_ID=ZG25U...
-AWS_SECRET_ACCESS_KEY=V8pu...
+```bash
+BACKUP_ENABLED=true
+BACKUP_DISK=s3
+AWS_ACCESS_KEY_ID=j85nRkzOgnlGc...
+AWS_SECRET_ACCESS_KEY=DA5nHUT2B2B...
 AWS_DEFAULT_REGION=eu-central-1
 AWS_BUCKET=linkace
 ```
@@ -74,8 +77,12 @@ AWS_BUCKET=linkace
 
 Instead of Amazon AWS S3, you can use any S3-compatible service. To connect to the service instead of AWS, you have to set the correct endpoint in your `.env` file. Near your other AWS_ settings, add the following line and replace the URL with your own service URL:
 
-```
+```bash
 AWS_ENDPOINT=https://minio.example.com
+
+# some non-AWS services use paths to reference buckets and endpoints.
+# If this is the case, add the following line:
+AWS_USE_PATH_STYLE_ENDPOINT=true
 ```
 
 ---
