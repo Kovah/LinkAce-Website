@@ -1,12 +1,12 @@
 {{ define "main" }}
-    <div class="d-flex align-items-center mb-5">
-        <h1 class="font-weight-bold mb-0 mr-1">
-            {{ .Title }}
-        </h1>
-        {{ if isset .Params "since" }}
-            <span class="ml-auto badge badge-info">Since {{ .Params.since }}</span>
-        {{ end }}
-    </div>
+<div class="mb-8 flex items-center">
+    <h1 class="page-title mb-0">
+        {{ .Title }}
+    </h1>
+    {{ if isset .Params "since" }}
+    <span class="ml-auto badge badge-info">Since {{ .Params.since }}</span>
+    {{ end }}
+</div>
 
     {{ if isset .Params "deprecated" }}
         <div class="alert alert-warning mb-4">
@@ -23,9 +23,9 @@
 
     {{ if ne .Params.hide_toc true }}
         {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
-            <div class="mb-5 d-lg-none">
-                <h2 class="h5">Table of Contents</h2>
-                <div class="small mt-3">
+            <div class="my-8 lg:hidden">
+                <h2 class="font-bold text-base">Table of Contents</h2>
+                <div class="toc">
                     {{ .TableOfContents }}
                 </div>
             </div>

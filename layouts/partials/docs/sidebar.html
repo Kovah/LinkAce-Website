@@ -7,29 +7,29 @@
 {{ $version = $docsV1 }}
 {{ end }}
 
-<div class="d-flex w-100 align-items-center mb-4">
+<div class="flex w-full items-center mt-1 mb-8 gap-1">
   {{ partial "docs/search" . }}
   {{ partial "docs/version-switch" (dict "docsV1" $docsV1 "docsV2" $docsV2 "version" $version "currentPage" $currentPage "Site" $.Site) }}
 </div>
 
-<div class="docs-sidebar list-group">
+<div class="sidebar card">
 
   {{ range (index $.Site.Menus $version.Params.doc_version) }}
 
-    <div class="list-group-item border-bottom-0 pb-0">
+    <div class="title">
       {{ .Title }}
     </div>
-    <div class="list-group-item p-2 btn-group-vertical btn-group-sm">
+    <div>
       {{ with .Page }}
         {{ if and (ne .Params.headless true) (ne .Params.in_sidebar false) }}
-          <a href="{{ .RelPermalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
+          <a href="{{ .RelPermalink }}" class='link {{ if eq .Permalink $currentPage.Permalink }}font-bold{{ end }}'>{{ .Title }}</a>
         {{ end }}
 
         {{ range .Pages }}
-          <a href="{{ .RelPermalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'>{{ .Title }}</a>
+          <a href="{{ .RelPermalink }}" class='link {{ if eq .Permalink $currentPage.Permalink }}font-bold{{ end }}'>{{ .Title }}</a>
 
           {{ range .Pages }}
-            <a href="{{ .RelPermalink }}" class='btn btn-sidebar text-start {{ if eq .Permalink $currentPage.Permalink }}fw-bold{{ end }}'><span class="text-muted">&boxur;</span> {{ .Title }}</a>
+            <a href="{{ .RelPermalink }}" class='link {{ if eq .Permalink $currentPage.Permalink }}font-bold{{ end }}'><span class="text-muted">&boxur;</span> {{ .Title }}</a>
           {{ end }}
         {{ end }}
       {{ end }}
@@ -37,15 +37,15 @@
 
   {{ end }}
 
-  <div class="list-group-item border-bottom-0">
+  <div class="title">
     API
   </div>
-  <div class="list-group-item p-2 btn-group-vertical btn-group-sm">
-    <a href="{{ .Site.Params.ApiDocs }}" class='btn btn-sidebar text-start'>API Documentation</a>
+  <div>
+    <a href="{{ .Site.Params.ApiDocs }}" class='link'>API Documentation</a>
   </div>
 
 </div>
 
-<div class="small text-muted my-4">
-  Found a typo or want to add something? Edit this page on <a href="{{ .Site.Params.DocsRepo }}">Github</a>.
+<div class="text-xs text-muted my-4 px-1">
+  Found a typo or want to add something? Edit this page on <a href="{{ .Site.Params.DocsRepo }}" class="link">Github</a>.
 </div>

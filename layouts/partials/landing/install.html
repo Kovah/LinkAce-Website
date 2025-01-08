@@ -1,28 +1,32 @@
-<section id="install" class="py-7 py-md-8 bg-primary text-light text-center">
+<section id="install" class="py-32 bg-blue-500 text-white text-center">
   <div class="container">
 
-    <div class="mb-5 px-3 px-md-8">
-      <h2 class="font-weight-bold mb-4">Install LinkAce</h2>
-      <p class="px-xl-7">
-        LinkAce ships with pre-configured Docker configurations and a built-in web installer to make
-        things as easy as possible.
-        Installation via Docker is the recommended way.
-      </p>
-    </div>
+    <h2 class="text-4xl font-bold">Install LinkAce</h2>
+    <p class="mt-8 text-lg max-w-screen-md mx-auto">
+      LinkAce ships with pre-configured Docker configurations and a built-in web installer to make
+      things as easy as possible. Installation via Docker is the recommended way.
+    </p>
 
-    <div class="row">
-      <div class="col-12 col-md-5 offset-md-1 py-4">
-        <div class="display-4 mb-3">{{ partial "icons/docker.html" }}</div>
-        <h4>Install with Docker</h4>
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
+      <div>
+        <div class="text-6xl mb-4">{{ partial "icons/docker.html" }}</div>
+        <h4 class="text-lg font-bold">Install with Docker</h4>
         <div class="mt-4">
-          <a href="{{ .Site.Params.WikiDockerSetupUrl }}" class="btn btn-light btn-lg">Docker Guide</a>
+          <a href="{{ .Site.Params.WikiDockerSetupUrl }}" class="btn btn-secondary btn-lg">Docker Guide</a>
         </div>
       </div>
-      <div class="mt-5 mt-sm-0 col-12 col-md-5 py-4">
-        <div class="display-4 mb-3">{{ partial "icons/php.html" }}</div>
-        <h4>Install without Docker</h4>
+      <div>
+        <div class="text-6xl mb-4">{{ partial "icons/php.html" }}</div>
+        <h4 class="text-lg font-bold">Install without Docker</h4>
         <div class="mt-4">
-          <a href="{{ .Site.Params.WikiServerSetupUrl }}" class="btn btn-light btn-lg">Server Guide</a>
+          <a href="{{ .Site.Params.WikiServerSetupUrl }}" class="btn btn-secondary btn-lg">Server Guide</a>
+        </div>
+      </div>
+      <div>
+        <div class="text-6xl mb-4">{{ partial "icons/server.html" }}</div>
+        <h4 class="text-lg font-bold">Official Hosting <span class="badge badge-warning text-xs">Beta</span></h4>
+        <div class="mt-4">
+          <a href="{{ .Site.Params.HostingUrl }}" class="btn btn-secondary btn-lg">Join Waitlist</a>
         </div>
       </div>
     </div>

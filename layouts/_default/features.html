@@ -11,13 +11,17 @@
 {{ partial "navbar.html" . }}
 
 <main>
-  <div class="container">
-    <section class="content-wrapper pt-5 pt-lg-6 pt-xl-8">
-      {{ partial "features/overview.html" . }}
-    </section>
+  <div class="bg-blue-500 pt-16 pb-8 text-white">
+    <div class="container">
+      <h2 class="page-title">{{ .Title }}</h2>
+    </div>
+  </div>
+  <div class="container py-16">
+    {{ partial "pages/features.html" . }}
   </div>
   {{ partial "landing/demo.html" . }}
   {{ partial "landing/install.html" . }}
+  {{ partial "landing/donate.html" . }}
 </main>
 
 {{ partial "footer.html" . }}

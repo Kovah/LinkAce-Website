@@ -1,0 +1,172 @@
+<div class="bg-blue-500 pt-16 pb-16 text-white text-center">
+  <div class="container">
+    <h2 class="page-title">{{ .Title }}</h2>
+  </div>
+</div>
+<div class="container py-16">
+  <section class="section prose">
+    <div
+        style="margin: 0 0 2rem; position: relative; width: 100%; height: clamp(400px, 30vh, 600px); overflow: hidden;">
+      <video autoplay loop muted
+          style="object-fit: cover; height: 100%; width: 100%; position: absolute; top: 0; left: 0; margin: 0">
+        <source src="/video/party.mp4" type="video/mp4"/>
+      </video>
+    </div>
+
+    <p>I’m super excited to finally share <strong>LinkAce 2.0</strong> with you! It’s been a wild ride since the first
+      version launched four years ago, and this new release has taken me over 100 hours to put together. I’ve completely
+      reworked a ton of features and polished everything to give you a faster, smoother, and overall better experience.
+    </p>
+
+    <p>This update has been all about making it easier and more enjoyable to organize your bookmarks. I’ve listened to
+      all the feedback, squashed some old bugs, and added new features that I think you’ll love.</p>
+
+    <p>I can’t wait for you to try out LinkAce 2.0 and see what’s new. Thanks for sticking with me through this
+      journey—I hope you enjoy this version as much as I enjoyed building it!</p>
+
+    <h2>Feature Highlights</h2>
+
+    <h3>Support for multiple users</h3>
+
+    <p>LinkAce now supports multiple users, along with an improved permission system and new visibility settings for
+      links, lists, and tags. Here’s what’s new:</p>
+
+    <ul>
+      <li>Administrators can manage system settings and invite new users.</li>
+      <li>You can now set links, lists, and tags to be public, internal, or private, controlling who can see
+        them—whether it’s the public or logged-in users.
+      </li>
+      <li>Links, lists, and tags now display the author’s name, so it’s clear who added them.</li>
+      <li>Each user has their own API keys for third-party app integration, while admins can also create system-wide API
+        keys.
+      </li>
+    </ul>
+
+    <p>LinkAce now also supports <strong>Single Sign-On (SSO)</strong> via OAuth or OIDC, with 12 providers already
+      built-in, including a generic OIDC option. For setup instructions, check out the <a
+          href="/docs/v2/configuration/sso-oauth-oidc">SSO setup guide</a>.</p>
+
+    <h3>User Interface</h3>
+
+    <p>The user interface has been completely revamped for better structure, consistency, and readability.</p>
+
+    <ul>
+      <li>Three newly designed display modes for links: compact, detailed, and card view. You can easily switch between
+        them directly from the interface, without needing to go to the settings.
+      </li>
+      <li>The main navigation has been streamlined, reducing the number of clicks needed to get around.</li>
+      <li>Lists and tags are now preloaded when adding or editing links, making the process faster and allowing
+        near-instant searches.
+      </li>
+      <li>Customize LinkAce with a custom logo text, additional footer link or a custom contact page.</li>
+    </ul>
+
+    {{ $shortcode := "{{< image type=\"screen\" img=\"v2/dashboard.png\" alt=\"Display links as a simple list\" >}}" }}
+    {{ $rendered := $shortcode | markdownify }}
+    {{ $rendered | safeHTML }}
+
+    <p>Also, you can now bulk-edit links, lists, and tags for quicker management.</p>
+
+    <h3>Administration</h3>
+
+    <ul>
+      <li>Audit logs were rewritten and now also log events on the system level.</li>
+      <li>A unique tag is added to all links processed during an import, to identify them later on.</li>
+      <li>There is a dedicated CLI command to test the email configuration.</li>
+    </ul>
+
+    <h3>Running LinkAce</h3>
+
+    <ul>
+      <li>The Docker image for LinkAce was rewritten, is now based on the Caddy web server and runs rootless by
+        default.
+      </li>
+      <li>The setup was overhauled and now supports SQLite and PostgreSQL too.</li>
+    </ul>
+
+    <div class="alert alert-info">
+      The full list of changes with more details can be found in the <a href="/docs/v2/general/changelog"><strong>Changelog</strong></a>.
+    </div>
+
+    <h2>Feedback and Issues</h2>
+
+    <p>If you are having issues with your upgrade or find issues in the new version, please report them in the <a
+        href="{{ .Site.Params.Community }}">Community Forum</a>.</p>
+
+  </section>
+</div>
+
+<div class="bg-blue-500">
+  <section class="container py-16">
+    <div class="prose text-white">
+
+      <h2 class="text-white">Install LinkAce 2 now!</h2>
+
+      <p>Ready to try LinkAce 2 or upgrade your existing installation to the new version?</p>
+
+      <div class="my-16 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 text-center not-prose">
+        <div>
+          <div class="text-6xl mb-4">{{ partial "icons/docker.html" }}</div>
+          <h4 class="text-lg font-bold">Install with Docker</h4>
+          <div class="mt-4">
+            <a href="{{ .Site.Params.WikiDockerSetupUrl }}" class="btn btn-secondary btn-lg">Docker Guide</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-6xl mb-4">{{ partial "icons/php.html" }}</div>
+          <h4 class="text-lg font-bold">Install without Docker</h4>
+          <div class="mt-4">
+            <a href="{{ .Site.Params.WikiServerSetupUrl }}" class="btn btn-secondary btn-lg">Server Guide</a>
+          </div>
+        </div>
+        <div>
+          <div class="text-5xl mt-3 mb-4">{{ partial "icons/square-up-right.html" }}</div>
+          <h4 class="text-lg font-bold">Upgrade from v1</h4>
+          <div class="mt-4">
+            <a href="/docs/v2/upgrade/from-v1" class="btn btn-secondary btn-lg">Upgrade Guide</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="alert alert-info text-gray-900">If you want to take a quick look at it without upgrading the existing setup, I
+        suggest to try the <a href="/docs/v2/setup/setup-with-docker#2-minute-test-setup">2-minute test setup</a>.</p>
+
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <section class="section prose mt-16">
+
+    <h2 class="text-3xl flex items-start">LinkAce Hosting <span class="badge badge-warning text-xs ml-2 mt-1">Beta</span></h2>
+
+    <p>I am also super excited to share the official LinkAce Hosting offer with you. If you can't or don't want to setup
+      LinkAce on your own, this is your way to go. All funds will directly benefit the whole project and support
+      me and my work.</p>
+    <p>The platform is not yet fully available. So if you are interested, please sign up for the waitlist and I will
+      share more details soon.</p>
+
+    <div class="not-prose">
+      <a href="{{ .Site.Params.HostingUrl }}" class="btn btn-primary btn-lg">Join Waitlist</a>
+    </div>
+
+  </section>
+  <section class="section prose mt-16">
+
+    <h2 class="text-3xl flex items-start">
+      <span class="mr-4 text-amber-500">{{ partial "icons/hand-holding-heart.html" }}</span>
+      Support LinkAce
+    </h2>
+
+    <p>I put a lot of effort into the project and try to keep up with all the requests, ideas and wishes. If you like
+      LinkAce and want to support me and my work, please consider a small donation:</p>
+
+    <div class="flex flex-wrap gap-2 justify-center md:justify-start not-prose">
+      <a href="{{ .Site.Params.DonateGithub }}" class="btn btn-primary">Github Sponsors</a>
+      <a href="{{ .Site.Params.DonateOpencollective }}" class="btn btn-primary">Open Collective</a>
+      <a href="{{ .Site.Params.DonatePatreon }}" class="btn btn-primary">Patreon</a>
+      <a href="{{ .Site.Params.DonateLiberapay }}" class="btn btn-primary">Liberapay</a>
+    </div>
+
+  </section>
+</div>

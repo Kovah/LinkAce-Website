@@ -8,7 +8,7 @@ aliases:
 
 Working with Docker is pretty straight forward, but you should be familiar with Docker. To make things easier, we provide Docker Compose files in the repository which contain all needed services, configured to just run the application right away.
 
-{{< alert type="secondary" >}}
+{{< alert type="info" >}}
 All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkace/linkace) and on the [**GitHub Registry**](https://github.com/Kovah/LinkAce/pkgs/container/linkace) and support `amd64`, `arm64` and `amd/v7`.
 {{</ alert >}}
 

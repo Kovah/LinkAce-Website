@@ -11,19 +11,9 @@
 {{ partial "navbar.html" . }}
 
 <main>
-  <div class="bg-blue-500 pt-16 pb-8 text-white">
-    <div class="container">
-      <h2 class="page-title">{{ .Title }}</h2>
-    </div>
-  </div>
-  <div class="container py-8">
-    <div class="section prose">
-      {{ .Content }}
-    </div>
-  </div>
+  {{ partial "pages/v2-release.html" . }}
 </main>
 
-{{ partial "landing/donate.html" . }}
 {{ partial "footer.html" . }}
 {{ partial "scripts.html" . }}
 

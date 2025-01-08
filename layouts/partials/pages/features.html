@@ -1,0 +1,157 @@
+<div class="relative pb-[50%] sm:pb-[40%] h-0 overflow-hidden z-10">
+  <div class="absolute bottom-0 w-full h-32 z-20 bg-gradient-to-b from-white/0 to-blue-700/20"></div>
+  <picture>
+    <source
+        type="image/jpg"
+        media="(max-width: 960px)"
+        srcset="/images/preview/dashboard-preview_2.0_sm.jpg" />
+    <img src="/images/preview/dashboard-preview_2.0.jpg" alt="LinkAce Dashboard Preview" class="w-full">
+  </picture>
+</div>
+
+<div class="section grid grid-cols-1 md:grid-cols-2 gap-16">
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/subtitles.html" }}</div>
+    <div>
+      <h3>Clean and organized Interface</h3>
+      <p>LinkAce maintains a clean and organized interface that offers a variety of features while trying not to overload you.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/folders.html" }}</div>
+    <div>
+      <h3>Tags & Lists</h3>
+      <p>Choose tags to categorize links, add them to custom lists to group them by a topic or occasion.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/users.html" }}</div>
+    <div>
+      <h3>Multiple Users + SSO</h3>
+      <p>LinkAce supports multiple users and even offers Single Sign On via OAuth or OIDC. Links, lists and tags can be shared amongst the users or used together.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/monitor.html" }}</div>
+    <div>
+      <h3>Continuous Monitoring</h3>
+      <p>All saved links are checked for their availability on a regular basis. You get a notification if a website was moved or became unavailable.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/shield.html" }}</div>
+    <div>
+      <h3>Automatic Archiving</h3>
+      <p>After you saved a link, it will automatically saved by the Internet Archive. A reliable backup without maintenance. LinkAce will also monitor your links and notify you, if something's wrong.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/search.html" }}</div>
+    <div>
+      <h3>Search, filter, order</h3>
+      <p>A powerful search helps you find the links you are looking for. Filter and order the results by various properties.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/user-unlock.html" }}</div>
+    <div>
+      <h3>Guest Mode & Privacy</h3>
+      <p>You can allow guests to view your link collection. Access can be controlled for each link, tag and list separately.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/language.html" }}</div>
+    <div>
+      <h3>Available in 15 Languages</h3>
+      <p>Manage your links in English, German, Frensh, Japanese, Spanish, Polish, Chinese and more languages.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/zapier-logomark.html" }}</div>
+    <div>
+      <h3>Integration with Zapier</h3>
+      <p>Connect your LinkAce with over 5000 other applications like Google Drive, Discord or Slack through <a href="{{ .Site.Params.Zapier }}" class="link">Zapier</a>.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/api.html" }}</div>
+    <div>
+      <h3>REST API</h3>
+      <p>LinkAce offers a REST API for all features, so you can control and access all your data from other applications.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/rss.html" }}</div>
+    <div>
+      <h3>RSS Feeds</h3>
+      <p>Latest links, lists or tags are all available as RSS feeds. Even private feeds can be accessed by using a secret key.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/checklist.html" }}</div>
+    <div>
+      <h3>Audit Log</h3>
+      <p>All changes to links, lists and tags, as well as changes to system settings are saved to an audit log accessible to the users and admins.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/moon.html" }}</div>
+    <div>
+      <h3>Darkmode</h3>
+      <p>Whether you want it all the time or based on your operating system: LinkAce handles light and dark mode for you.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/bookmark.html" }}</div>
+    <div>
+      <h3>The Bookmarklet</h3>
+      <p>Instead of yet another browser extensions, LinkAce provides an easy to use Bookmarklet to save any website with one click.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/note-sticky.html" }}</div>
+    <div>
+      <h3>Notes</h3>
+      <p>Add notes to links to add thoughts, details or whatever you don't want to put into the link description. Or discuss links with your fellow users.</p>
+    </div>
+  </div>
+
+  <div class="teaser-card">
+    <div class="teaser-icon">{{ partial "icons/sliders.html" }}</div>
+    <div>
+      <h3>Customize everything</h3>
+      <p>LinkAce offers a wide range of configuration options to customize it for your specific needs.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="section mt-16">
+  <h3 class="mb-8 text-2xl font-bold text-center">Even more Features</h3>
+  <div class="flex flex-col gap-4">
+    <div>Supported databases: SQLite, MySQL / MariaDB, PostgreSQL</div>
+    <div>Import or export to HTML files compatible with all major browsers.</div>
+    <div>Titles, descriptions and thumbnails are generated automatically once you saved a link.</div>
+    <div>Links, lists and tags can be bulk-edited and bulk-deleted.</div>
+    <div>LinkAce can store backups on Amazon AWS or any S3-compatible service. Backups include the app files and the database.</div>
+    <div>Links, tags, lists or notes are not permanently deleted. A trash holds all "deleted" entries so nothing gets lost accidentally.</div>
+    <div>Sharing with a click: LinkAce prepares share links for a lot of different apps: email, Twitter, Whatsapp, Reddit,...</div>
+    <div>And a dozen configuration options: timezone, time and date formats, defaults for link creation, and many more.</div>
+  </div>
+</div>
+

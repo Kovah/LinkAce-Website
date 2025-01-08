@@ -1,109 +1,99 @@
-<section class="container pt-7 pt-mb-8 pt-lg-8">
+<section class="container py-32">
 
-  <div class="row pb-6 mb-lg-7">
-    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <p class="text-large text-md-center">LinkAce is a self-hosted tool for effortlessly archiving, organizing, and sharing your favorite web links. With a clean interface, you can save articles, bookmark tools, and preserve important content long-term. Easily categorize and retrieve your links, or share your collection with others.</p>
+  <p class="text-xl lg:text-2xl mb-32 text-center max-w-screen-md mx-auto">LinkAce is a self-hosted tool for effortlessly
+    archiving, organizing, and sharing your favorite web links. With a clean interface, you can save articles, bookmark
+    tools, and preserve important content long-term. Easily categorize and retrieve your links, or share your collection
+    with others.</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+    <div class="teaser-card">
+      <div class="teaser-icon">{{ partial "icons/folders.html" }}</div>
+      <div>
+        <h3>Tags & Lists</h3>
+        <p>Choose tags to categorize links, add them to custom lists to group them by a topic or occasion.</p>
+      </div>
     </div>
+
+    <div class="teaser-card">
+      <div class="teaser-icon">{{ partial "icons/users.html" }}</div>
+      <div>
+        <h3>Multiple Users + SSO</h3>
+        <p>LinkAce supports multiple users and even offers Single Sign On via OAuth or OIDC. Links, lists and tags can be shared amongst the users or used together.</p>
+      </div>
+    </div>
+
+    <div class="teaser-card">
+      <div class="teaser-icon">{{ partial "icons/monitor.html" }}</div>
+      <div>
+        <h3>Continuous Monitoring</h3>
+        <p>All saved links are checked for their availability on a regular basis. You get a notification if a website was moved or became unavailable.</p>
+      </div>
+    </div>
+
+    <div class="teaser-card">
+      <div class="teaser-icon">{{ partial "icons/shield.html" }}</div>
+      <div>
+        <h3>Automatic Archiving</h3>
+        <p>After you saved a link, it will automatically saved by the Internet Archive. A reliable backup without maintenance. LinkAce will also monitor your links and notify you, if something's wrong.</p>
+      </div>
+    </div>
+
+    <div class="teaser-card">
+      <div class="teaser-icon">{{ partial "icons/search.html" }}</div>
+      <div>
+        <h3>Search, filter, order</h3>
+        <p>A powerful search helps you find the links you are looking for. Filter and order the results by various properties.</p>
+      </div>
+    </div>
+
+    <div class="teaser-card">
+      <div class="teaser-icon">{{ partial "icons/language.html" }}</div>
+      <div>
+        <h3>Available in 15 Languages</h3>
+        <p>Manage your links in English, German, Frensh, Japanese, Spanish, Polish, Chinese and more languages.</p>
+      </div>
+    </div>
+
+    <div class="teaser-card">
+      <div class="teaser-icon">{{ partial "icons/zapier-logomark.html" }}</div>
+      <div>
+        <h3>Integration with Zapier</h3>
+        <p>Connect your LinkAce with over 5000 other applications like Google Drive, Discord or Slack through <a href="{{ .Site.Params.Zapier }}" class="link">Zapier</a>.</p>
+      </div>
+    </div>
+
+    <div class="teaser-card">
+      <div class="teaser-icon">{{ partial "icons/api.html" }}</div>
+      <div>
+        <h3>REST API</h3>
+        <p>LinkAce offers a REST API for all features, so you can control and access all your data from other applications.</p>
+      </div>
+    </div>
+
+    <div class="teaser-card">
+      <div class="teaser-icon">{{ partial "icons/user-unlock.html" }}</div>
+      <div>
+        <h3>Guest Mode & Privacy</h3>
+        <p>You can allow guests to view your link collection. Access can be controlled for each link, tag and list separately.</p>
+      </div>
+    </div>
+
+    <div class="teaser-card">
+      <div class="teaser-icon">{{ partial "icons/sliders.html" }}</div>
+      <div>
+        <h3>Customize everything</h3>
+        <p>LinkAce offers a wide range of configuration options to customize it for your specific needs.</p>
+      </div>
+    </div>
+
   </div>
 
-
-  <div class="row">
-
-    <div class="col-12 col-sm-6 col-md-4 px-lg-5 px-xl-5 pb-5 pb-sm-6 pb-md-6 pb-lg-7">
-      <div class="text-success display-4 mb-4">{{ partial "icons/monitor.html" }}</div>
-      <h5 class="mb-3">
-        Continuous Monitoring
-      </h5>
-      <p class="small m-0">
-        All saved links are monitored. Get a notification when a website moves or becomes unavailable.
-      </p>
-    </div>
-
-    <div class="col-12 col-sm-6 col-md-4 px-lg-5 px-xl-5 pb-5 pb-sm-6 pb-md-6 pb-lg-7">
-      <div class="text-success display-4 mb-4">{{ partial "icons/shield.html" }}</div>
-      <h5 class="mb-3">
-        Automatic Archiving
-      </h5>
-      <p class="small m-0">
-        Links are backed up via the <a href="https://web.archive.org/">Internet Archive</a> after you saved them. Automagically.
-      </p>
-    </div>
-
-    <div class="col-12 col-sm-6 col-md-4 px-lg-5 px-xl-5 pb-5 pb-sm-6 pb-md-6 pb-lg-7">
-      <div class="text-success display-4 mb-4">{{ partial "icons/folders.html" }}</div>
-      <h5 class="mb-3">
-        Tags & Lists
-      </h5>
-      <p class="small m-0">
-        Choose tags to categorize links, add them to custom lists to group them by a topic or occasion.
-      </p>
-    </div>
-
-    <div class="col-12 col-sm-6 col-md-4 px-lg-5 px-xl-5 pb-5 pb-sm-6 pb-md-6 pb-lg-7">
-      <div class="text-success display-4 mb-4">{{ partial "icons/users.html" }}</div>
-      <h5 class="mb-3">
-        Multiple Users + SSO
-      </h5>
-      <p class="small m-0">
-        LinkAce supports multiple users and even offers Single Sign On via OAuth or OIDC.
-      </p>
-    </div>
-
-    <div class="col-12 col-sm-6 col-md-4 px-lg-5 px-xl-5 pb-5 pb-sm-6 pb-md-6 pb-lg-7">
-      <div class="text-success display-4 mb-4">{{ partial "icons/search.html" }}</div>
-      <h5 class="mb-3">
-        Search, filter, order
-      </h5>
-      <p class="small m-0">
-        A powerful search helps you find the links you are looking for. Filter and order the results by various properties.
-      </p>
-    </div>
-
-    <div class="col-12 col-sm-6 col-md-4 px-lg-5 px-xl-5 pb-5 pb-sm-6 pb-md-6 pb-lg-7">
-      <div class="text-success display-4 mb-4">{{ partial "icons/api.html" }}</div>
-      <h5 class="mb-3">
-        REST API
-      </h5>
-      <p class="small m-0">
-        LinkAce offers a REST API for all features, so you can control and access all your data from other applications.
-      </p>
-    </div>
-
-    <div class="col-12 col-sm-6 col-md-4 px-lg-5 px-xl-5 pb-5 pb-sm-6 pb-md-6 pb-lg-7">
-      <div class="text-success display-4 mb-4">{{ partial "icons/moon.html" }}</div>
-      <h5 class="mb-3">
-        Darkmode
-      </h5>
-      <p class="small m-0">
-        Whether you want it all the time or based on your operating system: LinkAce handles light and dark mode for you.
-      </p>
-    </div>
-
-    <div class="col-12 col-sm-6 col-md-4 px-lg-5 px-xl-5 pb-5 pb-sm-6 pb-md-6 pb-lg-7">
-      <div class="text-success display-4 mb-4">{{ partial "icons/user-unlock.html" }}</div>
-      <h5 class="mb-3">
-        Share, or keep it private
-      </h5>
-      <p class="small m-0">
-        Your link archive can be accessed by guests, or kept private. Links, tags and lists can be set private separately.
-      </p>
-    </div>
-
-    <div class="col-12 col-sm-6 col-md-4 px-lg-5 px-xl-5 pb-5 pb-sm-6 pb-md-6 pb-lg-7">
-      <div class="text-success display-4 mb-4">{{ partial "icons/bookmark.html" }}</div>
-      <h5 class="mb-3">
-        The Bookmarklet
-      </h5>
-      <p class="small m-0">
-        Instead of bulky browser extensions, LinkAce provides an easy to use Bookmarklet to save any website with one click.
-      </p>
-    </div>
-
-    <div class="col-12 px-lg-5 px-xl-5 pb-5 pb-sm-6 pb-md-6 pb-lg-7 pt-5 pt-md-0">
-      <h5 class="mb-3 text-right h5">
-         <a href="/features" class="mr-2 text-decoration-none">Discover all Features</a> {{ partial "icons/angle-right.html" }}
-      </h5>
-    </div>
+  <div class="mt-24">
+    <a href="/features" class="text-2xl flex items-center justify-end group hover:text-blue-700 focus:text-blue-700">
+      <span class="mr-2">Discover all Features</span>
+      <span class="transition group-hover:translate-x-2 group-focus:translate-x-2">{{ partial "icons/angle-right.html" }}</span>
+    </a>
   </div>
 
 </section>

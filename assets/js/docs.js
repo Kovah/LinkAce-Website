@@ -13,10 +13,10 @@ const docsSearch = instantsearch({
   onStateChange: function ({uiState}) {
     const searchResults = document.querySelector('#docsearch-results');
     if (uiState.linkace_docs.query) {
-      searchResults.classList.remove('d-none');
+      searchResults.classList.remove('hidden');
       return;
     }
-    searchResults.classList.add('d-none');
+    searchResults.classList.add('hidden');
   }
 });
 
@@ -27,16 +27,15 @@ docsSearch.addWidgets([
     showSubmit: false,
     showReset: false,
     cssClasses: {
-      form: 'my-form',
-      input: 'form-control'
+      input: 'form-control w-full'
     }
   }),
 
   hits({
     container: '#docsearch-results',
     cssClasses: {
-      emptyRoot: 'd-none',
-      list: 'list-unstyled mb-0',
+      emptyRoot: 'hidden',
+      list: 'list-none mb-0',
       item: 'docsearch-result'
     },
     templates: {

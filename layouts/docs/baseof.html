@@ -10,17 +10,15 @@
 
 {{ partial "navbar.html" . }}
 
-<div class="container-fluid docs-container">
-  <div class="d-flex flex-wrap row pt-5 pt-lg-6">
-    <aside class="order-1 order-md-0 col-12 col-md-4 col-lg-3">
+<div class="pt-8 max-w-screen-2xl mx-auto px-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-16 md:gap-8">
+    <aside class="col-span-1">
       {{ partial "docs/sidebar" . }}
     </aside>
-    <main class="order-0 order-md-1 col-12 col-md-8 col-lg-6 mb-6 mb-md-0">
-      <section class="content-wrapper">
-        {{ block "main" . }}{{ end }}
-      </section>
+    <main class="col-span-2 lg:col-span-3">
+      {{ block "main" . }}{{ end }}
     </main>
-    <aside class="d-none d-lg-block order-2 col-3">
+    <aside class="col-span-1 hidden lg:block">
       {{ partial "docs/toc" . }}
     </aside>
   </div>
