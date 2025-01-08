@@ -2,6 +2,25 @@
 title: LinkAce Changelog
 ---
 
+## 1.15.6
+
+_Released at 2024-12-24_
+
+- Dependencies were updated, including two important security patches for handling link URLs (CVE-2024-56508 and CVE-2024-56507)
+
+## 1.15.5
+
+_Released at 2024-12-02_
+
+- Dependencies were updated, including security patches
+
+## 1.15.4
+
+_Released at 2024-10-28_
+
+- Dependencies were updated, including security patches
+
+
 ## 1.15.3
 
 _Released at 2024-09-23_
