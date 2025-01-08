@@ -22,8 +22,8 @@
 
 @layer base {
   body {
-    @apply font-sans text-color-base  bg-gray-50 antialiased;
-    padding-top: 65px;
+    @apply font-sans text-color-base bg-gray-50 antialiased;
+    padding-top: 70px;
     transition: padding-top 100ms;
   }
 
@@ -79,11 +79,15 @@
   }
 
   .navbar-nav {
-    @apply flex flex-row flex-wrap content-end gap-2 justify-end mt-4 sm:mt-0 text-sm sm:text-base;
+    @apply flex flex-row flex-wrap items-center gap-2 justify-end mt-4 sm:mt-0 text-sm sm:text-base;
+  }
+
+  .nav-item {
+    @apply inline-block;
   }
 
   .nav-item .nav-link {
-    @apply py-2 px-2 text-white hover:bg-blue-700 focus:bg-blue-700 rounded transition;
+    @apply inline-block py-2 px-2 text-white hover:bg-blue-700 focus:bg-blue-700 rounded transition;
   }
 
   footer a {
