@@ -1,5 +1,5 @@
 ---
-title: LinkAce 2.0 is here! 💙
+title: LinkAce 2.0 is here! 🥳
 ---
 
 {{< v2-celebrate >}}
@@ -67,5 +67,5 @@ If you are having issues with your upgrade or find issues in the new version, pl
 
 {{< alert type="success" >}}
 If you like LinkAce, please consider supporting the project by **becoming a [Patreon](https://www.patreon.com/Kovah)
-or [Github Sponsor](https://github.com/sponsors/Kovah)**. ⭐️
+or [Github Sponsor](https://github.com/sponsors/Kovah)** or by donating directly on **[Open Collective](https://opencollective.com/linkace)**. ⭐️
 {{</ alert >}}
