@@ -49,20 +49,48 @@ That's it. LinkAce will now create backups every night at 2am.
 
 ---
 
-## Configuration for an S3-compatible service
+## Configuration for LinkAce backups
+
+The following settings allow you to configure backups for LinkAce. All settings go to your .env file:
+
+| .env setting | Possible values | Default value | Description |
+|:--|:--|:--|:--|
+| `BACKUP_ENABLED` | `true`, `false` | `false` | Set to `true` to enable the application backups |
+| `BACKUP_DISK` | `local_backups`, `s3` | `local_backups` | The storage for backups: `local_backups` saves the files to `/storage/app/backups`, `s3` saves to your configured S3 storage |
+| `BACKUP_CLEAN_HOUR` | 24-hour time string | `01:00` | Set the hour for cleaning old backups and creating a new one. Format must be in 24-hour time like '03:00' for 3 am or '14:00' for 2 pm. |
+| `BACKUP_RUN_HOUR` | 24-hour time string | `02:00` | See above |
+| `BACKUP_NOTIFICATIONS_ENABLED` | `true`, `false` | `true` | Set this to `false` if you don't want to receive any email notifications for cleanups or backups. |
+| `BACKUP_NOTIFICATION_EMAIL` | any email address | `your@email.com` | Set a valid email address to receive notification about backups. |
+| `BACKUP_MAX_SIZE` | any number | `265` | The maximum size of all backups in Megabyte. Once reached the _oldest_ backups will be deleted. |
+| `BACKUP_ARCHIVE_PASSWORD` | any string | none | Protect your backups with a password. |
+
+The .env file or your environment variables should look like this: 
+
+```bash
+BACKUP_ENABLED=true
+BACKUP_DISK=s3
+AWS_ACCESS_KEY_ID=j85nRkzOgnlGc...
+AWS_SECRET_ACCESS_KEY=DA5nHUT2B2B...
+AWS_DEFAULT_REGION=eu-central-1
+AWS_BUCKET=linkace
+```
+
+### Backing up to any s3-compatible storage
 
 To back up LinkAce to S3, add the following settings to your .env file:
 
 | .env setting | Possible values | Default value | Description |
 |:--|:--|:--|:--|
-| `BACKUP_ENABLED` | `true`, `false` | `false` | Set to true to enable the application backups |
-| `BACKUP_DISK` | `local_backups`, `s3` | `local_backups` | The storage for backups: `local_backups` saves the files to `/storage/app/backups`, `s3` saves to your configured S3 storage |
-| `BACKUP_NOTIFICATION_EMAIL` | any email address | `your@email.com` | Set a valid email address to receive notification about backups. |
-| `BACKUP_MAX_SIZE` | any number | `265` | The maximum size of all backups in MB. Once reached the oldest backups will be deleted. |
-| `BACKUP_ARCHIVE_PASSWORD` | any string | none | Protect your backups with a password. |
-| `AWS_USE_PATH_STYLE_ENDPOINT` | `true`, `false` | `false` | Non-AWS services might require you to set this option. |
+| `AWS_URL` | A valid URL | `empty` | The URL to access the AWS service or storage bucket. Often used for serving content via CloudFront.  |
+| `AWS_ENDPOINT` | A valid URL | `empty` | The custom endpoint URL for AWS services, used when working with non-standard AWS setups (e.g., local S3 emulators).  |
+| `AWS_BUCKET` | any string | `empty` | The name of the S3 bucket where files will be stored or retrieved. |
+| `AWS_ACCESS_KEY_ID` | any string | `empty` | Your AWS access key ID, used for authentication to AWS services. |
+| `AWS_SECRET_ACCESS_KEY` | any string | `empty` | Your AWS secret access key, used alongside the access key ID for secure authentication. |
+| `AWS_DEFAULT_REGION` | any string | `empty` | The AWS region where your bucket or resources are located (e.g., `us-east-1`). |
+| `AWS_USE_PATH_STYLE_ENDPOINT` | `true`, `false` | `false` | Determines whether to use path-style (`true`) or virtual-hosted-style (`false`) URLs for S3 buckets.  |
 
-The .env file or your environment variables should look like this: 
+
+The .env file or your environment variables should look like this:
 
 ```bash
 BACKUP_ENABLED=true
