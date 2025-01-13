@@ -17,16 +17,16 @@
     "build-with-search": "npm run production && hugo && npm run algolia"
   },
   "dependencies": {
-    "algoliasearch": "^5.15.0",
+    "algoliasearch": "^5.19.0",
     "bootstrap": "^5.3.3",
-    "instantsearch.js": "^4.75.6",
+    "instantsearch.js": "^4.75.7",
     "prismjs": "^1.25.0"
   },
   "devDependencies": {
     "atomic-algolia": "^0.3.19",
     "cross-env": "^7.0.3",
     "laravel-mix": "^6.0.39",
-    "sass": "^1.82.0",
+    "sass": "^1.83.1",
     "sass-loader": "^16.0.4"
   }
 }
