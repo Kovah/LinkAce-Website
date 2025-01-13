@@ -52,3 +52,19 @@ docsSearch.addWidgets([
 window.addEventListener('DOMContentLoaded', () => {
   docsSearch.start();
 });
+
+const v2UpgradeSelect = document.querySelector('#v2-upgrade-select');
+if (v2UpgradeSelect) {
+  v2UpgradeSelect.addEventListener('change', (event)=>{
+    const blocks = document.querySelectorAll('.upgrade-block');
+    blocks.forEach((block) => {
+      if (block.id === event.target.value) {
+        block.classList.remove('hidden');
+        block.setAttribute('aria-hidden', 'false')
+      } else {
+        block.classList.add('hidden');
+        block.setAttribute('aria-hidden', 'true')
+      }
+    });
+  })
+}

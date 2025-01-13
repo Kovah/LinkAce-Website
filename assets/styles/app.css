@@ -146,6 +146,10 @@
     @apply appearance-none py-1 px-2 rounded-md font-bold tracking-wide border border-gray-500 focus:border-blue-500 focus:ring-offset-2 disabled:opacity-50 transition ease-in-out duration-150;
   }
 
+  select.form-control {
+    @apply max-w-none w-max pr-8;
+  }
+
   .sidebar .title {
     @apply text-sm font-bold mt-8 mb-2;
   }

@@ -41,7 +41,7 @@
         {{ $version = $docsV1 }}
     {{ end }}
 
-    <article class="content">
+    <article class="section prose">
         {{ .Content }}
 
         {{ range (index $.Site.Menus $version.Params.doc_version) }}
