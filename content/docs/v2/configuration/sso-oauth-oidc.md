@@ -1,6 +1,6 @@
 ---
 title: SSO with OAuth or OIDC
-weight: 30
+weight: 130
 ---
 
 You can connect LinkAce with an OAuth or OIDC provider to manage your users at a central place and let them login to
@@ -30,10 +30,11 @@ provider has its own configuration which must be added to the .env file and prop
 
 {{< table >}}
 
-| Config                   | Possible Options | Description                                         |
-|:-------------------------|:-----------------|:----------------------------------------------------|
-| `SSO_ENABLED`            | true/false       | Enable SSO authentication via OAuth or OIDC         |
-| `REGULAR_LOGIN_DISABLED` | true/false       | Disable the regular login form and user management. |
+| Config                     | Possible Options | Default | Description                                                                           |
+|:---------------------------|:-----------------|---------|:--------------------------------------------------------------------------------------|
+| `SSO_ENABLED`              | true/false       | `false` | Enable SSO authentication via OAuth or OIDC                                           |
+| `SSO_REGISTRATION_ENABLED` | true/false       | `true`  | If set to false, users must have an existing SSO-enabled account to be able to login. |
+| `REGULAR_LOGIN_DISABLED`   | true/false       | `false` | Disable the regular login form and user management.                                   |
 
 {{< / table >}}
 

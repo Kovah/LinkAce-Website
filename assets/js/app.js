@@ -6,7 +6,7 @@ function registerCollapseToggles () {
     if ($target) {
       $toggle.addEventListener('click', () => {
         $toggle.setAttribute('aria-expanded', $toggle.getAttribute('aria-expanded') === 'false');
-        $target.classList.toggle('show');
+        $target.classList.toggle('block');
       });
     }
   });

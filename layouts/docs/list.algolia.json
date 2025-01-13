@@ -3,7 +3,7 @@
 {{- $section := $.Site.GetPage "section" .Section }}
 {{- range .Site.AllPages -}}
 {{- if or (and (.IsDescendant $section) (and (not .Draft) (not .Params.private))) $section.IsHome -}}
-{{- $.Scratch.Add "index" (dict "objectID" .File.UniqueID "description" (printf "%s, %s" (delimit (findRE "<a.*?>(.|\n)*?</a>" .TableOfContents) ", " | plainify) .Description) "lang" .Lang "permalink" .Permalink "summary" .Summary "title" .Title "weight" .Weight)}}
+{{- $.Scratch.Add "index" (dict "objectID" .File.UniqueID "description" (printf "%s, %s" (delimit (findRE "<a.*?>(.|\n)*?</a>" .TableOfContents) ", " | plainify) .Description) "lang" .Lang "permalink" .Permalink "summary" .Summary "title" .Title "weight" .Weight "version" (strings.Replace .Params.doc_version "docs_" ""))}}
 {{- end -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}

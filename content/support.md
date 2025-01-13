@@ -6,8 +6,7 @@ As written in the Readme of the project and on the website: I built LinkAce to s
 
 {{< alert type="success" >}}
 
-If you need prioritized support you can **become a [Patreon](https://www.patreon.com/Kovah)** 
-or **[Github Sponsor](https://github.com/sponsors/Kovah)**. ⭐️
+If you need prioritized support you can **become a [Patreon](https://www.patreon.com/Kovah)** or **[Github Sponsor](https://github.com/sponsors/Kovah)**. ⭐️
 
 {{</ alert >}}
 
@@ -16,7 +15,7 @@ or **[Github Sponsor](https://github.com/sponsors/Kovah)**. ⭐️
 
 Nothing goes exactly as planned. There can be small, hidden problems with LinkAce, or the app is not entirely compatible with your system.
 
-Before posting a new help requests to the Github repository or in the community, please take a look at the [**documentation**](/docs/v1) and the [**FAQ**](https://community.linkace.org/c/faq/9).
+Before posting a new help requests to the Github repository or in the community, please take a look at the [**documentation**](/docs/v2).
 
 
 ### Posting bug reports

@@ -1,0 +1,21 @@
+<section class="py-16">
+  <div class="container flex justify-center">
+    <div class="flex items-center flex-col md:flex-row gap-8 lg:gap-16">
+
+      <div class="text-6xl text-amber-500">
+        {{ partial "icons/hand-holding-heart.html" }}
+      </div>
+
+      <div class="text-center md:text-left">
+        <h3 class="text-xl font-bold mb-4">Support LinkAce with a Donation</h3>
+        <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+          <a href="{{ .Site.Params.DonateGithub }}" class="btn btn-primary">Github Sponsors</a>
+          <a href="{{ .Site.Params.DonateOpencollective }}" class="btn btn-primary">Open Collective</a>
+          <a href="{{ .Site.Params.DonatePatreon }}" class="btn btn-primary">Patreon</a>
+          <a href="{{ .Site.Params.DonateLiberapay }}" class="btn btn-primary">Liberapay</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

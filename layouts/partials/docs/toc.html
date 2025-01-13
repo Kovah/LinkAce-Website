@@ -2,8 +2,8 @@
 {{ if ne .Params.hide_toc true }}
 {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
 <div id="docs-toc">
-  <h2 class="h5">Table of Contents</h2>
-  <div >
+  <h2 class="text-lg font-bold mt-2 mb-8">Table of Contents</h2>
+  <div class="toc">
     {{ .TableOfContents }}
   </div>
 </div>
