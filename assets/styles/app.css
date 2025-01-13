@@ -204,6 +204,10 @@
     @apply inline-block py-1 px-1.5 rounded text-sm;
   }
 
+  .badge-sm {
+    @apply py-0.5 px-1 text-xs;
+  }
+
   .badge-info {
     @apply bg-sky-400 text-gray-900;
   }

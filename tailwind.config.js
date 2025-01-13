@@ -46,6 +46,7 @@ module.exports = {
           '2xl': '1024px'
         }
       },
+
       fontFamily: {
         sans: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans]
       },
