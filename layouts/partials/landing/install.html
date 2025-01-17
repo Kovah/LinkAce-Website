@@ -7,22 +7,40 @@
       things as easy as possible. Installation via Docker is the recommended way.
     </p>
 
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
-      <div>
+    <div class="mt-16 flex justify-center flex-wrap gap-8 sm:gap-16">
+      <div class="max-w-1/2 md:max-w-1/4">
         <div class="text-6xl mb-4">{{ partial "icons/docker.html" }}</div>
         <h4 class="text-lg font-bold">Install with Docker</h4>
         <div class="mt-4">
-          <a href="{{ .Site.Params.WikiDockerSetupUrl }}" class="btn btn-secondary btn-lg">Docker Guide</a>
+          <a href="{{ .Site.Params.WikiDockerSetupUrl }}" class="btn btn-secondary btn-lg">Docker Setup</a>
         </div>
       </div>
-      <div>
+
+      <div class="max-w-1/2 md:max-w-1/4">
+        <div class="text-6xl mb-4">{{ partial "icons/network-wired.html" }}</div>
+        <h4 class="text-lg font-bold">Install to Kubernetes</h4>
+        <div class="mt-4">
+          <a href="{{ .Site.Params.WikiK8sSetupUrl }}" class="btn btn-secondary btn-lg">K8s Setup</a>
+        </div>
+      </div>
+
+      <div class="max-w-1/2 md:max-w-1/4">
+        <div class="text-6xl mb-4">{{ partial "icons/cloud-binary.html" }}</div>
+        <h4 class="text-lg font-bold">Install to the Cloud</h4>
+        <div class="mt-4">
+          <a href="{{ .Site.Params.WikiCloudSetupUrl }}" class="btn btn-secondary btn-lg">Cloud Setup</a>
+        </div>
+      </div>
+
+      <div class="max-w-1/2 md:max-w-1/4">
         <div class="text-6xl mb-4">{{ partial "icons/php.html" }}</div>
         <h4 class="text-lg font-bold">Install without Docker</h4>
         <div class="mt-4">
-          <a href="{{ .Site.Params.WikiServerSetupUrl }}" class="btn btn-secondary btn-lg">Server Guide</a>
+          <a href="{{ .Site.Params.WikiServerSetupUrl }}" class="btn btn-secondary btn-lg">PHP Setup</a>
         </div>
       </div>
-      <div>
+
+      <div class="max-w-1/2 md:max-w-1/4">
         <div class="text-5xl mt-3 mb-4">{{ partial "icons/server.html" }}</div>
         <h4 class="text-lg font-bold">Official Hosting <span class="badge badge-warning badge-sm -mt-1">Beta</span></h4>
         <div class="mt-4">

@@ -253,7 +253,15 @@
   }
 
   .outline-card {
-    @apply rounded-md p-4 border border-gray-200;
+    @apply flex flex-col rounded-md p-4 border border-gray-200;
+  }
+
+  .outline-card:has(.card-bg-icon) {
+    @apply relative z-10 overflow-hidden;
+  }
+
+  .card-bg-icon {
+    @apply -z-10 opacity-5 absolute -right-5 -bottom-10 text-[10rem] leading-none;
   }
 }
 

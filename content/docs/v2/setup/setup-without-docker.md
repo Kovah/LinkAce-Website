@@ -1,6 +1,6 @@
 ---
 title: Setup without Docker
-weight: 20
+weight: 40
 ---
 
 The application was developed with being used with Docker in mind. All following steps will try to work around this but cannot be guaranteed to work in every environment. Please remember that you need shell access to work with LinkAce.
@@ -8,7 +8,7 @@ The application was developed with being used with Docker in mind. All following
 ## Requirements
 
 * A Linux-based server with full command line access
-* **PHP 8.1, 8.2 or 8.3**, with the following extensions
+* **PHP 8.1 to 8.4**, with the following extensions
     * BCMath
     * Ctype
     * DOM

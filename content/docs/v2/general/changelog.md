@@ -44,6 +44,7 @@ Additionally, LinkAce now supports **Single Sign On** with OAuth or OIDC. 12 pro
 ### Running LinkAce
 
 - The Docker image for LinkAce was rewritten, is now based on the Caddy web server and runs rootless by default. ({{<issuelink 502>}})
+- A Helm chart is available for easily deploying LinkAce to your Kubernetes cluster. ({{<issuelink 870>}})
 - The setup was overhauled and now supports SQLite and PostgreSQL too. ({{<issuelink 831>}})
 - The way settings are stored was completely rewritten and is now more solid for both system and user settings. ({{<issuelink 494>}})
 - Lots of smaller corrections, adjustments and rewritten features to make LinkAce more stable.

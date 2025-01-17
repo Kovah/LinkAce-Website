@@ -2,11 +2,31 @@
   <div class="outline-card">
     <h4 class="card-title mt-0">Install with Docker</h4>
     <p>This is the recommended way of installing LinkAce on a server with Docker.</p>
-    <p><a href='{{ relref . (.Get "docker") }}' class="btn btn-primary btn-lg">Start Setup</a></p>
+    <p class="mt-auto not-prose"><a href='{{ relref . (.Get "docker") }}' class="btn btn-primary">Docker Setup</a></p>
+    <div class="card-bg-icon">{{ partial "icons/docker.html" }}</div>
+  </div>
+  <div class="outline-card">
+    <h4 class="card-title mt-0">Install to Kubernetes</h4>
+    <p>LinkAce provides a Helm Chart that can be used to deploy it to Kubernetes.</p>
+    <p class="mt-auto not-prose"><a href='{{ relref . (.Get "k8s") }}' class="btn btn-primary">Kubernetes Setup</a></p>
+    <div class="card-bg-icon">{{ partial "icons/network-wired.html" }}</div>
+  </div>
+  <div class="outline-card">
+    <h4 class="card-title mt-0">One-Click-Deployment to the Cloud</h4>
+    <p>Deploystack offers a standardized one-click installation of LinkAce to the Cloud.</p>
+    <p class="mt-auto not-prose"><a href='{{ relref . (.Get "cloud") }}' class="btn btn-primary">Cloud Setup</a></p>
+    <div class="card-bg-icon">{{ partial "icons/cloud-binary.html" }}</div>
   </div>
   <div class="outline-card">
     <h4 class="card-title mt-0">Install without Docker</h4>
     <p>Install LinkAce on a server with plain PHP, or on shared hosting.</p>
-    <p><a href='{{ relref . (.Get "nodocker") }}' class="btn btn-primary btn-lg">Start Setup</a></p>
+    <p class="mt-auto not-prose"><a href='{{ relref . (.Get "nodocker") }}' class="btn btn-primary">PHP Setup</a></p>
+    <div class="card-bg-icon">{{ partial "icons/php.html" }}</div>
+  </div>
+  <div class="outline-card">
+    <h4 class="card-title mt-0">Official Hosting</h4>
+    <p>BETA: LinkAce offers managed hosting. Subscribe to the Waitlist now.</p>
+    <p class="mt-auto not-prose"><a href='{{ .Site.Params.HostingUrl }}' class="btn btn-primary">LinkAce Hosting</a></p>
+    <div class="card-bg-icon">{{ partial "icons/server.html" }}</div>
   </div>
 </div>
