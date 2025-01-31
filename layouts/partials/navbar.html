@@ -1,15 +1,15 @@
-<nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <span class="visually-hidden">LinkAce</span>
+<nav class="navbar">
+  <div class="navbar-content">
+    <a class="navbar-brand" href="/">
+      <span class="sr-only">LinkAce</span>
       <img src="/images/linkace_logo_white.svg" alt="LinkAce Logo" class="navbar-logo">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    <button class="navbar-toggler btn btn-sm btn-secondary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="mr-2">Menu</span>{{ partial "icons/toc.html" }}
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+    <div class="navbar-collapse ml-auto" id="navbarSupportedContent">
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="/about">About</a>
         </li>
@@ -25,8 +25,8 @@
         <li class="nav-item">
           <a class="nav-link" href="/support">Support</a>
         </li>
-        <li class="nav-item ml-0 ml-lg-2">
-          <a href="/#install" class="btn btn-outline-light">Install</a>
+        <li class="nav-item">
+          <a href="/#install" class="btn btn-secondary">Install</a>
         </li>
       </ul>
     </div>

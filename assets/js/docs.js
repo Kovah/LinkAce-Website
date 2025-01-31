@@ -6,20 +6,19 @@ const searchClient = algoliasearch('NDCLQHIM62', 'df23e2ffa22a485068544b25dc69d7
 
 const docsSearch = instantsearch({
   indexName: 'linkace_docs',
+  future: {
+    preserveSharedStateOnUnmount: true,
+  },
   searchClient,
-  searchFunction: function (helper) {
+  onStateChange: function ({uiState}) {
     const searchResults = document.querySelector('#docsearch-results');
-    if (helper.state.query === '') {
-      searchResults.classList.add('d-none');
+    if (uiState.linkace_docs.query) {
+      searchResults.classList.remove('hidden');
       return;
     }
-    helper.search();
-    searchResults.classList.remove('d-none');
+    searchResults.classList.add('hidden');
   }
 });
-
-const hitTemplate = `
-  <a href="{{{ permalink }}}" class="docsearch-result-link">{{{ title }}}</a>`;
 
 docsSearch.addWidgets([
   searchBox({
@@ -28,21 +27,24 @@ docsSearch.addWidgets([
     showSubmit: false,
     showReset: false,
     cssClasses: {
-      form: 'my-form',
-      input: 'form-control'
+      input: 'form-control w-full'
     }
   }),
 
   hits({
     container: '#docsearch-results',
     cssClasses: {
-      emptyRoot: 'd-none',
-      list: 'list-unstyled mb-0',
+      emptyRoot: 'hidden',
+      list: 'list-none mb-0',
       item: 'docsearch-result'
     },
     templates: {
-      item: hitTemplate,
-      empty: 'No results for <strong>{{ query }}</strong>'
+      item(hit, { html }) {
+        return html`<a href="${hit.permalink}" class="docsearch-result-link">${hit.title}${hit.version ? ' (' + hit.version + ')' : ''}</a>`;
+      },
+      empty(results, { html }) {
+        return html`No results found for "${results.query}"`;
+      },
     }
   })
 ]);
@@ -50,3 +52,19 @@ docsSearch.addWidgets([
 window.addEventListener('DOMContentLoaded', () => {
   docsSearch.start();
 });
+
+const v2UpgradeSelect = document.querySelector('#v2-upgrade-select');
+if (v2UpgradeSelect) {
+  v2UpgradeSelect.addEventListener('change', (event)=>{
+    const blocks = document.querySelectorAll('.upgrade-block');
+    blocks.forEach((block) => {
+      if (block.id === event.target.value) {
+        block.classList.remove('hidden');
+        block.setAttribute('aria-hidden', 'false')
+      } else {
+        block.classList.add('hidden');
+        block.setAttribute('aria-hidden', 'true')
+      }
+    });
+  })
+}

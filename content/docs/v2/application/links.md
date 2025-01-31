@@ -9,27 +9,43 @@ Links are the heart of LinkAce. Links can be anything, from interesting articles
 
 The link overview lists all available links together with some meta information like tags as well as the sharing options and links for editing and deleting them. You can sort the list by creation date, title and URL, both ascending and descending.
 
-Links can be displayed in two different formats, which can be changed in the [user settings]({{< relref path="docs/v2/configuration/user-settings.md" >}}).
+### Link display formats
 
-### Display links as rows with many details
+Links can be displayed in three different formats, which can be controlled directly from the overview page.
 
-{{< image type="screen" img="link_index_rows.png" alt="Preview of the Link overview: rows with many details" >}}
+#### Display links as a simple list
 
-### Display links as rows with fewer details
+{{< image type="screen" img="v2/links_index_simple.png" alt="Display links as a simple list" >}}
 
-{{< image type="screen" img="link_index_rows_small.png" alt="Preview of the Link overview: rows with less details" >}}
+#### Display links as a detailed list
 
-### Display links as cards
+{{< image type="screen" img="v2/links_index_detailed.png" alt="Display links as a detailed list" >}}
 
-{{< image type="screen" img="link_index_cards.png" alt="Preview of the Link overview: cards" >}}
+#### Display links as cards
 
+{{< image type="screen" img="v2/links_index_cards.png" alt="Display links as cards" >}}
+
+
+### Bulk editing
+
+Links can be bulk-edited. Select the links you want to edit by checking the small box for each link, or select all currently displayed links by clicking `Select all` at the top.
+
+{{< image type="screen" img="v2/links_bulk_select.png" alt="Bulk-selecting Links from the overview page" >}}
+
+After all Links are selected, click `Edit` at the top to start the bulk editing.
+
+{{< image type="screen" img="v2/links_bulk_form.png" alt="Bulk edit form for Links" >}}
+
+On the bulk edit form, you can change the assigned Tags, Lists, the visibility, or delete all selected Links.
+
+Values which are not changed will stay the same.
 
 ---
 
 
 ## Adding new Links
 
-{{< image type="screen" img="link_create.png" alt="Preview of the Link form" >}}
+{{< image type="screen" img="v2/link_create.png" alt="Preview of the Link form" >}}
 
 New links can be added in two ways: directly from the dashboard by using the "Quick Add" form, or by using the more powerful form available via the "Add Link" link in the menu bar.
 
@@ -44,7 +60,7 @@ The primary form shows you a lot of different fields which will be described in 
 | Description | No | You may set a custom description for the link here. If left blank, LinkAce will try to parse the description from the website. |
 | List | No | Used to add the link to lists. When you start typing, LinkAce will search for existing lists. If there are none you may add new lists by just entering them here. Lists can contain almost every character, except the comma. |
 | Tags | No | Used to add tags for the link. When you start typing, LinkAce will search for existing tags. If there are none you may add new tags by just entering them here. Tags can contain almost every character, except the comma. |
-| Is Private | No | Set the privacy mode of the link here. |
+| Visibility | No | Set the privacy mode of the link here. |
 
 {{< / table >}}
 
@@ -56,7 +72,7 @@ to the link detail page, but will see the link form again.
 
 After adding the URL in the form, LinkAce will gather details from the specified site. If a valid site was found and it contains meta information, LinkAce will suggest them to be added as tags. Click on a suggestion to add it as a new tag.
 
-{{< image type="screen" img="link_create_tag_suggestions.png" alt="Preview of some tag suggestions" >}}
+{{< image type="screen" img="v2/link_create_tag_suggestions.png" alt="Preview of some tag suggestions" >}}
 
 
 ---
@@ -64,7 +80,7 @@ After adding the URL in the form, LinkAce will gather details from the specified
 
 ## Link Details
 
-{{< image type="screen" img="link_details.png" alt="Preview of Link Details" >}}
+{{< image type="screen" img="v2/link_details.png" alt="Preview of Link Details" >}}
 
 The link detail page shows all available information about the link, including title, description, lists and tags. From the details page you can directly hop into the edit form or delete the link. If a thumbnail was saved for a link it will be displayed.
 
@@ -100,3 +116,7 @@ The [cron]({{< relref path="docs/v2/configuration/system-settings.md#cron-token"
 ## Notifications about dead or moved Links
 
 Also, if you set up the cron correctly, LinkAce will regularly check all links if they are still available. More details about this can be found on the [Link Checks]({{< relref path="docs/v2/application/link-checks.md" >}}) page.
+
+## Opening multiple links in new browser tabs
+
+Lists and Tags have an option to open all links in new browser tabs. This feature requires you to configure your browser to allow popups for LinkAce. Please consult the documentation of your browser on how to do this.

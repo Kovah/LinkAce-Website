@@ -1,29 +1,35 @@
-<footer class="py-7 text-center">
-  <div class="container">
+<footer>
+  <div class="container py-16">
 
-    <div class="mb-8 small text-muted">
-      <div class="mb-2">LinkAce servers are powered by</div>
-      <a href="https://hetzner.cloud/?ref=77Qtn2Mu0tDz" class="d-block">{{ partial "icons/hetzner.html" }}</a>
-      <div class="mt-3">Get 20€ when you sign up using <a href="https://hetzner.cloud/?ref=77Qtn2Mu0tDz">our friends link</a>.</div>
-    </div>
+    <div class="grid md:grid-cols-3 gap-8">
 
-    <div class="social mb-7 display-5">
-      <a href="{{ .Site.Params.Github }}" class="d-inline-block me-5" title="Github repository">
-        {{ partial "icons/github.html" }}
-      </a>
-      <a href="{{ .Site.Params.Twitter }}" class="d-inline-block me-5" title="Twitter profile">
-        {{ partial "icons/twitter.html" }}
-      </a>
-      <a href="{{ .Site.Params.Mastodon }}" class="d-inline-block me-5" title="Mastodon profile">
-        {{ partial "icons/mastodon.html" }}
-      </a>
-      <a href="{{ .Site.Params.Community }}" class="d-inline-block" title="Community Forums">
-        {{ partial "icons/chat.html" }}
-      </a>
-    </div>
+      <div>
+        <img src="/images/linkace_logo.svg" alt="LinkAce Logo" class="navbar-logo">
+        <div class="mt-4 text-muted text-sm">
+          &copy; {{ now.Format "2006" }} LinkAce &amp; <a href="{{ .Site.Params.AboutMeWebsite }}">Kovah.de</a>
+        </div>
+      </div>
 
-    <div class="text-muted small">
-      &copy; {{ now.Format "2006" }} LinkAce / <a href="https://www.kovah.de">Kovah.de</a>
+      <div class="flex md:justify-center items-center gap-8 text-3xl">
+        <a href="{{ .Site.Params.Github }}" class="inline-block" title="Github repository">
+          {{ partial "icons/github.html" }}
+        </a>
+        <a href="{{ .Site.Params.Twitter }}" class="inline-block" title="Twitter profile">
+          {{ partial "icons/twitter.html" }}
+        </a>
+        <a href="{{ .Site.Params.Mastodon }}" class="inline-block" title="Mastodon profile">
+          {{ partial "icons/mastodon.html" }}
+        </a>
+      </div>
+
+      <div class="text-sm md:text-right">
+        <div class="mb-2">LinkAce is powered by</div>
+        <a href="https://hetzner.cloud/?ref=77Qtn2Mu0tDz" class="inline-block">
+          {{ partial "icons/hetzner.html" }}
+        </a>
+        <div class="mt-2 text-xs">Get 20€ when you sign up using <a href="https://hetzner.cloud/?ref=77Qtn2Mu0tDz">our friends link</a>.</div>
+      </div>
+
     </div>
 
   </div>

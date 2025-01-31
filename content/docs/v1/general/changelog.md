@@ -2,6 +2,13 @@
 title: LinkAce Changelog
 ---
 
+## 1.15.7
+
+_Released at 2025.01.31_
+
+- Adds Linkace v2 upgrade information to system settings
+- Dependencies were updated
+
 ## 1.15.6
 
 _Released at 2024-12-24_

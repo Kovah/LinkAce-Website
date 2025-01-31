@@ -1,17 +1,17 @@
-<div class="flex-shrink-0 btn-group ms-2">
+<div class="flex-none flex items-center">
     {{ if eq .version .docsV1 }}
         {{ with .Site.GetPage (replace .currentPage.File.Path "v1" "v2") }}
-            <a class='btn btn-outline-primary' href='{{ .RelPermalink }}'>v2</a>
+            <a class='btn btn-secondary rounded-r-none' href='{{ .RelPermalink }}'>v2</a>
         {{ else }}
-            <a class='btn btn-outline-primary' href='{{ relref .currentPage "/docs/v2/_index.md" }}'>v2</a>
+            <a class='btn btn-secondary rounded-r-none' href='{{ relref .currentPage "/docs/v2/_index.md" }}'>v2</a>
         {{ end }}
-        <a class='btn btn-primary' href='{{ relref .currentPage "/docs/v1/_index.md" }}'>v1</a>
+        <a class='btn btn-primary rounded-l-none' href='{{ relref .currentPage "/docs/v1/_index.md" }}'>v1</a>
     {{ else }}
-        <a class='btn btn-primary' href='{{ relref .currentPage "/docs/v2/_index.md" }}'>v2</a>
+        <a class='btn btn-primary rounded-r-none' href='{{ relref .currentPage "/docs/v2/_index.md" }}'>v2</a>
         {{ with .Site.GetPage (replace .currentPage.File.Path "v2" "v1") }}
-            <a class='btn btn-outline-primary' href='{{ .RelPermalink }}'>v1</a>
+            <a class='btn btn-secondary rounded-l-none' href='{{ .RelPermalink }}'>v1</a>
         {{ else }}
-            <a class='btn btn-outline-primary' href='{{ relref .currentPage "/docs/v1/_index.md" }}'>v1</a>
+            <a class='btn btn-secondary rounded-l-none' href='{{ relref .currentPage "/docs/v1/_index.md" }}'>v1</a>
         {{ end }}
     {{ end }}
 </div>

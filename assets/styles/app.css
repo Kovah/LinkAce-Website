@@ -1,0 +1,274 @@
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'),
+  url('../fonts/IBMPlexSans-Bold.woff2') format('woff2'),
+  url('../fonts/IBMPlexSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: local('IBM Plex Sans'), local('IBMPlexSans'),
+  url('../fonts/IBMPlexSans.woff2') format('woff2'),
+  url('../fonts/IBMPlexSans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-color-base bg-gray-50 antialiased;
+    padding-top: 70px;
+    transition: padding-top 100ms;
+  }
+
+  .icon {
+    display: inline-block;
+    font-size: inherit;
+    width: 1em;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+  }
+
+  .icon:not(.icon-original) path {
+    fill: currentColor;
+  }
+
+  .text-color-base {
+    @apply text-gray-900;
+  }
+
+  .text-muted {
+    @apply text-gray-600;
+  }
+
+  .link {
+    @apply text-blue-500 hover:text-blue-700 focus:text-blue-700 hover:underline focus:underline transition;
+  }
+
+  .section {
+    @apply -mx-4 sm:-mx-0 bg-white sm:rounded-md p-8 shadow-lg shadow-gray-200/50;
+  }
+
+  .navbar {
+    @apply bg-blue-500 fixed top-0 w-full py-4 z-50;
+  }
+
+  .navbar-content {
+    @apply container flex flex-wrap items-center gap-4;
+  }
+
+  .navbar-collapse {
+    @apply hidden sm:block basis-full sm:basis-auto;
+  }
+
+  .navbar-brand h1 {
+    margin: 0;
+    line-height: 1;
+  }
+
+  .navbar-logo {
+    height: 30px;
+    width: 103px;
+  }
+
+  .navbar-nav {
+    @apply flex flex-row flex-wrap items-center gap-2 justify-end mt-4 sm:mt-0 text-sm sm:text-base;
+  }
+
+  .nav-item {
+    @apply inline-block;
+  }
+
+  .nav-item .nav-link {
+    @apply inline-block py-2 px-2 text-white hover:bg-blue-700 focus:bg-blue-700 rounded transition;
+  }
+
+  footer a {
+    @apply text-color-base hover:text-blue-700 focus:text-blue-700;
+  }
+
+  .page-title {
+    @apply text-2xl lg:text-4xl font-bold;
+  }
+
+  .teaser-card {
+    @apply flex gap-4 lg:gap-8;
+  }
+
+  .teaser-icon {
+    @apply text-5xl lg:text-6xl mt-3 text-lime-500;
+  }
+
+  .teaser-card h3 {
+    @apply text-xl font-bold;
+  }
+
+  .teaser-card p {
+    @apply mt-2 text-lg;
+  }
+
+  .search {
+    @apply relative;
+  }
+
+  .toc {
+    @apply text-sm;
+  }
+
+  .toc a {
+    @apply block my-1 link;
+  }
+
+  .toc ul ul {
+    @apply ml-2;
+  }
+
+  .docsearch-results {
+    @apply absolute z-30 top-2 w-60 max-w-[90vw] shadow border border-blue-500 bg-white rounded-md;
+  }
+
+  .docsearch-result:not(:first-child) {
+    @apply border-t border-blue-500;
+  }
+
+  .docsearch-result-link {
+    @apply block w-full px-2 py-1 text-sm hover:bg-blue-200 focus:bg-blue-200;
+  }
+
+  .form-control {
+    @apply appearance-none py-1 px-2 rounded-md font-bold tracking-wide border border-gray-500 focus:border-blue-500 focus:ring-offset-2 disabled:opacity-50 transition ease-in-out duration-150;
+  }
+
+  select.form-control {
+    @apply max-w-none w-max pr-8;
+  }
+
+  .sidebar .title {
+    @apply text-sm font-bold mt-8 mb-2;
+  }
+
+  .sidebar .title:first-of-type {
+    @apply mt-0;
+  }
+
+  .sidebar a {
+    @apply block text-sm py-1;
+  }
+
+  .prose .alert {
+    @apply my-8;
+  }
+
+  .prose img {
+    @apply shadow shadow-gray-200/50
+  }
+
+  .prose :last-child {
+    @apply mb-0;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block appearance-none py-1 px-2 rounded-md font-bold tracking-wide border border-transparent focus:ring-offset-2 disabled:opacity-50 transition ease-in-out duration-150;
+  }
+
+  .btn.btn-primary {
+    @apply bg-blue-500 hover:bg-blue-700 focus:bg-blue-700 text-white ring-blue-500;
+  }
+
+  .btn.btn-secondary {
+    @apply bg-white border-blue-500 hover:border-blue-800 focus:border-blue-800 text-blue-500 hover:text-blue-800 focus:text-blue-800 ring-blue-500;
+  }
+
+  .btn.btn-xl {
+    @apply text-xl px-6 py-4;
+  }
+
+  .btn.btn-lg {
+    @apply text-lg px-6 py-2;
+  }
+
+  .btn.btn-sm {
+    @apply text-sm px-2 py-1.5;
+  }
+
+  .badge {
+    @apply inline-block py-1 px-1.5 rounded text-sm;
+  }
+
+  .badge-sm {
+    @apply py-0.5 px-1 text-xs;
+  }
+
+  .badge-info {
+    @apply bg-sky-400 text-gray-900;
+  }
+
+  .badge-warning {
+    @apply bg-amber-400 text-gray-900;
+  }
+
+  .alert {
+    @apply p-4 rounded-md;
+  }
+
+  .alert-info {
+    @apply bg-sky-100;
+  }
+
+  .alert-success {
+    @apply bg-lime-100;
+  }
+
+  .alert-warning {
+    @apply bg-amber-100;
+  }
+
+  .alert-danger {
+    @apply bg-red-100;
+  }
+
+  .alert p, .alert ol, .alert ul, .alert pre {
+    margin-bottom: 0;
+  }
+
+  .alert > :first-child {
+    margin-top: 0;
+  }
+
+  .alert > :last-child {
+    margin-bottom: 0;
+  }
+
+  .card {
+    @apply bg-white rounded-md p-4 shadow-lg shadow-gray-200/50;
+  }
+
+  .outline-card {
+    @apply flex flex-col rounded-md p-4 border border-gray-200;
+  }
+
+  .outline-card:has(.card-bg-icon) {
+    @apply relative z-10 overflow-hidden;
+  }
+
+  .card-bg-icon {
+    @apply -z-10 opacity-5 absolute -right-5 -bottom-10 text-[10rem] leading-none;
+  }
+}
+
+.navbar-toggler {
+  @apply sm:hidden ml-auto;
+}
+
+[x-cloak] {
+  display: none;
+}

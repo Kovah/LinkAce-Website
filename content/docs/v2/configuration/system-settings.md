@@ -1,6 +1,6 @@
 ---
 title: System Settings
-weight: 10
+weight: 100
 ---
 
 The system settings allow the user to configure the whole application, affecting all users - even if this is a  single-user application for now.
@@ -13,7 +13,7 @@ The system settings allow the user to configure the whole application, affecting
 LinkAce will automatically check for updates on the system settings page. To get this to work, the app pulls information about the latest releases from Github and compares it to your currently installed version.
 
 
-## Cron Token
+## System Cron
 
 {{< image type="screen" img="system_settings_cron_token.png" alt="Preview of th cron token settings" >}}
 
@@ -36,40 +36,68 @@ Your cron must run **every minute** and must open the URL provided in the system
 *   *   *   *   *   wget -qO- https://linkace-example.com/cron/WPvv4mxM6nr22Aq4rVf1qEKutsXLTgyw > /dev/null
 ```
 
+#### Cron Setup for Docker
+
+```
+*   *   *   *   *   docker exec linkace-app-1 php artisan schedule:run > /dev/null
+```
+
+#### Cron Setup for a PHP installation
+
+```
+*   *   *   *   *   cd /path/to/your/linkace && php artisan schedule:run > /dev/null
+```
+
 ### Re-generate the cron token
 
 If you have problems with your current token or think that someone else knows the token, you should generate a new one in the system settings. Click the "Generate Token" button right to the token field and LinkAce will generate a new one.
 
+---
 
 ## General Settings
 
-{{< image type="screen" img="system_settings_general.png" alt="Preview of the general system settings" >}}
+{{< image type="screen" img="v2/system_settings_general.png" alt="Preview of the general system settings" >}}
 
 ### Page Title
 
 The page title setting allows you to specify the title that is displayed in the browser tab. If left blank, LinkAce will use the default title.
 
-### Guest Access
+### Custom Logo Text
 
-Guest access is an important setting regarding privacy and maybe also security. If turned on, guests will be able to 
-* view all links that are **not marked as private**,
-* view all tags that are **not marked as private**, and
-* view all categories that are **not marked as private**.
+You can replace the LinkAce logo in the navigation bar at the top with a short custom text. This text is limited to 20 characters.
 
-Regardless of this setting, LinkAce will always show you the option to make links, tags or categories private. This ensures that you can easily switch the guest access on and off without having to update any links.
+### Additional Link in the Footer
 
-If you don't want anyone to view your bookmark collection, leave the guest access disabled.
+If you want to display an additional link in the footer besides `LinkAce is a project by Kovah.de`, you can do this here. Both an URL and a text are required. The link text is limited to 20 characters.
+
+### Contact/About Page
+
+You have the option to enable a contact page whose content can be edited.
+
+Enable the page and add some content in the system settings. The content can contain Markdown to support additional formatting. Content is limited to 10 000 characters.
 
 ### Custom Header Content
 
 Content entered here will be placed before the </head> tag on all LinkAce sites. Useful to place analytics or customization scripts. **Caution:** contents are not escaped and may break the site! Use at your own risk.
 
+---
 
-## Guest Settings
+## Guest Access and Settings
+
+Guest access is an important setting regarding privacy and maybe also security. If turned on, guests will be able to
+* view all links that are **not marked as private or internal**,
+* view all tags that are **not marked as private or internal**, and
+* view all lists that are **not marked as private or internal**.
+
+Regardless of this setting, LinkAce will always show you the option to make links, tags or categories private. This ensures that you can easily switch the guest access on and off without having to update any links.
+
+If you don't want anyone to view your bookmark collection, leave the guest access disabled.
+
+### Guest Settings
 
 These settings apply to all guests visiting your site, if you have guest access enabled.
 
-{{< image type="screen" img="system_settings_guest_settings.png" alt="Preview of the system guest settings" >}}
+{{< image type="screen" img="v2/system_settings_guest_settings.png" alt="Preview of the system guest settings" >}}
 
 Please check the [user settings documentation]({{< relref path="docs/v2/configuration/user-settings.md" lang="" >}}) for more details about all available options, as they are exactly the same.
 

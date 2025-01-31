@@ -5,24 +5,33 @@ assetDir = "./assets/dist"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
 [params]
-  DocsCurrentVersion = "docs/v1"
-  DocsRepo = "https://github.com/Kovah/LinkAce-Website/"
-  ApiDocs = "https://api-docs.linkace.org"
-  DemoUrl = "https://demo.linkace.org"
-  WikiDockerSetupUrl = "/docs/v1/setup/setup-with-docker/"
-  WikiServerSetupUrl = "/docs/v1/setup/setup-without-docker/"
-  DockerHub = "https://hub.docker.com/r/linkace/linkace/"
-  Github = "https://github.com/Kovah/LinkAce/"
-  Twitter = "https://twitter.com/linkaceapp"
-  Mastodon = "https://mastodon.social/@linkace"
-  Community = "https://github.com/Kovah/LinkAce/discussions/"
-  Zapier = "https://zapier.com/apps/linkace/integrations"
-  AboutMeMastodon = "https://mastodon.social/@Kovah"
-  AboutMeWebsite = "https://kovah.de"
-  AboutMeTwitter = "https://twitter.com/kevinwoblick"
+DocsCurrentVersion = "docs/v2"
+DocsRepo = "https://github.com/Kovah/LinkAce-Website/"
+ApiDocs = "https://api-docs.linkace.org"
+ApiDocsV2 = "https://api-docs.linkace.org/v2"
+DemoUrl = "https://demo.linkace.org"
+HostingUrl = "https://hosting.linkace.org"
+WikiDockerSetupUrl = "/docs/v2/setup/setup-with-docker/"
+WikiK8sSetupUrl = "/docs/v2/setup/setup-to-k8s/"
+WikiCloudSetupUrl = "/docs/v2/setup/one-click-deploy/"
+WikiServerSetupUrl = "/docs/v2/setup/setup-with-php/"
+DockerHub = "https://hub.docker.com/r/linkace/linkace/"
+Github = "https://github.com/Kovah/LinkAce/"
+Twitter = "https://x.com/linkaceapp"
+Mastodon = "https://mastodon.social/@linkace"
+Community = "https://github.com/Kovah/LinkAce/discussions/"
+Zapier = "https://zapier.com/apps/linkace/integrations"
+AboutMeMastodon = "https://mastodon.social/@Kovah"
+AboutMeWebsite = "https://kovah.de"
+AboutMeBluesky = "https://bsky.app/profile/kevin.woblick.com"
+AboutMeTwitter = "https://x.com/kevinwoblick"
+DonateGithub = "https://github.com/Kovah"
+DonateOpencollective = "https://opencollective.com/linkace"
+DonatePatreon = "https://patreon.com/Kovah"
+DonateLiberapay = "https://liberapay.com/kovah"
 
-# [outputs]
-#   page = ['HTML', 'Algolia']
+[outputs]
+page = ['HTML', 'Algolia']
 
 [outputFormats.Algolia]
 baseName = "algolia"
