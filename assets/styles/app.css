@@ -22,8 +22,7 @@
 
 @layer base {
   body {
-    @apply font-sans text-color-base bg-gray-50 antialiased;
-    padding-top: 70px;
+    @apply font-sans text-color-base bg-gray-50 antialiased pt-[65px] sm:pt-[70px];
     transition: padding-top 100ms;
   }
 
