@@ -22,8 +22,7 @@
 
 @layer base {
   body {
-    @apply font-sans text-color-base bg-gray-50 antialiased;
-    padding-top: 70px;
+    @apply font-sans text-color-base bg-gray-50 antialiased pt-[65px] sm:pt-[70px];
     transition: padding-top 100ms;
   }
 
@@ -139,7 +138,11 @@
   }
 
   .docsearch-result-link {
-    @apply block w-full px-2 py-1 text-sm hover:bg-blue-200 focus:bg-blue-200;
+    @apply flex w-full items-center px-3 py-1.5 text-sm hover:bg-blue-200 focus:bg-blue-200;
+  }
+
+  .docsearch-version {
+    @apply ml-auto rounded-md bg-gray-100 px-1 py-0.5;
   }
 
   .form-control {

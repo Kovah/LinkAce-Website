@@ -27,6 +27,7 @@ module.exports = {
     'form-control',
     'docsearch-results',
     'docsearch-result-link',
+    'docsearch-version',
     'alert-info',
     'alert-success',
     'alert-warning',
