@@ -4,7 +4,7 @@ title: LinkAce Changelog
 
 ## 2.0.0
 
-_Released at TBD_
+_Released at 2025-01-31_
 
 {{< alert type="warning" >}}
 Please consult the [dedicated upgrade guide]({{< relref path="docs/v2/upgrade/from-v1.md" >}}) to update from LinkAce 1 to version 2.
