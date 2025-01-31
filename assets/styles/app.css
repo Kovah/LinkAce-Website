@@ -138,7 +138,7 @@
   }
 
   .docsearch-result-link {
-    @apply flex w-full items-center px-3 py-1.5 text-sm hover:bg-blue-200 focus:bg-blue-200;
+    @apply flex w-full items-center gap-2 px-3 py-1.5 text-sm hover:bg-blue-200 focus:bg-blue-200;
   }
 
   .docsearch-version {
