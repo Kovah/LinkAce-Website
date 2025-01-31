@@ -1,4 +1,4 @@
-import { algoliasearch } from 'algoliasearch';
+import { liteClient as algoliasearch } from "algoliasearch/lite";
 import instantsearch from 'instantsearch.js';
 import { hits, searchBox } from 'instantsearch.js/es/widgets';
 
@@ -6,17 +6,16 @@ const searchClient = algoliasearch('NDCLQHIM62', 'df23e2ffa22a485068544b25dc69d7
 
 const docsSearch = instantsearch({
   indexName: 'linkace_docs',
-  future: {
-    preserveSharedStateOnUnmount: true,
-  },
   searchClient,
-  onStateChange: function ({uiState}) {
+  onStateChange: function ({uiState, setUiState}) {
     const searchResults = document.querySelector('#docsearch-results');
-    if (uiState.linkace_docs.query) {
+    if (uiState['linkace_docs'].query) {
       searchResults.classList.remove('hidden');
+      setUiState(uiState);
       return;
     }
     searchResults.classList.add('hidden');
+    setUiState(uiState);
   }
 });
 
@@ -40,7 +39,8 @@ docsSearch.addWidgets([
     },
     templates: {
       item(hit, { html }) {
-        return html`<a href="${hit.permalink}" class="docsearch-result-link">${hit.title}${hit.version ? ' (' + hit.version + ')' : ''}</a>`;
+        const title = hit.version ? html`${hit.title} <span class="docsearch-version">${hit.version}</span>` : hit.title;
+        return html`<a href="${hit.permalink}" class="docsearch-result-link">${title}</a>`;
       },
       empty(results, { html }) {
         return html`No results found for "${results.query}"`;
