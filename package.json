@@ -3,7 +3,6 @@
   "description": "Source of the LinkAce website",
   "author": "Kevin Woblick <mail@kovah.de>",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "dev": "npm run development",
     "development": "mix",
