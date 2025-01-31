@@ -27,6 +27,7 @@ You can run LinkAce within a couple of minutes, using a SQLite database to try o
 
 ```
 touch database.sqlite
+chmod 0766 database.sqlite
 docker run -p "8080:80" -v "./database.sqlite:/app/database/database.sqlite" linkace/linkace
 ```
 
