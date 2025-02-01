@@ -20,6 +20,7 @@ There will be absolutely **no help to restore** your old LinkAce installation an
     However, if you have Guest Mode disabled, public links will become `internal`. This means they are visible to all logged-in users, but not to guests.
   - Your current user will become the primary administrator who can now control advanced system settings, as well as inviting new users to LinkAce.
 - The API was updated to version `v2`. Any existing integrations must be checked and adjusted if needed. The documentation can be found [here]({{< param "ApiDocsV2" >}}).
+- `MAIL_DRIVER` needs to be replaced with `MAIL_MAILER`, but the values stays the same. Example: `MAIL_DRIVER=smtp` becomes `MAIL_MAILER=smtp`.
 
 ## Select your current installation method
 

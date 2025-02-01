@@ -54,8 +54,8 @@ AWS_DUAL_STACK_ENDPOINT=[true/false]
 ## Mail configuration
 MAIL_FROM_ADDRESS=your@email.com
 MAIL_FROM_NAME=LinkAce
-# Set the driver used for sending email here, default is `smtp`
-MAIL_DRIVER=smtp
+# Set the driver used for sending email here, default is `log`
+MAIL_MAILER=smtp
 # Set the SMTP host and its port here
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=2525

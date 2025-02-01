@@ -19,7 +19,7 @@ Please add the following block to your .env file and change the values according
 |:--|:--|:--|:--|
 | `MAIL_FROM_ADDRESS` | any email address | `hello@example.com` | The email address you are sending from |
 | `MAIL_FROM_NAME` | any string | `LinkAce` | The name you are sending from |
-| `MAIL_DRIVER` | `log`, `smtp`, `sendmail`, `mailgun`, `ses`, `postmark` | `smtp` | The method of sending email, more details see [the Mail configuration docs](https://laravel.com/docs/9.x/mail) |
+| `MAIL_MAILER` | `log`, `smtp`, `sendmail`, `mailgun`, `ses`, `postmark` | `smtp` | The method of sending email, more details see [the Mail configuration docs](https://laravel.com/docs/9.x/mail) |
 | `MAIL_HOST` | any string | `smtp.mailgun.org` | SMTP only: the host sending email from |
 | `MAIL_PORT` | any number | `587` | SMTP only: the post for connecting to the host |
 | `MAIL_USERNAME` | any string | none | SMTP only: the username for connecting to the host |
