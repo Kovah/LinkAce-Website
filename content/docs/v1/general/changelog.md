@@ -2,9 +2,17 @@
 title: LinkAce Changelog
 ---
 
+## 1.16.0
+
+_Released at 2025-02-06_
+
+- Adds a new unversioned API endpoint which returns the current supported API version. ({{issuelink 892}})
+  Details can be found in the [API docs]({{< param "ApiDocsV1" >}})
+- Dependencies were updated.
+
 ## 1.15.7
 
-_Released at 2025.01.31_
+_Released at 2025-01-31_
 
 - Adds Linkace v2 upgrade information to system settings
 - Dependencies were updated

@@ -2,6 +2,16 @@
 title: LinkAce Changelog
 ---
 
+## 2.1.0
+
+_Released at 2025-02-06_
+
+- Adds a new unversioned API endpoint which returns the current supported API version. ({{issuelink 892}})
+  Details can be found in the [API docs]({{< param "ApiDocsV2" >}})
+- Backups should now run again properly, caused due to the handling of disabled notifications.
+- Fixes issue with tags and lists in guest mode where the controller crashed due to incorrect URLs.
+- Dependencies were updated.
+
 ## 2.0.0
 
 _Released at 2025-01-31_

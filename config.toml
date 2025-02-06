@@ -8,6 +8,7 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 DocsCurrentVersion = "docs/v2"
 DocsRepo = "https://github.com/Kovah/LinkAce-Website/"
 ApiDocs = "https://api-docs.linkace.org"
+ApiDocsV1 = "https://api-docs.linkace.org/v1"
 ApiDocsV2 = "https://api-docs.linkace.org/v2"
 DemoUrl = "https://demo.linkace.org"
 HostingUrl = "https://hosting.linkace.org"
