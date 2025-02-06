@@ -8,6 +8,7 @@ The application was developed with being used with Docker in mind. All following
 ## Requirements
 
 * A Linux-based server with full command line access
+* The `storage` directory inside LinkAce must be writable by the web server
 * **PHP 8.1 to 8.4**, with the following extensions
     * BCMath
     * Ctype
