@@ -33,6 +33,13 @@ docker run -p "8080:80" -v "./database.sqlite:/app/database/database.sqlite" lin
 
 Then open `http://localhost:8080` in your browser and follow the setup steps.
 
+{{< alert type="warning" >}}
+If the LinkAce container is not starting, this might be caused by OS-specific permissions for Docker. In that case, try to run LinkAce on another internal port:
+```
+docker run -p "8080:8080" -e "PORT=8080" -v "./database.sqlite:/app/database/database.sqlite" linkace/linkace
+```
+{{</ alert >}}
+
 ---
 
 ## Stable Setup
