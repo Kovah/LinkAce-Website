@@ -1,6 +1,17 @@
 ---
-title: LinkAce Changelog
+title: LinkAce v2 Changelog
 ---
+
+## 2.1.1
+
+_Released at 2025-02-11_
+
+- Fixes critical issue where links were deleted when bulk-deleting tags. ({{issuelink 897}})
+- Fixes and issue where bulk-editing tags or lists for links resulted in an unexpected behavior. ({{issuelink 905}})
+- Links are now properly displayed when viewing lists of another user. ({{issuelink 902}})
+- Adds missing `SSO_KEYCLOAK_BASE_URL` to the configuration ({{issuelink 904}})
+- Dependencies were updated.
+
 
 ## 2.1.0
 

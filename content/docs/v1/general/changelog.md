@@ -1,5 +1,5 @@
 ---
-title: LinkAce Changelog
+title: LinkAce v1 Changelog
 ---
 
 ## 1.16.0
