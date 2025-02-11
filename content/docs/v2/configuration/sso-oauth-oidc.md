@@ -1,5 +1,5 @@
 ---
-title: SSO with OAuth or OIDC
+title: SSO (Single-Sign-On) with OAuth or OIDC
 weight: 130
 ---
 
@@ -88,7 +88,7 @@ users try to login.
 
 {{< / table >}}
 
-The base URL must be set to the URL of your OIDC endpoint excluding the `.well-known/openid-configuration` part.
+The base URL must be set to the _OpenID Configuration URL_, but excluding the `.well-known/openid-configuration` part.
 Example: If `https://auth.company.com/application/linkace/.well-known/openid-configuration` is your OIDC configuration 
 URL, then `https://auth.company.com/application/linkace` must be your base URL.
 
