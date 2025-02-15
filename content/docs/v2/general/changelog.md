@@ -2,6 +2,15 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.1.2
+
+_Released at 2025-02-15_
+
+- Adds Bluesky as a sharing option. ({{issuelink 909}})
+- Fixes issue with sorting links on tag or list pages randomly.
+- You can now configure some more advanced settings via the .env file. See [.env Settings]({{< relref path="docs/v2/configuration/env-settings.md" >}}) for more details.
+
+
 ## 2.1.1
 
 _Released at 2025-02-11_
