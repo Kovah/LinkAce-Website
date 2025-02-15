@@ -107,21 +107,6 @@ Please check the [user settings documentation]({{< relref path="docs/v2/configur
 
 ## Advanced System Settings
 
-The following settings can be changed only in the `.env` file.
+LinkAce offers some more configuration options that are not available from the user or system settings. They are considered advanced settings because users may only change those options in edge cases or other very specific situations.
 
-### `APP_TIMEZONE`
-
-Change the timezone of the core application here. It does not affect the timezone set in the user settings but changes how LinkAce saves dates and times in the database. Be very careful when using this setting as it can have unintended site effects! There won't be any support for broken applications due to a changed timezone.
-
-* Possible Value(s): a valid timezone according to [PHP](https://www.php.net/manual/en/timezones.php)
-* Default value: `UTC`
-* Example: `APP_TIMEZONE=Europe/Berlin`
-
-### `APP_USER_AGENT`
-
-Change the User Agent that is used in LinkAce to make requests to website. Can be helpful if LinkAce is blocked often by sites when it tries to gather metadata.  
-Please note that it's important to wrap the User Agent in quotes (`"`) in your .env file.
-
-* Possible Value(s): a valid User Agent string
-* Default value: `LinkAce/1 (https://github.com/Kovah/LinkAce)`
-* Example: `APP_USER_AGENT="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"`
+A complete list of all available settings can be found in the [.env file reference]({{< relref path="docs/v2/configuration/env-settings.md" >}}).
