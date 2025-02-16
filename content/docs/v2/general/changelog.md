@@ -2,6 +2,13 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.1.3
+
+_Released at 2025-02-16_
+
+- Fixes the 2.1.2 release.
+
+
 ## 2.1.2
 
 _Released at 2025-02-15_
