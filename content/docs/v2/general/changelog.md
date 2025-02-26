@@ -2,6 +2,16 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.1.4
+
+_Released at 2025-02-26_
+
+- **The API now validates `content-type` and `accept` headers for POST, PATCH and DELETE requests.** Those headers were required for the API to work properly, so client should send them already. If you run into issues where LinkAce responds with `415` HTTP errors, please make sure that your client properly sets the required `content-type` and `accept` headers. Thanks to [@prplecake](https://github.com/prplecake) for his awesome debugging and contribution. {{issuelink 885}}
+- Internal or private links are now properly displayed on tag and list pages. ({{issuelink 914}})
+- The setup handles database passwords with special characters now. ({{issuelink 927}})
+- Permissions for the `storage` directory were adjusted for Docker and PHP release packages. ({{issuelink 879}})
+- Dependencies were updated.
+
 ## 2.1.3
 
 _Released at 2025-02-16_
