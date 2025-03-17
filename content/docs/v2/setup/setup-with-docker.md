@@ -108,7 +108,7 @@ docker compose up -d
 
 ### 4. Start the built-in setup
 
-Open the URL which points to your Docker container in your browser now. If you started LinkAce on your local machine, for example, the URL should be `http://localhost`.
+Open the URL which points to your Docker container in your browser now. If you started LinkAce on your local machine, for example, the URL should be `http://localhost` or your domain pointing to LinkAce.
 
 You can configure the database and your user account in the following process.
 
@@ -124,6 +124,20 @@ Please make sure to follow the [post-installation steps]({{< relref path="docs/v
 
 
 ## Advanced Configuration
+
+### Completing the installation without the built-in setup
+
+If you run into issues with the built-in setup via the web, you may try to complete the installation via the command line.
+
+Follow the instructions above until step 4. Then run the following commands. Please note that the database configuration must be done in the .env file BEFORE running the following commands.
+
+```bash
+docker exec -it linkace_app_1 php artisan migrate
+docker exec -it linkace_app_1 php artisan setup:complete
+docker exec -it linkace_app_1 php artisan registeruser --admin
+```
+
+The last command lets you create your first admin user. After all commands were successful, you can login right away at `http://localhost` or your domain pointing to LinkAce.
 
 ### Running Linkace behind a proxy / load balancer
 

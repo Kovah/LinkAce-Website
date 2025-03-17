@@ -92,4 +92,16 @@ Please make sure to follow the [post-installation steps]({{< relref path="docs/v
 
 ---
 
-Next Step: [Post-Setup Steps]({{< relref path="docs/v2/setup/post-setup.md" >}})
+## Completing the installation without the built-in setup
+
+If you run into issues with the built-in setup via the web, you may try to complete the installation via the command line.
+
+Follow the instructions above until step 4. Then run the following commands. Please note that the database configuration must be done in the .env file BEFORE running the following commands.
+
+```bash
+php artisan migrate
+php artisan setup:complete
+php artisan registeruser --admin
+```
+
+The last command lets you create your first admin user. After all commands were successful, you can login right away at `http://localhost` or your domain pointing to LinkAce.
