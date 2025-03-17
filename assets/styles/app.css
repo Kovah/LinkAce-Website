@@ -21,6 +21,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-padding-top: 100px;
+  }
+
   body {
     @apply font-sans text-color-base bg-gray-50 antialiased pt-[65px] sm:pt-[70px];
     transition: padding-top 100ms;
