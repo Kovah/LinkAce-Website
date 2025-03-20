@@ -2,6 +2,17 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.1.5
+
+_Released at 2025-03-20_
+
+- The SSO login is now correctly shown in when using the bookmarklet. Thanks to [@geoffholden](https://github.com/geoffholden) for his first contribution. {{issuelink 932}}
+- Handling of tag and list selects was overhauled to fix ghost-tags being created during bulk-editing. ({{issuelink 936}})
+- The setup now uses psql instead of pg_restore for Postgres databases for better compatibility.
+- Minor design fixes.
+- Dependencies were updated.
+
+
 ## 2.1.4
 
 _Released at 2025-02-26_
