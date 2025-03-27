@@ -2,6 +2,20 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.1.7
+
+_Released at 2025-03-27_
+
+- Links can now properly be sorted on the details page of Lists. ({{issuelink 941}})
+- Minor fixes and adjustments for the SQLite web setup.
+- Dependencies were updated.
+
+## 2.1.6
+
+_Released at 2025-03-21_
+
+- Fixes the search after it was not working correctly when searching with tags or lists
+
 ## 2.1.5
 
 _Released at 2025-03-20_
