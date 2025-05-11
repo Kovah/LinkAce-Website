@@ -70,6 +70,8 @@ SSO_AUTH0_CLIENT_SECRET=U5qo0Le2stKK2vO87TTl.....
 After adding this to your .env file, the regular login form vanishes and a button to login with Auth0 will show up when
 users try to login.
 
+Callback URL is `https://[[YOUR.LINKACE.INSTALL]]/auth/sso/[[SERVICE]]/callback` (replace service with whatever comes between `SSO_[[SERVICE]]_ENABLED` in your `.env` file)
+
 ---
 
 ## Provider Configuration
