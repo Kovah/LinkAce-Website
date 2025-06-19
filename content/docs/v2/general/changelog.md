@@ -2,6 +2,13 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.1.8
+
+_Released at 2025-06-19_
+
+- Tag and List relations are now properly removed for deleted Links. ({{issuelink 941}})
+- Dependencies were updated.
+
 ## 2.1.7
 
 _Released at 2025-03-27_
