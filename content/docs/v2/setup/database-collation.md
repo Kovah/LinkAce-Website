@@ -1,5 +1,6 @@
 ---
 title: Adjusting the Database Collation
+weight: 100
 ---
 
 The default collation used for the database is `utf8mb4_bin`. This was chosen to be the default because back in LinkAce v1 there were severe issues with checks for unique links because of how databases handle Unicode characters. This may lead to issues with sorting entries by their name.
