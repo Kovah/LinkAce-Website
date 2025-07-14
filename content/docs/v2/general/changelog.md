@@ -2,6 +2,13 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.1.9
+
+_Released at 2025-07-14_
+
+- Fixes a minor security issue where existing links could be updated with Javascript code.
+- Dependencies were updated.
+
 ## 2.1.8
 
 _Released at 2025-06-19_
