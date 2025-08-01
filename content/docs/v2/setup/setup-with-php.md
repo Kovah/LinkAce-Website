@@ -3,7 +3,7 @@ title: Setup without Docker
 weight: 40
 ---
 
-The application was developed with being used with Docker in mind. All following steps will try to work around this but cannot be guaranteed to work in every environment. Please remember that you need shell access to work with LinkAce.
+Since this application was designed for Docker, consider the following steps as a workaround. These steps aren't guaranteed to work in every environment. You will need shell access to work with LinkAce.
 
 ## Requirements
 
