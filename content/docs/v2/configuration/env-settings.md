@@ -44,6 +44,8 @@ MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
 # If you want to use Sendmail, set the path here
 MAIL_SENDMAIL_PATH="/usr/sbin/sendmail -bs -i"
+# If you are using self-signed certificates, add this setting to false to no verify SSL connections
+MAIL_VERIFY_TLS=true
 
 
 ## Advanced database configuration
