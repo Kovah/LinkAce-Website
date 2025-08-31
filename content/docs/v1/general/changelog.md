@@ -2,6 +2,12 @@
 title: LinkAce v1 Changelog
 ---
 
+## 1.16.2
+
+_Released at 2025-08.31_
+
+- Dependencies were updated.
+
 ## 1.16.1
 
 _Released at 2025-06-19_

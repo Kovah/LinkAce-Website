@@ -2,6 +2,18 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.2.0
+
+_Released at 2025-08-31_
+
+- Allow disabling TLS/SSL verification when using SMTP for sending mails ({{issuelink 986}}
+- Selecting tags or lists now prefer existing entries instead of creating new ones ({{issuelink 992}}
+- Allow users to search shared links by @KobyW in {{issuelink 976}}
+- Fix markdown rendering in link lists by using formatted_description attribute in {{issuelink 994}}
+- Add comprehensive GitHub Copilot instructions for LinkAce development in {{issuelink 996}}
+- LinkAce now uses the official Redis docker image instead of the Bitnami one, as Bitnami deprecated their images.
+- Dependencies were updated
+
 ## 2.1.9
 
 _Released at 2025-07-14_
