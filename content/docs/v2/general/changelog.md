@@ -6,7 +6,7 @@ title: LinkAce v2 Changelog
 
 _Released at 2025-09-07_
 
-- Allow more configuration options for connecting to the database via SSL, see [.env Settings]({{< relref path="docs/v2/configuration/env-settings.md" >}} for details ({{<issuelink 949>}})
+- Allow more configuration options for connecting to the database via SSL, see [.env Settings]({{< relref path="docs/v2/configuration/env-settings.md" >}}) for details ({{<issuelink 949>}})
 - Improvement for handling existing (even trashed)  links during adding or editing links ({{<issuelink 1004>}})
 - Improve handling of non-existing links, lists or tags for Postgres databases ({{<issuelink 1005>}})
 - Adding new tags or lists correctly takes default privacy settings into account ({{<issuelink 1001>}}))
