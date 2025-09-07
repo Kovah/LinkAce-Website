@@ -63,6 +63,13 @@ DB_ENGINE=InnoDB
 DB_SOCKET=
 DATABASE_URL="mysql://sandy:secret@192.168.10.10:3306/db"
 
+# SSL settings for the database connections
+DB_SSL_MODE=prefer
+MYSQL_VERIFY_SERVER_CERT=true
+MYSQL_SSL_KEY=
+MYSQL_SSL_CERT=
+MYSQL_SSL_CA= =
+
 
 ## Meta generation
 ## Configure how LinkAce should handle HTTP requests when fetching the meta data of websites when adding links.

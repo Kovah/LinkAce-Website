@@ -2,6 +2,18 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.3.0
+
+_Released at 2025-09-07_
+
+- Allow more configuration options for connecting to the database via SSL, see [.env Settings]({{< relref path="docs/v2/configuration/env-settings.md" >}} for details ({{issuelink 949}})
+- Improvement for handling existing (even trashed)  links during adding or editing links ({{issuelink 1004}})
+- Improve handling of non-existing links, lists or tags for Postgres databases ({{issuelink 1005}})
+- Adding new tags or lists correctly takes default privacy settings into account ({{issuelink 1001}}))
+- Link sharing button is removed when no sharing services are enabled ({{issuelink 991}}))
+- New option for OIDC logins: SSO_OIDC_VERIFY_JWT which enables JWT verification and now defaults to true
+- Dependencies were updated
+
 ## 2.2.0
 
 _Released at 2025-08-31_
