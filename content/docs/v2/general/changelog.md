@@ -6,11 +6,11 @@ title: LinkAce v2 Changelog
 
 _Released at 2025-09-07_
 
-- Allow more configuration options for connecting to the database via SSL, see [.env Settings]({{< relref path="docs/v2/configuration/env-settings.md" >}} for details ({{issuelink 949}})
-- Improvement for handling existing (even trashed)  links during adding or editing links ({{issuelink 1004}})
-- Improve handling of non-existing links, lists or tags for Postgres databases ({{issuelink 1005}})
-- Adding new tags or lists correctly takes default privacy settings into account ({{issuelink 1001}}))
-- Link sharing button is removed when no sharing services are enabled ({{issuelink 991}}))
+- Allow more configuration options for connecting to the database via SSL, see [.env Settings]({{< relref path="docs/v2/configuration/env-settings.md" >}} for details ({{<issuelink 949>}})
+- Improvement for handling existing (even trashed)  links during adding or editing links ({{<issuelink 1004>}})
+- Improve handling of non-existing links, lists or tags for Postgres databases ({{<issuelink 1005>}})
+- Adding new tags or lists correctly takes default privacy settings into account ({{<issuelink 1001>}}))
+- Link sharing button is removed when no sharing services are enabled ({{<issuelink 991>}}))
 - New option for OIDC logins: SSO_OIDC_VERIFY_JWT which enables JWT verification and now defaults to true
 - Dependencies were updated
 
@@ -18,11 +18,11 @@ _Released at 2025-09-07_
 
 _Released at 2025-08-31_
 
-- Allow disabling TLS/SSL verification when using SMTP for sending mails ({{issuelink 986}}
-- Selecting tags or lists now prefer existing entries instead of creating new ones ({{issuelink 992}}
-- Allow users to search shared links by @KobyW in {{issuelink 976}}
-- Fix markdown rendering in link lists by using formatted_description attribute in {{issuelink 994}}
-- Add comprehensive GitHub Copilot instructions for LinkAce development in {{issuelink 996}}
+- Allow disabling TLS/SSL verification when using SMTP for sending mails ({{<issuelink 986>}}
+- Selecting tags or lists now prefer existing entries instead of creating new ones ({{<issuelink 992>}}
+- Allow users to search shared links by @KobyW in {{<issuelink 976>}}
+- Fix markdown rendering in link lists by using formatted_description attribute in {{<issuelink 994>}}
+- Add comprehensive GitHub Copilot instructions for LinkAce development in {{<issuelink 996>}}
 - LinkAce now uses the official Redis docker image instead of the Bitnami one, as Bitnami deprecated their images.
 - Dependencies were updated
 
@@ -37,14 +37,14 @@ _Released at 2025-07-14_
 
 _Released at 2025-06-19_
 
-- Tag and List relations are now properly removed for deleted Links. ({{issuelink 941}})
+- Tag and List relations are now properly removed for deleted Links. ({{<issuelink 941>}})
 - Dependencies were updated.
 
 ## 2.1.7
 
 _Released at 2025-03-27_
 
-- Links can now properly be sorted on the details page of Lists. ({{issuelink 941}})
+- Links can now properly be sorted on the details page of Lists. ({{<issuelink 941>}})
 - Minor fixes and adjustments for the SQLite web setup.
 - Dependencies were updated.
 
@@ -58,8 +58,8 @@ _Released at 2025-03-21_
 
 _Released at 2025-03-20_
 
-- The SSO login is now correctly shown in when using the bookmarklet. Thanks to [@geoffholden](https://github.com/geoffholden) for his first contribution. {{issuelink 932}}
-- Handling of tag and list selects was overhauled to fix ghost-tags being created during bulk-editing. ({{issuelink 936}})
+- The SSO login is now correctly shown in when using the bookmarklet. Thanks to [@geoffholden](https://github.com/geoffholden) for his first contribution. {{<issuelink 932>}}
+- Handling of tag and list selects was overhauled to fix ghost-tags being created during bulk-editing. ({{<issuelink 936>}})
 - The setup now uses psql instead of pg_restore for Postgres databases for better compatibility.
 - Minor design fixes.
 - Dependencies were updated.
@@ -69,10 +69,10 @@ _Released at 2025-03-20_
 
 _Released at 2025-02-26_
 
-- **The API now validates `content-type` and `accept` headers for POST, PATCH and DELETE requests.** Those headers were required for the API to work properly, so client should send them already. If you run into issues where LinkAce responds with `415` HTTP errors, please make sure that your client properly sets the required `content-type` and `accept` headers. Thanks to [@prplecake](https://github.com/prplecake) for his awesome debugging and contribution. {{issuelink 885}}
-- Internal or private links are now properly displayed on tag and list pages. ({{issuelink 914}})
-- The setup handles database passwords with special characters now. ({{issuelink 927}})
-- Permissions for the `storage` directory were adjusted for Docker and PHP release packages. ({{issuelink 879}})
+- **The API now validates `content-type` and `accept` headers for POST, PATCH and DELETE requests.** Those headers were required for the API to work properly, so client should send them already. If you run into issues where LinkAce responds with `415` HTTP errors, please make sure that your client properly sets the required `content-type` and `accept` headers. Thanks to [@prplecake](https://github.com/prplecake) for his awesome debugging and contribution. {{<issuelink 885>}}
+- Internal or private links are now properly displayed on tag and list pages. ({{<issuelink 914>}})
+- The setup handles database passwords with special characters now. ({{<issuelink 927>}})
+- Permissions for the `storage` directory were adjusted for Docker and PHP release packages. ({{<issuelink 879>}})
 - Dependencies were updated.
 
 ## 2.1.3
@@ -86,7 +86,7 @@ _Released at 2025-02-16_
 
 _Released at 2025-02-15_
 
-- Adds Bluesky as a sharing option. ({{issuelink 909}})
+- Adds Bluesky as a sharing option. ({{<issuelink 909>}})
 - Fixes issue with sorting links on tag or list pages randomly.
 - You can now configure some more advanced settings via the .env file. See [.env Settings]({{< relref path="docs/v2/configuration/env-settings.md" >}}) for more details.
 
@@ -95,10 +95,10 @@ _Released at 2025-02-15_
 
 _Released at 2025-02-11_
 
-- Fixes critical issue where links were deleted when bulk-deleting tags. ({{issuelink 897}})
-- Fixes and issue where bulk-editing tags or lists for links resulted in an unexpected behavior. ({{issuelink 905}})
-- Links are now properly displayed when viewing lists of another user. ({{issuelink 902}})
-- Adds missing `SSO_KEYCLOAK_BASE_URL` to the configuration ({{issuelink 904}})
+- Fixes critical issue where links were deleted when bulk-deleting tags. ({{<issuelink 897>}})
+- Fixes and issue where bulk-editing tags or lists for links resulted in an unexpected behavior. ({{<issuelink 905>}})
+- Links are now properly displayed when viewing lists of another user. ({{<issuelink 902>}})
+- Adds missing `SSO_KEYCLOAK_BASE_URL` to the configuration ({{<issuelink 904>}})
 - Dependencies were updated.
 
 
@@ -106,7 +106,7 @@ _Released at 2025-02-11_
 
 _Released at 2025-02-06_
 
-- Adds a new unversioned API endpoint which returns the current supported API version. ({{issuelink 892}})
+- Adds a new unversioned API endpoint which returns the current supported API version. ({{<issuelink 892>}})
   Details can be found in the [API docs]({{< param "ApiDocsV2" >}})
 - Backups should now run again properly, caused due to the handling of disabled notifications.
 - Fixes issue with tags and lists in guest mode where the controller crashed due to incorrect URLs.
