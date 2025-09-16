@@ -2,6 +2,14 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.3.1
+
+_Released at 2025-09-16_
+
+- Fix for disabling TLS verification for SMTP connections ({{<issuelink 1012>}})
+- Minor security fix: user names are only allowed to have alpha-numeric characters and dashes.
+- Dependencies were updated.
+
 ## 2.3.0
 
 _Released at 2025-09-07_
