@@ -2,6 +2,23 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.4.0
+
+_Released at 2025-10-24_
+
+- **Important security patches, please update as soon as possible**:
+    - Sharing of links is now properly escaped within the application, preventing XSS attacks
+    - RSS feeds no longer contain private links.
+    - Private links are no longer exported in HTML exports.
+    - Minor change: LinkAce won't fetch keyword suggestions for tags from private and reserved IP addresses like `192.168.x.x` or `10.72.x.x`.
+    - Permission checks of system tokens were corrected to reflect the actual API usage, not the in-browser UI.
+- Private RSS feeds can be accessed by using `?api_token=3|tq3K7r...` within the URL again ({{<issuelink 1034>}})
+- Filter tags by search in the tags overview @Alitindrawan24 ({{<issuelink 1028>}})
+- System tokens don't fail while updating links via the API anymore ({{<issuelink 1013>}})
+- System tokens are now able to properly delete entities via the API
+- Lists and tags starting with numbers like `10 best Soup recipes` are correctly parsed in the List and Tags select while adding Links ({{<issuelink 1017>}})
+- Dependencies were updated.
+
 ## 2.3.1
 
 _Released at 2025-09-16_
