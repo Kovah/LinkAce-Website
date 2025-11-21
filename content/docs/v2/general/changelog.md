@@ -2,6 +2,13 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.4.1
+
+_Released at 2025-11-21_
+
+- LinkAce now officially supports PHP 8.5.
+- Minor dependency updates, including possible security patches.
+
 ## 2.4.0
 
 _Released at 2025-10-24_
