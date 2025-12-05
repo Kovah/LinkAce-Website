@@ -8,7 +8,8 @@ menu:
 
 ## Register a user
 
-This is helpful if you are not able to run the built-in setup LinkAce provides. At least one admin user must be created. The command will guide you through the process and ask for a username, an email and a password.
+This is helpful if you are not able to run the built-in setup LinkAce provides. The command will guide you through the process and ask for a username, an email and a password.  
+You may append `--admin` to create an admin user.
 
 **Run via Docker**
 ```
