@@ -2,6 +2,14 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.4.2
+
+_Released at 2025-12-18_
+
+- Sorting of lists and tags by link count was fixed.  ({{<issuelink 1047>}})
+- A password can now be passed when registering a new user via CLI.  ({{<issuelink 1046>}})
+- Minor dependency updates, including security patches.
+
 ## 2.4.1
 
 _Released at 2025-11-21_
