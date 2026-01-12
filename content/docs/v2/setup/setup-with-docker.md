@@ -17,7 +17,6 @@ All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkac
 * Command-line access to your server
 * Docker version 19 or greater
 * Docker Compose is recommended for the setup, must support at least compose version 3
-* Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` _may_ cause issues with different Unicode characters.
 
 ---
 

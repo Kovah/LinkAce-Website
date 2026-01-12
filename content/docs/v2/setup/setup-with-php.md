@@ -29,7 +29,6 @@ Since this application was designed for Docker, consider the following steps as 
   * MySQL: [mysql-client](https://dev.mysql.com/doc/refman/8.4/en/mysql.html) or [mariadb-client](https://mariadb.com/docs/server/connect/clients/mariadb-client/)
   * PostgreSQL: [postgresql-client and postgresql-dev](https://www.postgresql.org/)
   * SQLite: [sqlite](https://sqlite.org/download.html)
-* Please consider using `utf8mb4_bin` as the database collation. Other collations like `utf8mb4_general_ci` may cause issues with different Unicode characters and the LinkAce search feature.
 
 Older PHP versions will **not** be supported in any way. Please do yourself a favor and do not expose yourself or your users to any risks by using an outdated PHP version.
 
