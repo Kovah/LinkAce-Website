@@ -12,6 +12,7 @@ LinkAce supports various OAuth or OIDC providers.
 
 - Generic OIDC provider
 - Auth0
+- Authelia
 - Authentik
 - AWS Cognito
 - FusionAuth
@@ -106,6 +107,54 @@ URL, then `https://auth.company.com/application/linkace` must be your base URL.
 | `SSO_AUTH0_CLIENT_SECRET` |         | The Auth0 client secret               |
 
 {{< / table >}}
+
+### Authelia
+OIDC with Authelia works with the generic OIDC config. The critical succesfactor is the Authelia config, where PKCE needs to be disabled.
+
+**configuration.yml (Authelia)**
+```yaml {title="configuration.yml (Authelia)"}
+identity_providers:
+  oidc:
+    clients:
+      - client_id: 'linkace'
+        client_name: 'linkace'
+        client_secret: '[DIGEST OF SSO_OIDC_CLIENT_SECRET]'
+        public: false
+        authorization_policy: 'two_factor'
+        require_pkce: false
+        redirect_uris:
+          - 'https://linkace.example.com/auth/sso/oidc/callback'
+        scopes:
+          - 'openid'
+          - 'groups'
+          - 'email'
+          - 'profile'
+        response_types:
+          - 'code'
+        grant_types:
+          - 'authorization_code'
+          - 'refresh_token'
+        access_token_signed_response_alg: 'none'
+        userinfo_signed_response_alg: 'none'
+        token_endpoint_auth_method: 'client_secret_post'
+
+```
+
+**LinkAce configuration**
+
+{{< table >}}
+
+| Config                   | Default | Description                                 |
+|:-------------------------|:--------|:--------------------------------------------|
+| `SSO_OIDC_ENABLED`       | `false` | Enable SSO authentication for OIDC          |
+| `SSO_OIDC_BASE_URL`      |         | The OIDC base URL (details see below)       |
+| `SSO_OIDC_CLIENT_ID`     |         | The OIDC client ID                          |
+| `SSO_OIDC_CLIENT_SECRET` |         | The OIDC client secret                      |
+| `SSO_OIDC_SCOPES`        |         | Additional scopes sent to the OIDC provider |
+
+{{< / table >}}
+
+
 
 ### Authentik
 
