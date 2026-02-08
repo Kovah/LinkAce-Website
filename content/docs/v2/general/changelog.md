@@ -2,6 +2,19 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.5.0
+
+_Released at 2026-02-08_
+
+- **Support for PHP 8.1 was dropped. LinkAce only supports PHP 8.2 to 8.5.**
+
+## 2.4.3
+
+_Released at 2026-02-08_
+
+- Security patch: RSS feeds now contain proper escaping of HTML and XML.
+- Minor dependency updates, including security patches.
+
 ## 2.4.2
 
 _Released at 2025-12-18_
