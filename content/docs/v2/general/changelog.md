@@ -2,6 +2,12 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.5.1
+
+_Released at 2026-02-12_
+
+- Fixes an issue where the web setup for SQLite could not be completed. ({{<issuelink 1066>}})
+
 ## 2.5.0
 
 _Released at 2026-02-08_
