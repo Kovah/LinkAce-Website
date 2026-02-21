@@ -64,31 +64,6 @@ php artisan links:update-thumbnails
 If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
 
 
-## Cleanup history entries for Links
-
-Removes all but the last 5 entries in the link histories. Useful if you changed your links a lot in the latest time and want to clean up the histories a bit.
-If a field is provided, only history entries of that field are deleted. Possible values are:
-- `url`
-- `title`
-- `description`
-- `is_private`
-- `deleted_at`
-- `revtags` (Changes for assigned Tags)
-- `revlists` (Changes for assigned Lists)
-
-**Run via Docker**
-```
-docker exec -it linkace_app_1 php artisan links:cleanup-histories [field]
-```
-
-**Run without Docker**
-```
-php artisan links:cleanup-histories [field]
-```
-
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
-
-
 ## Import Links from a HTML bookmarks file
 
 If you have very large bookmark exports, you may want to import all links from the command line. Use this command after storing your file in the `/storage` directory.
