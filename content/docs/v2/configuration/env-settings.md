@@ -79,6 +79,8 @@ APP_USER_AGENT="LinkAce/1 (https://github.com/Kovah/LinkAce)"
 META_GENERATION_TIMEOUT=20
 # You also can add custom headers, for example to customize the Accept-Language header. Multiple headers must be separated by a pipe (|).
 META_GENERATION_CUSTOM_HEADERS="Accept-Language=fr-CH,fr;q=0.9,en|referer=https://example.com"
+# By default, HTML meta is not generated for internal IP ranges. To enable this again, add the following line.
+META_ALLOW_PRIVATE_IP_RANGES=true
 
 
 #### Backup configuration

@@ -25,12 +25,12 @@ LinkAce is a bookmark archive. You may store any URI inside the app, for example
 
 {{< table >}}
 
-| Feature                        | HTTP(S) | other URIs |
-|:-------------------------------|:--------|:-----------|
-| Store in LinkAce               | ✅       | ✅          |
-| Meta generation                | ✅       | ❌          |
-| Backup to the Internet Archive | ✅       | ❌          |
-| Automated uptime checks        | ✅       | ❌          |
+| Feature                        | HTTP(S) | HTTP(S) for private IP ranges | other URIs |
+|:-------------------------------|:--------|-------------------------------|:-----------|
+| Store in LinkAce               | ✅      | ✅                            | ✅          |
+| Meta generation                | ✅      | ⚠️ ([Details]({{< relref path="docs/v2/configuration/system-settings.md#advanced-system-settings" >}})) | ❌          |
+| Backup to the Internet Archive | ✅      | ❌                            | ❌          |
+| Automated uptime checks        | ✅      | ✅                            | ❌          |
 
 {{< / table >}}
 
