@@ -2,6 +2,14 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.5.2
+
+_Released at 2026-03-08_
+
+- **Change of default behavior**: due to possible security concerns, meta generation is now disabled by default for internal IP ranges (e.g. 192.168.x.x). You can enable this again by adding `META_ALLOW_PRIVATE_IP_RANGES=true` to your .env file.
+- Private tags or lists from other users can no longer be added to your links by using internal IDs.
+- Several updates for dependencies, including security fixes.
+
 ## 2.5.1
 
 _Released at 2026-02-12_
