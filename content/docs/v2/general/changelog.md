@@ -2,6 +2,14 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.5.3
+
+_Released at 2026-03-24_
+
+- Private notes are no longer visible to internal users.
+- Requests to private IP ranges are blocked on IP and hostname level.
+- Several updates for dependencies, including security fixes.
+
 ## 2.5.2
 
 _Released at 2026-03-08_
