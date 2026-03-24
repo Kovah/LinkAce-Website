@@ -28,7 +28,7 @@ Please add the following block to your .env file and change the values according
 
 ### Application backups to an S3-compatible storage service
 
-Application backups have a dedicated documentation: [Application backups]({{< relref path="docs/v2/configuration/application-backups.md" >}})
+Application backups have dedicated documentation: [Application backups]({{< relref path="docs/v2/configuration/application-backups.md" >}})
 
 
 ## 2. Setup the cron
@@ -39,6 +39,11 @@ Application backups have a dedicated documentation: [Application backups]({{< re
 
 On the same page as your Bookmarklet you can find basic app settings like the timezone, date and time format, and some privacy defaults. I recommend setting the correct timezone and the date and time formats too. You may also set which share buttons should be available when viewing your links.
 
-## 4. Install the Bookmarklet
+## 4. Security Tips
+
+- Please note that LinkAce does not automatically block embedding or content security policy. If you expose your LinkAce instance to the internet, make sure that your web server in front of LinkAce is properly configured for that.
+- By default, metadata is not fetched for private IP ranges. If you are sure you want to enable this feature for yourself and possible users of your instance, follow the [.env file reference]({{< relref path="docs/v2/configuration/env-settings.md" >}}) for adding the option.
+
+## 5. Install the Bookmarklet
 
 Visit the user settings, available from the dropdown menu beneath your username. To install the bookmarklet, simply drag the Bookmarklet button into your bookmarks bar.
