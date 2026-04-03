@@ -2,6 +2,26 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.5.4
+
+_Released at 2026-04-03_
+
+### Important Changes
+
+{{< alert type="danger" >}}
+**LinkAce now requires you to add `APP_URL=https://my-linkace-domain.com` to your .env file or alternatively to your docker compose file.**
+
+Replace `https://my-linkace-domain.com` with the actual URL of your LinkAce instance.
+{{</ alert >}}
+
+This is needed to mitigate a possible security issue if you don't have trusted proxies configured, which is the default for LinkAce. Not adding this setting will break some features such as password reset emails.
+
+#### Other changes
+
+- Private IPs and hostnames are now checked during the link checks.
+- Updated dependencies
+
+
 ## 2.5.3
 
 _Released at 2026-03-24_

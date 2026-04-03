@@ -61,4 +61,10 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 ## Version-specific upgrades
 
-At the moment, no specific steps are required to upgrade to a LinkAce 2 version.
+### to version 2.5.4
+
+{{< alert type="danger" >}}
+**LinkAce now requires you to add `APP_URL=https://my-linkace-domain.com` to your .env file or alternatively to your docker compose file.** Replace `https://my-linkace-domain.com` with the actual URL of your LinkAce instance.
+{{</ alert >}}
+
+This is needed to mitigate a possible security issue if you don't have trusted proxies configured, which is the default for LinkAce. Not adding this setting will break some features such as password reset emails.
