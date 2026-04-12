@@ -2,6 +2,15 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.5.5
+
+_Released at 2026-04-12_
+
+- Links are now re-checked after 2 weeks if they are broken. The number of weeks can be configured using the `` .env setting. ({{<issuelink 1093>}})
+- The broken status of links is now rest if the URL is changed. ({{<issuelink 1092>}})
+- Migration from Laravel Mix to Vite for CSS and JS.
+- Update of dependencies
+
 ## 2.5.4
 
 _Released at 2026-04-03_

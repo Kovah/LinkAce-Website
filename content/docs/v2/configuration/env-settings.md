@@ -6,8 +6,15 @@ weight: 200
 The following settings can be added to the `.env` file and changed as you need them. 
 
 ```bash
-# Only relevant for URLs generated when using LinkAce CLI commands
+# The URL under which LinkAce is accessible, e.g. https://links.example.com
+# Used when generating links in emails and other notifications
 APP_URL=http://localhost
+
+## Trusted Proxies and Hosts
+# Set to the IP of your reverse proxy if running behind one (e.g. nginx, Traefik).
+# Use a comma-separated list for multiple proxies: 192.168.1.1,10.0.0.1
+# Use * to trust the immediate upstream connection (any single reverse proxy).
+TRUSTED_PROXIES=*
 
 # The environment is usually 'production' but may be changed to 'local' for development
 APP_ENV=production
@@ -26,6 +33,11 @@ SESSION_SECURE_COOKIE=[true/false]
 # Configure the API rate limit here: the first number defines the number of requests, the second the time frame
 # for the requests. 60,1 is the default which means: 60 requests per 1 minute
 API_RATE_LIMIT=60,1
+
+
+## Link checking
+# How many weeks between re-checks of broken links (default: 2)
+BROKEN_LINK_RECHECK_INTERVAL_WEEKS=2
 
 
 ## Mail configuration
