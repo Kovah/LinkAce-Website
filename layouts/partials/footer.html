@@ -1,7 +1,7 @@
 <footer>
   <div class="container py-16">
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 gap-8">
 
       <div>
         <img src="/images/linkace_logo.svg" alt="LinkAce Logo" class="navbar-logo">
@@ -10,7 +10,7 @@
         </div>
       </div>
 
-      <div class="flex md:justify-center items-center gap-8 text-3xl">
+      <div class="flex md:justify-end items-center gap-8 text-3xl text-right">
         <a href="{{ .Site.Params.Github }}" class="inline-block" title="Github repository">
           {{ partial "icons/github.html" }}
         </a>
@@ -20,14 +20,6 @@
         <a href="{{ .Site.Params.Mastodon }}" class="inline-block" title="Mastodon profile">
           {{ partial "icons/mastodon.html" }}
         </a>
-      </div>
-
-      <div class="text-sm md:text-right">
-        <div class="mb-2">LinkAce is powered by</div>
-        <a href="https://hetzner.cloud/?ref=77Qtn2Mu0tDz" class="inline-block">
-          {{ partial "icons/hetzner.html" }}
-        </a>
-        <div class="mt-2 text-xs">Get 20€ when you sign up using <a href="https://hetzner.cloud/?ref=77Qtn2Mu0tDz">our friends link</a>.</div>
       </div>
 
     </div>
