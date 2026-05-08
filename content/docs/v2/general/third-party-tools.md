@@ -8,14 +8,24 @@ This page is an overview of third-party tools and libraries which are compatible
 
 # Mobile apps
 
-### ananasowe/hyperlinks-knapsack
+### ananasem/hyperlinks-knapsack
 
-Gitlab user [ananasowe](https://gitlab.com/ananasowe) created a native Android app for interacting with LinkAce collections using the API.
+Gitlab user [ananasowe](https://gitlab.com/ananasem) created a native Android app for interacting with LinkAce collections using the API.
 
 {{< image type="third_party" img="hyperlinks-knapsack-home.png" alt="Home screen of the Hyperlinks Knapsack app" >}}
 
-* APK installation [described here](https://gitlab.com/ananasowe/hyperlinks-knapsack#install)
-* Source Code at [Gitlab](https://gitlab.com/ananasowe/hyperlinks-knapsack)
+* APK installation [described here](https://gitlab.com/ananasem/hyperlinks-knapsack#install)
+* Source Code at [Gitlab](https://gitlab.com/ananasem/hyperlinks-knapsack)
+
+# Desktop apps
+
+### Tsundoku
+
+Gitlab user [gingerbeardman](https://gitlab.com/gingerbeardman) created a macOS menu bar app for quickly saving links to various bookmarking tools, including LinkAce. One global hotkey to save links. No browser extension required.
+
+{{< image type="third_party" img="tsundoku_settings_light.png" alt="Preview of the Tsundoku macOS app" >}}
+
+* Install from the [macOS App Store](https://apps.apple.com/app/apple-store/id6747599085?pt=19577&ct=website&mt=12)
 
 ## Command Line Tools (CLI)
 
