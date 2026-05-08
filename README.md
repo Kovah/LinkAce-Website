@@ -7,7 +7,7 @@ This is the source of the LinkAce website and documentation.
 
 ## Contribution & Development
 
-The website is built using [Hugo](https://gohugo.io/). Please make sure you have it installed locally. Additionally, you need [Node v16](https://nodejs.org/en/). Styling is done via Bootstrap and code blocks use Prism.js.
+The website is built using [Hugo](https://gohugo.io/). Please make sure you have it installed locally. Additionally, you need a current [Node.js](https://nodejs.org/en/) version supported by Vite. Styling is done via Tailwind CSS and code blocks use Prism.js.
 
 ```
 # Install dependencies
@@ -27,4 +27,3 @@ I may decline contributions for large content or style changes. Make sure to tal
 
 
 LinkAce is a project by [Kevin Woblick](https://kovah.de) and [Contributors](https://github.com/Kovah/LinkAce-Website/graphs/contributors)
-
