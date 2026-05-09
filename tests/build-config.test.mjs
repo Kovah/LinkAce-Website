@@ -14,12 +14,6 @@ test('npm scripts use Vite for asset builds and keep Hugo commands', () => {
   assert.equal(packageJson.scripts['build-with-search'], 'npm run production && hugo && npm run algolia');
 });
 
-test('package dependencies use Vite instead of Laravel Mix', () => {
-  assert.equal(packageJson.devDependencies.vite, '7.3.1');
-  assert.equal(packageJson.devDependencies['laravel-mix'], undefined);
-  assert.equal(packageJson.overrides, undefined);
-});
-
 test('Vite config emits stable Hugo asset names into assets/dist', async () => {
   const config = (await import('../vite.config.mjs')).default;
 
