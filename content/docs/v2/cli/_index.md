@@ -6,6 +6,23 @@ menu:
     weight: 60
 ---
 
+## Show debug information
+
+run this command to show essential information about your LinkAce installation, including your current configuration, the configured database connection, and the results of some checks for required host configurations.
+
+**Run via Docker**
+```
+docker exec -it linkace_app_1 php artisan debug
+```
+
+**Run without Docker**
+```
+php artisan debug
+```
+
+If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+
+
 ## Register a user
 
 This is helpful if you are not able to run the built-in setup LinkAce provides. The command will guide you through the process and ask for a username, an email and a password.  

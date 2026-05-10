@@ -2,6 +2,18 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.5.6
+
+_Released at 2026-05-10_
+
+- **Security fixes:**
+  - Users are now prohibited from editing other users entities.
+  - User names are now properly escaped in activity logs.
+  - Line breaks are now disallowed in database configurations during the setup process.
+- LinkAce now provides a `TRUSTED_HOSTS` .env configuration variable that can be used to change which hostnames are allowed for accessing your instance.
+- There is now a debug command (`php artisan debug`) which shows essential configuration parameters.
+- Dependencies were updated.
+
 ## 2.5.5
 
 _Released at 2026-04-12_

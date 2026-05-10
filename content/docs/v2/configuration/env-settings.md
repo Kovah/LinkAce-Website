@@ -8,13 +8,16 @@ The following settings can be added to the `.env` file and changed as you need t
 ```bash
 # The URL under which LinkAce is accessible, e.g. https://links.example.com
 # Used when generating links in emails and other notifications
-APP_URL=http://localhost
+APP_URL=http://linkace.example.com
 
 ## Trusted Proxies and Hosts
 # Set to the IP of your reverse proxy if running behind one (e.g. nginx, Traefik).
 # Use a comma-separated list for multiple proxies: 192.168.1.1,10.0.0.1
 # Use * to trust the immediate upstream connection (any single reverse proxy).
 TRUSTED_PROXIES=*
+# Trusted host names are generated automatically from the APP_URL setting. You may also set a comma-separated 
+# list of trusted host names here, or a regex.
+TRUSTED_HOSTS=linkace.example.com
 
 # The environment is usually 'production' but may be changed to 'local' for development
 APP_ENV=production
