@@ -70,7 +70,7 @@ If you aren't able to solve the issue with the help of the debug mode or logs, y
 
 The bland it sounds, please try to restart LinkAce. If that didn't help, try to restart your sever.
 
-## 6. Post your issue to the forum
+## 5. Post your issue to the forum
 
 If you aren't able to solve the issue with the detailed information or threads from the community, you might post a new one.
 

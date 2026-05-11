@@ -7,7 +7,7 @@ One of the more advanced features of LinkAce is the search. It provides a simple
 
 Please notice that search is only available for logged-in users.
 
-{{< image type="screen" img="v2/search_results.png" alt="Preview of the search form with results" >}}
+{{< image type="screen" img="v2/search.png" alt="Preview of the search form with results" >}}
 
 
 ## Search Options

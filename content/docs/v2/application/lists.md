@@ -7,7 +7,7 @@ Other than tags, lists are meant to not directly categorize but bundle different
 
 ## Lists Overview
 
-{{< image type="screen" img="v2/list_index.png" alt="Preview of List overview" >}}
+{{< image type="screen" img="v2/lists_index.png" alt="Preview of List overview" >}}
 
 The list overview provides a list of all lists with their name, description and link count displayed.
 
