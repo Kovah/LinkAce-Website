@@ -11,9 +11,11 @@ If you are new to LinkAce, start with the setup guide, finish the post-setup che
 
 ## New to LinkAce
 
+- [Follow the Getting Started guide]({{< relref path="docs/v2/getting-started/_index.md" >}}) for the shortest path from a fresh installation to daily use.
 - [Choose an installation method]({{< relref path="docs/v2/setup/_index.md" >}}) if you are setting up LinkAce for the first time.
 - [Install with Docker]({{< relref path="docs/v2/setup/setup-with-docker.md" >}}) for the recommended self-hosted setup.
 - [Follow the post-setup checklist]({{< relref path="docs/v2/setup/post-setup.md" >}}) to enable email, cron, automated checks, and backups.
+- [Complete the first steps after setup]({{< relref path="docs/v2/getting-started/first-steps.md" >}}) to verify adding, importing, searching, and defaults.
 - [Add and manage links]({{< relref path="docs/v2/application/links.md" >}}) once your instance is running.
 - [Import browser bookmarks]({{< relref path="docs/v2/configuration/import.md" >}}) if you already have a bookmark collection.
 - [Install the Bookmarklet]({{< relref path="docs/v2/application/bookmarklet.md" >}}) to save pages from your browser quickly.

@@ -5,6 +5,8 @@ weight: 60
 
 Theoretically you can use LinkAce after finishing the setup. I recommend checking the following short steps to make sure you unlock the full potential of LinkAce, including automated backups to the Internet Archive and regular automated link checks.
 
+If you want a guided first session after completing these checks, continue with [First Steps After Setup]({{< relref path="docs/v2/getting-started/first-steps.md" >}}).
+
 ## 1. Update the .env file with advanced settings
 
 The `.env` file in your LinkAce directory contains some advanced settings which can be enabled if you want to use them. Two configurations are quite important: email settings and application backups.
