@@ -176,7 +176,20 @@ sudo chown www-data:www-data .env
 sudo chmod u+rw .env
 ```
 
-For Docker setups with a mounted `.env` file, permissions on the host are shared into the container. Make sure the file is writable by the container during setup. After setup, you may make the file read-only again.
+For Docker setups with a mounted `.env` file, permissions on the host are shared into the container. Identify the user used by the container and make the mounted file writable for that user:
+
+```bash
+APP_UID="$(docker compose run --rm --entrypoint id app -u www-data)"
+APP_GID="$(docker compose run --rm --entrypoint id app -g www-data)"
+sudo chown "$APP_UID:$APP_GID" .env
+chmod u+rw .env
+```
+
+After setup, you may make the file read-only for the container user again:
+
+```bash
+chmod u-w .env
+```
 
 ### Database setup fails
 
@@ -311,13 +324,16 @@ For local Docker backups, make the host backup directory writable by the LinkAce
 
 ```bash
 mkdir -p backups
-sudo chown -R [container user]:[container group] backups
+APP_UID="$(docker compose run --rm --entrypoint id app -u www-data)"
+APP_GID="$(docker compose run --rm --entrypoint id app -g www-data)"
+sudo chown -R "$APP_UID:$APP_GID" backups
+chmod u+rwx backups
 ```
 
-If you do not know the container user and group IDs, inspect them from the running container:
+If your setup does not use Docker Compose, inspect the running container directly:
 
 ```bash
-docker compose exec app id www-data
+docker exec -it [your LinkAce container name] id www-data
 ```
 
 See [Application Backups]({{< relref path="docs/v2/configuration/application-backups.md" >}}).

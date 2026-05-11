@@ -24,11 +24,14 @@ BACKUP_ENABLED=true
 
 ### Edit your docker-compose.yml
 
-First, create a backup folder to store the backups. The folder must be writable for other users, otherwise LinkAce won't be able to properly store the resulting files.
+First, create a backup folder to store the backups. The folder must be writable by the user running LinkAce inside the container. Prefer fixing ownership instead of making the folder writable for everyone.
 
 ```bash
-$ mkdir ./backups
-$ chmod 0766 ./backups
+mkdir ./backups
+APP_UID="$(docker compose run --rm --entrypoint id app -u www-data)"
+APP_GID="$(docker compose run --rm --entrypoint id app -g www-data)"
+sudo chown "$APP_UID:$APP_GID" ./backups
+chmod u+rwx ./backups
 ```
 
 Now, open the `docker-compose.yml` file and remove the `#` in front of the `- ./backups:/app/storage/app/backups` line like this:

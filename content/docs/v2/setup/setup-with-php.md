@@ -9,6 +9,8 @@ Since this application was designed for Docker, consider the following steps as 
 
 * A Linux-based server with full command line access
 * The `storage` directory inside LinkAce must be writable by the web server
+* The `bootstrap/cache` directory must be writable by the web server
+* The `.env` file must be writable by the web server during setup
 * **PHP 8.1 to 8.4**, with the following extensions
     * BCMath
     * Ctype
@@ -45,6 +47,17 @@ app.
 ### 2. Edit the .env file
 
 Make a copy of the `.env.example` file and name it `.env`. Please do not change any values in it now!
+
+Make sure the web server user can write to the required paths. For example, on Debian or Ubuntu with Apache or nginx running as `www-data`:
+
+```bash
+sudo chown www-data:www-data .env
+sudo chown -R www-data:www-data storage bootstrap/cache
+sudo chmod u+rw .env
+sudo chmod -R u+rwX,g+rwX storage bootstrap/cache
+```
+
+Adjust `www-data` if your web server runs as another user. Prefer fixing ownership instead of making files or directories writable for everyone.
 
 ### 3. Generate a secret key
 

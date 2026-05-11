@@ -26,7 +26,10 @@ You can run LinkAce within a couple of minutes, using a SQLite database to try o
 
 ```
 touch database.sqlite
-chmod 0766 database.sqlite
+APP_UID="$(docker run --rm --entrypoint id linkace/linkace -u www-data)"
+APP_GID="$(docker run --rm --entrypoint id linkace/linkace -g www-data)"
+sudo chown "$APP_UID:$APP_GID" database.sqlite
+chmod u+rw database.sqlite
 docker run -p "8080:80" -v "./database.sqlite:/app/database/database.sqlite" linkace/linkace
 ```
 
@@ -60,8 +63,6 @@ You should change the following settings in the .env file before starting the se
 * DB_PASSWORD - Please set a secure password here
 * REDIS_PASSWORD - Please set a secure password here
 
-If you are unsure if the `.env` file is writable inside Docker, please make it writable for anybody (`-rw-rw-rw- or 666`). You can switch back to read only after the setup.
-
 Your directory should look like this now:
 
 ```
@@ -70,6 +71,21 @@ Your directory should look like this now:
 ├╴ docker-compose.yml
 ├╴ LICENSE.md
 └╴ README.md
+```
+
+The setup writes to the mounted `.env` file. Prefer fixing ownership instead of making the file writable for everyone:
+
+```bash
+APP_UID="$(docker compose run --rm --entrypoint id app -u www-data)"
+APP_GID="$(docker compose run --rm --entrypoint id app -g www-data)"
+sudo chown "$APP_UID:$APP_GID" .env
+chmod u+rw .env
+```
+
+After setup, you may make `.env` read-only for the container user:
+
+```bash
+chmod u-w .env
 ```
 
 {{< alert type="info" >}}
