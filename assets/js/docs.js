@@ -1,8 +1,10 @@
 import { liteClient as algoliasearch } from "algoliasearch/lite";
 import instantsearch from 'instantsearch.js';
-import { hits, searchBox } from 'instantsearch.js/es/widgets';
+import { configure, hits, searchBox } from 'instantsearch.js/es/widgets';
+import { filterHitsByDocsVersion, getDocsVersionFromPath } from './docs-search-version.mjs';
 
 const searchClient = algoliasearch('NDCLQHIM62', 'df23e2ffa22a485068544b25dc69d708');
+const currentDocsVersion = getDocsVersionFromPath(window.location.pathname);
 
 const docsSearch = instantsearch({
   indexName: 'linkace_docs',
@@ -20,9 +22,13 @@ const docsSearch = instantsearch({
 });
 
 docsSearch.addWidgets([
+  configure({
+    hitsPerPage: 50,
+  }),
+
   searchBox({
     container: '#docsearch-searchbox',
-    placeholder: 'Search...',
+    placeholder: currentDocsVersion ? `Search ${currentDocsVersion} docs...` : 'Search...',
     showSubmit: false,
     showReset: false,
     cssClasses: {
@@ -36,6 +42,9 @@ docsSearch.addWidgets([
       emptyRoot: 'hidden',
       list: 'list-none mb-0',
       item: 'docsearch-result'
+    },
+    transformItems(items) {
+      return filterHitsByDocsVersion(items, currentDocsVersion);
     },
     templates: {
       item(hit, { html }) {
