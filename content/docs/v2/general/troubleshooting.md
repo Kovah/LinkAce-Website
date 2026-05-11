@@ -1,175 +1,341 @@
 ---
 title: Troubleshooting
-description: If you have issues with LinkAce or run into any errors, please follow these steps before creating a discussion or an issue on Github.
+description: If LinkAce does not work as expected, start here to collect useful diagnostics and fix common setup, cron, mail, import, proxy, and permission issues.
 ---
 
-If you have issues with LinkAce or run into any errors, please follow these steps before creating a discussion or an issue on Github. You can find some common issues [below the troubleshooting guide](#common-issues).
+If LinkAce does not work as expected, start with the checks below. They help you find the exact error and make support requests much easier to answer.
 
-## Disclaimer
+## Start here
 
-As written in the Readme of the project and on the website: I built LinkAce to solve my problem, and I now share my solution and code to your without charging anything. I spent a lot of my free time building this application already, so I won't offer any *free* personal support, customization or installation help. If you need help please visit the [community forum]({{< relref path="community.md" >}}) and post your issue there.
+### 1. Check the application logs
 
-### Help other to help you
+If LinkAce is running, open **System Logs** from the user menu. If LinkAce is not reachable, read the same logs from `storage/logs` on the server.
 
-Generally speaking: if you have a problem, help other to understand your problem.
+For Docker setups:
 
-It is not helpful, if you just post an error message like "There was an error". Post details about your setup, what you did to make it work already, and what you expected. After following the troubleshooting guide, you will be able to post much more information about your LinkAce instance, which in turn might help other understand your problem and help you fix it.
+```bash
+# Show running containers and their names
+docker compose ps
 
-The golden rule is above everything else is: be nice and patient.
+# Show the application container logs
+docker compose logs app
 
----
+# Open a shell in the application container
+docker compose exec app ash
 
-## 1. Enable the debug mode
-
-The absolutely very first step you can try to understand what's wrong is to enable the _Debug Mode_. Error messages might be more detailed then and help find the root cause.
-
-Add this to your .env file:
-
+# Read LinkAce logs from inside the container
+ls -lah /app/storage/logs
+cat /app/storage/logs/laravel-YYYY-MM-DD.log
 ```
+
+Container names may differ in Portainer, Unraid, Synology, or custom Compose files. If `docker compose exec app ash` does not work, run `docker ps` and use the actual LinkAce container name:
+
+```bash
+docker exec -it [your LinkAce container name] ash
+```
+
+### 2. Enable debug mode temporarily
+
+Set this in your `.env` file, restart LinkAce, and try the failing action again:
+
+```bash
 APP_DEBUG=true
 ```
 
-## 2. Get more logs
-
-Logs are information collected by various components of LinkAce and might help understand the root cause better.
-
-- If LinkAce is running, you can find the general system logs under `System Logs` in the menu.
-- If LinkAce is not running or not accessible, you find the same logs under `./storage/logs`.
-
-### Getting logs from within Docker
-
-If you run LinkAce via Docker, you may use the following commands to access your container.
-
-{{< alert type="info" >}}
-Docker setups may vary. The container names can be different depending on where and how you set up LinkAce. In a regular setup, the container for LinkAce itself should be called `linkace-app-1`. You can find the name of your container by running `docker ps`.
-{{</ alert >}}
-
-```bash
-# For single Docker containers
-docker exec -it [your LinkAce container name] ash
-
-# For Docker Compose
-docker compose exec -it app ash
-```
-
-Once you are inside the container, find the logs directory and view the latest logs file.
-
-```bash
-# View all log files
-cd /app/storage/logs
-
-# Open the latest log file
-cat laravel-2025-02-26.log
-```
-
-## 3. Search the community forum for similar error messages
-
-If you aren't able to solve the issue with the help of the debug mode or logs, you might search the [community forum]({{< relref path="community.md" >}}) for your error message. There are tons of threads about all kinds of issues already and yours might already be solved.
-
-## 4. Did you try turning it off and on again?
-
-The bland it sounds, please try to restart LinkAce. If that didn't help, try to restart your sever.
-
-## 5. Post your issue to the forum
-
-If you aren't able to solve the issue with the detailed information or threads from the community, you might post a new one.
+After troubleshooting, set it back to `false`.
 
 {{< alert type="warning" >}}
-If you want to share tons of log files and additional info, please for the sake of god use [Pastebin](https://pastebin.com/) to drop of all the files and logs there. It is not helpful for others to encounter threads with 1000+ lines of logs all in the thread itself.
+Do not leave `APP_DEBUG=true` enabled on a public instance. Debug mode may expose internal details in error pages.
 {{</ alert >}}
 
-### What does your tech stack look like?
+### 3. Run the LinkAce debug command
 
-- If you run LinkAce behind a proxy or load balancer, please share details about it, and logs from it if necessary.
-- Do you run Cloudflare or another provider in front of LinkAce?
-- Are you using an SSO provider? If yes, share details about the setup and post logs if necessary.
-
-### Gather additional system information
-
-The instructions are written for Linux systems. If you use something else, please look up how do find details about it.
+The debug command shows the LinkAce version, Laravel version, PHP version, trusted host configuration, trusted proxy configuration, database target, and writable paths.
 
 ```bash
-# General details about your server
-uname -a
+# Docker
+docker compose exec app php artisan debug
 
-# Details about your docker system
-docker system info
-
-# Details about your LinkAce container setup
-cat docker-compose.yml
-docker container inspect [your LinkAce container name]
+# PHP installation
+php artisan debug
 ```
+
+The command only runs when `APP_DEBUG=true`.
+
+### 4. Check background tasks
+
+Many features are processed by the scheduler: imports, link checks, Wayback Machine backups, and application backups. Confirm that the cron is configured as described in [System Settings]({{< relref path="docs/v2/configuration/system-settings.md#system-cron" >}}).
+
+For Docker setups, you can test one scheduler run manually:
+
+```bash
+docker compose exec app php artisan schedule:run
+```
+
+For PHP installations:
+
+```bash
+php artisan schedule:run
+```
+
+### 5. Test email separately
+
+Password resets, backup notifications, and dead-link notifications need working mail settings. Test them with:
+
+```bash
+# Docker
+docker compose exec app php artisan mail:check
+
+# PHP installation
+php artisan mail:check
+```
+
+See [Advanced Settings]({{< relref path="docs/v2/configuration/env-settings.md#mail-configuration" >}}) for the mail variables.
 
 ---
 
-## Common Issues
+## Common issues
 
-There are a few common issues that might occur when you run LinkAce based on it's architecture and the technology it uses.
+### LinkAce shows `400 Bad Request`
 
-### Permission issues
+This is usually a host or proxy configuration issue.
 
-The most common issue is permissions. There are two major parts of LinkAce which require 
-
-#### .env file
-
-The .env file needs to be writable for the setup. You can change it back to non-writable permissions afterward. This also applies for the outside of the Docker container, as permissions are shared through the container!
+First check:
 
 ```bash
-# make it writable
-chmod 0666 .env
-
-# make it non-writable
-chmod 0655 .env
+docker compose exec app php artisan debug
 ```
 
-#### Storage directory
+Look at the **Trusted Hosts** and **Trusted Proxies** sections. Common causes are:
 
-The storage directory contains various files for caches, sessions and logs, as well as the application backups. Please make sure that the folders in it are writable by the user running LinkAce. In the official LinkAce docker container, the user will always be `www-data`.
+- `APP_URL` is still `http://localhost`.
+- The URL scheme is wrong, for example `http://` in `.env` while users open LinkAce via `https://`.
+- The reverse proxy forwards a host that does not match `APP_URL` or `TRUSTED_HOSTS`.
+- A Docker or Portainer stack defines variables, but the LinkAce container does not actually receive them.
+
+Relevant settings:
 
 ```bash
-# Inside a Docker container (if applicable)
-docker exec -it [your LinkAce container name] chmod -R 0766 ./storage
-
-# For a general PHP setup
-cd [Path to your LinkAce folder]
-chmod -R 0766 ./storage
+APP_URL=https://links.example.com
+TRUSTED_HOSTS=links.example.com
+TRUSTED_PROXIES=192.0.2.10
 ```
 
-#### Special case: SQLite Database
+Set `TRUSTED_PROXIES` to the IP address or subnet of your reverse proxy. Only use `TRUSTED_PROXIES=*` when LinkAce is reachable only through a trusted proxy layer and you understand that all forwarded proxy headers will be accepted.
 
-If you run LinkAce with an SQLite database, make sure that the folder containing the database is writable! This is a requirement from SQLite itself.
+When using a reverse proxy, make sure it forwards the original host and protocol. See [running LinkAce behind a proxy]({{< relref path="docs/v2/setup/setup-with-docker.md#running-linkace-behind-a-proxy--load-balancer" >}}).
 
-### Database is not reachable / credentials are incorrect
+### LinkAce shows `419 Page Expired` or `CSRF token mismatch`
 
-If you start the LinkAce Docker setup and change the database password later, you will have a mismatch between the actual password of your database and the password LinkAce knows.
+This usually means the browser session cookie does not match the URL used to access LinkAce.
 
-Please note that there will be no help for changing the password inside your database. Please refer to the official documentation of your database server.
+Check:
 
-{{< alert type="warning" >}}
-If you use special characters such as `?\/$'"` in your password, either change those to other characters or surround your database password with `"` quotes like this in your .env file:
+- `APP_URL` matches the public URL exactly.
+- Your reverse proxy sends the correct `Host` and `X-Forwarded-Proto` headers.
+- You are not switching between different hostnames, IP addresses, or schemes in the same browser session.
+- If LinkAce is intentionally served over plain HTTP, `SESSION_SECURE_COOKIE` is not set to `true`.
+
+After changing `.env`, restart LinkAce and clear configuration caches if needed:
+
+```bash
+docker compose exec app php artisan config:clear
+docker compose exec app php artisan cache:clear
 ```
+
+### LinkAce does not start or only shows a blank page
+
+Start with logs from Docker or your web server. Then run the debug command if possible.
+
+Common causes:
+
+- Required PHP extensions are missing on PHP installations.
+- `.env`, `storage/`, `storage/logs/`, or `storage/framework/views/` are not writable by the user running LinkAce.
+- The web server does not point to LinkAce's `public/` directory.
+- LinkAce is installed in a subdirectory instead of its own virtual host or subdomain. Subdirectory setups are not supported.
+
+For PHP installations, the web server user must be able to write to the storage directory:
+
+```bash
+cd /path/to/linkace
+sudo chown -R www-data:www-data storage bootstrap/cache
+sudo chmod -R u+rwX,g+rwX storage bootstrap/cache
+```
+
+Adjust `www-data` if your web server uses another user.
+
+### The setup cannot write `.env`
+
+The setup writes database and application values to `.env`. The file must be writable during setup.
+
+For PHP installations:
+
+```bash
+cd /path/to/linkace
+sudo chown www-data:www-data .env
+sudo chmod u+rw .env
+```
+
+For Docker setups with a mounted `.env` file, permissions on the host are shared into the container. Make sure the file is writable by the container during setup. After setup, you may make the file read-only again.
+
+### Database setup fails
+
+Common error messages include `Access denied`, `Connection refused`, `Can't connect to server`, or `Database could not be configured`.
+
+Check:
+
+- `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD` in `.env`.
+- In the standard Docker Compose setup, `DB_HOST` should be the Compose service name, usually `db`.
+- In a PHP setup where the database runs on the same host, `DB_HOST` is often `127.0.0.1` or `localhost`.
+- If the database password contains characters like `$`, `'`, `"`, `\`, or `?`, wrap it in double quotes in `.env`.
+- If you use Docker or Portainer environment variables instead of a mounted `.env` file, confirm the LinkAce container receives those variables.
+
+Example:
+
+```bash
 DB_PASSWORD="my$superSecret'DBPassword'"
 ```
+
+If the error mentions TLS or SSL, check your database server version and the database SSL settings in [Advanced Settings]({{< relref path="docs/v2/configuration/env-settings.md#advanced-database-configuration" >}}). Some MariaDB/MySQL client and server combinations require explicitly configuring SSL mode.
+
+{{< alert type="warning" >}}
+Do not remove Docker database volumes on an existing installation unless you have a verified backup and understand that this deletes the database. For a brand-new failed test setup, deleting the database volume can be a valid reset, but it is a destructive operation.
 {{</ alert >}}
 
-If you haven't set up LinkAce yet, you can delete your database and start from scratch. The following steps assume the standard LinkAce Docker setup. If you are using another database, please adopt the changes.
+### Password reset emails do not arrive
+
+Run the mail check command first:
 
 ```bash
-# Stop the whole setup
-docker compose down
-
-# Find the Docker volume of the LinkAce database, it should end with `linkace-db`
-docker volume ls 
-
-# ====== !CAUTION! ======
-# THIS WILL REMOVE YOUR DATABASE VOLUME AND EVERYTHING INSIDE IT!
-# MAKE SURE THAT THE NAME IS CORRECT!
-docker volume rm linkace_linkace-db
-
-# Start LinkAce again
-docker compose up -d
+docker compose exec app php artisan mail:check
 ```
 
-{{< alert type="info" >}}
-The default password shipping with LinkAce is `ChangeThisToASecurePassword!`
+Check:
+
+- `MAIL_MAILER`, `MAIL_HOST`, `MAIL_PORT`, `MAIL_USERNAME`, `MAIL_PASSWORD`, and `MAIL_ENCRYPTION`.
+- `MAIL_FROM_ADDRESS` is accepted by your mail provider.
+- Your provider allows SMTP from the server running LinkAce.
+- `MAIL_VERIFY_TLS=false` is only used for trusted internal test environments with self-signed certificates.
+
+{{< alert type="warning" >}}
+Disabling TLS verification weakens mail transport security. Prefer a valid certificate or trusted CA. Only use `MAIL_VERIFY_TLS=false` when you understand the risk and control the SMTP server.
 {{</ alert >}}
+
+If password reset emails are not available, use the CLI password reset command from [CLI Commands]({{< relref path="docs/v2/cli/_index.md#reset-a-user-password" >}}).
+
+### Imports stay in the queue
+
+Imports are queued and processed by the scheduler. If the import queue does not move, cron is usually not running.
+
+Check:
+
+```bash
+docker compose exec app php artisan schedule:run
+```
+
+Then reload the Import Queue in LinkAce. Also check `storage/logs` for failed import jobs.
+
+For large imports:
+
+- Keep the browser open until LinkAce confirms that links were queued.
+- Give the scheduler time to process all jobs.
+- Use the CLI import command for large bookmark files.
+- Use `--skip-meta-generation` if many imported URLs are slow or unreachable and you only need the saved URLs first.
+
+See [Import and Export]({{< relref path="docs/v2/configuration/import.md" >}}) and [CLI Commands]({{< relref path="docs/v2/cli/_index.md#import-links-from-a-html-bookmarks-file" >}}).
+
+### Link checks or Wayback Machine backups do not run
+
+Both features depend on the scheduler. Confirm the cron runs every minute as described in [System Settings]({{< relref path="docs/v2/configuration/system-settings.md#setting-up-the-cron" >}}).
+
+Also check:
+
+- Link checks only run periodically and process links in batches.
+- Wayback Machine backups are scheduled after links are added and may take time to appear on archive.org.
+- Private links are not sent to the Wayback Machine by default. Check your [User Settings]({{< relref path="docs/v2/configuration/user-settings.md#wayback-machine-backups" >}}).
+
+### Metadata or thumbnails are missing
+
+LinkAce fetches metadata from the saved URL. If the remote site blocks requests, responds slowly, has no Open Graph image, or resolves to a private IP range, LinkAce falls back to basic link data.
+
+Check:
+
+- `storage/logs` for warnings from metadata generation.
+- Whether the target website is reachable from the server running LinkAce.
+- `APP_USER_AGENT`, `META_GENERATION_TIMEOUT`, and `META_GENERATION_CUSTOM_HEADERS` in [Advanced Settings]({{< relref path="docs/v2/configuration/env-settings.md#meta-generation" >}}).
+- `META_ALLOW_PRIVATE_IP_RANGES=true` only if you intentionally save internal services.
+
+{{< alert type="warning" >}}
+Allowing metadata requests to private IP ranges can expose internal services to server-side requests. Only enable it for trusted private deployments.
+{{</ alert >}}
+
+### Guest users see too much or too little
+
+Guest access has two parts:
+
+- The system-wide guest access setting controls whether guests can browse public content.
+- Each link, tag, and list has its own visibility.
+
+Guest users can only see items that are not private or internal. If a public list is missing links, check the visibility of the links and tags inside it.
+
+See [System Settings]({{< relref path="docs/v2/configuration/system-settings.md#guest-access-and-settings" >}}) and [User Settings]({{< relref path="docs/v2/configuration/user-settings.md" >}}).
+
+### SSO login fails
+
+Check the application logs first. Then verify:
+
+- The SSO provider URL is reachable from the LinkAce server.
+- The client ID and secret match the provider.
+- Redirect URLs in the provider match the public `APP_URL`.
+- Reverse proxy headers preserve the correct scheme and host.
+
+If you ask for help, include the SSO provider name, the public LinkAce URL, the relevant `.env` variable names without secrets, and the log error.
+
+### Backups fail
+
+Run a manual backup and read the full error:
+
+```bash
+docker compose exec app php artisan backup:run
+```
+
+Common causes:
+
+- `/app/storage/app/backups` is mounted from the host but owned by `root` or another user the container cannot write as.
+- Mail notifications are enabled, but mail is not configured.
+- S3-compatible storage settings are incomplete.
+- Database dump fails because of database SSL/client compatibility.
+- The scheduler is not running, so automated backups never start.
+
+For local Docker backups, make the host backup directory writable by the LinkAce container user. Prefer fixing ownership over giving the directory broad permissions:
+
+```bash
+mkdir -p backups
+sudo chown -R [container user]:[container group] backups
+```
+
+If you do not know the container user and group IDs, inspect them from the running container:
+
+```bash
+docker compose exec app id www-data
+```
+
+See [Application Backups]({{< relref path="docs/v2/configuration/application-backups.md" >}}).
+
+---
+
+## Asking for help
+
+If the steps above do not solve the issue, search the [community forum]({{< relref path="community.md" >}}) for the exact error message. If you open a new discussion, include:
+
+- LinkAce version and setup method: Docker, PHP, Portainer, Unraid, Synology, or another platform.
+- The public URL format you use, without private tokens.
+- Whether LinkAce is behind a reverse proxy, load balancer, Cloudflare, or an SSO provider.
+- The relevant `.env` variable names and values, with secrets removed.
+- The output of `php artisan debug` if debug mode can run.
+- The related LinkAce logs from `storage/logs`.
+- Docker Compose snippets or web server configuration when the issue involves startup, proxying, HTTPS, or containers.
+
+Use a paste service for long logs and remove passwords, API keys, SSO secrets, cron tokens, and backup credentials before posting.
+
+LinkAce is a community project. Clear diagnostics, exact error messages, and a short explanation of what you already tried make it much easier for others to help.

@@ -10,6 +10,8 @@ menu:
 
 run this command to show essential information about your LinkAce installation, including your current configuration, the configured database connection, and the results of some checks for required host configurations.
 
+The command only runs when `APP_DEBUG=true` is set in your `.env` file.
+
 **Run via Docker**
 ```
 docker exec -it linkace_app_1 php artisan debug
@@ -87,7 +89,6 @@ If you have very large bookmark exports, you may want to import all links from t
 
 Possible Options:
 - `--skip-meta-generation` - Whether the automatic generation of titles should be skipped.
-- `--skip-check` - Whether the links checking should be skipped afterwards.
 
 **Run via Docker**
 ```
