@@ -3,26 +3,58 @@ title: Lists
 weight: 40
 ---
 
-Other than tags, lists are meant to not directly categorize but bundle different types of links together for one topic. For example, the `open-source` tag categorized all links of open source projects and the `macos` tag categorizes all links for neat macOS apps. A `Open Source macOS Apps` list may contain links to your favourite, open source macOS applications, while both used tags are not directly related.
+Lists group links into collections. Use lists for curated sets such as "Research for Project A", "Public Reading List", or "Tools for the Team".
 
-## Lists Overview
+Lists are different from tags: a list is usually a deliberate collection, while tags are labels that can describe many unrelated links.
+
+## View Lists
+
+The list overview shows all lists with their description and link count.
 
 {{< image type="screen" img="v2/lists_index.png" alt="Preview of List overview" >}}
 
-The list overview provides a list of all lists with their name, description and link count displayed.
-
-## Lists Details
+Open a list to see the links assigned to it. The link table can be sorted from the table header.
 
 {{< image type="screen" img="v2/list_details.png" alt="Preview of List details" >}}
 
-The list detail page is mostly available to give a quick overview on the links added for a particular list, as an alternative for the advanced search. The table containing the assigned links can be sorted by clicking the sorting symbol in the header row of the table.
+## Create a List
 
-## Adding Lists
+You can create lists in two places:
+
+- from the Lists menu,
+- directly from the link form while adding or editing a link.
 
 {{< image type="screen" img="v2/list_create.png" alt="Preview of List form" >}}
 
-Lists can be added through the menu or directly in the link add form. If added by using the dedicated form accessible from the menu you have an additional option for making a list private. It will then be displayed only to you.
- 
-{{< alert type="warning" >}}
-Please notice that list titles cannot contain commas.
-{{</ alert >}}
+Use the dedicated list form when you want to set a description or visibility immediately.
+
+List names cannot contain commas.
+
+## Add Links to a List
+
+Open a link and edit its **Lists** field, or add a list while creating the link. Existing lists are suggested while typing.
+
+For several links at once, use bulk editing on the link overview. See [Links]({{< relref path="docs/v2/application/links.md#edit-links-in-bulk" >}}).
+
+## Share a List
+
+List visibility controls who can see the list itself. The links inside the list also need compatible visibility.
+
+- Private lists are visible only to you.
+- Internal lists are visible to logged-in users.
+- Public lists can be visible to guests when guest access is enabled.
+
+See [System Settings]({{< relref path="docs/v2/configuration/system-settings.md#guest-access-and-settings" >}}) for guest access.
+
+## Common Problems
+
+- A list is visible but some links are missing: check the visibility of the links inside the list.
+- Guests cannot see a public list: confirm guest access is enabled.
+- A list name cannot be saved: remove commas from the list name.
+
+## Related Pages
+
+- [Links]({{< relref path="docs/v2/application/links.md" >}})
+- [Tags]({{< relref path="docs/v2/application/tags.md" >}})
+- [Search]({{< relref path="docs/v2/application/search.md" >}})
+- [RSS Feeds]({{< relref path="docs/v2/application/rss-feeds.md" >}})

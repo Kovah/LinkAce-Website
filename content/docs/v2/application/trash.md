@@ -3,20 +3,36 @@ title: Trash
 weight: 100
 ---
 
-There should never be the situation where data is lost by mistake. That's why everything in LinkAce will not be deleted permanently when deleting it from the interface. Instead, the entry (be it a link, tag or category) is moved to the trash. You can access the trash trough the menu bar by clicking on the trashcan.
+Trash protects you from accidental deletion. Links, lists, tags, and notes are moved to the trash first instead of being deleted permanently.
+
+Use trash when you need to restore something that was deleted by mistake or permanently remove deleted items after confirming they are no longer needed.
 
 {{< image type="screen" img="trash.png" alt="Preview of the trash with some deleted elements" >}}
 
+## Restore Items
 
-## Restoring elements from the Trash
+1. Open Trash from the menu.
+2. Find the deleted item.
+3. Click the restore button beside it.
 
-While on the trash overview, you can restore entries from it. Click the back arrow button beside the entry you want to restore.
+The item becomes available again after it is restored.
 
+## Permanently Delete Items
 
-## Permanently deleting entries (clearing the trash)
+Use **Clear Trash** for the relevant item type to permanently delete items in that section.
 
-By clicking on the red, dangerously looking "Clear Trash" button, you permanently delete all entries for the corresponding table. As a security measurement, there is no "Clear everything" button. Just to make sure no accidents will happen.
+There is no single "clear everything" action, so each type must be cleared separately.
 
 {{< alert type="danger" >}}
-When deleting items permanently, they are really permanently deleted. You won't be able to recover them if you have no backups of your data!
+Permanent deletion cannot be undone from LinkAce. Make sure you have a usable backup before clearing trash if the data may still matter.
 {{</ alert >}}
+
+## Common Problems
+
+- A restored item is still not visible to guests: check its visibility and guest access settings.
+- You deleted something permanently: restore it from an application backup if one exists.
+
+## Related Pages
+
+- [Application Backups]({{< relref path="docs/v2/configuration/application-backups.md" >}})
+- [Administration Operations]({{< relref path="docs/v2/administration/operations.md#confirm-backups" >}})

@@ -3,120 +3,127 @@ title: Links
 weight: 20
 ---
 
-Links are the heart of LinkAce. Links can be anything, from interesting articles, cool portfolios, helpful web tools. As long as it has a URL, you can add it to LinkAce. Additionally to informations like title and description, you may categorize links using tags or group them together with lists. Links are archived by the Wayback Machine and checked regularly to make sure you know about changes in availability of the links you saved.
+Links are the main records in LinkAce. A link stores a URL, title, description, visibility, optional lists and tags, optional notes, and status information from automated checks.
+
+Use links to save pages you want to find again, organize them with lists and tags, share them with other users or guests, and keep track of moved or broken URLs.
 
 ## Link Overview
 
-The link overview lists all available links together with some meta information like tags as well as the sharing options and links for editing and deleting them. You can sort the list by creation date, title and URL, both ascending and descending.
+The link overview lists your saved links and provides display, sorting, bulk editing, edit, delete, and sharing actions.
 
-### Link display formats
+You can switch between three display formats:
 
-Links can be displayed in three different formats, which can be controlled directly from the overview page.
-
-#### Display links as a simple list
+### Simple list
 
 {{< image type="screen" img="v2/links_index_simple.png" alt="Display links as a simple list" >}}
 
-#### Display links as a detailed list
+### Detailed list
 
 {{< image type="screen" img="v2/links_index_detailed.png" alt="Display links as a detailed list" >}}
 
-#### Display links as cards
+### Cards
 
 {{< image type="screen" img="v2/links_index_cards.png" alt="Display links as cards" >}}
 
+## Add a Link Quickly
 
-### Bulk editing
+Use the **Quick Add** form on the dashboard when you only need to save a URL.
 
-Links can be bulk-edited. Select the links you want to edit by checking the small box for each link, or select all currently displayed links by clicking `Select all` at the top.
+1. Paste the URL into the Quick Add form.
+2. Submit the form.
+3. LinkAce saves the link using your default link visibility.
+4. LinkAce tries to fetch title, description, and thumbnail metadata automatically.
 
-{{< image type="screen" img="v2/links_bulk_select.png" alt="Bulk-selecting Links from the overview page" >}}
+Quick Add is best for fast capture. Use the full form when you want to choose lists, tags, visibility, or a custom title immediately.
 
-After all Links are selected, click `Edit` at the top to start the bulk editing.
+## Add a Link With Details
 
-{{< image type="screen" img="v2/links_bulk_form.png" alt="Bulk edit form for Links" >}}
-
-On the bulk edit form, you can change the assigned Tags, Lists, the visibility, or delete all selected Links.
-
-Values which are not changed will stay the same.
-
----
-
-
-## Adding new Links
+Open **Add Link** from the menu to use the full link form.
 
 {{< image type="screen" img="v2/link_create.png" alt="Preview of the Link form" >}}
-
-New links can be added in two ways: directly from the dashboard by using the "Quick Add" form, or by using the more powerful form available via the "Add Link" link in the menu bar.
-
-The primary form shows you a lot of different fields which will be described in the following overview:
 
 {{< table >}}
 
 | Field | Required | Description |
 |:------|:---------|:------------|
-| URL | Yes | Contains the URL of the link you want to add. |
-| Title | No | You may set a custom title for the link here. If left blank, LinkAce will try to parse the title from the website. If no title was found, the URL will be used as the title. |
-| Description | No | You may set a custom description for the link here. If left blank, LinkAce will try to parse the description from the website. |
-| List | No | Used to add the link to lists. When you start typing, LinkAce will search for existing lists. If there are none you may add new lists by just entering them here. Lists can contain almost every character, except the comma. |
-| Tags | No | Used to add tags for the link. When you start typing, LinkAce will search for existing tags. If there are none you may add new tags by just entering them here. Tags can contain almost every character, except the comma. |
-| Visibility | No | Set the privacy mode of the link here. |
+| URL | Yes | The URL you want to save. |
+| Title | No | Custom title. If left blank, LinkAce tries to fetch the title from the website. |
+| Description | No | Custom description. If left blank, LinkAce tries to fetch the description from the website. |
+| Lists | No | Add the link to one or more lists. Existing lists are suggested while typing. New lists can be created from the field. |
+| Tags | No | Add one or more tags. Existing tags are suggested while typing. New tags can be created from the field. |
+| Visibility | No | Choose whether the link is public, internal, or private. |
 
 {{< / table >}}
 
-If you would like to add several links in a row, check the "Continue Adding" box. If checked, you will not be redirected
-to the link detail page, but will see the link form again.
+List and tag names cannot contain commas.
 
+### Tag Suggestions
 
-### Suggestions for Tags
-
-After adding the URL in the form, LinkAce will gather details from the specified site. If a valid site was found and it contains meta information, LinkAce will suggest them to be added as tags. Click on a suggestion to add it as a new tag.
+After you enter a URL, LinkAce checks the website metadata and may suggest tags. Click a suggestion to add it to the link.
 
 {{< image type="screen" img="v2/link_create_tag_suggestions.png" alt="Preview of some tag suggestions" >}}
 
+## Add Several Links in a Row
 
----
+Use **Continue Adding** on the full link form when you are entering several links manually.
 
+If enabled, LinkAce saves the current link and returns to the add form instead of opening the new link detail page.
 
-## Link Details
+## Edit Links in Bulk
+
+Use bulk editing when several links need the same tags, lists, visibility, or deletion action.
+
+1. Open the link overview.
+2. Select individual links with their checkboxes, or use **Select all** for all currently displayed links.
+3. Click **Edit**.
+4. Choose what should change.
+5. Submit the bulk edit form.
+
+{{< image type="screen" img="v2/links_bulk_select.png" alt="Bulk-selecting Links from the overview page" >}}
+
+{{< image type="screen" img="v2/links_bulk_form.png" alt="Bulk edit form for Links" >}}
+
+For tags and lists, choose whether the entered values should be appended to the existing values or replace them. Values you leave unchanged stay as they are.
+
+## Disable Checks for a Single Link
+
+Open the link detail page and use the **Disable Check** button if LinkAce cannot reliably check a specific URL.
+
+This is useful for websites that work in your browser but block automated requests, require visitor checks, or sit behind services such as Cloudflare. You can enable checks again from the same page.
+
+Automated checks require cron. See [Link Checks]({{< relref path="docs/v2/application/link-checks.md" >}}).
+
+## Add Notes to a Link
+
+Open the link detail page and use the notes section below the link details.
+
+Notes are useful for context, follow-up tasks, quotes, or reminders about why a link was saved. Notes have their own visibility, so a private note can stay private even when the link itself is public or internal.
+
+## Link Details and History
 
 {{< image type="screen" img="v2/link_details.png" alt="Preview of Link Details" >}}
 
-The link detail page shows all available information about the link, including title, description, lists and tags. From the details page you can directly hop into the edit form or delete the link. If a thumbnail was saved for a link it will be displayed.
+The detail page shows the saved URL, title, description, thumbnail, lists, tags, notes, share links, link-check controls, and change history.
 
-The "Enable Check" / "Disable Check" button lets you enable / disable the [automated checks]({{< relref path="docs/v2/application/link-checks.md" >}}) performed by LinkAce. This might be helpful if a website is reachable but LinkAce has problems accessing it. This is mostly the case with visitor captcha checks seen with Cloudflare-hosted websites.
+The change history records recent changes to link fields and assigned lists or tags.
 
-You will also be shown all share links if you enabled some in the user settings.
+## Automatic Wayback Machine Backups
 
-### Link Notes
+After a link is added, LinkAce can schedule a Wayback Machine request for that URL. This helps preserve access if the page later goes offline.
 
-Each link can have several notes. Those may be used to add more detailed information about the link or leaving hints to your guest viewers. Notes can like links be either private or not private. Private notes can only be read by yourself.
+Some websites block the Wayback Machine, so not every URL can be archived. Wayback Machine backups also require cron to be configured. See [System Settings]({{< relref path="docs/v2/configuration/system-settings.md#system-cron" >}}).
 
-To add a new note, view existing ones or edit an existing note, go to the link detail page. The notes section is displayed below the regular link details.
+## Common Problems
 
-### Change History
+- Metadata or thumbnails are missing: the website may block requests, respond slowly, or provide no metadata. See [Troubleshooting]({{< relref path="docs/v2/general/troubleshooting.md#metadata-or-thumbnails-are-missing" >}}).
+- Link checks do not run: verify cron in [System Settings]({{< relref path="docs/v2/configuration/system-settings.md#system-cron" >}}).
+- A public link is not visible to guests: check the link visibility and guest access in [System Settings]({{< relref path="docs/v2/configuration/system-settings.md#guest-access-and-settings" >}}).
+- Opening many links from a list or tag may require allowing popups for your LinkAce domain in the browser.
 
-The change history at the bottom of the link details shows you your recent changes with the timestamp and the previous value. Changes are recorded for all link values and assigned lists and tags.
+## Related Pages
 
-
----
-
-
-## Automatic Backups with the Wayback Machine
-
-After you add a link to LinkAce, it will schedule an automatic "backup" with the help of the [Wayback Machine (archive.org)](https://archive.org/web/web.php).
-This backup will help you access the contents of your saved link in case it goes offline. LinkAce will notify the Waback Machine about the link you safed, so the archiving can be scheduled. It may take a while until the first backup is finished.
-
-Please notice, that some websites restrict access of the Wayback Machine. If that's the case, the website will not be archived. Please contact the site owner to get access for the Wayback Machine.
-
-{{< alert type="warning" >}}
-The [cron]({{< relref path="docs/v2/configuration/system-settings.md#cron-token" >}}) needs to be configured and working to enable automated backups.
-{{</ alert >}}
-
-## Notifications about dead or moved Links
-
-Also, if you set up the cron correctly, LinkAce will regularly check all links if they are still available. More details about this can be found on the [Link Checks]({{< relref path="docs/v2/application/link-checks.md" >}}) page.
-
-## Opening multiple links in new browser tabs
-
-Lists and Tags have an option to open all links in new browser tabs. This feature requires you to configure your browser to allow popups for LinkAce. Please consult the documentation of your browser on how to do this.
+- [Lists]({{< relref path="docs/v2/application/lists.md" >}})
+- [Tags]({{< relref path="docs/v2/application/tags.md" >}})
+- [Link Checks]({{< relref path="docs/v2/application/link-checks.md" >}})
+- [Search]({{< relref path="docs/v2/application/search.md" >}})
+- [User Settings]({{< relref path="docs/v2/configuration/user-settings.md" >}})

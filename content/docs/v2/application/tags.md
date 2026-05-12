@@ -3,26 +3,60 @@ title: Tags
 weight: 50
 ---
 
-Tags are used to quickly add several labels to a link to categorize it. Usually this is done to add further specification of the category for the link. Tags can be added through the menu or directly in the link add form.
+Tags are labels for links. Use them to describe topics, technologies, status, people, projects, or any other category you want to search and filter by later.
 
-## Tag Overview
+Unlike lists, tags do not need to represent a curated collection. A link can have many tags.
+
+## View Tags
+
+The tag overview shows all tags with their link count.
 
 {{< image type="screen" img="v2/tags_index.png" alt="Preview of Tag overview" >}}
 
-The tag overview provides a list of all tags with their name and link count displayed.
-
-## Tag Details
+Open a tag to see links using that tag.
 
 {{< image type="screen" img="v2/tags_details.png" alt="Preview of Tag details" >}}
 
-The tag detail page is mostly available to give a quick overview on the links added for a particular tag, as an alternative for the advanced search.
+## Create a Tag
 
-## Adding Tags
+You can create tags in two places:
+
+- from the Tags menu,
+- directly from the link form while adding or editing a link.
 
 {{< image type="screen" img="v2/tags_create.png" alt="Preview of Tag form" >}}
 
-Tags can be added through the menu or directly in the link add form. If added by using the dedicated form accessible from the menu you have an additional option for making a tag private. It will then be displayed only to you.
- 
-{{< alert type="warning" >}}
-Please notice that tags cannot contain commas.
-{{</ alert >}}
+Use the dedicated tag form when you want to set visibility immediately.
+
+Tag names cannot contain commas.
+
+## Add Tags to Links
+
+Open a link and edit its **Tags** field, or add tags while creating the link. Existing tags are suggested while typing.
+
+LinkAce may also suggest tags from website metadata after you enter a URL in the link form.
+
+For several links at once, use bulk editing on the link overview. See [Links]({{< relref path="docs/v2/application/links.md#edit-links-in-bulk" >}}).
+
+## Share Tags
+
+Tag visibility controls who can see the tag itself. The links using that tag also need compatible visibility.
+
+- Private tags are visible only to you.
+- Internal tags are visible to logged-in users.
+- Public tags can be visible to guests when guest access is enabled.
+
+See [System Settings]({{< relref path="docs/v2/configuration/system-settings.md#guest-access-and-settings" >}}) for guest access.
+
+## Common Problems
+
+- A tag is visible but some links are missing: check the visibility of the links using the tag.
+- Guests cannot see a public tag: confirm guest access is enabled.
+- A tag name cannot be saved: remove commas from the tag name.
+
+## Related Pages
+
+- [Links]({{< relref path="docs/v2/application/links.md" >}})
+- [Lists]({{< relref path="docs/v2/application/lists.md" >}})
+- [Search]({{< relref path="docs/v2/application/search.md" >}})
+- [RSS Feeds]({{< relref path="docs/v2/application/rss-feeds.md" >}})

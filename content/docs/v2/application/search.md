@@ -3,30 +3,70 @@ title: Advanced Search
 weight: 60
 ---
 
-One of the more advanced features of LinkAce is the search. It provides a simple yet powerful interface to quickly find links you are searching for. You can search either by a specific search string, or by a list or tag.
+Advanced Search helps you find links by text, status, visibility, lists, and tags. It is available to logged-in users.
 
-Please notice that search is only available for logged-in users.
+Use search when the normal link overview is too broad, when you need links missing organization data, or when you want to find broken links.
 
 {{< image type="screen" img="v2/search.png" alt="Preview of the search form with results" >}}
 
+## Search by Text
 
-## Search Options
+Enter a search term in the main search field.
 
-The following table gives you an overview over all search options available.
+Use the two checkboxes to decide where LinkAce searches:
 
-{{< table >}}
+- **Search Title** searches link titles.
+- **Search Description** searches link descriptions.
 
-| Option | Description |
-|:------|:------------|
-| Search for | The Search for field is the main input, letting your specify the search term. |
-| Search Title | If checked, LinkAce searches for the term in the title field. |
-| Search Description | If checked, LinkAce searches for the term in the description field. |
-| Broken Links only | If checked, only display links which are marked as broken by the automated link checks. |
-| without Lists | If checked, only links without any associated lists will be displayed. |
-| without Tags | If checked, only links without any associated tags will be displayed. |
-| List filter | If you select a list here, only links which are associated with the selected list will be displayed. |
-| Tag filter | If you select a tag here, only links which are associated with the selected tag will be displayed. |
-| Visibility filter | Select if `public`, `internal` or only `private` links should be displayed. |
-| Sorting option | This option allows you to sort the results by title, URL or the creation date, ascending or descending respectively. |
+Both are enabled by default. Disable one if you need a narrower result set.
 
-{{< / table >}}
+## Find Broken Links
+
+Enable **Broken Links only** to show links marked as broken by automated link checks.
+
+If no broken links appear but you expect some, verify that cron is configured and link checks are running. See [Link Checks]({{< relref path="docs/v2/application/link-checks.md" >}}).
+
+## Find Links Without Tags or Lists
+
+Use these filters to clean up unsorted links:
+
+- **without Tags** shows links that have no tags.
+- **without Lists** shows links that are not assigned to any list.
+
+These filters do not require a text search term.
+
+## Filter by Visibility
+
+Use the visibility filter to show only public, internal, or private links.
+
+This is useful before enabling guest access or when checking which links can be seen by other users. See [User Management]({{< relref path="docs/v2/configuration/user-management.md" >}}) for the visibility model.
+
+## Filter by Lists and Tags
+
+Use **Filter by List** or **Filter by Tag** to find links assigned to specific lists or tags.
+
+You can select multiple lists or tags. The search form also supports excluding lists or tags, which is useful when cleaning up links that should not belong to a category.
+
+## Sort Results
+
+Use the sorting dropdown to order results by:
+
+- creation date,
+- URL,
+- title,
+- random order.
+
+Each sortable field can be ordered ascending or descending where available.
+
+## Common Problems
+
+- Search returns no results: confirm at least one search term, list, tag, exclusion, or checkbox filter is set.
+- Expected public results are missing in guest search: guest search only sees public content and does not expose private visibility filters.
+- Broken-link results are stale: confirm cron is running in [System Settings]({{< relref path="docs/v2/configuration/system-settings.md#system-cron" >}}).
+
+## Related Pages
+
+- [Links]({{< relref path="docs/v2/application/links.md" >}})
+- [Lists]({{< relref path="docs/v2/application/lists.md" >}})
+- [Tags]({{< relref path="docs/v2/application/tags.md" >}})
+- [Link Checks]({{< relref path="docs/v2/application/link-checks.md" >}})

@@ -3,34 +3,52 @@ title: Bookmarklet
 weight: 65
 ---
 
-The Bookmarklet is one of the most important features as it provides a simple way to add a random website to LinkAce as a link without leaving the website. 
-While on a website you want to save to LinkAce, click the Bookmarklet. This will open a popup. This popup will show a login page if you are not logged in on LinkAce, or the pre-filled link form.
+The Bookmarklet lets you save the page currently open in your browser without first opening LinkAce. Add it to your browser bookmarks bar once, then click it whenever you want to save the current page.
 
+If you are not logged in to LinkAce, the Bookmarklet opens the login page first. After login, it continues to the pre-filled link form.
 
-## Preparing the Bookmarklet
+## Add the Bookmarklet to Your Browser
+
+1. Open your LinkAce user settings.
+2. Find the Bookmarklet section at the top.
+3. Make sure your browser bookmarks bar is visible.
+4. Drag the Bookmarklet button to the bookmarks bar.
 
 {{< image type="screen" img="user_settings_bookmarklet.png" alt="Preview of the bookmarklet settings" >}}
 
-Go to the user settings. Right at the top you will find the Bookmarklet section. To use the Bookmarklet, drag the button to your browser bookmarks bar.
-
-
-## Using the Bookmarklet
-
 {{< image type="screen" img="bookmarklet_browser.png" alt="Preview of the bookmarklet in the browser bookmarks bar" >}}
 
-To start the Bookmarklet, click the bookmark in your browser while you have the site open you want to save. The bookmarklet will then open a new window with the form for adding new links. Please notice: if you are not logged in to LinkAce, you will be redirected to the login form first.
+If dragging does not work, check whether your browser or mobile browser supports bookmarklets. Some mobile browsers restrict JavaScript bookmarks.
 
-The form will be pre-filled with the URL and the title of the website. You are free to enter Lists or Tags now and set the Link to private if you want.
+## Save a Page With the Bookmarklet
+
+1. Open the page you want to save.
+2. Click the Bookmarklet in your bookmarks bar.
+3. LinkAce opens a small window with the link form.
+4. Review the pre-filled URL and title.
+5. Add lists, tags, description, and visibility if needed.
+6. Save the link.
 
 {{< image type="screen" img="bookmarklet_preview.png" alt="Preview of the bookmarklet while saving a new link" >}}
 
-After adding the link, the Bookmarklet will close itself after 5 seconds. If you want, you can jump to LinkAce with a click on the then shown button.
+After saving, the Bookmarklet window closes itself after a few seconds. You can also use the shown button to open LinkAce.
 
 {{< image type="screen" img="bookmarklet_saved.png" alt="Preview of the bookmarklet after saving a link" >}}
 
+## Use Selected Text as the Description
 
-### Using text selection for a description
-
-If you select any text on the website you want to save, the Bookmarklet will use this text as the description of the Bookmarklet. Follow the same steps as above, but before clicking the Bookmarklet, select any text.
+Before clicking the Bookmarklet, select text on the page. LinkAce uses the selected text as the link description.
 
 {{< image type="screen" img="bookmarklet_preview_description.png" alt="Preview of the bookmarklet while saving a link with a description" >}}
+
+## Common Problems
+
+- The login page appears: log in to LinkAce, then try the Bookmarklet again.
+- Nothing opens: allow popups for your LinkAce domain and check whether the browser supports bookmarklets.
+- The form is missing title or description: the website may block metadata access. You can fill the fields manually.
+
+## Related Pages
+
+- [Links]({{< relref path="docs/v2/application/links.md" >}})
+- [User Settings]({{< relref path="docs/v2/configuration/user-settings.md" >}})
+- [Troubleshooting]({{< relref path="docs/v2/general/troubleshooting.md#metadata-or-thumbnails-are-missing" >}})
