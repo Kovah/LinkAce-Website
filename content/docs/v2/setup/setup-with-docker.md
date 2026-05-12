@@ -6,23 +6,30 @@ aliases:
 - setup
 ---
 
-Working with Docker is pretty straight forward, but you should be familiar with Docker. To make things easier, we provide Docker Compose files in the repository which contain all needed services, configured to just run the application right away.
+Docker is the recommended setup method for most self-hosted LinkAce installations. The stable Docker setup uses Docker Compose and includes the application, database, and cache services.
 
 {{< alert type="info" >}}
 All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkace/linkace) and on the [**GitHub Registry**](https://github.com/Kovah/LinkAce/pkgs/container/linkace) and support `amd64`, `arm64` and `amd/v7`.
 {{</ alert >}}
 
-## Base Requirements
+## Before You Start
 
-* Command-line access to your server
-* Docker version 19 or greater
-* Docker Compose is recommended for the setup, must support at least compose version 3
+- Decide which URL you will use: a local URL such as `http://localhost:8080` or a domain such as `https://links.example.com`.
+- Make sure you have command-line access to the server.
+- Install Docker 19 or newer.
+- Install Docker Compose with support for Compose file version 3 or newer.
+- Decide which database you will use. The provided stable setup uses MariaDB.
+- If this is an existing LinkAce installation, make a verified backup before changing containers, volumes, or database settings.
 
 ---
 
 ## 2-Minute Test Setup
 
-You can run LinkAce within a couple of minutes, using a SQLite database to try out the application. Please note that this is not recommended for production use and migrating from this test setup to another database is not supported.
+Use this only to evaluate LinkAce locally. It uses a single container and SQLite.
+
+{{< alert type="warning" >}}
+This test setup is not recommended for production use. Migrating from this test setup to another database is not supported.
+{{</ alert >}}
 
 ```
 touch database.sqlite
@@ -46,7 +53,7 @@ docker run -p "8080:8080" -e "PORT=8080" -v "./database.sqlite:/app/database/dat
 
 ## Stable Setup
 
-It is recommended to follow these setup steps to ensure that LinkAce is running smoothly. This setup method is the only supported one for Docker. 
+Use this setup for a real Docker installation. It is the supported Docker path and uses Docker Compose with separate services for LinkAce, the database, and Redis.
 
 
 ### 1. Copy the needed files
@@ -133,6 +140,8 @@ You can configure the database and your user account in the following process.
 {{< alert type="warning" >}}
 Please make sure to follow the [post-installation steps]({{< relref path="docs/v2/setup/post-setup.md" >}}) now to fully enable all features.
 {{</ alert >}}
+
+The post-setup checklist covers `APP_URL`, mail, cron, backups, guest access, default visibility, imports, and the Bookmarklet.
 
 
 ---

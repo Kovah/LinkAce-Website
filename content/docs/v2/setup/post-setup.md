@@ -3,49 +3,103 @@ title: Post-Setup Steps
 weight: 60
 ---
 
-Theoretically you can use LinkAce after finishing the setup. I recommend checking the following short steps to make sure you unlock the full potential of LinkAce, including automated backups to the Internet Archive and regular automated link checks.
+After the setup wizard is finished, LinkAce can save links immediately. Use this checklist to enable the features most users expect: correct generated URLs, email, cron, backups, visibility defaults, imports, and the Bookmarklet.
 
 If you want a guided first session after completing these checks, continue with [First Steps After Setup]({{< relref path="docs/v2/getting-started/first-steps.md" >}}).
 
-## 1. Update the .env file with advanced settings
+## Post-Setup Checklist
 
-The `.env` file in your LinkAce directory contains some advanced settings which can be enabled if you want to use them. Two configurations are quite important: email settings and application backups.
+### 1. Set `APP_URL`
 
-All other possible settings can be found in the [.env file reference]({{< relref path="docs/v2/configuration/env-settings.md" >}}).
+Set `APP_URL` in your `.env` file or environment variables to the exact URL users open in the browser.
 
-### Email Configuration
+```bash
+APP_URL=https://links.example.com
+```
 
-Please add the following block to your .env file and change the values according to your 
+This value is used for generated links, emails, trusted host checks, and reverse-proxy setups. If LinkAce shows `400 Bad Request` or generates wrong URLs, start with [Troubleshooting]({{< relref path="docs/v2/general/troubleshooting.md#linkace-shows-400-bad-request" >}}).
 
-| .env setting | Possible values | Default value | Description |
-|:--|:--|:--|:--|
-| `MAIL_FROM_ADDRESS` | any email address | `hello@example.com` | The email address you are sending from |
-| `MAIL_FROM_NAME` | any string | `LinkAce` | The name you are sending from |
-| `MAIL_MAILER` | `log`, `smtp`, `sendmail`, `mailgun`, `ses`, `postmark` | `smtp` | The method of sending email, more details see [the Mail configuration docs](https://laravel.com/docs/9.x/mail) |
-| `MAIL_HOST` | any string | `smtp.mailgun.org` | SMTP only: the host sending email from |
-| `MAIL_PORT` | any number | `587` | SMTP only: the post for connecting to the host |
-| `MAIL_USERNAME` | any string | none | SMTP only: the username for connecting to the host |
-| `MAIL_PASSWORD` | any string | none | SMTP only: the password for connecting to the host |
-| `MAIL_ENCRYPTION` | `ssl`, `tls`, none | `tls` | SMTP only: the sending encryption |
+### 2. Configure Mail
 
-### Application backups to an S3-compatible storage service
+Email is needed for password resets, user invitations, dead-link notifications, and backup notifications.
 
-Application backups have dedicated documentation: [Application backups]({{< relref path="docs/v2/configuration/application-backups.md" >}})
+Configure the mail variables in `.env` or your environment. The full list is available in [Advanced Settings]({{< relref path="docs/v2/configuration/env-settings.md#mail-configuration" >}}).
 
+Common SMTP settings:
 
-## 2. Setup the cron
+```bash
+MAIL_FROM_ADDRESS=links@example.com
+MAIL_FROM_NAME=LinkAce
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.example.com
+MAIL_PORT=587
+MAIL_USERNAME=links@example.com
+MAIL_PASSWORD=change-me
+MAIL_ENCRYPTION=tls
+```
 
-**The cron is necessary to enable automated backups via the Waybackmachine, enabling regular link checks and application backups.** You will be presented a cron token, and a pre-built cron URL on the system settings page, available from the username dropdown. More information about how to configure a cron can be found in the [System Settings]({{< relref path="docs/v2/configuration/system-settings.md" >}}).
+### 3. Test Mail
 
-## 3. Configure basic app settings
+Run the mail check command:
 
-On the same page as your Bookmarklet you can find basic app settings like the timezone, date and time format, and some privacy defaults. I recommend setting the correct timezone and the date and time formats too. You may also set which share buttons should be available when viewing your links.
+```bash
+# Docker
+docker compose exec app php artisan mail:check
 
-## 4. Security Tips
+# PHP installation
+php artisan mail:check
+```
 
-- Please note that LinkAce does not automatically block embedding or content security policy. If you expose your LinkAce instance to the internet, make sure that your web server in front of LinkAce is properly configured for that.
-- By default, metadata is not fetched for private IP ranges. If you are sure you want to enable this feature for yourself and possible users of your instance, follow the [.env file reference]({{< relref path="docs/v2/configuration/env-settings.md" >}}) for adding the option.
+If the test fails, see [Troubleshooting Mail]({{< relref path="docs/v2/general/troubleshooting.md#password-reset-emails-do-not-arrive" >}}).
 
-## 5. Install the Bookmarklet
+### 4. Configure Cron
 
-Visit the user settings, available from the dropdown menu beneath your username. To install the bookmarklet, simply drag the Bookmarklet button into your bookmarks bar.
+Cron is required for imports, automated link checks, Wayback Machine backups, and application backups.
+
+Open **System Settings** from the user menu. The **System Cron** section shows the cron token and cron URL.
+
+Your cron must run every minute. See [System Settings]({{< relref path="docs/v2/configuration/system-settings.md#system-cron" >}}) for examples.
+
+You can test one scheduler run manually:
+
+```bash
+# Docker
+docker compose exec app php artisan schedule:run
+
+# PHP installation
+php artisan schedule:run
+```
+
+### 5. Configure Backups
+
+Exports are not full backups. Configure application backups if you want a recovery path for the database and application data.
+
+See [Application Backups]({{< relref path="docs/v2/configuration/application-backups.md" >}}) for local and S3-compatible backup setup.
+
+### 6. Choose Guest Access
+
+Open **System Settings** and decide whether guests should be able to browse public links, lists, and tags.
+
+Leave guest access disabled if LinkAce should be private. If you enable it, review which links, lists, and tags are public.
+
+See [Guest Access and Settings]({{< relref path="docs/v2/configuration/system-settings.md#guest-access-and-settings" >}}).
+
+### 7. Choose Default Visibility
+
+Open **User Settings** and choose default visibility for new links, lists, tags, and notes.
+
+For a private archive, set defaults to **Private**. For a shared team instance, **Internal** may be more useful. You can still change visibility per item while creating or editing it.
+
+See [User Settings: Privacy Settings]({{< relref path="docs/v2/configuration/user-settings.md#privacy-settings" >}}).
+
+### 8. Import Links or Install the Bookmarklet
+
+If you already have bookmarks, import an HTML bookmark export from your browser. See [Import Browser Bookmarks]({{< relref path="docs/v2/recipes/import-browser-bookmarks.md" >}}).
+
+If you want to save pages while browsing, install the Bookmarklet from **User Settings**. See [Bookmarklet]({{< relref path="docs/v2/application/bookmarklet.md" >}}).
+
+## Security Tips
+
+- If you expose LinkAce to the internet, configure your reverse proxy or web server carefully and set `APP_URL` correctly.
+- Metadata is not fetched for private IP ranges by default. Only enable `META_ALLOW_PRIVATE_IP_RANGES` for trusted private deployments. See [Troubleshooting Metadata]({{< relref path="docs/v2/general/troubleshooting.md#metadata-or-thumbnails-are-missing" >}}).
+- Keep backups and `.env` secrets out of public directories and source control.
