@@ -8,6 +8,8 @@ LinkAce supports multiple users working on the same application, sharing links, 
 - **Admin** - Admins are meant to maintain LinkAce, configure several system-wide options and invite new users. Admins are by no means meant to act like "gods", i.e. they can't see private stuff from other users.
 - **User** - Registered users are able to see anything created and shared by other users that are either `public` or `internal`.  
 
+For a broader overview of admin tasks, see [Administration]({{< relref path="docs/v2/administration/_index.md" >}}).
+
 {{< table >}}
 
 | Option | Description |

@@ -5,6 +5,8 @@ weight: 100
 
 The system settings allow the user to configure the whole application, affecting all users - even if this is a  single-user application for now.
 
+For recurring admin checks after setup, see the [Administration]({{< relref path="docs/v2/administration/_index.md" >}}) overview and the [Operations Guide]({{< relref path="docs/v2/administration/operations.md" >}}).
+
 
 ## Update Checks
 
