@@ -2,6 +2,20 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.5.8
+
+_Released at 2026-06-06_
+
+- Dependencies were updated.
+
+## 2.5.7
+
+_Released at 2026-05-25_
+
+- Security fixes:
+  - API: The bulk-submitting of links now properly disallows `javascript:` in URLs
+- Dependencies were updated.
+
 ## 2.5.6
 
 _Released at 2026-05-10_
