@@ -5,8 +5,8 @@ weight: 20
 ---
 
 This Helm chart can be used to deploy LinkAce to your Kubernetes cluster. Please note that this chart deploys the
-full application stack by default, including a MariaDB database and Redis for caching. It is possible to use an existing
-database or Redis. Please see the values.yml file for details.
+full application stack by default, including a MariaDB database, Redis for caching, and Meilisearch for search. It is possible to use existing
+database, Redis, or Meilisearch services. Please see the values.yml file for details.
 
 {{< alert type="warning" >}}
 This Helm Chart is currently a beta version. Please give feedback if you are using it.
@@ -16,6 +16,8 @@ This Helm Chart is currently a beta version. Please give feedback if you are usi
 
 Please visit the [**Helm Chart documentation**](https://github.com/Kovah/LinkAce/tree/2.x/deploy) in the repository for the
 current version of the chart with usage instructions.
+
+By default, the chart configures `APP_SEARCH_DRIVER=meilisearch` and points LinkAce to the bundled Meilisearch service. If you disable the bundled Meilisearch service, configure an external search service or set `APP_SEARCH_DRIVER=database` in the chart environment file.
 
 ### Follow the post-installation steps
 
