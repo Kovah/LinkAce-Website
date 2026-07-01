@@ -257,6 +257,38 @@ For large imports:
 
 See [Import and Export]({{< relref path="docs/v2/configuration/import.md" >}}) and [CLI Commands]({{< relref path="docs/v2/cli/_index.md#import-links-from-a-html-bookmarks-file" >}}).
 
+### Search returns stale or no results
+
+If LinkAce uses the built-in database search, no external search service or index setup is needed. If LinkAce uses Meilisearch or another external search engine, stale or missing results usually mean the search service is unreachable or the index needs to be rebuilt.
+
+For the standard Docker setup, check:
+
+```bash
+docker compose ps
+docker compose logs meilisearch
+docker compose exec app php artisan search:setup
+docker compose exec app php artisan search:rebuild
+```
+
+Also verify these `.env` values for the standard Docker setup:
+
+```bash
+APP_SEARCH_DRIVER=meilisearch
+MEILISEARCH_HOST=http://meilisearch:7700
+MEILISEARCH_KEY=ChangeThisToASecurePassword!
+```
+
+`MEILISEARCH_KEY` must match the key used by the Meilisearch container as `MEILI_MASTER_KEY`. If you use Docker or Portainer environment variables instead of a mounted `.env` file, confirm that both the LinkAce and Meilisearch containers receive the matching values.
+
+For PHP installations, run the same Artisan commands without Docker:
+
+```bash
+php artisan search:setup
+php artisan search:rebuild
+```
+
+After changing `.env`, restart LinkAce and clear cached configuration if needed.
+
 ### Link checks or Wayback Machine backups do not run
 
 Both features depend on the scheduler. Confirm the cron runs every minute as described in [System Settings]({{< relref path="docs/v2/configuration/system-settings.md#setting-up-the-cron" >}}).

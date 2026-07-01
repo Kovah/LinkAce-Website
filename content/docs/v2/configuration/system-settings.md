@@ -15,6 +15,13 @@ For recurring admin checks after setup, see the [Administration]({{< relref path
 LinkAce will automatically check for updates on the system settings page. To get this to work, the app pulls information about the latest releases from Github and compares it to your currently installed version.
 
 
+## Search Index
+
+If LinkAce uses an external search engine such as Meilisearch or Typesense, the system settings show an option to rebuild the search index. This option is hidden when LinkAce uses the built-in database search.
+
+Use the rebuild action after changing the search driver, restoring a backup, importing existing data, or fixing stale search results. Rebuilding flushes and imports the search indexes for links, tags, and lists. External search engines may finish indexing asynchronously after the rebuild action completes.
+
+
 ## System Cron
 
 {{< image type="screen" img="system_settings_cron_token.png" alt="Preview of th cron token settings" >}}
@@ -27,6 +34,7 @@ Currently, the following tasks will be run:
 
 * LinkAce runs the [link check]({{< relref path="docs/v2/application/link-checks.md" >}}) and sends a notification if moved or dead links were found.
 * LinkAce sends requests to the Wayback Machine with all newly added links, so they are backed up later.
+* LinkAce processes queued jobs, including queued search index updates if `SCOUT_QUEUE=true` is configured.
 
 ### Setting up the cron
 

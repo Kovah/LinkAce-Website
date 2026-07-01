@@ -6,7 +6,7 @@ aliases:
 - setup
 ---
 
-Docker is the recommended setup method for most self-hosted LinkAce installations. The stable Docker setup uses Docker Compose and includes the application, database, and cache services.
+Docker is the recommended setup method for most self-hosted LinkAce installations. The stable Docker setup uses Docker Compose and includes the application, database, Meilisearch, and cache services.
 
 {{< alert type="info" >}}
 All images are available on the [**Docker Hub**](https://hub.docker.com/r/linkace/linkace) and on the [**GitHub Registry**](https://github.com/Kovah/LinkAce/pkgs/container/linkace) and support `amd64`, `arm64` and `amd/v7`.
@@ -53,7 +53,7 @@ docker run -p "8080:8080" -e "PORT=8080" -v "./database.sqlite:/app/database/dat
 
 ## Stable Setup
 
-Use this setup for a real Docker installation. It is the supported Docker path and uses Docker Compose with separate services for LinkAce, the database, and Redis.
+Use this setup for a real Docker installation. It is the supported Docker path and uses Docker Compose with separate services for LinkAce, the database, Meilisearch, and Redis.
 
 
 ### 1. Copy the needed files
@@ -69,6 +69,13 @@ You should change the following settings in the .env file before starting the se
 
 * DB_PASSWORD - Please set a secure password here
 * REDIS_PASSWORD - Please set a secure password here
+* MEILISEARCH_KEY - Please set a secure key here
+
+The provided Docker Compose setup starts the database, Meilisearch, and Redis together with LinkAce. The default `.env` file uses `APP_SEARCH_DRIVER=meilisearch` and connects LinkAce to the bundled Meilisearch container.
+
+{{< alert type="info" >}}
+If you don't want to use Meilisearch for advanced searches in LinkAce, remove the `meilisearch` service from the docker-compose.yaml file and set the search driver to `APP_SEARCH_DRIVER=database` in the .env file.
+{{</ alert >}}
 
 Your directory should look like this now:
 
@@ -141,7 +148,7 @@ You can configure the database and your user account in the following process.
 Please make sure to follow the [post-installation steps]({{< relref path="docs/v2/setup/post-setup.md" >}}) now to fully enable all features.
 {{</ alert >}}
 
-The post-setup checklist covers `APP_URL`, mail, cron, backups, guest access, default visibility, imports, and the Bookmarklet.
+The post-setup checklist covers `APP_URL`, mail, cron, search indexing, backups, guest access, default visibility, imports, and the Bookmarklet.
 
 
 ---
@@ -156,10 +163,13 @@ If you run into issues with the built-in setup via the web, you may try to compl
 Follow the instructions above until step 4. Then run the following commands. Please note that the database configuration must be done in the .env file BEFORE running the following commands.
 
 ```bash
-docker exec -it linkace_app_1 php artisan migrate
-docker exec -it linkace_app_1 php artisan setup:complete
-docker exec -it linkace_app_1 php artisan registeruser --admin
+docker compose exec app php artisan migrate
+docker compose exec app php artisan search:setup
+docker compose exec app php artisan setup:complete
+docker compose exec app php artisan registeruser --admin
 ```
+
+`search:setup` prepares the configured external search engine. It is required for the default Docker setup because it uses Meilisearch.
 
 The last command lets you create your first admin user. After all commands were successful, you can login right away at `http://localhost` or your domain pointing to LinkAce.
 
@@ -220,6 +230,7 @@ services:
     restart: unless-stopped
     depends_on:
       - db
+      - meilisearch
     ports:
       - "0.0.0.0:80:80"
       # Remove the hash of the following line if you want to use HTTPS for this container

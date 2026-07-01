@@ -138,6 +138,31 @@ REDIS_PASSWORD=ChangeThisToASecurePassword!
 REDIS_PORT=6379
 REDIS_DB=0
 
+
+## Search configuration
+# The default Docker setup uses Meilisearch. Without this setting, LinkAce uses database search.
+# Supported values: database, meilisearch, typesense
+APP_SEARCH_DRIVER=meilisearch
+# Optional prefix for all external search indexes, useful if multiple LinkAce installations share one search service.
+SCOUT_PREFIX=
+# Set to true if search index updates should be queued instead of processed immediately.
+SCOUT_QUEUE=false
+
+# Meilisearch configuration
+MEILISEARCH_HOST=http://meilisearch:7700
+MEILISEARCH_KEY=ChangeThisToASecurePassword!
+
+# Typesense configuration
+TYPESENSE_API_KEY=
+TYPESENSE_HOST=localhost
+TYPESENSE_PORT=8108
+TYPESENSE_PATH=
+TYPESENSE_PROTOCOL=http
+TYPESENSE_CONNECTION_TIMEOUT_SECONDS=2
+TYPESENSE_HEALTHCHECK_INTERVAL_SECONDS=30
+TYPESENSE_NUM_RETRIES=3
+TYPESENSE_RETRY_INTERVAL_SECONDS=1
+
 ## Memcache cache configuration
 MEMCACHED_PERSISTENT_ID=
 MEMCACHED_USERNAME=

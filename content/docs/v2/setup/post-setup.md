@@ -3,7 +3,7 @@ title: Post-Setup Steps
 weight: 60
 ---
 
-After the setup wizard is finished, LinkAce can save links immediately. Use this checklist to enable the features most users expect: correct generated URLs, email, cron, backups, visibility defaults, imports, and the Bookmarklet.
+After the setup wizard is finished, LinkAce can save links immediately. Use this checklist to enable the features most users expect: correct generated URLs, email, cron, search, backups, visibility defaults, imports, and the Bookmarklet.
 
 If you want a guided first session after completing these checks, continue with [First Steps After Setup]({{< relref path="docs/v2/getting-started/first-steps.md" >}}).
 
@@ -70,13 +70,29 @@ docker compose exec app php artisan schedule:run
 php artisan schedule:run
 ```
 
-### 5. Configure Backups
+### 5. Verify Search
+
+The default Docker setup includes Meilisearch and configures LinkAce to use it. Search should work without extra services.
+
+If search returns stale or missing results, rebuild the search index:
+
+```bash
+# Docker
+docker compose exec app php artisan search:rebuild
+
+# PHP installation
+php artisan search:rebuild
+```
+
+For custom or PHP installations, configure `APP_SEARCH_DRIVER` and the matching search engine variables before running the rebuild command. See [Advanced Settings]({{< relref path="docs/v2/configuration/env-settings.md#search-configuration" >}}).
+
+### 6. Configure Backups
 
 Exports are not full backups. Configure application backups if you want a recovery path for the database and application data.
 
 See [Application Backups]({{< relref path="docs/v2/configuration/application-backups.md" >}}) for local and S3-compatible backup setup.
 
-### 6. Choose Guest Access
+### 7. Choose Guest Access
 
 Open **System Settings** and decide whether guests should be able to browse public links, lists, and tags.
 
@@ -84,7 +100,7 @@ Leave guest access disabled if LinkAce should be private. If you enable it, revi
 
 See [Guest Access and Settings]({{< relref path="docs/v2/configuration/system-settings.md#guest-access-and-settings" >}}).
 
-### 7. Choose Default Visibility
+### 8. Choose Default Visibility
 
 Open **User Settings** and choose default visibility for new links, lists, tags, and notes.
 
@@ -92,7 +108,7 @@ For a private archive, set defaults to **Private**. For a shared team instance, 
 
 See [User Settings: Privacy Settings]({{< relref path="docs/v2/configuration/user-settings.md#privacy-settings" >}}).
 
-### 8. Import Links or Install the Bookmarklet
+### 9. Import Links or Install the Bookmarklet
 
 If you already have bookmarks, import an HTML bookmark export from your browser. See [Import Browser Bookmarks]({{< relref path="docs/v2/recipes/import-browser-bookmarks.md" >}}).
 
