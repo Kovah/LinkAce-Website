@@ -13,8 +13,8 @@ If you are new to LinkAce, start with the setup guide, finish the post-setup che
 
 - [Follow the Getting Started guide]({{< relref path="docs/v2/getting-started/_index.md" >}}) for the shortest path from a fresh installation to daily use.
 - [Choose an installation method]({{< relref path="docs/v2/setup/_index.md" >}}) if you are setting up LinkAce for the first time.
-- [Install with Docker]({{< relref path="docs/v2/setup/setup-with-docker.md" >}}) for the recommended self-hosted setup.
-- [Follow the post-setup checklist]({{< relref path="docs/v2/setup/post-setup.md" >}}) to enable email, cron, automated checks, and backups.
+- [Install with Docker]({{< relref path="docs/v2/setup/setup-with-docker.md" >}}) for the recommended self-hosted setup with database, Redis, and Meilisearch.
+- [Follow the post-setup checklist]({{< relref path="docs/v2/setup/post-setup.md" >}}) to enable email, cron, search, automated checks, and backups.
 - [Complete the first steps after setup]({{< relref path="docs/v2/getting-started/first-steps.md" >}}) to verify adding, importing, searching, and defaults.
 - [Add and manage links]({{< relref path="docs/v2/application/links.md" >}}) once your instance is running.
 - [Import browser bookmarks]({{< relref path="docs/v2/configuration/import.md" >}}) if you already have a bookmark collection.
@@ -23,7 +23,7 @@ If you are new to LinkAce, start with the setup guide, finish the post-setup che
 ## Install or Upgrade
 
 - [Setup overview]({{< relref path="docs/v2/setup/_index.md" >}}) explains the available installation options.
-- [Setup with Docker]({{< relref path="docs/v2/setup/setup-with-docker.md" >}}) is the recommended setup path for most users.
+- [Setup with Docker]({{< relref path="docs/v2/setup/setup-with-docker.md" >}}) is the recommended setup path for most users and includes Meilisearch by default.
 - [Setup with Helm]({{< relref path="docs/v2/setup/setup-to-k8s.md" >}}) is available for Kubernetes environments.
 - [One-click cloud deployment]({{< relref path="docs/v2/setup/one-click-deploy.md" >}}) is available through Deploystack.
 - [Setup without Docker]({{< relref path="docs/v2/setup/setup-with-php.md" >}}) is available for manual PHP installations.
@@ -43,7 +43,7 @@ If you are new to LinkAce, start with the setup guide, finish the post-setup che
 ## Configure and Administer
 
 - [User Settings]({{< relref path="docs/v2/configuration/user-settings.md" >}}) control personal defaults, privacy, display, sharing, and Wayback Machine behavior.
-- [System Settings]({{< relref path="docs/v2/configuration/system-settings.md" >}}) control update checks, cron, guest access, and site-wide options.
+- [System Settings]({{< relref path="docs/v2/configuration/system-settings.md" >}}) control update checks, search indexing, cron, guest access, and site-wide options.
 - [User Management]({{< relref path="docs/v2/configuration/user-management.md" >}}) explains users, roles, invitations, and visibility.
 - [Application Backups]({{< relref path="docs/v2/configuration/application-backups.md" >}}) explains local and S3-compatible backups.
 - [User API Tokens]({{< relref path="docs/v2/configuration/user-api-tokens.md" >}}) and [System API Tokens]({{< relref path="docs/v2/configuration/system-api-tokens.md" >}}) explain API access.
@@ -54,7 +54,7 @@ If you are new to LinkAce, start with the setup guide, finish the post-setup che
 ## Fix a Problem
 
 - [Troubleshooting]({{< relref path="docs/v2/general/troubleshooting.md" >}}) explains how to collect logs, debug setup issues, and ask for help.
-- [Post-Setup Steps]({{< relref path="docs/v2/setup/post-setup.md" >}}) is useful if cron, email, backups, or link checks do not work yet.
+- [Post-Setup Steps]({{< relref path="docs/v2/setup/post-setup.md" >}}) is useful if cron, email, search, backups, or link checks do not work yet.
 - [System Settings]({{< relref path="docs/v2/configuration/system-settings.md" >}}) explains cron and guest access settings.
 - [Link Checks]({{< relref path="docs/v2/application/link-checks.md" >}}) explains automated checks for dead or moved links.
 

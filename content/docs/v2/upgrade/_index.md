@@ -61,6 +61,31 @@ Make sure to check the version-specific upgrade guides to make sure you don't mi
 
 ## Version-specific upgrades
 
+### to version 2.6.0
+
+The default Docker setup now includes Meilisearch and configures LinkAce to use it for search.
+
+If you use the provided Docker Compose setup, compare your local `docker-compose.yml` and `.env` with the current files from the release package before upgrading. Make a verified backup before changing containers, volumes, or search settings.
+
+To use the new default Meilisearch setup, add the `meilisearch` service and volume from the current Compose file, add `meilisearch` to the application `depends_on` list, and add these variables to `.env`:
+
+```bash
+APP_SEARCH_DRIVER=meilisearch
+MEILISEARCH_HOST=http://meilisearch:7700
+MEILISEARCH_KEY=ChangeThisToASecurePassword!
+```
+
+Use a secure value for `MEILISEARCH_KEY`. The same value must be passed to the Meilisearch container as `MEILI_MASTER_KEY`.
+
+After starting the upgraded containers, prepare and rebuild the search index:
+
+```bash
+docker compose exec app php artisan search:setup
+docker compose exec app php artisan search:rebuild
+```
+
+If you do not want to add Meilisearch, keep or set `APP_SEARCH_DRIVER=database`. Database search does not need an external service or index rebuild.
+
 ### to version 2.5.4
 
 {{< alert type="danger" >}}

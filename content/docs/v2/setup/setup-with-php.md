@@ -27,6 +27,7 @@ Since this application was designed for Docker, consider the following steps as 
     * PostgreSQL 9.4+
     * SQLite 3.8.8+
     * SQL Server 2017+ (not tested, may work)
+* Optional: Meilisearch or Typesense if you want to use an external search engine instead of the built-in database search.
 * If your database is not running on the same server as LinkAce, you need to install the corresponding database clients:
   * MySQL: [mysql-client](https://dev.mysql.com/doc/refman/8.4/en/mysql.html) or [mariadb-client](https://mariadb.com/docs/server/connect/clients/mariadb-client/)
   * PostgreSQL: [postgresql-client and postgresql-dev](https://www.postgresql.org/)
@@ -102,6 +103,25 @@ Now open the URL pointing to LinkAce in your browser. The built-in setup should 
 Please make sure to follow the [post-installation steps]({{< relref path="docs/v2/setup/post-setup.md" >}}) to fully enable all features, including automated backups and link checks.
 {{</ alert >}}
 
+### 6. Optional: Configure external search
+
+PHP installations use database search by default. To use Meilisearch, run a Meilisearch service, then set the search variables in `.env`:
+
+```bash
+APP_SEARCH_DRIVER=meilisearch
+MEILISEARCH_HOST=http://127.0.0.1:7700
+MEILISEARCH_KEY=ChangeThisToASecurePassword!
+```
+
+After changing the search configuration, prepare and rebuild the search index:
+
+```bash
+php artisan search:setup
+php artisan search:rebuild
+```
+
+Typesense is also supported. See [Advanced Settings]({{< relref path="docs/v2/configuration/env-settings.md#search-configuration" >}}) for all search variables.
+
 ---
 
 ## Completing the installation without the built-in setup
@@ -112,8 +132,11 @@ Follow the instructions above until step 4. Then run the following commands. Ple
 
 ```bash
 php artisan migrate
+php artisan search:setup
 php artisan setup:complete
 php artisan registeruser --admin
 ```
+
+`search:setup` prepares the configured external search engine. If LinkAce uses database search, the command exits without changes.
 
 The last command lets you create your first admin user. After all commands were successful, you can login right away at `http://localhost` or your domain pointing to LinkAce.

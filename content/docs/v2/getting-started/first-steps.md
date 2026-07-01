@@ -50,6 +50,8 @@ When you are on a page you want to save, click the Bookmarklet to open a pre-fil
 
 Use the dashboard search field for a quick search, or open [Advanced Search]({{< relref path="docs/v2/application/search.md" >}}) to filter by text, list, tag, visibility, missing tags, missing lists, or broken links.
 
+Docker installations use Meilisearch by default, so newly added or imported links may need a short moment to appear in search. If search results stay empty or stale, rebuild the search index as described in [Post-Setup Steps]({{< relref path="docs/v2/setup/post-setup.md#verify-search" >}}) or [Troubleshooting]({{< relref path="docs/v2/general/troubleshooting.md#search-returns-stale-or-no-results" >}}).
+
 ## 7. Set your defaults
 
 Open [User Settings]({{< relref path="docs/v2/configuration/user-settings.md" >}}) and review:
@@ -69,4 +71,3 @@ Cron is required for imports, automated link checks, Wayback Machine backups, an
 Email is required for password resets, invitations, and notifications.
 
 Use the [Post-Setup Steps]({{< relref path="docs/v2/setup/post-setup.md" >}}) to finish both before relying on LinkAce for regular use.
-

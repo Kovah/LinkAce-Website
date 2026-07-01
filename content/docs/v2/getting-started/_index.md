@@ -11,7 +11,7 @@ If you already installed LinkAce, continue with the [first steps after setup]({{
 ## 1. Choose an installation method
 
 For most self-hosted installations, use [Setup with Docker]({{< relref path="docs/v2/setup/setup-with-docker.md" >}}).
-It provides the application and the services LinkAce needs in one Docker Compose setup.
+It provides the application, database, Redis, and Meilisearch in one Docker Compose setup.
 
 Other installation options are available if they better match your environment:
 
@@ -33,6 +33,7 @@ The most important follow-up tasks are:
 
 - configure email,
 - configure the cron,
+- verify search,
 - choose basic user and privacy defaults,
 - configure application backups if needed,
 - install the Bookmarklet.
@@ -56,4 +57,3 @@ If you want automated link checks, Wayback Machine backups, imports, or applicat
 The [System Settings]({{< relref path="docs/v2/configuration/system-settings.md" >}}) page shows the cron token and the cron URL.
 
 Email should also be configured if you want password resets, user invitations, backup notifications, or dead-link notifications.
-
