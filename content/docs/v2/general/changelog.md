@@ -2,6 +2,35 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.6.0
+
+_Released at 2026-07-03_
+
+### A new Search System for LinkAce
+
+LinkAce now features a completely rebuilt search system with pluggable backends. Choose between lightweight database search (default, no setup required) or Meilisearch for advanced full-text search with typo tolerance and better ranking. Both options support filtering by tags and lists. Database search works out of the box; to use Meilisearch, configure it alongside LinkAce, run `php artisan search:setup`, and then `php artisan search:rebuild` to index your links. Administrators can also rebuild search indexes via a new button in System Settings. See the [upgrade guide]({{< relref path="docs/v2/upgrade/index.md#to-version-260" >}}) for detailed instructions.
+
+Guests can now search through publicly shared links without an account. Guest search respects your existing privacy settings—only content marked as public appears to visitors.
+
+### New Languages
+
+- Added Czech (Čeština) translation, thanks to tomo90!
+- Added Ukrainian (Українська) translation, thanks to tolik8
+- Added Vietnamese (Tiếng Việt) translation, thanks to Dzung Do
+
+### Bug fixes and other improvements
+
+- Kubernetes Helm chart now includes Meilisearch deployment
+- Improved data validation in link repository
+- Fixed handling of model relationships after stores and updates
+- Enhanced visibility and privacy controls
+- Better database configuration compatibility
+- Updated all dependencies to latest stable versions
+- Expanded automated test coverage for search functionality
+- Mass assignment of user IDs through the API is no longer possible
+- It is no longer possible to find out other users private links through probing with the bookmarks importer
+- Users are not correctly authenticated when viewing link feeds for lists and tags
+
 ## 2.5.8
 
 _Released at 2026-06-06_
