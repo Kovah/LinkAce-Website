@@ -1,0 +1,10 @@
+{{ if ge .Level 2 }}
+<h{{ .Level }} id="{{ .Anchor }}">
+    <a href="#{{ .Anchor }}" class="heading-anchor" aria-hidden="true" tabindex="-1">
+        {{ partial "icons/link.html" }}
+    </a>
+    {{ .Text }}
+</h{{ .Level }}>
+{{ else }}
+<h{{ .Level }}{{ with .Anchor }} id="{{ . }}"{{ end }}>{{ .Text }}</h{{ .Level }}>
+{{ end }}

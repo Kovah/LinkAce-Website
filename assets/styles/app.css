@@ -180,6 +180,27 @@
   .prose :last-child {
     @apply mb-0;
   }
+
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply relative;
+  }
+
+  .prose .heading-anchor {
+    @apply absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-200 text-gray-400 hover:text-blue-500 focus:text-blue-500 text-base;
+  }
+
+  .prose h2:hover .heading-anchor,
+  .prose h3:hover .heading-anchor,
+  .prose h4:hover .heading-anchor,
+  .prose h5:hover .heading-anchor,
+  .prose h6:hover .heading-anchor,
+  .prose .heading-anchor:focus {
+    @apply opacity-100;
+  }
 }
 
 @layer components {
