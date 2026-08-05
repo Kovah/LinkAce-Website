@@ -11,7 +11,7 @@ Since this application was designed for Docker, consider the following steps as 
 * The `storage` directory inside LinkAce must be writable by the web server
 * The `bootstrap/cache` directory must be writable by the web server
 * The `.env` file must be writable by the web server during setup
-* **PHP 8.1 to 8.4**, with the following extensions
+* **PHP 8.2 to 8.5**, with the following extensions
     * BCMath
     * Ctype
     * DOM
