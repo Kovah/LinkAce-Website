@@ -31,11 +31,12 @@ provider has its own configuration which must be added to the .env file and prop
 
 {{< table >}}
 
-| Config                     | Possible Options | Default | Description                                                                           |
-|:---------------------------|:-----------------|---------|:--------------------------------------------------------------------------------------|
-| `SSO_ENABLED`              | true/false       | `false` | Enable SSO authentication via OAuth or OIDC                                           |
-| `SSO_REGISTRATION_ENABLED` | true/false       | `true`  | If set to false, users must have an existing SSO-enabled account to be able to login. |
-| `REGULAR_LOGIN_DISABLED`   | true/false       | `false` | Disable the regular login form and user management.                                   |
+| Config                        | Possible Options | Default | Description                                                                                                      |
+|:------------------------------|:-----------------|---------|:-----------------------------------------------------------------------------------------------------------------|
+| `SSO_ENABLED`                 | true/false       | `false` | Enable SSO authentication via OAuth or OIDC                                                                      |
+| `SSO_REGISTRATION_ENABLED`    | true/false       | `true`  | If set to false, users must have an existing SSO-enabled account to be able to login.                            |
+| `SSO_REQUIRE_VERIFIED_EMAIL`  | true/false       | `false` | Require the provider to confirm that it verified the email address before an existing account is connected to it. |
+| `REGULAR_LOGIN_DISABLED`      | true/false       | `false` | Disable the regular login form and user management.                                                              |
 
 {{< / table >}}
 
@@ -43,13 +44,33 @@ provider has its own configuration which must be added to the .env file and prop
 
 While a user tries to login with any SSO provider, this is how the user account is handled:
 
-- If a user with the same email address already exists, but no SSO details are present yet, this user is automatically
-  connected to the user provided by the SSO provider. An internal ID is stored for that user.
-- If a user with the same email address already exists and SSO details are present, the user is logged in and those
-  fields are updated:
-    - user name
-    - authentication token (if applicable)
+- Accounts are matched on the internal ID that the provider issues for the user, not on the email address. If an account with that ID exists, the user is logged in and the user name plus the authentication token (if applicable) are updated.
+- If no account carries that ID, but an account with the same email address exists and has no SSO details yet, that account is connected to the SSO provider and the internal ID is stored. This is the migration path for users who already have a password account on your instance.
+- If an account with the same email address exists and is already connected to a different identity of the same provider, the login is rejected. The same applies when the account is connected to a different provider.
 - If no user with the same email address exists, a new user is registered and the user is automatically logged in.
+
+### Email address verification
+
+Connecting an existing password account to an SSO identity relies on the email address your provider reports. If your provider lets users choose an arbitrary email address, or does not check that an address really belongs to the user, then someone could sign in to your provider using another user's email address and gain access to that user's LinkAce account.
+
+Set `SSO_REQUIRE_VERIFIED_EMAIL=true` to reject any login unless the provider explicitly confirms that it verified the address. This is strongly recommended if you run your own OIDC provider, where email verification depends entirely on your own configuration.
+
+{{< alert type="warning" >}}
+The option is disabled by default because three of the supported providers cannot supply this information at all. Enabling it stops logins via GitLab and Microsoft Azure from working, and also via GitHub even though GitHub only ever reports verified addresses.
+{{</ alert >}}
+
+{{< table >}}
+
+| Provider                                                                                   | Confirms that the email address was verified                      |
+|:-------------------------------------------------------------------------------------------|:------------------------------------------------------------------|
+| Generic OIDC, Authelia, Auth0, Authentik, AWS Cognito, FusionAuth, Keycloak, Okta, Zitadel | Yes, as long as the provider itself verifies email addresses      |
+| Google                                                                                     | Yes, always                                                       |
+| GitHub                                                                                     | Never reported, but LinkAce only ever receives a verified address |
+| GitLab, Microsoft Azure                                                                    | Never reported                                                    |
+
+{{< / table >}}
+
+The underlying `email_verified` claim is a standard OpenID Connect claim of the `email` scope, which LinkAce already requests from every provider that supports it. Providers are not required to return the claim, so a missing claim counts as unverified. You do not have to configure an additional claim or scope on your side.
 
 {{< alert type="info" >}}
 If you disable your SSO provider after users registered with it, those users must manually reset their password via the
