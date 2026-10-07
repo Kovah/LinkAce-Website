@@ -33,6 +33,6 @@ export default {
       },
     },
     target: 'es2019',
-    minify: 'esbuild',
+    minify: 'oxc',
   },
 };
