@@ -28,6 +28,8 @@ _Released at 2026-10-07_
 
 ### Bug fixes and other improvements
 
+- docs: Offer private vulnerability reporting in the issue chooser by @MrBeldum ({{<issuelink 1166>}})
+- Fix bookmark import rejected for valid HTML exports (libmagic MIME misdetection) by @lihe6666 ({{<issuelink 1160>}})
 - The internal search now uses pagination correctly. ({{<issuelink 1152>}})
 - Fixed an error page when viewing the trash with a note whose link was deleted as well, and fixed restoring such a note.
 - Dependencies were updated.
