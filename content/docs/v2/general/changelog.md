@@ -12,7 +12,6 @@ _Released at 2026-10-07_
 
 ### Security fixes
 
-- **Important**: Fixed an account takeover vector in SSO logins, where an existing SSO identity could be silently replaced by another account from the same provider. Accounts are now matched on the provider identity instead of the email address alone. Account linking by email address is unchanged, see the note above.
 - Fixed a remote code execution vulnerability in the setup process, where the SQLite database path could be used to inject additional configuration options into the `.env` file.
 - Fixed a server-side request forgery (SSRF) issue where private and internal IP addresses could still be reached during metadata fetching, because the validator and the HTTP client resolved hostnames separately. Validated addresses are now pinned into the request, and resolution failures block the request instead of allowing it.
 - Fixed an information disclosure issue where the import queue overview showed the import jobs of all users instead of only the current user's jobs.
