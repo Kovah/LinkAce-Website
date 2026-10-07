@@ -2,6 +2,37 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.6.2
+
+_Released at 2026-10-07_
+
+{{< alert type="warning" >}}
+**Using SSO? Check your email verification.** LinkAce links a provider login to an existing account by email address. If your provider lets users set an unverified address, they can take over the account using it. Set `SSO_REQUIRE_VERIFIED_EMAIL=true` if your provider supports it, see [the details]({{< relref path="docs/v2/configuration/sso-oauth-oidc.md#email-address-verification" >}}).
+{{</ alert >}}
+
+### Security fixes
+
+- **Important**: Fixed an account takeover vector in SSO logins, where an existing SSO identity could be silently replaced by another account from the same provider. Accounts are now matched on the provider identity instead of the email address alone. Account linking by email address is unchanged, see the note above.
+- Fixed a remote code execution vulnerability in the setup process, where the SQLite database path could be used to inject additional configuration options into the `.env` file.
+- Fixed a server-side request forgery (SSRF) issue where private and internal IP addresses could still be reached during metadata fetching, because the validator and the HTTP client resolved hostnames separately. Validated addresses are now pinned into the request, and resolution failures block the request instead of allowing it.
+- Fixed an information disclosure issue where the import queue overview showed the import jobs of all users instead of only the current user's jobs.
+- Fixed an information disclosure issue where private tags and lists of other users could appear in link listings, search results, the link edit form and the link history.
+- Fixed an information disclosure issue where a note could be moved to another user's link, exposing that link's private URL and title in the trash.
+- Password reset links are now always generated from the configured `APP_URL` and can no longer be redirected to an attacker-controlled host.
+- Two-factor recovery codes are now only displayed after the user confirms their password, so a stolen session can no longer be turned into a permanent two-factor bypass.
+- The two-factor authentication challenge is now rate-limited, which prevents brute forcing of one-time codes.
+- Invitation-based registration now binds the registration to the invited email address and invalidates the invitation immediately, so a single invitation can no longer be used for arbitrary email addresses or for multiple accounts.
+- Admin-issued API tokens are now correctly checked against their granted permissions for link search, link notes, feeds, link checks and the link listings of lists and tags.
+- User settings are now validated, which prevents HTML injection through the date and time format settings and a permanent lockout caused by an invalid locale or timezone.
+- An invalid locale can no longer break the administration audit log. All audit modifiers now handle unknown values, and the guest and general system settings forms validate their actual fields again, so `cron_token` and `setup_completed` are no longer writable through them.
+- Unauthenticated requests now have a maximum page size. Previously `per_page=0` returned all available items in a single response, which could be used to exhaust server resources.
+
+### Bug fixes and other improvements
+
+- The internal search now uses pagination correctly. ({{<issuelink 1152>}})
+- Fixed an error page when viewing the trash with a note whose link was deleted as well, and fixed restoring such a note.
+- Dependencies were updated.
+
 ## 2.6.1
 
 _Released at 2026-08-03_
