@@ -11,8 +11,8 @@ permissions:
   contents: read
 
 jobs:
-  build-config:
-    name: Build config
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -30,3 +30,12 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.167.0'
+          extended: true
+
+      - name: Build site
+        run: npm run build
