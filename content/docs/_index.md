@@ -5,10 +5,6 @@ layout: overview
 outputs:
 - html
 - algolia
-cascade:
-  outputs:
-    - html
-    - algolia
 ---
 
 Welcome to the LinkAce documentation.

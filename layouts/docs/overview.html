@@ -33,7 +33,6 @@
     {{ end }}
 
     {{ $currentPage := . }}
-    {{ $defaultDocs := .Site.Params.DocsBaseVersion }}
     {{ $docsV1 := .Site.GetPage "section" "docs/v1" }}
     {{ $docsV2 := .Site.GetPage "section" "docs/v2" }}
     {{ $version := $docsV2 }}

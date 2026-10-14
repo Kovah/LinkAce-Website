@@ -20,7 +20,7 @@ docker-compose exec app php artisan setup:complete
 php artisan setup:complete
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctrl` + `C`.
 
 
 ## Register a user
@@ -37,7 +37,7 @@ docker-compose exec app php artisan registeruser
 php artisan registeruser
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctrl` + `C`.
 
 
 ## Reset a user password
@@ -58,7 +58,7 @@ docker-compose exec app php artisan reset-password
 php artisan reset-password
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctrl` + `C`.
 
 
 ## Update the thumbnails for all links
@@ -77,7 +77,7 @@ docker-compose exec app php artisan links:update-thumbnails
 php artisan links:update-thumbnails
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctrl` + `C`.
 
 
 ## Cleanup history entries for Links
@@ -102,7 +102,7 @@ docker-compose exec app php artisan links:cleanup-histories [field]
 php artisan links:cleanup-histories [field]
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctrl` + `C`.
 
 
 ## Import Links from a HTML bookmarks file
@@ -123,7 +123,7 @@ docker-compose exec app php artisan links:import [file name]
 php artisan links:import [file name]
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctrl` + `C`.
 
 
 ## View 2FA Recovery Codes
@@ -140,7 +140,7 @@ docker-compose exec app php artisan 2fa:view-recovery-codes
 php artisan 2fa:view-recovery-codes
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctrl` + `C`.
 
 
 ## List all registered users
@@ -159,4 +159,4 @@ docker-compose exec app php artisan users:list
 php artisan users:list
 ```
 
-If you are stuck, you can cancel the command at any time by using <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+If you are stuck, you can cancel the command at any time by using `Ctrl` + `C`.

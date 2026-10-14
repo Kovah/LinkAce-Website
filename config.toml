@@ -1,8 +1,8 @@
 baseURL = "https://www.linkace.org/"
-languageCode = "en-us"
+locale = "en-us"
 title = "LinkAce - Your self-hosted bookmark archive. Free and open source."
 assetDir = "./assets/dist"
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+disableKinds = ["rss", "taxonomy", "term"]
 
 [params]
 DocsCurrentVersion = "docs/v2"
@@ -31,9 +31,6 @@ DonateOpencollective = "https://opencollective.com/linkace"
 DonatePatreon = "https://patreon.com/Kovah"
 DonateLiberapay = "https://liberapay.com/kovah"
 
-[outputs]
-page = ['HTML', 'Algolia']
-
 [outputFormats.Algolia]
 baseName = "algolia"
 isPlainText = true
@@ -43,3 +40,6 @@ notAlternative = true
 [params.algolia]
 vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
 params = ["categories", "tags"]
+
+[module.hugoVersion]
+min = "0.158.0"

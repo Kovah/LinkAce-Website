@@ -88,7 +88,7 @@ Enable the page and add some content in the system settings. The content can con
 
 ### Custom Header Content
 
-Content entered here will be placed before the </head> tag on all LinkAce sites. Useful to place analytics or customization scripts. **Caution:** contents are not escaped and may break the site! Use at your own risk.
+Content entered here will be placed before the `</head>` tag on all LinkAce sites. Useful to place analytics or customization scripts. **Caution:** contents are not escaped and may break the site! Use at your own risk.
 
 ---
 

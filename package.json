@@ -14,8 +14,8 @@
     "test": "node --test tests/*.test.mjs",
     "algolia": "node --env-file-if-exists=.env scripts/algolia-upload.mjs",
     "serve": "hugo serve -D --gc --bind 0.0.0.0",
-    "build": "npm run production && hugo",
-    "build-with-search": "npm run production && hugo && npm run algolia"
+    "build": "npm run production && hugo --cleanDestinationDir",
+    "build-with-search": "npm run production && hugo --cleanDestinationDir && npm run algolia"
   },
   "dependencies": {
     "algoliasearch": "5.59.0",

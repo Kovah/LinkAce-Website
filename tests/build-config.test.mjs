@@ -10,8 +10,8 @@ test('npm scripts use Vite for asset builds and keep Hugo commands', () => {
   assert.equal(packageJson.scripts.prod, 'npm run production');
   assert.equal(packageJson.scripts.production, 'vite build');
   assert.equal(packageJson.scripts.serve, 'hugo serve -D --gc --bind 0.0.0.0');
-  assert.equal(packageJson.scripts.build, 'npm run production && hugo');
-  assert.equal(packageJson.scripts['build-with-search'], 'npm run production && hugo && npm run algolia');
+  assert.equal(packageJson.scripts.build, 'npm run production && hugo --cleanDestinationDir');
+  assert.equal(packageJson.scripts['build-with-search'], 'npm run production && hugo --cleanDestinationDir && npm run algolia');
 });
 
 test('Vite config emits stable Hugo asset names into assets/dist', async () => {
