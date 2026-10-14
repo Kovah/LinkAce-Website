@@ -296,7 +296,3 @@
 .navbar-toggler {
   @apply sm:hidden ml-auto;
 }
-
-[x-cloak] {
-  display: none;
-}
