@@ -22,12 +22,11 @@
     "instantsearch.js": "4.119.0"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/forms": "0.5.11",
+    "@tailwindcss/typography": "0.5.20",
+    "@tailwindcss/vite": "4.3.3",
     "atomic-algolia": "^0.3.19",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.12",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "4.3.3",
     "vite": "8.3.3"
   }
 }

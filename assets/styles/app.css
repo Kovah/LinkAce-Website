@@ -1,3 +1,10 @@
+@import "tailwindcss" source(none);
+@source "../../layouts";
+@source "../js";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@config "../../tailwind.config.js";
+
 @font-face {
   font-family: 'IBM Plex Sans';
   src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'),
@@ -16,9 +23,34 @@
   font-style: normal;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-blue-50: #f4f6fb;
+  --color-blue-100: #e8ecf6;
+  --color-blue-200: #ccd7eb;
+  --color-blue-300: #a0b6d9;
+  --color-blue-400: #6d8fc3;
+  --color-blue-500: #44679f;
+  --color-blue-600: #385891;
+  --color-blue-700: #2e4676;
+  --color-blue-800: #2a3e62;
+  --color-blue-900: #273653;
+  --color-blue-950: #1a2237;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @variant xl {
+    max-width: 64rem;
+  }
+
+  @variant 2xl {
+    max-width: 64rem;
+  }
+}
 
 @layer base {
   html {
@@ -26,7 +58,7 @@
   }
 
   body {
-    @apply font-sans text-color-base bg-gray-50 antialiased pt-[65px] sm:pt-[70px];
+    @apply font-sans text-gray-900 bg-gray-50 antialiased pt-[65px] sm:pt-[70px];
     transition: padding-top 100ms;
   }
 
@@ -42,6 +74,9 @@
   .icon:not(.icon-original) path {
     fill: currentColor;
   }
+}
+
+@layer components {
 
   .text-color-base {
     @apply text-gray-900;
@@ -90,11 +125,11 @@
   }
 
   .nav-item .nav-link {
-    @apply inline-block py-2 px-2 text-white hover:bg-blue-700 focus:bg-blue-700 rounded transition;
+    @apply inline-block py-2 px-2 text-white hover:bg-blue-700 focus:bg-blue-700 rounded-sm transition;
   }
 
   footer a {
-    @apply text-color-base hover:text-blue-700 focus:text-blue-700;
+    @apply text-gray-900 hover:text-blue-700 focus:text-blue-700;
   }
 
   .page-title {
@@ -126,7 +161,7 @@
   }
 
   .toc a {
-    @apply block my-1 link;
+    @apply block my-1 text-blue-500 hover:text-blue-700 focus:text-blue-700 hover:underline focus:underline transition;
   }
 
   .toc ul ul {
@@ -134,7 +169,7 @@
   }
 
   .docsearch-results {
-    @apply absolute z-30 top-2 w-60 max-w-[90vw] shadow border border-blue-500 bg-white rounded-md;
+    @apply absolute z-30 top-2 w-60 max-w-[90vw] shadow-sm border border-blue-500 bg-white rounded-md;
   }
 
   .docsearch-result:not(:first-child) {
@@ -169,43 +204,8 @@
     @apply block text-sm py-1;
   }
 
-  .prose .alert {
-    @apply my-8;
-  }
-
-  .prose img {
-    @apply shadow shadow-gray-200/50
-  }
-
-  .prose :last-child {
-    @apply mb-0;
-  }
-
-  .prose h2,
-  .prose h3,
-  .prose h4,
-  .prose h5,
-  .prose h6 {
-    @apply relative;
-  }
-
-  .prose .heading-anchor {
-    @apply absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-200 text-gray-400 hover:text-blue-500 focus:text-blue-500 text-base;
-  }
-
-  .prose h2:hover .heading-anchor,
-  .prose h3:hover .heading-anchor,
-  .prose h4:hover .heading-anchor,
-  .prose h5:hover .heading-anchor,
-  .prose h6:hover .heading-anchor,
-  .prose .heading-anchor:focus {
-    @apply opacity-100;
-  }
-}
-
-@layer components {
   .btn {
-    @apply inline-block appearance-none py-1 px-2 rounded-md font-bold tracking-wide border border-transparent focus:ring-offset-2 disabled:opacity-50 transition ease-in-out duration-150;
+    @apply inline-block appearance-none cursor-pointer py-1 px-2 rounded-md font-bold tracking-wide border border-transparent focus:ring-offset-2 disabled:opacity-50 transition ease-in-out duration-150;
   }
 
   .btn.btn-primary {
@@ -229,7 +229,7 @@
   }
 
   .badge {
-    @apply inline-block py-1 px-1.5 rounded text-sm;
+    @apply inline-block py-1 px-1.5 rounded-sm text-sm;
   }
 
   .badge-sm {
@@ -264,18 +264,6 @@
     @apply bg-red-100;
   }
 
-  .alert p, .alert ol, .alert ul, .alert pre {
-    margin-bottom: 0;
-  }
-
-  .alert > :first-child {
-    margin-top: 0;
-  }
-
-  .alert > :last-child {
-    margin-bottom: 0;
-  }
-
   .card {
     @apply bg-white rounded-md p-4 shadow-lg shadow-gray-200/50;
   }
@@ -291,8 +279,59 @@
   .card-bg-icon {
     @apply -z-10 opacity-5 absolute -right-5 -bottom-10 text-[10rem] leading-none;
   }
+
+  .navbar-toggler {
+    @apply sm:hidden ml-auto;
+  }
 }
 
-.navbar-toggler {
-  @apply sm:hidden ml-auto;
+/*
+ * The typography plugin emits .prose into the utilities layer in Tailwind v4.
+ * Rules that must override prose styles live here, so specificity decides as in v3.
+ */
+@layer utilities {
+  .prose .alert {
+    @apply my-8;
+  }
+
+  .prose img {
+    @apply shadow-sm shadow-gray-200/50;
+  }
+
+  .prose :last-child {
+    @apply mb-0;
+  }
+
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply relative;
+  }
+
+  .prose .heading-anchor {
+    @apply absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-200 text-gray-400 hover:text-blue-500 focus:text-blue-500 text-base;
+  }
+
+  .prose h2:hover .heading-anchor,
+  .prose h3:hover .heading-anchor,
+  .prose h4:hover .heading-anchor,
+  .prose h5:hover .heading-anchor,
+  .prose h6:hover .heading-anchor,
+  .prose .heading-anchor:focus {
+    @apply opacity-100;
+  }
+
+  .alert p, .alert ol, .alert ul, .alert pre {
+    margin-bottom: 0;
+  }
+
+  .alert > :first-child {
+    margin-top: 0;
+  }
+
+  .alert > :last-child {
+    margin-bottom: 0;
+  }
 }

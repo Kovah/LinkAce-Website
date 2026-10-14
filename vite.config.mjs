@@ -1,5 +1,6 @@
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import tailwindcss from '@tailwindcss/vite';
 
 const configDir = dirname(fileURLToPath(import.meta.url));
 
@@ -7,6 +8,7 @@ const configDir = dirname(fileURLToPath(import.meta.url));
 export default {
   root: '.',
   publicDir: false,
+  plugins: [tailwindcss()],
   build: {
     outDir: 'assets/dist',
     assetsDir: '',
