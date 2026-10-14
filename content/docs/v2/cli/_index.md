@@ -26,7 +26,7 @@ docker exec -it linkace_app_1 php artisan debug
 php artisan debug
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using `Ctrl / Strg` + `C`.
 
 
 ## Register a user
@@ -48,7 +48,7 @@ docker exec -it linkace_app_1 php artisan registeruser
 php artisan registeruser
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using `Ctrl / Strg` + `C`.
 
 
 ## Reset a user password
@@ -73,7 +73,7 @@ docker exec -it linkace_app_1 php artisan reset-password
 php artisan reset-password
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using `Ctrl / Strg` + `C`.
 
 
 ## Update the thumbnails for all links
@@ -96,7 +96,7 @@ docker exec -it linkace_app_1 php artisan links:update-thumbnails
 php artisan links:update-thumbnails
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using `Ctrl / Strg` + `C`.
 
 
 ## Import Links from a HTML bookmarks file
@@ -120,7 +120,7 @@ docker exec -it linkace_app_1 php artisan links:import [file name]
 php artisan links:import [file name]
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using `Ctrl / Strg` + `C`.
 
 
 ## Check the Email Configuration
@@ -143,7 +143,7 @@ docker exec -it linkace_app_1 php artisan mail:check
 php artisan mail:check
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using `Ctrl / Strg` + `C`.
 
 
 ## Prepare the External Search Engine
@@ -168,7 +168,7 @@ docker exec -it linkace_app_1 php artisan search:setup
 php artisan search:setup
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using `Ctrl / Strg` + `C`.
 
 
 ## Rebuild the Search Index
@@ -193,7 +193,7 @@ docker exec -it linkace_app_1 php artisan search:rebuild
 php artisan search:rebuild
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using `Ctrl / Strg` + `C`.
 
 
 ## View 2FA Recovery Codes
@@ -214,4 +214,4 @@ docker exec -it linkace_app_1 php artisan 2fa:view-recovery-codes
 php artisan 2fa:view-recovery-codes
 ```
 
-If you are stuck, you can cancel the command at any time by using `Ctl / Strg` + `C`.
+If you are stuck, you can cancel the command at any time by using `Ctrl / Strg` + `C`.

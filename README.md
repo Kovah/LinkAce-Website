@@ -7,7 +7,7 @@ This is the source of the LinkAce website and documentation.
 
 ## Contribution & Development
 
-The website is built using [Hugo](https://gohugo.io/). Please make sure you have it installed locally. Additionally, you need a current [Node.js](https://nodejs.org/en/) version supported by Vite. Styling is done via Tailwind CSS and code blocks use Prism.js.
+The website is built using [Hugo](https://gohugo.io/). Please make sure you have it installed locally. Additionally, you need a current [Node.js](https://nodejs.org/en/) version supported by Vite. Styling is done via Tailwind CSS and code blocks are highlighted by Hugo.
 
 ```
 # Install dependencies
