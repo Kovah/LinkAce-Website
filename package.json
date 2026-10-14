@@ -12,7 +12,7 @@
     "prod": "npm run production",
     "production": "vite build",
     "test": "node --test tests/*.test.mjs",
-    "algolia": "atomic-algolia",
+    "algolia": "node --env-file-if-exists=.env scripts/algolia-upload.mjs",
     "serve": "hugo serve -D --gc --bind 0.0.0.0",
     "build": "npm run production && hugo",
     "build-with-search": "npm run production && hugo && npm run algolia"
@@ -25,7 +25,6 @@
     "@tailwindcss/forms": "0.5.11",
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.3",
-    "atomic-algolia": "^0.3.19",
     "tailwindcss": "4.3.3",
     "vite": "8.3.3"
   }
