@@ -47,7 +47,24 @@ app.
 
 ### 2. Edit the .env file
 
-Make a copy of the `.env.example` file and name it `.env`. Please do not change any values in it now!
+Make a copy of the `.env.local.production` file and name it `.env`.
+
+Create an empty database and a database user for LinkAce, then enter the connection details in the database section of the `.env` file:
+
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=linkace
+DB_USERNAME=linkace
+DB_PASSWORD=ChangeThisToASecurePassword!
+```
+
+If you want to use SQLite, set `DB_CONNECTION=sqlite` and set `DB_DATABASE` to the absolute path of your database file. The release package already contains an empty `database/database.sqlite` file. If you use another path, make sure the file exists and the web server user can write to it.
+
+{{< alert type="warning" >}}
+LinkAce must be able to connect to the database before the built-in setup can start. If the connection fails, LinkAce shows an error page instead of the setup. Check the database details in your `.env` file and the application logs in `storage/logs` in that case.
+{{</ alert >}}
 
 Make sure the web server user can write to the required paths. For example, on Debian or Ubuntu with Apache or nginx running as `www-data`:
 
@@ -97,7 +114,7 @@ error_page 404 /index.php;
 
 ### 5. Run the built-in setup
 
-Now open the URL pointing to LinkAce in your browser. The built-in setup should start. Follow the instructions to configure a database and register your user account.
+Now open the URL pointing to LinkAce in your browser. The built-in setup should start. Follow the instructions to confirm the database configuration and register your user account.
 
 {{< alert type="warning" >}}
 Please make sure to follow the [post-installation steps]({{< relref path="docs/v2/setup/post-setup.md" >}}) to fully enable all features, including automated backups and link checks.
