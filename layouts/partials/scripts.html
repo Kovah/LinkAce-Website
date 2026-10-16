@@ -4,4 +4,15 @@
 {{ if ne hugo.IsServer true }}
 <noscript><img src="https://analytics.kovah.dev/ingress/e2c6ad69-2a8d-4bd3-96d5-bb7d12adb339/pixel.gif"></noscript>
 <script src="https://analytics.kovah.dev/ingress/e2c6ad69-2a8d-4bd3-96d5-bb7d12adb339/script.js"></script>
+
+<script src="https://stats.kovah.dev/assets/app.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {swetrix.init('74A5MD72M1fi', {
+    apiURL: 'https://stats.kovah.dev/backend/v1/log',
+    respectDNT: true,
+  });swetrix.trackViews()})
+</script>
+<noscript>
+  <img src="https://stats.kovah.dev/backend/log/noscript?pid=74A5MD72M1fi" alt="" referrerpolicy="no-referrer-when-downgrade"/>
+</noscript>
 {{ end }}
