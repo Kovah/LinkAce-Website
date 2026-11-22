@@ -2,6 +2,26 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.6.4
+
+_Released at 2026-11-21_
+
+### Security fixes
+
+- System API tokens now always respect their granted abilities, including for entities owned by the system user, the trash endpoints, and creating lists, tags and notes.
+- Changing or resetting your password now ends all other sessions.
+- Private lists and tags of other users can no longer be used as search filters to find out which links they contain.
+- Usernames now stay unique when updating the profile or logging in via SSO. If the name from the SSO provider is already taken, existing users keep their name and new users get a number appended.
+
+### Bug fixes and other improvements
+
+- Fixed the sort direction on list, tag and guest pages by @jayhemnani9910 ({{<issuelink 1184>}})
+- Saving a link with an empty title now shows a validation error instead of a server error by @jayhemnani9910 ({{<issuelink 1185>}})
+- Fixed a JavaScript error on the dashboard caused by the URL field. ({{<issuelink 1186>}})
+- Fixed a missing translation in the link history. ({{<issuelink 1171>}})
+- The setup can no longer be completed without an admin account.
+- Dependencies were updated.
+
 ## 2.6.2
 
 _Released at 2026-10-07_
