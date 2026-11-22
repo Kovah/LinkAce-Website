@@ -22,6 +22,21 @@ _Released at 2026-11-21_
 - The setup can no longer be completed without an admin account.
 - Dependencies were updated.
 
+## 2.6.3
+
+_Released at 2026-10-21_
+
+### Security fixes
+
+- The web setup no longer opens when the database is unreachable. It is now only available if the database is reachable but LinkAce was not set up yet.
+- The setup no longer shows the configured database password in the form. Leave the field empty to keep the existing password.
+
+### Bug fixes and other improvements
+
+- The error page now hints at a missing SQLite database file during the first setup.
+- The Docker base image now uses PHP 8.5.12.
+- Dependencies were updated.
+
 ## 2.6.2
 
 _Released at 2026-10-07_
